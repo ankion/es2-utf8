@@ -15,4 +15,4 @@ kill_pid ${DIR}/mudos.pid
 
 # another option:
 # forever stop `which webtelnet` 8080 4000 -w ${DIR}/../www
-kill_pid ${DIR}/webtelnet.pid
+#kill_pid ${DIR}/webtelnet.pid

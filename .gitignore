@@ -12,3 +12,5 @@ mudlib/log/USAGE
 mudlib/log/author_stats
 mudlib/log/domain_stats
 mudlib/log/tsatic/CRASHES
+
+bin/config.ES2
