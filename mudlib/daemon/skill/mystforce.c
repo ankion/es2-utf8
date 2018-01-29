@@ -8,7 +8,7 @@ int valid_learn(object me) { return 1; }
 
 int practice_skill(object me)
 {
-        return notify_fail ("步玄心法只能学，或是从运用(exert)中增加熟练度。\n"); 
+        return notify_fail ("步玄心法只能學，或是從運用(exert)中增加熟練度。\n"); 
 }
 
 /*string exert_function_file(string func)

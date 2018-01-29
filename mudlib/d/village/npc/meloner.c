@@ -7,7 +7,7 @@ void catch_thief();
 
 void create()
 {
-	set_name("瓜农", ({ "meloner" }) );
+	set_name("瓜農", ({ "meloner" }) );
 	set("gender", "男性" );
 	set("age", 46);
 	set("str", 29);
@@ -19,8 +19,8 @@ void create()
 	set("kar", 25);
 	set("con", 27);
 	set("long", @LONG
-一个中年瓜农，脸上被阳光晒得黝黑，一身的键子
-肉，给人的感觉是扎实威猛。
+一箇中年瓜農，臉上被陽光曬得黝黑，一身的鍵子
+肉，給人的感覺是紮實威猛。
 LONG
 );
 	set("attitude", "friendly");
@@ -76,31 +76,31 @@ void init()
 void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
-        say( "这位" + RANK_D->query_respect(ob)
-                + "要不要买个西瓜解解渴？\n");
+        say( "這位" + RANK_D->query_respect(ob)
+                + "要不要買個西瓜解解渴？\n");
 }
 
 int do_return(string arg)
 {
 	if( !this_player()->query_temp("melon/catch_thief") )
-	  return notify_fail("你又没欠他什么，为什么要还？\n" );
-	if(!arg) return notify_fail("你要还什么？\n");
-	if( arg=="melon cost" || arg=="瓜钱" )
+	  return notify_fail("你又沒欠他什麼，爲什麼要還？\n" );
+	if(!arg) return notify_fail("你要還什麼？\n");
+	if( arg=="melon cost" || arg=="瓜錢" )
 	{
-	  command("say 好，咱俩的账就算结了。\n");
+	  command("say 好，咱倆的賬就算結了。\n");
 	  set_temp("melon/catch_thief",0);
 	  this_player()->set_temp("melon/catch_thief",0);
 	  set_leader(0);
 	  move(find_object("/d/village/melonguard"));
 	  return 1;
 	}
-	return notify_fail("除了瓜钱，我什么都不要。\n");
+	return notify_fail("除了瓜錢，我什麼都不要。\n");
 }
 
 void catch_thief()
 {
 	if( query_temp("melon/catch_thief") )
-	  command( "say 你要不还我瓜钱(return melon cost)），咱俩就没完！\n" );
+	  command( "say 你要不還我瓜錢(return melon cost)），咱倆就沒完！\n" );
 	else
 	  command( "heihei this_player()" );
 }

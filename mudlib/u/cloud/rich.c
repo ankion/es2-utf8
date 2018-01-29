@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "张百万家");
+	set("short", "張百萬家");
 	set("long", @LONG
-你现在正站在张百万家里
-    靠近门口的地方有一块乌木雕成的招牌(sign)。
+你現在正站在張百萬家裏
+    靠近門口的地方有一塊烏木雕成的招牌(sign)。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

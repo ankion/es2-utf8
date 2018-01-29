@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "后厅");
+    set("short", "後廳");
 	set("long", @LONG
-你进了后厅，这是后院上房五间中，最大的一间厅房。四面墙            
-壁，玲珑剔透，琴剑书画，挂在墙上。锦笼纱罩，金彩珠光，连地上                  
-踏的砖，皆是碧绿凿花，是雕空的紫檀板壁。厅上摆了二十六张桧木
-交椅，庄内对外展示舞步表演，都是在这举行。
+你進了後廳，這是後院上房五間中，最大的一間廳房。四面牆            
+壁，玲瓏剔透，琴劍書畫，掛在牆上。錦籠紗罩，金彩珠光，連地上                  
+踏的磚，皆是碧綠鑿花，是雕空的紫檀板壁。廳上擺了二十六張檜木
+交椅，莊內對外展示舞步表演，都是在這舉行。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -24,7 +24,7 @@ LONG
         __DIR__"npc/spring2" : 1,
         __DIR__"npc/yushou" : 1,
     ]) );
-    create_door("north","后厅大门","south", DOOR_CLOSED);
+    create_door("north","後廳大門","south", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

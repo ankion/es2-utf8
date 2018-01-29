@@ -5,8 +5,8 @@ inherit NPC;
 void create()
 {
 	set_name("常老大", ({ "boss tsang", "boss", "tsang" }) );
-	set("title", "老松寨寨主");
-	set("nickname", "泼风刀王");
+	set("title", "老鬆寨寨主");
+	set("nickname", "潑風刀王");
 	set("gender", "男性");
 	set("age", 53);
 	set("combat_exp", 260000);

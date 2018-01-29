@@ -7,11 +7,11 @@ void create()
 	set("board_id", "dancer_b");
 	set("location", "/d/latemoon/latemoon1" );
 	setup();
-	set_name("沐花镜屏", ({ "mirror" }) );
+	set_name("沐花鏡屏", ({ "mirror" }) );
 	set("long",
-		"这是一面有一个人高的镜屏，有著古藤缠绕著的红木镜框，上面还缀著\n"
-		"一些刚采来的鲜花，你看著镜中的自己，有如站在花丛之中，晚月庄的\n"
-		"女子喜欢将自己的心事写成纸条绑在镜框上。\n");
+		"這是一面有一個人高的鏡屏，有著古藤纏繞著的紅木鏡框，上面還綴著\n"
+		"一些剛採來的鮮花，你看著鏡中的自己，有如站在花叢之中，晚月莊的\n"
+		"女子喜歡將自己的心事寫成紙條綁在鏡框上。\n");
 	set("capacity", 30);
 	replace_program(BULLETIN_BOARD);
 }

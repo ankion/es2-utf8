@@ -5,19 +5,19 @@ string look_shield();
 
 void create()
 {
-	set("short", "财主家南房");
+	set("short", "財主家南房");
 	set("long", @LONG
-南房布置得象个书房，在屋子的中间有一张大书桌，靠西侧的墙上立
-着一个书架(shield)，上面很摆了几本书。向南和向西开了两面大窗户，
-向南望去，能模模糊糊地望见京城林立的楼阁；向西可以看到在田间忙碌
-的田农。
+南房佈置得象個書房，在屋子的中間有一張大書桌，靠西側的牆上立
+着一個書架(shield)，上面很擺了幾本書。向南和向西開了兩面大窗戶，
+向南望去，能模模糊糊地望見京城林立的樓閣；向西可以看到在田間忙碌
+的田農。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
   "north" : __DIR__"lordhouse1",
 ]));
 	set("item_desc",([
-	//	"shield": "这书架上好象摆着八本书，你可以将它们中的某一本抽(take)出来，\n或将抽出来的书放回去(putback)。\n",
+	//	"shield": "這書架上好象擺着八本書，你可以將它們中的某一本抽(take)出來，\n或將抽出來的書放回去(putback)。\n",
 		"shield": look_shield(),
 	]) );
 	
@@ -39,15 +39,15 @@ int do_takeout(string arg)
 	string num;
 	
 	if( !arg || arg=="" )
-		return notify_fail("你要拿什么？\n");
+		return notify_fail("你要拿什麼？\n");
 	if( arg=="book" ) {
-	write("你想拿第几本石书？\n");
+	write("你想拿第幾本石書？\n");
 	return 1;
 	}
 	
 	if( sscanf(arg, "book %s", num)==1 ) {
 	    if( num <"0" || num >"12" ){
-	    	return notify_fail("有多少本书，你仔细点清楚了！\n");
+	    	return notify_fail("有多少本書，你仔細點清楚了！\n");
 	    }
 	    switch( num ){
 	    	case "9":

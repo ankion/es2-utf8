@@ -6,21 +6,21 @@ string kill_passenger(object who);
 
 void create()
 {
-        set_name("刘老农", ({ "liu" }) );
+        set_name("劉老農", ({ "liu" }) );
         set("gender", "男性" );
         set("age", 57);
         set("str", 27);
         set("int", 12);
         set("per", 10);
         set("long", @LONG
-刘老农今年快六十了。但手脚还算灵活。
+劉老農今年快六十了。但手腳還算靈活。
 LONG
 );
         set("attitude", "peaceful");
 
         set("combat_exp", 10000);
         set("bellicosity", 0);
-        set("marks/老刘本人", 1);
+        set("marks/老劉本人", 1);
 
         set_skill("sword", 150);
         set_skill("unarmed", 100);
@@ -42,7 +42,7 @@ LONG
 }
 int accept_fight(object me)
 {
-        command("say 老头子哪里是您的对手？");
+        command("say 老頭子哪裏是您的對手？");
         return 0;
 }
 
@@ -62,23 +62,23 @@ void greeting(object ob)
         object sword;
         if((int) ob->query("marks/murder") == 0)
         {
-        if( (int) ob->query("marks/老刘") == 0 ) 
-        say( "刘老农说道：“这位"+ RANK_D->query_respect(ob) 
-+"，可否见到小女娟儿？” \n");
+        if( (int) ob->query("marks/老劉") == 0 ) 
+        say( "劉老農說道：“這位"+ RANK_D->query_respect(ob) 
++"，可否見到小女娟兒？” \n");
         else
         {
 
         set_skill("six-chaos-sword",150);
         set_skill("pyrobat-steps", 80);
         map_skill("unarmed","liuh-ken");
-        say( "刘老农说道：“这位"+ RANK_D->query_respect(ob) 
-+"，多谢答救小女娟儿。” \n");
-        say( "刘老农说道：“这口剑，这本密笈赠于"+ RANK_D->query_respect(ob) 
+        say( "劉老農說道：“這位"+ RANK_D->query_respect(ob) 
++"，多謝答救小女娟兒。” \n");
+        say( "劉老農說道：“這口劍，這本密笈贈於"+ RANK_D->query_respect(ob) 
 +"。” \n");
-        say( "刘老农说道：“这处非久留之地，我等去也。” \n");
-        say( "刘老农领着娟儿匆匆离去。” \n");
+        say( "劉老農說道：“這處非久留之地，我等去也。” \n");
+        say( "劉老農領着娟兒匆匆離去。” \n");
 
-         ob->set("marks/老刘", 0);
+         ob->set("marks/老劉", 0);
         sword = new(__DIR__"obj/hengbing");
         book = new(__DIR__"obj/parrybook");
         sword->move(ob);
@@ -93,18 +93,18 @@ void greeting(object ob)
 killhim(object ob)
 {
         ob->set("marks/murder", 0);
-        ob->set("marks/老刘", 0);
-        set("title", "悲愤欲绝");
+        ob->set("marks/老劉", 0);
+        set("title", "悲憤欲絕");
         
-say("刘老农悲愤欲绝的骂道：你．．你．．你们居然杀了我女儿，纳命来！\n");  
+say("劉老農悲憤欲絕的罵道：你．．你．．你們居然殺了我女兒，納命來！\n");  
 
                 set("chat_msg_combat", ({
-"刘老农悲愤欲绝的骂道：你．．你．．你们居然杀了我女儿，纳命来！",
+"劉老農悲憤欲絕的罵道：你．．你．．你們居然殺了我女兒，納命來！",
                 (: random_move :),
         }) );
         set("chat_chance", 15);
         set("chat_msg", ({
-"刘老农悲愤欲绝的骂道：你．．你．．你们居然杀了我女儿，纳命来！",
+"劉老農悲憤欲絕的罵道：你．．你．．你們居然殺了我女兒，納命來！",
                 (: random_move :),
         }) );
         set_temp("apply/force",4000);

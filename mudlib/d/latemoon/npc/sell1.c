@@ -5,12 +5,12 @@ void create()
 {
       object ob;
 
-        set_name("颜慧如", ({ "Huei Ru","huei","huei ru" }) );
+        set_name("顏慧如", ({ "Huei Ru","huei","huei ru" }) );
         set("gender", "女性" );
         set("age", 27);
         set("long",
-"她是一位美女，真是红颜似玉，绿鬓如云，明丽的眼睛，\n"
-"洁白的牙齿。容色俊俏，风度飘逸，令人心动。\n");
+"她是一位美女，真是紅顏似玉，綠鬢如雲，明麗的眼睛，\n"
+"潔白的牙齒。容色俊俏，風度飄逸，令人心動。\n");
         set("combat_exp", 70000);
         set("force",1000);
         set("max_force", 1000);
@@ -24,11 +24,11 @@ void create()
         ]) );
         set("chat_chance", 7);
         set("chat_msg", ({
-"颜慧如说道：小本生意！  物美价廉，欢迎订购(order)。\n",
-"颜慧如梳了梳头发。\n",
-"颜慧如眼睛眨呀眨看著你。\n"
+"顏慧如說道：小本生意！  物美價廉，歡迎訂購(order)。\n",
+"顏慧如梳了梳頭髮。\n",
+"顏慧如眼睛眨呀眨看著你。\n"
         }) );
-        create_family("晚月庄",2,"弟子");
+        create_family("晚月莊",2,"弟子");
         setup();
         ob = carry_object("/obj/example/dagger");
 }
@@ -48,8 +48,8 @@ void init()
 void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
-         say( "颜慧如说道：这位" + RANK_D->query_respect(ob)
-             + "，要不要买些东西呀。\n");
+         say( "顏慧如說道：這位" + RANK_D->query_respect(ob)
+             + "，要不要買些東西呀。\n");
 }
 
 int accept_object(object who, object ob)
@@ -65,31 +65,31 @@ int accept_object(object who, object ob)
                         who->add("bellicosity", - 
 (random((int)who->query("kar")) + val/1000) );
         }
-        say( "颜慧如说道：多谢这位" + RANK_D->query_respect(who)
-                + "，神明一定会保佑你的。\n");
+        say( "顏慧如說道：多謝這位" + RANK_D->query_respect(who)
+                + "，神明一定會保佑你的。\n");
 
         return 1;
 }
 
 int ask_buy(object who)
 {
-        write("小本生意，价钱决对公道。\n"
-              "详列细目 :  list \n"
-              "订购物品 :  order [<物品名称>]  \n");
+        write("小本生意，價錢決對公道。\n"
+              "詳列細目 :  list \n"
+              "訂購物品 :  order [<物品名稱>]  \n");
      return 1;
 }
 
 int do_list(string arg)
 {
-      write( "我卖有以下物品 : \n"
-          "\n 单位：银子 (silver) \n \n"
-             "No.    价格.      名称 \n"
-             "1. [ 五两   ]  花裙 (skirt) \n"
-             "2. [   十两   ]  女儿红 (wine) \n"
-             "3. [ 二十两   ]  鹿皮小靴 (boots) \n"
-             "4. [ 五十两   ]  仙豆  (sen-bean) \n"
-             "5. [ 一百两   ]  大还丹 (heal pill) \n \n"
-    "如果你不说订购什么!那我就卖你女儿红喔! \n \n"
+      write( "我賣有以下物品 : \n"
+          "\n 單位：銀子 (silver) \n \n"
+             "No.    價格.      名稱 \n"
+             "1. [ 五兩   ]  花裙 (skirt) \n"
+             "2. [   十兩   ]  女兒紅 (wine) \n"
+             "3. [ 二十兩   ]  鹿皮小靴 (boots) \n"
+             "4. [ 五十兩   ]  仙豆  (sen-bean) \n"
+             "5. [ 一百兩   ]  大還丹 (heal pill) \n \n"
+    "如果你不說訂購什麼!那我就賣你女兒紅喔! \n \n"
             );
       return 1;
 }
@@ -105,7 +105,7 @@ int do_buy(string arg)
        player = this_player();
        obj = new("/d/latemoon/sell/wine");
     if(!arg )
-          return notify_fail("你要买什么东东呀?说清楚嘛! \n");
+          return notify_fail("你要買什麼東東呀?說清楚嘛! \n");
        else {
       if ( arg == "wine")       { obj= new("/d/latemoon/sell/wine");
                                   amount = 10; }
@@ -118,9 +118,9 @@ int do_buy(string arg)
       if ( arg == "heal pill")   { obj= new("/d/latemoon/sell/pill");
                                    amount = 100; }
        from_ob = present("silver_money",this_player());
-       if( !from_ob )    return notify_fail("你身上没有银两耶。\n");
+       if( !from_ob )    return notify_fail("你身上沒有銀兩耶。\n");
        if( (int)from_ob->query_amount() < amount )
-       return notify_fail("你身上没有那么多银两耶！\n");
+       return notify_fail("你身上沒有那麼多銀兩耶！\n");
           from_ob->add_amount(-amount);
           obj->move(player);
        }
@@ -128,9 +128,9 @@ int do_buy(string arg)
        unit = (string)obj->query("unit");
        objname = (string)obj->query("name");
 
-       tell_room(environment(this_object()),"颜慧如给"+name
+       tell_room(environment(this_object()),"顏慧如給"+name
               +"一"+unit+objname+"\n");
-             say ("颜慧如说道：谢谢你!下次再来! \n");
+             say ("顏慧如說道：謝謝你!下次再來! \n");
 
        return 1;
 }
@@ -141,7 +141,7 @@ void die()
         revive();
         command("grin");
         command("shake");
-        command("say 你这样是杀不死我的!! ");
+        command("say 你這樣是殺不死我的!! ");
         command("say 嘻..");
         inv = all_inventory(environment(this_object()));
         i = sizeof(inv);

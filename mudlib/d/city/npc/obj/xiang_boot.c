@@ -3,7 +3,7 @@ inherit BOOTS;
 
 void create()
 {
-        set_name("象皮战靴", ({ "elephant boots","boots" }) );
+        set_name("象皮戰靴", ({ "elephant boots","boots" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);

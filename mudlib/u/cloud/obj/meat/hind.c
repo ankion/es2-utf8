@@ -9,13 +9,13 @@ void create()
 {
         set_name("牛腿", ({ "hind" }) );
         set_weight(800);
-	set("long", "哇! 好香的牛腿! 不吃还等什么?\n");
+	set("long", "哇! 好香的牛腿! 不吃還等什麼?\n");
 	set("unit", "只");
 	set("value", 150);
         set("food_remaining", 5);
 	set("food_supply", 80);
         set("material", "rib");
-        set("wield_msg", "$N抓起一只$n，握在手中当武器。\n");
+        set("wield_msg", "$N抓起一隻$n，握在手中當武器。\n");
         init_hammer(5);
         setup();
 }

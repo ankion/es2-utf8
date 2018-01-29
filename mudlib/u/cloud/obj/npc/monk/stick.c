@@ -12,8 +12,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "条");
-		set("long", "一条又粗又长僧棍，表面已被磨得十分光滑。\n");
+		set("unit", "條");
+		set("long", "一條又粗又長僧棍，表面已被磨得十分光滑。\n");
 		set("value", 100);
 		set("material", "wood");
 		set("wield_msg", "$N拿出一根$n抄在手中。\n");

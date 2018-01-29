@@ -5,24 +5,24 @@ inherit F_CLEAN_UP;
 mapping default_dirs = ([
 	"north":		"北",
 	"south":		"南",
-	"east":			"东",
+	"east":			"東",
 	"west":			"西",
-	"northup":		"北边",
-	"southup":		"南边",
-	"eastup":		"东边",
-	"westup":		"西边",
-	"northdown":	"北边",
-	"southdown":	"南边",
-	"eastdown":		"东边",
-	"westdown":		"西边",
-	"northeast":	"东北",
+	"northup":		"北邊",
+	"southup":		"南邊",
+	"eastup":		"東邊",
+	"westup":		"西邊",
+	"northdown":	"北邊",
+	"southdown":	"南邊",
+	"eastdown":		"東邊",
+	"westdown":		"西邊",
+	"northeast":	"東北",
 	"northwest":	"西北",
-	"southeast":	"东南",
+	"southeast":	"東南",
 	"southwest":	"西南",
 	"up":			"上",
 	"down":			"下",
 	"out":			"外",
-	"enter":        "里",
+	"enter":        "裏",
 ]);
 
 void create() { seteuid(getuid()); }
@@ -33,20 +33,20 @@ int main(object me, string arg)
 	object env, obj;
 	mapping exit;
 
-	if( !arg ) return notify_fail("你要往哪个方向走？\n");
+	if( !arg ) return notify_fail("你要往哪個方向走？\n");
 
 	if( me->over_encumbranced() )
-		return notify_fail("你的负荷过重，动弹不得。\n");
+		return notify_fail("你的負荷過重，動彈不得。\n");
 
 	if( me->is_busy() )
-		return notify_fail("你的动作还没有完成，不能移动。\n");
+		return notify_fail("你的動作還沒有完成，不能移動。\n");
 
 	env = environment(me);
-	if(!env) return notify_fail("你哪里也去不了。\n");
+	if(!env) return notify_fail("你哪裏也去不了。\n");
 
 	if( !mapp(exit = env->query("exits")) || undefinedp(exit[arg]) ) {
 		if( query_verb()=="go")
-			return notify_fail("这个方向没有出路。\n");
+			return notify_fail("這個方向沒有出路。\n");
 		else
 			return 0;
 	}
@@ -56,7 +56,7 @@ int main(object me, string arg)
 	if( !(obj = find_object(dest)) )
 		call_other(dest, "???");
 	if( !(obj = find_object(dest)) )
-		return notify_fail("无法移动。\n");
+		return notify_fail("無法移動。\n");
 
 	if( !env->valid_leave(me, arg) ) return 0;
 
@@ -67,10 +67,10 @@ int main(object me, string arg)
 
 	if( me->is_fighting() ) {
 		mout = "往" + dir + "落荒而逃了。\n";
-		min = "跌跌撞撞地跑了过来，模样有些狼狈。\n";
+		min = "跌跌撞撞地跑了過來，模樣有些狼狽。\n";
 	} else {
-		mout = "往" + dir + "离开。\n";
-		min = "走了过来。\n";
+		mout = "往" + dir + "離開。\n";
+		min = "走了過來。\n";
 	}
 
 	message( "vision", me->name() + mout, environment(me), ({me}) );
@@ -95,7 +95,7 @@ void do_flee(object me)
 	exits = environment(me)->query("exits");
 	if( !mapp(exits) || !sizeof(exits) ) return;
 	directions = keys(exits);
-	tell_object(me, "看来该找机会逃跑了...\n");
+	tell_object(me, "看來該找機會逃跑了...\n");
 
     arg = directions[random(sizeof(directions))];
 
@@ -104,7 +104,7 @@ void do_flee(object me)
 	else
 		dir = arg;
 
-	tell_object(me, "你慌里慌张往" + dir + "(" + arg + ")逃去...\n");
+	tell_object(me, "你慌里慌張往" + dir + "(" + arg + ")逃去...\n");
 
     main(me, arg);
 }
@@ -114,7 +114,7 @@ int help(object me)
 	write(@HELP
 指令格式 : go <方向>
  
-让你往指定的方向移动。
+讓你往指定的方向移動。
  
 HELP
     );

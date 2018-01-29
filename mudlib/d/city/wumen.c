@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "午门");
+        set("short", "午門");
         set("long", @LONG
-这里是京师的午门。午门进出紫禁城的要道，北面那庄严的大门
-(gate)后面便是神秘的紫禁城。大门的两侧放着一对石狮(statue)，
-虎视眈眈地盯着来往的人群。南面是历年选武状元的校武场，也不知
-现在有没有人。东西向的街道围绕着紫禁城。
+這裏是京師的午門。午門進出紫禁城的要道，北面那莊嚴的大門
+(gate)後面便是神祕的紫禁城。大門的兩側放着一對石獅(statue)，
+虎視眈眈地盯着來往的人羣。南面是歷年選武狀元的校武場，也不知
+現在有沒有人。東西向的街道圍繞着紫禁城。
 LONG
         );
 
@@ -22,7 +22,7 @@ LONG
 		]));
         set("outdoors", "city");
 
-//	create_door("north", "铁门", "south", DOOR_CLOSED);
+//	create_door("north", "鐵門", "south", DOOR_CLOSED);
 
         setup();
         replace_program(ROOM);

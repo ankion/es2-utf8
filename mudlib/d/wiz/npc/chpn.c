@@ -20,8 +20,8 @@ void create()
 	set("int", 26);
 	set("per", 23);
 	set("con", 24);
-	set("long", "故事是个看起来相当斯文的年轻人，不过有时候会有些心不在焉的\n"
-                "样子，颇有些隐者的风骨\n");
+	set("long", "故事是個看起來相當斯文的年輕人，不過有時候會有些心不在焉的\n"
+                "樣子，頗有些隱者的風骨\n");
 set("combat_exp", 200000);
 	set("attitude", "friendly");
 	set("pursuer", 1);
@@ -34,13 +34,13 @@ set("combat_exp", 200000);
 	set("max_mana", 1000);		set("mana", 1000);		set("mana_factor", 3);
 
         set("chat_msg_combat", ({
-                CYN "故事似笑非笑地望著你，脸上的神气古理古怪，不知道在想些什
-么？\n" NOR,
-                CYN "故事的身影晃了一下，似乎在你身上各处大穴摸了一下，不过也
-许是你的错觉。\n" NOR,
-                CYN "故事神情忽然严肃了起来，不过好像是在想自己的英语翻译事，与你无关
+                CYN "故事似笑非笑地望著你，臉上的神氣古理古怪，不知道在想些什
+麼？\n" NOR,
+                CYN "故事的身影晃了一下，似乎在你身上各處大穴摸了一下，不過也
+許是你的錯覺。\n" NOR,
+                CYN "故事神情忽然嚴肅了起來，不過好像是在想自己的英語翻譯事，與你無關
 。\n" NOR,
-                CYN "故事忽然呵呵呵地笑了起来，却不知道在笑些什么....\n" NOR,
+                CYN "故事忽然呵呵呵地笑了起來，卻不知道在笑些什麼....\n" NOR,
                 (: perform_action, "sword.counterattack" :),
                 (: cast_spell, "drainerbolt" :),
                 (: cast_spell, "feeblebolt" :),
@@ -92,23 +92,23 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(3) ) {
                 case 0:
-                        say( "故事笑咪咪地说道：这位" + RANK_D->query_respect(ob)
-                                + "，进来歇息一下吧。\n");
+                        say( "故事笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                                + "，進來歇息一下吧。\n");
                         break;
                 case 1:
-                        say( "故事用毛巾抹了抹头上的汗，说道：这位" + RANK_D->query_respect(ob)
-                                + "，帮我翻译几页英文资料吧。\n");
+                        say( "故事用毛巾抹了抹頭上的汗，說道：這位" + RANK_D->query_respect(ob)
+                                + "，幫我翻譯幾頁英文資料吧。\n");
                         break;
                 case 2:
-                        say( "故事说道：这位" + RANK_D->query_respect(ob)
-                                + "，有什么意见可以提呀。\n");
+                        say( "故事說道：這位" + RANK_D->query_respect(ob)
+                                + "，有什麼意見可以提呀。\n");
                         break;
         }
 }
 
 int accept_fight(object me)
 {
-	command("say 咦... 要打就真打吧，光是较量多没意思？");
+	command("say 咦... 要打就真打吧，光是較量多沒意思？");
 	command("grin");
 	kill_ob(me);
 	return 1;

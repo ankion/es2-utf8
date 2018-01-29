@@ -10,9 +10,9 @@ int main(object me, string arg)
 	string file;
 
 	seteuid(geteuid(me));
-    if (!arg) return notify_fail("你想要显示那个档案?\n");
+    if (!arg) return notify_fail("你想要顯示那個檔案?\n");
 	file = resolve_path(me->query("cwd"), arg);
-	if( file_size(file)<0 ) return notify_fail("没有这个档案。\n");
+	if( file_size(file)<0 ) return notify_fail("沒有這個檔案。\n");
 	cat(file);
 	return 1;
 }
@@ -20,9 +20,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-指令格式 : cat <档案>
+指令格式 : cat <檔案>
 
-此指令可让你(□)直接读取某档案之程式。
+此指令可讓你(□)直接讀取某檔案之程式。
 HELP
     );
     return 1;

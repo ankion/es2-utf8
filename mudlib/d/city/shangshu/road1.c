@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "小径");
+        set("short", "小徑");
         set("long",@LONG
-尚书府的小径走到这似乎到了尽头。小径的东边是一间小屋，平
-时房门总是关的，每天按时由一名又聋又哑的仆役送饭进去，其他人
-一概不让入内。南边不远处就是尚书府庭院了。
+尚書府的小徑走到這似乎到了盡頭。小徑的東邊是一間小屋，平
+時房門總是關的，每天按時由一名又聾又啞的僕役送飯進去，其他人
+一概不讓入內。南邊不遠處就是尚書府庭院了。
 LONG
         );
 
@@ -25,7 +25,7 @@ LONG
 
 	set("outdoors", "city");
 	
-	create_door ("east", "小木门", "west", DOOR_CLOSED);
+	create_door ("east", "小木門", "west", DOOR_CLOSED);
 
         setup();
         replace_program(ROOM);

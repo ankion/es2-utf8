@@ -6,11 +6,11 @@ inherit ROOM;
 void create()
 {
     seteuid(getuid());
-	set("short", "青石小径");
+	set("short", "青石小徑");
 	set("long", @LONG
-绕过了后殿, 出现在眼前的是一栋木造两层高的屋子。屋子四周
-的门窗都紧紧的关著, 门口上方挂著一方蓝色琉璃匾额, 上书『藏经
-楼』三个金字。门旁立著一个石碑(slab)。
+繞過了後殿, 出現在眼前的是一棟木造兩層高的屋子。屋子四周
+的門窗都緊緊的關著, 門口上方掛著一方藍色琉璃匾額, 上書『藏經
+樓』三個金字。門旁立著一個石碑(slab)。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -19,11 +19,11 @@ LONG
 ]));
 
         set("item_desc", ([
-            "slab" : "石碑上写著 : \n\n"
+            "slab" : "石碑上寫著 : \n\n"
                      "    非\n"
                      "    茅  不\n"
                      "    山  得\n"
-                     "    弟  进\n"
+                     "    弟  進\n"
                      "    子  入\n\n"
            ]) );
 
@@ -44,11 +44,11 @@ void reset()
 int valid_leave(object me, string dir)
 {
      if ( dir=="enter" && (string)this_player()->query("family/family_name") != "茅山派")      
-          return notify_fail("\n一道无形的墙挡住了门口, 差点把你的鼻子给撞扁了。\n\n");
+          return notify_fail("\n一道無形的牆擋住了門口, 差點把你的鼻子給撞扁了。\n\n");
      if ( dir=="enter" && (string)this_player()->query("family/family_name") == "茅山派") 
          {
-          message_vision("\n$N推开门走了进去, 顺手把门关了起来。\n\n", this_player());
-          tell_room(__DIR__"book_room1", "你看到门被推了开来, 有人走了进来并随手把门带上。\n\n");
+          message_vision("\n$N推開門走了進去, 順手把門關了起來。\n\n", this_player());
+          tell_room(__DIR__"book_room1", "你看到門被推了開來, 有人走了進來並隨手把門帶上。\n\n");
           ::valid_leave(me, dir);
          }
      return 1;

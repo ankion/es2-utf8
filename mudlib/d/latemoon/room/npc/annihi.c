@@ -2,7 +2,7 @@ inherit NPC;
  
 void create()
 {
-         set_name("安妮儿", ({ "annihier"  }) );
+         set_name("安妮兒", ({ "annihier"  }) );
         set("gender", "女性" );
          set("age",37);
         set("long", @TEXT
@@ -27,7 +27,7 @@ TEXT
         set("force", 5000);
         set("max_force", 5000);
         set("force_factor", 10);
-        create_family("东方神教", 1, "教主");
+        create_family("東方神教", 1, "教主");
 
         setup();
         carry_object("/d/latemoon/obj/deer_boot")->wear();
@@ -37,6 +37,6 @@ TEXT
 
 void attempt_apprentice(object ob)
 {
-     command("say 拜师! 不敢当，我都老了!你去找「芷萍」好了，看她收不收你? ");
+     command("say 拜師! 不敢當，我都老了!你去找「芷萍」好了，看她收不收你? ");
      return 0;
 }

@@ -10,9 +10,9 @@ void create()
         set_temp("apply/dodge",(random(2)+4));
         set("chat_chance",10);
         set("chat_msg",({
-                "小孩很好奇地往门缝里看去。\n",
-                "小孩说道：村长说这道门绝对不可以打开喔!\n",
-                "小孩说道：不知道里面是什么...\n",
+                "小孩很好奇地往門縫裏看去。\n",
+                "小孩說道：村長說這道門絕對不可以打開喔!\n",
+                "小孩說道：不知道里面是什麼...\n",
                 }) );
         setup();
         carry_object("/obj/cloth")->wear();

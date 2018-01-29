@@ -7,7 +7,7 @@ void create()
      set("age", 24);
      set("class", "taoist");
      set("title", "茅山派第七代弟子");
-set("long", "一位身材魁武的年轻道士, 他正在练拳, 你看他舞得虎虎生风\n");
+set("long", "一位身材魁武的年輕道士, 他正在練拳, 你看他舞得虎虎生風\n");
      set("attitude", "heroism");
      set("combat_exp",5000);
 

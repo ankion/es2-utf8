@@ -6,7 +6,7 @@ void create()
 {
 	set("short", "幻影道入口");
 	set("long", @LONG
-整修中，请往回走:P
+整修中，請往回走:P
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

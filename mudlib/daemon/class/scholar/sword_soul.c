@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-        set_name( HIW "风泉剑灵" NOR, ({ "sword soul", "soul" }) );
-        set("long", "一个高大的人形，只有轮廓发出暗蓝色的光芒，其他部份都是透明的！\n");
+        set_name( HIW "風泉劍靈" NOR, ({ "sword soul", "soul" }) );
+        set("long", "一個高大的人形，只有輪廓發出暗藍色的光芒，其他部份都是透明的！\n");
         set("age", 19);
         set("gender", "女性");
         set("attitude", "heroism");
@@ -49,20 +49,20 @@ static void chant_sword(int stage)
 {
         switch(stage) {
                 case 1:
-                        command("say 剑气指天 ...");
+                        command("say 劍氣指天 ...");
                         call_out("chant_sword", 20, 2);
                         break;
                 case 2:
-                        command("say 剑心内敛 ...");
+                        command("say 劍心內斂 ...");
                         call_out("chant_sword", 20, 3);
                         break;
                 case 3:
-                        command("say 剑芒游光 ...");
+                        command("say 劍芒遊光 ...");
                         call_out("chant_sword", 20, 4);
                         break;
                 case 4:
-                        command("say 剑神如意！");
-                        message_vision("一阵蓝光笼罩住$N，「嗡」地一声，$N的轮廓又变清晰了一些！\n", this_object());
+                        command("say 劍神如意！");
+                        message_vision("一陣藍光籠罩住$N，「嗡」地一聲，$N的輪廓又變清晰了一些！\n", this_object());
                         add("combat_exp", 100000);
                         call_out("chant_sword", 60, 1);
                         break;

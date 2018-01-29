@@ -4,13 +4,13 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("沐花镜屏", ({ "mirror" }) );
+        set_name("沐花鏡屏", ({ "mirror" }) );
 	set("board_id", "dancer_b");
 	set("location", "/u/cloud/latemoon/hall" );
 	set("long",@LONG
-    这是一面有一个人高的镜屏，有著古藤缠绕著的红木镜框，上面还
-缀著一些刚采来的鲜花，你看著镜中的自己，有如站在花丛之中，晚月
-庄的女子喜欢将自己的心事写成纸条绑在镜框上。
+    這是一面有一個人高的鏡屏，有著古藤纏繞著的紅木鏡框，上面還
+綴著一些剛採來的鮮花，你看著鏡中的自己，有如站在花叢之中，晚月
+莊的女子喜歡將自己的心事寫成紙條綁在鏡框上。
 LONG
 	);
         setup();

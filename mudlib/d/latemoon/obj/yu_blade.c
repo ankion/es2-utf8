@@ -12,9 +12,9 @@ void create()
                 set("unit", "柄");
                 set("value", 500);
                 set("material", "iron");
-                set("long", "这是一柄纤细的柳玉刀，轻薄短小。\n");
-                set("wield_msg", "$N抽出一柄纤细的$n握在手中。\n");
-                set("unequip_msg", "$N将手中的$n插入腰间的刀鞘。\n");
+                set("long", "這是一柄纖細的柳玉刀，輕薄短小。\n");
+                set("wield_msg", "$N抽出一柄纖細的$n握在手中。\n");
+                set("unequip_msg", "$N將手中的$n插入腰間的刀鞘。\n");
         }
         init_blade(27);
         setup();

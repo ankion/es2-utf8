@@ -8,10 +8,10 @@ string look_sign(object me);
 
 void create()
 {
-        set("short", "香茗坊二楼");
+        set("short", "香茗坊二樓");
 	set("long", @LONG
-这是茶楼的二层，附近的文人墨客常喜欢在此品茗作赋。
-    里首摆着个棋盘。
+這是茶樓的二層，附近的文人墨客常喜歡在此品茗作賦。
+    裏首擺着個棋盤。
 LONG
         );
         set("exits", ([

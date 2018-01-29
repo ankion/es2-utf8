@@ -7,13 +7,13 @@ void create()
         set("gender", "女性" );
         set("age", 27);
         set("long", @TEXT
-她国色天香，娇丽无伦；温柔娴静，秀绝人寰。
-她姿容绝美，世所罕见。从她身旁你闻道一寒谷
+她國色天香，嬌麗無倫；溫柔嫺靜，秀絕人寰。
+她姿容絕美，世所罕見。從她身旁你聞道一寒谷
 幽香。
 TEXT
 );
 	set("inquiry", ([
-		"舞曲谱":
+		"舞曲譜":
 		(: this_object(), "do_reply" :),
 	]) );
        set("class", "dancer");
@@ -30,7 +30,7 @@ TEXT
        set_temp("apply/armor", 70);
        set_temp("apply/attack", 50);
 
-        create_family("晚月庄",2,"弟子");
+        create_family("晚月莊",2,"弟子");
         setup();
         carry_object("/d/latemoon/obj/deer_boot")->wear();
         carry_object("/d/latemoon/obj/belt")->wear();
@@ -40,7 +40,7 @@ TEXT
 string do_reply()
 {
 	this_player()->set("mark/dance-book",1);
-	return("舞曲谱啊，师姐她们练习舞步的时候才用的着，\n"+
-"你也想学吗？ 嘻嘻...\n");
+	return("舞曲譜啊，師姐她們練習舞步的時候才用的着，\n"+
+"你也想學嗎？ 嘻嘻...\n");
 }
 

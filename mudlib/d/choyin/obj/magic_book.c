@@ -4,10 +4,10 @@ inherit ITEM;
 
 void create()
 {
-	set_name( "「白杨经」", ({ "book" }) );
+	set_name( "「白楊經」", ({ "book" }) );
 	set_weight(600);
 	set("unit", "本");
-	set("long", "这是一本讲述吐纳、养生之法的古书，现在已经不多见了。\n");
+	set("long", "這是一本講述吐納、養生之法的古書，現在已經不多見了。\n");
 	set("value", 200);
 	set("skill", ([
 		"name": 		"magic",		// name of the skill

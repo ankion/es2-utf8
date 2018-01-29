@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "黑松阁西厅");
+        set("short", "黑松閣西廳");
         set("long", @LONG
-这是黑松堡主淳于怀太迎宾的西厅。整个大厅布置的雍荣典雅。
-向东是黑松阁的正厅，向西和向北都是精心修剪过的花园。楼上则是
-淳于巨大的睡房。南面是一个小小的储藏室。
+這是黑松堡主淳于懷太迎賓的西廳。整個大廳佈置的雍榮典雅。
+向東是黑松閣的正廳，向西和向北都是精心修剪過的花園。樓上則是
+淳于巨大的睡房。南面是一個小小的儲藏室。
 LONG
         );
          set("exits", ([ /* sizeof() == 5 */
@@ -21,7 +21,7 @@ LONG
           __DIR__"npc/guard" : 2,
           ]) );
           
-          create_door("south", "木门", "north", DOOR_CLOSED);
+          create_door("south", "木門", "north", DOOR_CLOSED);
           
           setup();
 }

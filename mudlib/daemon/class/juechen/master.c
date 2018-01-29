@@ -4,7 +4,7 @@ inherit NPC;
 inherit F_MASTER;
 void create()
 {
-	set_name("绝尘子",({"master outer","master","outer"}) );
+	set_name("絕塵子",({"master outer","master","outer"}) );
 	set("gender","男性");
 	set("age",48);
 	set("str",21);
@@ -24,18 +24,18 @@ void create()
 	set("max_mana",2000);
 	set("mana",4000);
 	set("long",
-	"绝尘子本为释家人，后得奇人指点，得悟道家真谛，佛道双修，\n"
-	"皆入化境。后访遍名山大川，自号绝尘，创此绝尘一派。\n" );
+	"絕塵子本爲釋家人，後得奇人指點，得悟道家真諦，佛道雙修，\n"
+	"皆入化境。後訪遍名山大川，自號絕塵，創此絕塵一派。\n" );
 	
-	create_family("绝尘派",1,"祖师");
+	create_family("絕塵派",1,"祖師");
 	set("combat_exp",2000000);
 	set("score",200000);
 	set("chat_chance_combat",40);
 	set("chat_msg_combat", ({
 		(:cast_spell, "dun" :),
 		(:cast_spell, "saveme" :),
-		"绝尘子道：你为何无故滋事，误我清修！\n",
-"绝尘子道：贫道向以遁世为乐，你何苦如此相逼？\n",
+		"絕塵子道：你爲何無故滋事，誤我清修！\n",
+"絕塵子道：貧道向以遁世爲樂，你何苦如此相逼？\n",
 
 	}) ) ;
 	
@@ -60,9 +60,9 @@ void create()
 	map_skill("force","juechen-force");
 
         set("inquiry", ([
-                "绝尘派" : "绝尘派是我所创，你有何指教？",
-                "拜师"   : "入我派者，需有慧根。",
-                "name": "我便是绝尘子。",
+                "絕塵派" : "絕塵派是我所創，你有何指教？",
+                "拜師"   : "入我派者，需有慧根。",
+                "name": "我便是絕塵子。",
               ]) );
                 setup();
                 carry_object(__DIR__"jingang_staff")->wield();
@@ -75,7 +75,7 @@ void attempt_apprentice(object ob)
         if((string)ob->query("title")!="普通百姓")
          {
             command("chat "+ob->query("title")+ob->query("nickname")+
-            ob->query("name")+"要叛师！！！");
+            ob->query("name")+"要叛師！！！");
             command("grin");
             kill_ob(ob);
             return;
@@ -83,11 +83,11 @@ void attempt_apprentice(object ob)
 
         if( ((int)ob->query("spi") < 24))
           {     command("say 入我派者，需有慧根。" +
-              RANK_D->query_respect(ob) + "的资质不宜！");
+              RANK_D->query_respect(ob) + "的資質不宜！");
                return; }
 
 	if ( ob->query("combat_exp") < 100000 ) {
-		command("say "+RANK_D->query_respect(ob) + "似乎尚缺江湖历练，不宜投入绝尘门下。" );
+		command("say "+RANK_D->query_respect(ob) + "似乎尚缺江湖歷練，不宜投入絕塵門下。" );
 		return ;
 	} 
 

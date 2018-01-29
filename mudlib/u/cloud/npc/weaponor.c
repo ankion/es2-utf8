@@ -5,11 +5,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("兵器贩子", ({ "weaponor" }) );
+        set_name("兵器販子", ({ "weaponor" }) );
         set("title", "兵器屋");
         set("gender", "男性" );
         set("age", 32);
-        set("long", "卖兵器的是个中年人，满脸伤疤。\n");
+        set("long", "賣兵器的是個中年人，滿臉傷疤。\n");
         set("combat_exp", 20000);
         set("attitude", "friendly");
         set_skill("unarmed", 100);
@@ -17,7 +17,7 @@ void create()
         set_skill("sword", 60);
 
         set("inquiry", ([
-                "兵器屋" : "本店专卖各种长短兵器", 
+                "兵器屋" : "本店專賣各種長短兵器", 
         ]) );
 
         set("vendor_goods", ([
@@ -57,12 +57,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "兵器贩子道：这位"
+                        say( "兵器販子道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，自个儿挑一件称手的兵器吧\n");
+                                + "，自個兒挑一件稱手的兵器吧\n");
                         break;
                 case 1:
-                        say( "兵器贩子突然间出了神，好象想起了他的往事\n");
+                        say( "兵器販子突然間出了神，好象想起了他的往事\n");
                         break;
         }
 }

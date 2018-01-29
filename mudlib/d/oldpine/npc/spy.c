@@ -10,7 +10,7 @@ void create()
 	set("gender", "男性");
 	set("age", 24);
 	set("long",
-		"这个男人看起来鬼鬼祟祟的，想必不是什么好东西。\n");
+		"這個男人看起來鬼鬼祟祟的，想必不是什麼好東西。\n");
 	set("combat_exp", 6000);
 	set("score", 400);
 	set("bellicosity", 2000);

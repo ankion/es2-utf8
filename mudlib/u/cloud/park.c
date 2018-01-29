@@ -8,9 +8,9 @@ string look_sign(object me);
 
 void create()
 {
-        set("short", "张家花园");
+        set("short", "張家花園");
 	set("long", @LONG
-你现在正站在张家花园里
+你現在正站在張家花園裏
 LONG
         );
         set("exits", ([

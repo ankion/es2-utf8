@@ -6,7 +6,7 @@ void create()
 {
         set("short", "江南渡口");
         set("long", @LONG
-这里是泓水南岸，再往南不远就是日照山了。
+這裏是泓水南岸，再往南不遠就是日照山了。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

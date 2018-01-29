@@ -7,13 +7,13 @@ void consider();
 
 void create()
 {
-	set_name("萧辟尘", ({ "master fighter", "master", "fighter" }) );
+	set_name("蕭闢塵", ({ "master fighter", "master", "fighter" }) );
 
 	set("nickname", "小天邪");
 	set("gender", "男性");
 	set("age", 24);
 	set("long",
-		"萧辟尘自幼生长於岚城之中，看起来仙风道骨，不食人间烟火。\n");
+		"蕭闢塵自幼生長於嵐城之中，看起來仙風道骨，不食人間煙火。\n");
 	set("attitude", "peaceful");
 
 	set("str", 26);
@@ -77,11 +77,11 @@ void init()
 void attempt_apprentice(object me)
 {
 	if( me->query_temp("pending/celestial_swear") ) {
-		command("say 多说无益，若不发誓恪守门规，便是跪著求我也没用。");
+		command("say 多說無益，若不發誓恪守門規，便是跪著求我也沒用。");
 		return;
 	} else {
-		command("say 我天邪派门规甚严，" + RANK_D->query_respect(me)
-			+ "如果真的有心，且发个誓(swear)来。");
+		command("say 我天邪派門規甚嚴，" + RANK_D->query_respect(me)
+			+ "如果真的有心，且發個誓(swear)來。");
 		me->set_temp("pending/celestial_swear", 1);
 	}
 }
@@ -90,16 +90,16 @@ int do_swear(string arg)
 {
 	if( !this_player()->query_temp("pending/celestial_swear") )
 		return 0;
-	if( !arg ) return notify_fail("你要发什麽誓？\n");
+	if( !arg ) return notify_fail("你要發什麼誓？\n");
 	this_player()->set_temp("pending/celestial_swear", 0);
-	message_vision("$N发誓道：" + arg + "\n", this_player());
-//	if( strsrch(arg, "守") >=0 && strsrch(arg, "门规") >=0 ) {
-	if (arg == "守门规") {
+	message_vision("$N發誓道：" + arg + "\n", this_player());
+//	if( strsrch(arg, "守") >=0 && strsrch(arg, "門規") >=0 ) {
+	if (arg == "守門規") {
 		command("smile");
-		command("say 这就是了。\n");
+		command("say 這就是了。\n");
 		command("recruit " + this_player()->query("id"));
 	} else {
-		command("say 你发的是什麽鬼誓，别以为我没听到！");
+		command("say 你發的是什麼鬼誓，別以爲我沒聽到！");
 	}
 	return 1;
 }
@@ -123,14 +123,14 @@ void consider()
 			if(	!query_temp("weapon") ) {
 				command("say " + RANK_D->query_respect(enemy[i]) + "既然使兵刃，在下空手接招未免不敬。");
 				command("wield sword");
-				command("say 进招吧！");
+				command("say 進招吧！");
 				break;
 			}
 		}
 	}
 	if( !flag && query_temp("weapon") ) {
 		if( sizeof(enemy) > 1 )
-			command("say 嗯... 既然" + chinese_number(sizeof(enemy)) + "位都是空手，在下理当奉陪！");
+			command("say 嗯... 既然" + chinese_number(sizeof(enemy)) + "位都是空手，在下理當奉陪！");
 		else
 			command("say 既然" + RANK_D->query_respect(enemy[0]) + "不使兵刃，在下自然奉陪！\n");
 		command("unwield sword");

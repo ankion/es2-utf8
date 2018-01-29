@@ -6,13 +6,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name("鲜红锦衣", ({ "crimson suit", "suit" }) );
+	set_name("鮮紅錦衣", ({ "crimson suit", "suit" }) );
 	set_weight(6500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("unit", "件");
-		set("long", "一件鲜红色的锦衣，上面绣著水烟阁的金色乌鸦徽号。\n");
+		set("long", "一件鮮紅色的錦衣，上面繡著水煙閣的金色烏鴉徽號。\n");
 		set("material", "cloth");
 		set("value", 2000);
 		set("armor_prop/armor", 5);

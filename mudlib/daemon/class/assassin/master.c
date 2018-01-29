@@ -14,7 +14,7 @@ void create()
 	set("str", 26);
 	set("int", 24);
 
-	create_family("月牙神教", 25, "圣女");
+	create_family("月牙神教", 25, "聖女");
 
 	set("force", 1800);
 	set("max_force", 1800);
@@ -56,8 +56,8 @@ void attempt_apprentice(object me)
 {
 	command("look " + me->query("id"));
 	if( me->can_afford(100) ) {
-		command("say 我们花紫会只收化子，" + RANK_D->query_respect(me)
-			+ "您还是回去享福吧。\n");
+		command("say 我們花紫會只收化子，" + RANK_D->query_respect(me)
+			+ "您還是回去享福吧。\n");
 		return;
 	} else {
 		command("nod");

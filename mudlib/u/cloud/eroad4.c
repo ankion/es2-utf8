@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "茶场");
+        set("short", "茶場");
         set("long", @LONG
-这里是绮云镇的茶场，绮云盛产茶叶，因此这里有不少茶工在忙着
-采茶。
+這裏是綺雲鎮的茶場，綺雲盛產茶葉，因此這裏有不少茶工在忙着
+採茶。
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */

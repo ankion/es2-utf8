@@ -6,11 +6,11 @@ int do_smell(string arg);
 
 void create()
 {
-	set("short", "神秘洞穴");
+	set("short", "神祕洞穴");
 	set("long", @LONG
-洞内黑漆漆的，几乎什么都看不见，只是在一个角落里
-有两点红光闪烁，凭你多年的经验，那一定是一双野兽的眼
-睛。这个地方最好不要久留。
+洞內黑漆漆的，幾乎什麼都看不見，只是在一個角落裏
+有兩點紅光閃爍，憑你多年的經驗，那一定是一雙野獸的眼
+睛。這個地方最好不要久留。
 LONG
 );
 	set("objects", ([
@@ -32,16 +32,16 @@ int do_smell (string arg)
 	int i;
 
 	if (arg != "grass")
-		return notify_fail ("你要用什么？\n");
+		return notify_fail ("你要用什麼？\n");
 
 	list = all_inventory(this_player());  
 	i = sizeof(list);
 	while (i--) {
 		if (((string)list[i]->query("id")) == "grass")
-			message_vision("一阵怪风骤然刮起，$N仿佛腾云驾雾般。\n", this_player());
+			message_vision("一陣怪風驟然颳起，$N彷彿騰雲駕霧般。\n", this_player());
 			this_player()->move ("/u/cloud/biaoju");
 			return 1;
 		}
 
-	return notify_fail ("你身上没有忘忧草啊。\n");
+	return notify_fail ("你身上沒有忘憂草啊。\n");
 }

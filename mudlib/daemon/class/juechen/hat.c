@@ -11,7 +11,7 @@ void create()
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "顶");
+                set("unit", "頂");
                 set("value", 12000);
                 set("material", "cloud");
                 set("armor_type", "head");

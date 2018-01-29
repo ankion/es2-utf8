@@ -2,7 +2,7 @@ inherit NPC;
 void create()
 {
 	seteuid(getuid());
-        set_name("采石工",({"worker"}));
+        set_name("採石工",({"worker"}));
         set("gender","男性");
         set("age",(random(10)+32));
         set("str",30);

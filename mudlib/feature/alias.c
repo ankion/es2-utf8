@@ -18,8 +18,8 @@ string process_input(string str)
 		repeat_cnt++;
 		if( repeat_cnt > MAX_REPEAT ) {
 			tell_object( this_object(),
-				"\n\n侮天鬼王突然在一阵烟雾中出现。\n\n"
-				"\n\n侮天鬼王喝道：你是机器人!!! 连我也看不惯了，滚吧!!!\n\n");
+				"\n\n侮天鬼王突然在一陣煙霧中出現。\n\n"
+				"\n\n侮天鬼王喝道：你是機器人!!! 連我也看不慣了，滾吧!!!\n\n");
 			command("quit");
 		}
 	} else {
@@ -67,7 +67,7 @@ int set_alias(string verb, string replace)
 	} else {
 		if( !mapp(alias) ) alias = ([ verb:replace ]);
 		else if( sizeof(alias) > MAX_ALIASES )
-			return notify_fail("您设定的 alias 太多了，请先删掉一些不常用的。\n");
+			return notify_fail("您設定的 alias 太多了，請先刪掉一些不常用的。\n");
 		else alias[verb] = replace;
 		return 1;
 	}

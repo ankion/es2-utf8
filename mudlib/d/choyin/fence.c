@@ -6,8 +6,8 @@ void create()
 {
   set("short", "竹林");
   set("long", @LONG
-诺大的一片竹林，密密匝匝，望不道尽头。游目四顾，没有路了。
-微风乍起，竹林深处现出一角竹篱(fence)。
+諾大的一片竹林，密密匝匝，望不道盡頭。遊目四顧，沒有路了。
+微風乍起，竹林深處現出一角竹籬(fence)。
 LONG
 );
   set("exits", ([ /* sizeof() == 2 */
@@ -15,9 +15,9 @@ LONG
     "eastup" : __DIR__"rockyu",
   ]));
   set("item_desc", ([
-    "fence":"篱笆依地势而曲折延伸，你注意到柴门里面有一间草堂。\n",
+    "fence":"籬笆依地勢而曲折延伸，你注意到柴門裏面有一間草堂。\n",
   ]) );
-  create_door("west", "柴门", "east", DOOR_CLOSED);
+  create_door("west", "柴門", "east", DOOR_CLOSED);
   set("no_clean_up", 0);      
   setup();
   replace_program(ROOM);

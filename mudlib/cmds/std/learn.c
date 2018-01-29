@@ -5,9 +5,9 @@
 inherit F_CLEAN_UP;
 
 string *reject_msg = ({
-        "说道：您太客气了，这怎麽敢当？\n",
-        "像是受宠若惊一样，说道：请教？这怎麽敢当？\n",
-        "笑著说道：您见笑了，我这点雕虫小技怎够资格「指点」您什麽？\n",
+        "說道：您太客氣了，這怎麼敢當？\n",
+        "像是受寵若驚一樣，說道：請教？這怎麼敢當？\n",
+        "笑著說道：您見笑了，我這點雕蟲小技怎夠資格「指點」您什麼？\n",
 });
 
 int is_appr_of(object me, object master);
@@ -25,14 +25,14 @@ int main(object me, string arg)
                 return notify_fail("指令格式：learn <技能> from <某人>\n");
 
         if( me->is_fighting() )
-                return notify_fail("临阵磨枪？来不及啦。\n");
+                return notify_fail("臨陣磨槍？來不及啦。\n");
 
         if( !(ob = present(teacher, environment(me))) || !ob->is_character())
-                return notify_fail("你要向谁求教？\n");
+                return notify_fail("你要向誰求教？\n");
 
         if( !living(ob) )
                 return notify_fail("嗯....你得先把" + ob->name() + 
-"弄醒再说。\n");
+"弄醒再說。\n");
 
 	marry_flag = 0;
 	list = all_inventory(me);
@@ -44,8 +44,8 @@ int main(object me, string arg)
 		}
 	}
 	if ( marry_flag ==1 ) {	
-		if (sscanf(cardname,"你和%s的婚约" ,target)!=1)
-                	return notify_fail("你没有伴侣.\n");
+		if (sscanf(cardname,"你和%s的婚約" ,target)!=1)
+                	return notify_fail("你沒有伴侶.\n");
 			couple_ob = find_player(target);	
 	}
  
@@ -64,17 +64,17 @@ reject_msg[random(sizeof(reject_msg))] );
         }
 
         if( !master_skill = ob->query_skill(skill, 1) )
-                return notify_fail("这项技能你恐怕必须找别人学了。\n");
+                return notify_fail("這項技能你恐怕必須找別人學了。\n");
 
-        notify_fail(ob->name() + "不愿意教你这项技能。\n");
+        notify_fail(ob->name() + "不願意教你這項技能。\n");
         if( ob->prevent_learn(me, skill) )
                 return 0;
 
         my_skill = me->query_skill(skill, 1);
         if( my_skill >= master_skill )
-                return notify_fail("这项技能你的程度已经不输你师父了。\n");
+                return notify_fail("這項技能你的程度已經不輸你師父了。\n");
 
-        notify_fail("依你目前的能力，没有办法学习这种技能。\n");
+        notify_fail("依你目前的能力，沒有辦法學習這種技能。\n");
         if( !SKILL_D(skill)->valid_learn(me) ) return 0;
 
         gin_cost = 150 / (int)ob->query("int") + 150 / (int)me->query("int");
@@ -86,23 +86,23 @@ reject_msg[random(sizeof(reject_msg))] );
 
         if( (int)me->query("learned_points") >= (int)me->query("potential") )
                 return 
-notify_fail("你的潜能已经发挥到极限了，没有办法再成长了。\n");
-        printf("你向%s请教有关「%s」的疑问。\n", ob->name(),
+notify_fail("你的潛能已經發揮到極限了，沒有辦法再成長了。\n");
+        printf("你向%s請教有關「%s」的疑問。\n", ob->name(),
                 to_chinese(skill));
 
         if( ob->query("env/no_teach") )
                 return notify_fail("但是" + ob->name() + 
-"现在并不准备回答你的问题。\n");
+"現在並不準備回答你的問題。\n");
 
-        tell_object(ob, sprintf("%s向你请教有关「%s」的问题。\n",
+        tell_object(ob, sprintf("%s向你請教有關「%s」的問題。\n",
                 me->name(), to_chinese(skill)));
 
         if( (int)ob->query("sen") > gin_cost/5 + 1 ) {
                 if( userp(ob) ) ob->receive_damage("sen", gin_cost/5 + 1);
         } else {
                 write("但是" + ob->name() + 
-"显然太累了，没有办法教你什麽。\n");
-                tell_object(ob, "但是你太累了，没有办法教" + me->name() + 
+"顯然太累了，沒有辦法教你什麼。\n");
+                tell_object(ob, "但是你太累了，沒有辦法教" + me->name() + 
 "。\n");
                 return 1;
         }
@@ -113,9 +113,9 @@ notify_fail("你的潜能已经发挥到极限了，没有办法再成长了。\
                 &&      my_skill * my_skill * my_skill / 10 > 
 (int)me->query("combat_exp") ) {
                         
-printf("也许是缺乏实战经验，你对%s的回答总是无法领会。\n", ob->name() );
+printf("也許是缺乏實戰經驗，你對%s的回答總是無法領會。\n", ob->name() );
                 } else {
-                        printf("你听了%s的指导，似乎有些心得。\n", 
+                        printf("你聽了%s的指導，似乎有些心得。\n", 
 ob->name());
                         me->add("learned_points", 1);
 				me->improve_skill(skill, random(me->query("int")+me->query("combat_exp")/(1000+me->query("combat_exp")/1000)));
@@ -123,7 +123,7 @@ ob->name());
                 }
         } else {
                 gin_cost = me->query("gin");
-                write("你今天太累了，结果什麽也没有学到。\n");
+                write("你今天太累了，結果什麼也沒有學到。\n");
         }
 
         me->receive_damage("gin", gin_cost );
@@ -137,7 +137,7 @@ int is_appr_of(object me, object master)
 		return 0;
 
 	if (me->query("family/generation") != master->query("family/generation")+1) {
-		message_vision("$n看起来要杀死$N\n",master,me);
+		message_vision("$n看起來要殺死$N\n",master,me);
 		return 0;
 		}
 
@@ -149,25 +149,25 @@ int help(object me)
         write(@HELP
 指令格式 : learn <技能> from <某人>
  
-这个指令可以让你向别人请教有关某一种技能的疑难问题，当然，你请教的对象在这
-项技能上的造诣必须比你高，而你经由这种方式学习得来的技能也不可能高於你所请
-教的人，然而因为这种学习方式相当於一种「经验的传承」，因此学习可以说是熟悉
-一种新技能最快的方法。
+這個指令可以讓你向別人請教有關某一種技能的疑難問題，當然，你請教的對象在這
+項技能上的造詣必須比你高，而你經由這種方式學習得來的技能也不可能高於你所請
+教的人，然而因爲這種學習方式相當於一種「經驗的傳承」，因此學習可以說是熟悉
+一種新技能最快的方法。
 
-通常，一个人刚学到一种新技能是不会有什麽疑难问题的，而是经由实际上的应用中
-遭遇问题，这些问题对於学习一种新技能的过程是很重要的，尤其是各种作为其他技
-能基础的基本技能，更需要经由「发现问题—解决问题」的过程才能得到较好的效果
-因此我们将这种发现问题的过程用「潜能」的观念表示，一个人能够自己发现某些问
-题，表示他(她)有解决这项问题的潜能，当你具有这样的潜能时就可以利用这个指令
-来向其他人请教，而获得进步。
-(PS. 潜能还有其他更广义的定义，这里只是其中之一 )
+通常，一個人剛學到一種新技能是不會有什麼疑難問題的，而是經由實際上的應用中
+遭遇問題，這些問題對於學習一種新技能的過程是很重要的，尤其是各種作爲其他技
+能基礎的基本技能，更需要經由「發現問題—解決問題」的過程才能得到較好的效果
+因此我們將這種發現問題的過程用「潛能」的觀念表示，一個人能夠自己發現某些問
+題，表示他(她)有解決這項問題的潛能，當你具有這樣的潛能時就可以利用這個指令
+來向其他人請教，而獲得進步。
+(PS. 潛能還有其他更廣義的定義，這裏只是其中之一 )
 
-此外学习也需要消耗一些精力，而消耗的精力跟你自己、与你学习对象的悟性有关。
+此外學習也需要消耗一些精力，而消耗的精力跟你自己、與你學習對象的悟性有關。
 
-至於如何知道你能从对方学到什麽技能，如果对方是你的师父，可以用 skills 指令
-直接查看，如果不是你的师父，那麽通常会有其他的提示，你只好自己想办法。
+至於如何知道你能從對方學到什麼技能，如果對方是你的師父，可以用 skills 指令
+直接查看，如果不是你的師父，那麼通常會有其他的提示，你只好自己想辦法。
 
-其他相关指令 : practice、study
+其他相關指令 : practice、study
 HELP
         );
         return 1;

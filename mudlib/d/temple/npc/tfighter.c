@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("僵尸护法", ({ "taoist tfighter", "tfighter" }) );
+        set_name("殭屍護法", ({ "taoist tfighter", "tfighter" }) );
         set("gender", "男性");
         set("age", 32);
         set("long",
-"僵尸护法是茅山派的护法，着一身黑色的道袍\n"
+"殭屍護法是茅山派的護法，着一身黑色的道袍\n"
 );
         set("combat_exp", 50000);
         set("score", 20);
@@ -33,9 +33,9 @@ void create()
 
         set("inquiry", ([
                 "谷衣心法":
-"谷衣心法是我茅山派为对抗邪魔外道所创的内功心法。\n",
+"谷衣心法是我茅山派爲對抗邪魔外道所創的內功心法。\n",
                 "茅山派":
-"我茅山派自张天师开山立派至今，世世代代皆以降妖伏魔为己任。\n"
+"我茅山派自張天師開山立派至今，世世代代皆以降妖伏魔爲己任。\n"
         ]) );
         set("chat_chance_combat", 40);
         set("chat_msg_combat", ({
@@ -78,9 +78,9 @@ int accept_fight(object me)
 {
         if( (string)me->query("family/family_name")=="茅山派" ) {
                 command("nod");
-                command("say 进招吧。");
+                command("say 進招吧。");
                 return 1;
         }
-        command("say 茅山派不和别派的人过招。");
+        command("say 茅山派不和別派的人過招。");
         return 0;
 }

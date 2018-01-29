@@ -4,16 +4,16 @@ inherit NPC;
 
 void create()
 {
-	set_name("疯狗", ({ "crazy dog", "dog" }) );
-	set("race", "野兽");
+	set_name("瘋狗", ({ "crazy dog", "dog" }) );
+	set("race", "野獸");
 	set("age", 4);
-	set("long", "一只浑身脏兮兮的野狗，一双眼睛正恶狠狠地瞪著你。\n");
+	set("long", "一隻渾身髒兮兮的野狗，一雙眼睛正惡狠狠地瞪著你。\n");
 	set("attitude", "aggressive");
 	
 	set("str", 26);
 	set("cor", 30);
 
-	set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+	set("limbs", ({ "頭部", "身體", "前腳", "後腳", "尾巴" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set("combat_exp", 100);
@@ -25,8 +25,8 @@ void create()
 	
 	set("chat_msg_combat", ({
 		(: random_move :),
-		"疯狗大声吠叫：汪！汪！汪！汪！汪！汪！\n",
-		"疯狗突然跳了起来，口中乱咬，却不知道是在咬谁。\n"
+		"瘋狗大聲吠叫：汪！汪！汪！汪！汪！汪！\n",
+		"瘋狗突然跳了起來，口中亂咬，卻不知道是在咬誰。\n"
 	}) );
 		
 	set_temp("apply/attack", 15);

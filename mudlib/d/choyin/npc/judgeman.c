@@ -14,7 +14,7 @@ static int in_test=0;
 void create()
 {
         set_name("程不平", ({ "county magistrate","magistrate" }) );
-        set("title", "乔阴县县官");
+        set("title", "喬陰縣縣官");
         set("gender", "男性" );
         set("age", 22);
 
@@ -29,8 +29,8 @@ void create()
 
         set("long",
 
-"他虽然出身望族，然攻读刻苦，榜中探花，如今已是才高八斗，满腹\n"
-"经纶，还略通佛理。为官数年清贫廉正，人人敬仰。\n"
+"他雖然出身望族，然攻讀刻苦，榜中探花，如今已是才高八斗，滿腹\n"
+"經綸，還略通佛理。爲官數年清貧廉正，人人敬仰。\n"
 );
         set("combat_exp", 5000000);
         set("attitude", "friendly");
@@ -72,7 +72,7 @@ add_action("do_charge","charge");
 int accept_fight(object me)
 {
         command("scowl");
-        command("say 这是衙门，快回去吧。");
+        command("say 這是衙門，快回去吧。");
         return 0;
 }
 
@@ -82,7 +82,7 @@ int level,i;
 int gin,kee,sen,condition;
 if (level=crime->query("crime_lv"))
         {
-message_vision(HIR"来人哪！把$N拖下去打"+chinese_number(level*10)
+message_vision(HIR"來人哪！把$N拖下去打"+chinese_number(level*10)
                                 +"大板！\n",crime);
         gin=10-crime->query("max_atman")/100;
         kee=10-crime->query("max_force")/100;
@@ -119,13 +119,13 @@ message_vision(HIR"来人哪！把$N拖下去打"+chinese_number(level*10)
                 crime->receive_wound("sen",sen);
                 if (condition==3)
                         {
-                        message_vision(HIR "哎, 早知今日,何必当初?\n" NOR+
-                        "来人呀, 把$N给我抬出去!\n"+
+                        message_vision(HIR "哎, 早知今日,何必當初?\n" NOR+
+                        "來人呀, 把$N給我擡出去!\n"+
                         "...退...堂...!\n",crime);
                         crime->unconcious();
                         crime->add("crime_lv",-1);
                         }
-                message_vision(HIR "$N对$n说道: 再敢犯案, 定斩不饶!\n" NOR,this_object(),crime); 
+                message_vision(HIR "$N對$n說道: 再敢犯案, 定斬不饒!\n" NOR,this_object(),crime); 
                 }
         crime->move(find_object("/d/choyin/court1.c"));
         if (!crime->query("crime_lv"))
@@ -133,7 +133,7 @@ message_vision(HIR"来人哪！把$N拖下去打"+chinese_number(level*10)
         }
 else
         {
-        tell_object(crime,"真是对不起, 下人办事不周, 让您受委屈了.\n");
+        tell_object(crime,"真是對不起, 下人辦事不周, 讓您受委屈了.\n");
         call_out((:call_other,crime,"move",find_object("/d/choyin/court1.c"):),1);
         }
  return 1;
@@ -150,7 +150,7 @@ i=sizeof(players);
 while(i--)
         {
         if((players[i]->query("crime_lv")
-        ||players[i]->query("marks/强盗")
+        ||players[i]->query("marks/強盜")
         ||players[i]->query("thief"))
         &&!players[i]->query("being_caught"))
                 {
@@ -176,10 +176,10 @@ int permit;
 object police,crimer;
 if (!arg) return 0;
 if (sscanf(arg,"%s with %s",who,why)!=2)
-        return notify_fail("正确用法是: charge sb. with <reason>\n");
+        return notify_fail("正確用法是: charge sb. with <reason>\n");
 crimer=find_player(who);
 if (!crimer)
-                return notify_fail("对不起，你要告的人不在线上！\n");
+                return notify_fail("對不起，你要告的人不在線上！\n");
 switch (why)
         {
         case "steal":
@@ -194,11 +194,11 @@ switch (why)
                 else permit=0;
                 break;
         case "kill":
-                if (crimer->query("marks/强盗"))
+                if (crimer->query("marks/強盜"))
                         {
-                        if (crimer->query("marks/强盗")==1)
-                                                crimer->delete("marks/强盗");
-                        else            crimer->add("marks/强盗",-1);
+                        if (crimer->query("marks/強盜")==1)
+                                                crimer->delete("marks/強盜");
+                        else            crimer->add("marks/強盜",-1);
                         crimer->add("crimer_lv",5);
                         permit=1;
                         }
@@ -223,7 +223,7 @@ switch (why)
                         }
                 else permit=0;
                 break;
-        case "杀气":
+        case "殺氣":
                 if
 (random(crimer->query("bellicosity"))>random(800)+800)
                         {
@@ -244,7 +244,7 @@ switch (why)
                 else permit=0;
                 break;
         default:
-                return notify_fail("对不起，此类案件本县不受理。\n");
+                return notify_fail("對不起，此類案件本縣不受理。\n");
         }
 if (permit) {say("hdjdjhjfdhsjfhjdshjfhdsjhfjsdhfj");}
          else {say("haha");}
@@ -258,9 +258,9 @@ if (permit)
                 ||environment(crimer)==find_object("/d/choyin/n_gate.c"))
                         crimer->move(find_object("/d/choyin/court1.c"));
         police->move(environment(crimer));
-        say("嗯......的确如此!\n好吧, 我派人去抓"+
+        say("嗯......的確如此!\n好吧, 我派人去抓"+
                         (crimer->query("gender")=="女性"?"她":"他")+
-                        "来.\n");
+                        "來.\n");
         if (objectp(police=present("magistrate waiter",environment())))
         police->delete_temp("pending/beat");
 crimer->move("/d/choyin/yamen");
@@ -273,7 +273,7 @@ else
         if (query("bad_man/"+who)>3)
                 {
                 this_player()->add("crime_lv",2);
-                tell_object(this_player(),"你竟敢诬告？！\n");
+                tell_object(this_player(),"你竟敢誣告？！\n");
                 call_out("settle_lawsuit",1,this_player());
                 }
         return 1;

@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("long", "哇! 好香的牛肉! 不吃还等什么?\n");
+		set("long", "哇! 好香的牛肉! 不吃還等什麼?\n");
 		set("unit", "斤");
 		set("value", 100);
         	set("food_remaining", 3);

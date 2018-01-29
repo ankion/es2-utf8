@@ -7,12 +7,12 @@ inherit NPC;
 void create()
 {
         set_name("李信", ({ "vice general","general" }));
-	set("title","副将");
+	set("title","副將");
 	set("gender", "男性");
 	set("age", 40);
 	set("long",
-                "原是禁卫军的队长，也因其强大的声望和实力，被先帝调离京师\n"
-                "和镇国大将军共同镇守黄石隘口。\n");
+                "原是禁衛軍的隊長，也因其強大的聲望和實力，被先帝調離京師\n"
+                "和鎮國大將軍共同鎮守黃石隘口。\n");
 
 	set("attitude", "peaceful");
 
@@ -74,8 +74,8 @@ void init()
 void greeting(object ob)
 {
         if ( !ob || environment(ob) != environment() ) return;
-        if ( !ob->query("marks/军营") )	{
-        	command("say 大胆狂徒，竟私闯此地，给我滚出去");
+        if ( !ob->query("marks/軍營") )	{
+        	command("say 大膽狂徒，竟私闖此地，給我滾出去");
                 ob->move(PATH);
 
         }

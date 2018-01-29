@@ -6,12 +6,12 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("破烂的粉红布衫", ({ "pink cloth", "cloth" }) );
+        set_name("破爛的粉紅布衫", ({ "pink cloth", "cloth" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "这件粉红色的布衫上沾满了暗红色的血迹。\n");
+                set("long", "這件粉紅色的布衫上沾滿了暗紅色的血跡。\n");
                 set("unit", "件");
                 set("value", 200);
                 set("material", "cloth");

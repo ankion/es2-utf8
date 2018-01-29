@@ -8,7 +8,7 @@ void converse_one();
 void create()
 {
         seteuid(getuid());
-        set_name("妇人",({"woman"}));
+        set_name("婦人",({"woman"}));
         set("gender","女性");
         set("age",(random(30)+12));
         set("combat_exp",(20+random(40)));
@@ -27,7 +27,7 @@ void create()
 void wield_weapon()
 {
     if (!query_temp("weapon")) {
-        command("say 没见识过我的菜刀神功\是吧, 接招!");
+        command("say 沒見識過我的菜刀神功\是吧, 接招!");
         command("wield knife");
         set("chat_chance_combat", 10);
     }
@@ -39,7 +39,7 @@ void converse_one()
     object ob;
     ob = this_player();
     if ((int)ob->query("age") < (int)query("age")) {
-        command("say 死小孩, 专们欺负老人家!");
+        command("say 死小孩, 專們欺負老人家!");
         command("slap "+(string)ob->query("id"));
     }
     else

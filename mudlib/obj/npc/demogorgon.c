@@ -8,9 +8,9 @@ void create()
 {
 	set_name( HIW "侮天鬼王" NOR, ({ "demogorgon" }) );
 	set("long",
-		"侮天鬼王神情倨傲地站在你面前，他高大的身躯跟一股令人窒息的\n"
-		"可怕杀气正压得你几乎喘不过气来，你的心里似乎有一个声音在告\n"
-		"诉你：「 快 逃 ！！」\n");
+		"侮天鬼王神情倨傲地站在你面前，他高大的身軀跟一股令人窒息的\n"
+		"可怕殺氣正壓得你幾乎喘不過氣來，你的心裏似乎有一個聲音在告\n"
+		"訴你：「 快 逃 ！！」\n");
 
 	set("age", 7006);
 	set("pursuer", 1);
@@ -57,11 +57,11 @@ void start_shutdown()
 	if( geteuid(previous_object()) != ROOT_UID ) return;
 
 	message("system",
-		HIR "\n你听到天空中传来一阵可怕的咆哮 ....\n\n"
-		HIW	"侮天鬼王" HIR "用震耳欲聋的声音喝道：\n\n"
-			"\t\t全 天 下 的 众 生 给 我 听 著 ！\n\n"
-			"\t\t限你们十五分钟内把我的头颅交出来 ！\n\n"
-			"\t\t不 然 的 话 ..... 哼 .. 哼 ！\n\n" NOR,
+		HIR "\n你聽到天空中傳來一陣可怕的咆哮 ....\n\n"
+		HIW	"侮天鬼王" HIR "用震耳欲聾的聲音喝道：\n\n"
+			"\t\t全 天 下 的 衆 生 給 我 聽 著 ！\n\n"
+			"\t\t限你們十五分鐘內把我的頭顱交出來 ！\n\n"
+			"\t\t不 然 的 話 ..... 哼 .. 哼 ！\n\n" NOR,
 		users() );
 	call_out("countdown", 60, 15);
 }
@@ -71,16 +71,16 @@ void countdown(int min)
 	min--;
 	if( min ) {
 		message("system",
-			HIW "\n侮天鬼王" HIR "用震耳欲聋的声音喝道：\n\n"
-				"\t\t你们还有" + chinese_number(min) + "分钟的时间交出我的头颅！\n\n"
-				"\t\t—不—要—命—的—就—给—我—慢—慢—拖—吧—！\n\n" NOR,
+			HIW "\n侮天鬼王" HIR "用震耳欲聾的聲音喝道：\n\n"
+				"\t\t你們還有" + chinese_number(min) + "分鐘的時間交出我的頭顱！\n\n"
+				"\t\t—不—要—命—的—就—給—我—慢—慢—拖—吧—！\n\n" NOR,
 			users() );
 		call_out("countdown", 60, min);
 	} else {
 		message("system",
-			HIW "\n侮天鬼王" HIR "用震耳欲聋的声音喝道：\n\n"
+			HIW "\n侮天鬼王" HIR "用震耳欲聾的聲音喝道：\n\n"
 				"\t\t可恨.....真是可恨....\n\n"
-				"\t\t苍天啊～ 大地啊～  海洋啊～  众生啊～\n\n" NOR,
+				"\t\t蒼天啊～ 大地啊～  海洋啊～  衆生啊～\n\n" NOR,
 			users() );
 		call_out("do_shutdown", 3);
 	}
@@ -89,11 +89,11 @@ void countdown(int min)
 void do_shutdown()
 {
 	message("system",
-		HIW "\n\n侮天鬼王" HIR "用震耳欲聋的声音喝道：\n\n"
-		HIW "\t\t通 通 和 我 一 起 下 地 狱 吧 ～～～～ ！\n\n"
-		HIR "\t\t声音一毕，天空立刻变得血红，不....你眼前的一切都变得血红...\n\n"
-			"\t\t所有的一切都在瞬间陷入火海....\n\n"
-			"\t\t然後你的眼前是一片黑暗....无止尽的黑暗....\n\n" NOR,
+		HIW "\n\n侮天鬼王" HIR "用震耳欲聾的聲音喝道：\n\n"
+		HIW "\t\t通 通 和 我 一 起 下 地 獄 吧 ～～～～ ！\n\n"
+		HIR "\t\t聲音一畢，天空立刻變得血紅，不....你眼前的一切都變得血紅...\n\n"
+			"\t\t所有的一切都在瞬間陷入火海....\n\n"
+			"\t\t然後你的眼前是一片黑暗....無止盡的黑暗....\n\n" NOR,
 		users() );
 	shutdown(0);
 }
@@ -108,9 +108,9 @@ void die()
 	if( !ob ) return;
 
 	message("system",
-		HIR "\n\n你听到一声带著愤恨、惊恐、与野兽般的咆哮声响彻整个天空。\n\n"
-		HIW "侮天鬼王" HIR "嘶哑地吼著：可恶的" + ob->name(1) + "，我一定会报仇的～～～\n\n"
-			"然後一道黑色火焰呼啸著冲上云端，大地又恢复了宁静。\n\n" NOR,
+		HIR "\n\n你聽到一聲帶著憤恨、驚恐、與野獸般的咆哮聲響徹整個天空。\n\n"
+		HIW "侮天鬼王" HIR "嘶啞地吼著：可惡的" + ob->name(1) + "，我一定會報仇的～～～\n\n"
+			"然後一道黑色火焰呼嘯著衝上雲端，大地又恢復了寧靜。\n\n" NOR,
 		users() );
 	destruct(this_object());
 }

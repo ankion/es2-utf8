@@ -5,11 +5,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("裁缝", ({ "tailor" }) );
-        set("title", "布庄");
+        set_name("裁縫", ({ "tailor" }) );
+        set("title", "布莊");
         set("gender", "男性" );
         set("age", 42);
-        set("long", "一位看上去很和蔼的老裁缝，正在缝制衣服。\n");
+        set("long", "一位看上去很和藹的老裁縫，正在縫製衣服。\n");
 	set("str", 12);
 	set("int", 24);
         set("combat_exp", 500);
@@ -19,7 +19,7 @@ void create()
         set_skill("dodge", 30);
 
         set("inquiry", ([
-		"香茗坊" : "您也知道'碧海银针'？茶楼就在斜对面，我常去的。", 
+		"香茗坊" : "您也知道'碧海銀針'？茶樓就在斜對面，我常去的。", 
         ]) );
 
         set("vendor_goods", ([
@@ -51,10 +51,10 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "老裁缝抬起头看了你一眼，问道：客官买布还是制衣?\n");
+                        say( "老裁縫擡起頭看了你一眼，問道：客官買布還是製衣?\n");
                         break;
                 case 1:
-                        say( "裁缝的手脚甚是麻利，显然已做了多年了。\n");
+                        say( "裁縫的手腳甚是麻利，顯然已做了多年了。\n");
 	}
 }
 

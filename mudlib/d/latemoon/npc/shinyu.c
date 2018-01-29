@@ -4,8 +4,8 @@ inherit NPC;
  
 void create()
 {
-        set_name("阮欣郁", ({ "shinyu","shin" }) );
-        set("title", "晚月庄第三代弟子");
+        set_name("阮欣鬱", ({ "shinyu","shin" }) );
+        set("title", "晚月莊第三代弟子");
         set("gender", "女性" );
         set("age",17);
         set("long", @TEXT
@@ -44,9 +44,9 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
 	if ((string)ob->query("gender") == "男性" ) {
-		say( HIY "欣郁大喊： 喂! 兄台! 这不准男人进来! \n"  NOR );
-		say( HIR "欣郁从袖里取出一把粉红色细粉泼撒出去。\n" NOR );
-		say( HIY "欣郁一脚往闯入者踢了出去。\n" NOR );
+		say( HIY "欣鬱大喊： 喂! 兄臺! 這不準男人進來! \n"  NOR );
+		say( HIR "欣鬱從袖裏取出一把粉紅色細粉潑撒出去。\n" NOR );
+		say( HIY "欣鬱一腳往闖入者踢了出去。\n" NOR );
         command("close door");
 		ob->receive_damage("gin",50);
 		ob->receive_damage("kee",100);

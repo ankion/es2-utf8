@@ -9,9 +9,9 @@ void create()
     else {
 	    set("unit", "封");
 	    set("long",@LONG
-师叔：
-    小徒在我这里学满，欲求教于您老，敬请收纳他为徒。
-                                侄：剑秋 敬上
+師叔：
+    小徒在我這裏學滿，欲求教於您老，敬請收納他爲徒。
+                                侄：劍秋 敬上
 LONG
 );
             set("material", "paper");

@@ -8,15 +8,15 @@ void create()
 {
 	set("short", "客房");
 	set("long", @LONG
-这是一间打扫得相当乾净的客房，虽然所有的家俱看起来都相当朴
-素，比不上县城里几家著名的大酒馆，但是自有一种敦厚亲切的感觉，
-你在这里相信可以安心的休息。
+這是一間打掃得相當乾淨的客房，雖然所有的傢俱看起來都相當樸
+素，比不上縣城裏幾家著名的大酒館，但是自有一種敦厚親切的感覺，
+你在這裏相信可以安心的休息。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
 		"south" : __DIR__"inn_2f",
 	]));
 
-	create_door("south", "房门", "north", DOOR_CLOSED);
+	create_door("south", "房門", "north", DOOR_CLOSED);
 	setup();
 }

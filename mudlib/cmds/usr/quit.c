@@ -8,7 +8,7 @@ inherit F_CLEAN_UP;
 void create() 
 {
 	seteuid(getuid());
-	set("name", "离线指令");
+	set("name", "離線指令");
 	set("id", "quit");
 }
 
@@ -43,11 +43,11 @@ int main(object me, string arg)
 		destruct(link_ob);
 	}
 
-	write("欢迎下次再来！\n");
-	message("system", me->name() + "离开游戏。\n", environment(me), me);
+	write("歡迎下次再來！\n");
+	message("system", me->name() + "離開遊戲。\n", environment(me), me);
 
 	CHANNEL_D->do_channel(this_object(), "sys",
-		me->name() + "离开游戏了。");
+		me->name() + "離開遊戲了。");
 
 	me->save();
 	destruct(me);
@@ -60,7 +60,7 @@ int help(object me)
 	write(@HELP
 指令格式 : quit
 
-当你(□)想暂时离开时, 可利用此一指令。
+當你(□)想暫時離開時, 可利用此一指令。
 HELP
     );
     return 1;

@@ -3,9 +3,9 @@ inherit NPC;
 void create()
 {
         set_name("大蟑螂", ({ "cockroach" }) );
-        set("race", "野兽");
+        set("race", "野獸");
         set("age", 1);
-        set("long", "一只非常恶心的蟑螂。 \n");
+        set("long", "一隻非常噁心的蟑螂。 \n");
 
         set("combat_exp",7000);
         set("score", 200);
@@ -14,7 +14,7 @@ void create()
         set_skill("dodge", 100);
 
 
-        set("limbs", ({ "头部", "身体"}) );
+        set("limbs", ({ "頭部", "身體"}) );
          set("verbs", ({ "bite" }) );
         set_temp("armor", 50);
 

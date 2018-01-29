@@ -11,8 +11,8 @@ void create()
         set("age", 47);
         set("long",
                 
-"林忌是一位道行十分高深的修道者，你发现他的眼珠一个是黑色的，一\n"
-                "个是金色的，这正是「谷衣心法」修炼到极高境界的徵兆。\n");
+"林忌是一位道行十分高深的修道者，你發現他的眼珠一個是黑色的，一\n"
+                "個是金色的，這正是「谷衣心法」修煉到極高境界的徵兆。\n");
 
         set("combat_exp", 1000000);
         set("score", 200000);
@@ -38,9 +38,9 @@ void create()
 
         set("inquiry", ([
                 "谷衣心法": 
-"谷衣心法是我茅山派为对抗邪魔外道所创的内功心法。\n",
+"谷衣心法是我茅山派爲對抗邪魔外道所創的內功心法。\n",
                 "茅山派": 
-"我茅山派自张天师开山立派至今，世世代代皆以降妖伏魔为己任。\n"
+"我茅山派自張天師開山立派至今，世世代代皆以降妖伏魔爲己任。\n"
         ]) );
 
         set("apprentice_available", 3);
@@ -52,7 +52,7 @@ void create()
                 (: cast_spell, "invocation" :),
         }) );
 
-        create_family("茅山派", 5, "天师");
+        create_family("茅山派", 5, "天師");
 
         set_skill("literate", 70);
         set_skill("magic", 40);
@@ -85,18 +85,18 @@ void attempt_apprentice(object ob)
 {
         if( query("apprentice_available") ) {
                 if( find_call_out("do_recruit") != -1 )
-                        command("say 慢著，一个一个来。");
+                        command("say 慢著，一個一個來。");
                 else
                         call_out("do_recruit", 2, ob);
         } else {
-                command("say 贫道今天已经收了三个弟子，不想再收徒了。");
+                command("say 貧道今天已經收了三個弟子，不想再收徒了。");
         }
 }
 
 void do_recruit(object ob)
 {
         if( (string)ob->query("gender") != "男性" )
-                command("say 贫道是出家人，不便收女徒，得罪了。");
+                command("say 貧道是出家人，不便收女徒，得罪了。");
         else {
                 command("say 嗯... 想入我茅山派？也好....");
                 command("recruit " + ob->query("id") );

@@ -80,12 +80,12 @@ varargs string short(int raw)
 	}
 
 	if( !raw ) {
-		if( this_object()->is_ghost() ) str = HIB "(鬼气) " NOR + str;
-		if( query_temp("netdead") ) str += HIG " <断线中>" NOR;
-		if( in_input() ) str += HIC " <输入文字中>" NOR;
-		if( in_edit() ) str += HIY " <编辑档案中>" NOR;
+		if( this_object()->is_ghost() ) str = HIB "(鬼氣) " NOR + str;
+		if( query_temp("netdead") ) str += HIG " <斷線中>" NOR;
+		if( in_input() ) str += HIC " <輸入文字中>" NOR;
+		if( in_edit() ) str += HIY " <編輯檔案中>" NOR;
 		if( interactive(this_object())
-		&&	query_idle( this_object() ) > 120 ) str += HIM " <发呆中>" NOR;
+		&&	query_idle( this_object() ) > 120 ) str += HIM " <發呆中>" NOR;
 		if( !living(this_object()) ) str += HIR + query("disable_type") + NOR;
 	}
 

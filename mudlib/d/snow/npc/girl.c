@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-	set_name("柳绘心", ({ "liuh wheixin", "liuh", "wheixin" }) );
+	set_name("柳繪心", ({ "liuh wheixin", "liuh", "wheixin" }) );
 	set("gender", "女性" );
 	set("age", 15);
 	set("str", 16);
@@ -19,17 +19,17 @@ void create()
 	set("force", 200);
 	set("force_factor", 2);
 
-	set("long",	"柳绘心是淳风武馆馆主柳淳风的独生女。\n");
+	set("long",	"柳繪心是淳風武館館主柳淳風的獨生女。\n");
 
-	create_family("封山剑派北宗", 14, "弟子");
+	create_family("封山劍派北宗", 14, "弟子");
 
 	set("combat_exp", 1000);
 
 	set("chat_chance_combat", 25);
 	set("chat_msg_combat", ({
 		(: perform_action, "sword.counterattack" :),
-		"柳绘心秀眉微蹙，说道：喂！我哪里得罪你了？干嘛这样跟我拼死拼活？\n",
-		"柳绘心不住地望著窗外：你还是快走吧，我没空陪你练功夫！\n",
+		"柳繪心秀眉微蹙，說道：喂！我哪裏得罪你了？幹嘛這樣跟我拼死拼活？\n",
+		"柳繪心不住地望著窗外：你還是快走吧，我沒空陪你練功夫！\n",
 	}) );
 
 	set_skill("unarmed", 20);
@@ -58,15 +58,15 @@ void create()
 
 int accept_fight(object me)
 {
-	if( (string)me->query("family/family_name")=="封山剑派" ) {
+	if( (string)me->query("family/family_name")=="封山劍派" ) {
 		if( (string)me->query("gender")=="女性" ) {
-			command("say 师姐！别整天想著练功嘛，我们去花园摘花儿玩嘛？");
+			command("say 師姐！別整天想著練功嘛，我們去花園摘花兒玩嘛？");
 			return 0;
 		} else {
-			command("say 我才不要，你们去找李教头练吧！");
+			command("say 我纔不要，你們去找李教頭練吧！");
 			return 0;
 		}
 	}
-	command("say 爹爹说过，不能跟你们这些江湖人物比武过招。");
+	command("say 爹爹說過，不能跟你們這些江湖人物比武過招。");
 	return 0;
 }

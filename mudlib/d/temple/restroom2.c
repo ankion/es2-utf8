@@ -4,16 +4,16 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "厢房");
+	set("short", "廂房");
 	set("long", @LONG
-这是一间供香客或其他江湖同道休息挂单的客房, 屋子里只是简
-单地摆放著几件家俱。你闻到天井中传来淡淡的花香。
+這是一間供香客或其他江湖同道休息掛單的客房, 屋子裏只是簡
+單地擺放著幾件傢俱。你聞到天井中傳來淡淡的花香。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
      "west" : __DIR__"corridor3",
 ]));
 
-    create_door("west","木门","east");
+    create_door("west","木門","east");
 	setup();
 }

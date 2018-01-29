@@ -3,7 +3,7 @@ inherit NPC;
  
 void create()
 {
-        set_name("梦玉楼", ({ "yu lou", "yulou","lou" }) );
+        set_name("夢玉樓", ({ "yu lou", "yulou","lou" }) );
         set("gender", "女性" );
         set("age",17);
         set("long", @TEXT

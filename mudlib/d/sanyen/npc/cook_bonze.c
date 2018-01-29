@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-     set_name("烧饭僧", ({"cook bonze", "bonze"}));
+     set_name("燒飯僧", ({"cook bonze", "bonze"}));
      set("gender", "男性");
      set("class", "bonze");
      set("age",35);
-     set("long","一位长得肥肥胖胖, 福福泰泰的中年僧人。\n");
+     set("long","一位長得肥肥胖胖, 福福泰泰的中年僧人。\n");
      set("combat_exp", 1100);
      set("attitude", "friendly");
 
@@ -33,6 +33,6 @@ void create()
 
 int accept_fight(object me)
 {
-     command("say 阿弥陀佛 !! 贫僧的菜刀是用来切菜的, 不是用来砍人的。\n");
+     command("say 阿彌陀佛 !! 貧僧的菜刀是用來切菜的, 不是用來砍人的。\n");
      return 0;
 }

@@ -7,8 +7,8 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
 	if (!arg) {
-		write("你自言自语不知道在说些什麽。\n");
-		message("sound", me->name() + "自言自语不知道在说些什麽。\n",
+		write("你自言自語不知道在說些什麼。\n");
+		message("sound", me->name() + "自言自語不知道在說些什麼。\n",
 			environment(me), me);
 		return 1;
 	}
@@ -16,8 +16,8 @@ int main(object me, string arg)
 		arg = replace_string(arg, " ", " ... ") + " ...";
 	}
 
-	write( CYN "你说道：" + arg + "\n" NOR);
-	message("sound", CYN + me->name() + "说道：" +  arg + "\n" NOR,
+	write( CYN "你說道：" + arg + "\n" NOR);
+	message("sound", CYN + me->name() + "說道：" +  arg + "\n" NOR,
 		environment(me), me);
 
 	// The mudlib interface of say
@@ -29,9 +29,9 @@ int main(object me, string arg)
 int help (object me)
 {
 	write(@HELP
-指令格式: say <讯息>
+指令格式: say <訊息>
  
-说话，所有跟你在同一个房间的人都会听到你说的话。
+說話，所有跟你在同一個房間的人都會聽到你說的話。
  
 注: 本指令可用 ' 取代.
  

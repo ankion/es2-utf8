@@ -8,8 +8,8 @@ void create()
 {
         set("short", "小屋");
         set("long",@LONG
-你步入尚书府内的一间小屋。小屋内很黑，什么也看不见，但莫
-名地感到一股杀气，让人有转身就跑的念头。
+你步入尚書府內的一間小屋。小屋內很黑，什麼也看不見，但莫
+名地感到一股殺氣，讓人有轉身就跑的念頭。
 LONG
         );
 
@@ -17,7 +17,7 @@ LONG
 		"west":		__DIR__"road1"
                 ]));
 
-	create_door ("west", "小木门", "east", DOOR_CLOSED);
+	create_door ("west", "小木門", "east", DOOR_CLOSED);
 
         setup();
         replace_program(ROOM);

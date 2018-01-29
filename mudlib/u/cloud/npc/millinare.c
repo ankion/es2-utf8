@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("张百万", ({ "zhang" }) );
+        set_name("張百萬", ({ "zhang" }) );
         set("title", "主人");
         set("gender", "男性" );
         set("age", 43);	
         set("long",
-             "一位精明能干的大奸商\n");
+             "一位精明能幹的大奸商\n");
         set("combat_exp", 10000);
         set("attitude", "friendly");
 

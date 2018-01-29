@@ -6,7 +6,7 @@ inherit SWORD;
 
 void create()
 {
-	set_name("长剑", ({ "long sword", "sword" }) );
+	set_name("長劍", ({ "long sword", "sword" }) );
 	set_weight(7000);
 	if( clonep() )
 		set_default_object(__FILE__);
@@ -15,7 +15,7 @@ void create()
 		set("value", 700);
 		set("material", "iron");
 		set("long",
-			"一把粗制滥造的长剑，把手部份用布缠绕了好几圈以防止武器脱手。\n");
+			"一把粗製濫造的長劍，把手部份用布纏繞了好幾圈以防止武器脫手。\n");
 	}
 	init_sword(25);
 	setup();

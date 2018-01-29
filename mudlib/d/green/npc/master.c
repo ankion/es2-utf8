@@ -5,13 +5,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("龙若法王", ({ "master neon", "master", "neon" }) );
+        set_name("龍若法王", ({ "master neon", "master", "neon" }) );
 
         set("gender", "男性");
         set("age", 62);
         set("long",
-                "龙若法王本是释家中人，后得奇人点化，佛道双修，齐入化境，\n"
-                "于二十九年前创下绝尘一派。\n");
+                "龍若法王本是釋家中人，後得奇人點化，佛道雙修，齊入化境，\n"
+                "於二十九年前創下絕塵一派。\n");
         set("attitude", "peaceful");
 
         set("str", 21);
@@ -60,7 +60,7 @@ void create()
         map_skill("staff", "jingang-staff");
 	map_skill("spells",magic-array);
 
-        create_family("绝尘派", 0, "法师");
+        create_family("絕塵派", 0, "法師");
 
         setup();
 

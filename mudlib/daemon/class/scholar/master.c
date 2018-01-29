@@ -5,18 +5,18 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("骆云舟", ({ "master scholar", "master" }) );
+        set_name("駱雲舟", ({ "master scholar", "master" }) );
 
         set("gender", "男性");
         set("age", 35);
         set("long",
-		"骆云舟生於京城有名的武林世家，他的本名是骆建炎，但是因为生性喜爱\n"
-		"四处游荡，遂自号「云舟」，四处游山玩水，结交豪杰异人。数年前继承\n"
-		"其父骆易而成为步玄派的新任掌门，但是喜爱飘泊的个性仍然不改，令门\n"
-		"中耆宿头痛不已。\n" );
+		"駱雲舟生於京城有名的武林世家，他的本名是駱建炎，但是因爲生性喜愛\n"
+		"四處遊蕩，遂自號「雲舟」，四處遊山玩水，結交豪傑異人。數年前繼承\n"
+		"其父駱易而成爲步玄派的新任掌門，但是喜愛飄泊的個性仍然不改，令門\n"
+		"中耆宿頭痛不已。\n" );
 
 	set("attitude", "peaceful");
-	create_family("步玄派", 7, "掌门人");
+	create_family("步玄派", 7, "掌門人");
 
 	set("str", 26);
 	set("cor", 30);
@@ -67,12 +67,12 @@ void attempt_apprentice(object ob)
         	command("say 很好，" + RANK_D->query_respect(ob) +
 "多加努力，他日必定有成。\n");
         	command("recruit " + ob->query("id") );
-		ob->set("marks/书生", 0); 
+		ob->set("marks/書生", 0); 
 		ob->set("marks/桃林", 0);	
 		}
 	    else {
-		command ("say 你还是先走一趟东边的桃林吧。\n");
-		ob->set("marks/书生", 1);
+		command ("say 你還是先走一趟東邊的桃林吧。\n");
+		ob->set("marks/書生", 1);
 		} 
 }
 

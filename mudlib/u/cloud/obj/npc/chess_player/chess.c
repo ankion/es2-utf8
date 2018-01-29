@@ -10,7 +10,7 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long",	"棋子是一种较轻的暗器。\n");
+		set("long",	"棋子是一種較輕的暗器。\n");
 		set("unit", "把");
 		set("base_unit", "枚");
 		set("base_weight", 2);

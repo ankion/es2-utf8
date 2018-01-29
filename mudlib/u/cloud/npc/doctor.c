@@ -5,11 +5,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("伙计", ({ "waiter" }) );
-        set("title", "药店");
+        set_name("夥計", ({ "waiter" }) );
+        set("title", "藥店");
         set("gender", "男性" );
         set("age", 17);
-        set("long", "药店的小伙计，正在学着配药。\n");
+        set("long", "藥店的小夥計，正在學着配藥。\n");
         set("combat_exp", 100);
         set("attitude", "heroism");
         set_skill("unarmed", 30);
@@ -17,7 +17,7 @@ void create()
         set_skill("dodge", 10);
 
         set("inquiry", ([
-		"抓药" : "这里是附近最好的药店，您要什么？",
+		"抓藥" : "這裏是附近最好的藥店，您要什麼？",
         ]) );
 
         set("vendor_goods", ([
@@ -47,12 +47,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "小伙计称了几味药，包做个纸包。\n");
+                        say( "小夥計稱了幾味藥，包做個紙包。\n");
                         break;
                 case 1:
-                        say( "伙计点头道：这位"  
+                        say( "夥計點頭道：這位"  
 				+ RANK_D->query_respect(ob)
-                                + "，买药？\n");
+                                + "，買藥？\n");
                         break;
         }
 }

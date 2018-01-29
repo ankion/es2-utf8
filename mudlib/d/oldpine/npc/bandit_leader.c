@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("土匪首领", ({ "bandit leader", "chief", "leader" }) );
+	set_name("土匪首領", ({ "bandit leader", "chief", "leader" }) );
 	set("gender", "男性");
 	set("age", 47);
-	set("long",	"这家伙眼神凶恶，一双精光四射的眼珠正盯著你的脖子。\n");
+	set("long",	"這傢伙眼神兇惡，一雙精光四射的眼珠正盯著你的脖子。\n");
 	set("combat_exp", 50000);
 	set("score", 7700);
 	set("bellicosity", 3000);
@@ -19,9 +19,9 @@ void create()
 
 	set("chat_chance_combat", 20);
 	set("chat_msg_combat", ({
-		"\n土匪首领阴恻恻地说道：这种三脚猫的功\夫也敢上老松寨来撒野？！\n",
-		"\n土匪首领说道：去你的，老子今天要剁下你的头来练练毒爪！\n",
-		"\n土匪首领虎吼一声，欺身上前。\n"
+		"\n土匪首領陰惻惻地說道：這種三腳貓的功\夫也敢上老鬆寨來撒野？！\n",
+		"\n土匪首領說道：去你的，老子今天要剁下你的頭來練練毒爪！\n",
+		"\n土匪首領虎吼一聲，欺身上前。\n"
 	}) );
 	set_skill("blade", 60);
 	set_skill("parry", 70);

@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "内厅穿堂");
+   set("short", "內廳穿堂");
 	set("long", @LONG
-通过『 垂花门 』便是往后院。垂花门为男女之门限，古来女
-人就有「大门不出，二门不迈」的谚语，于是二门堪称为男女门限
-。后院为庄内女弟子厢房，与湘园。东面一扇小门，为庄内更衣沐
-浴的小花池。更是严禁外人胡乱闯入。
+通過『 垂花門 』便是往後院。垂花門爲男女之門限，古來女
+人就有「大門不出，二門不邁」的諺語，於是二門堪稱爲男女門限
+。後院爲莊內女弟子廂房，與湘園。東面一扇小門，爲莊內更衣沐
+浴的小花池。更是嚴禁外人胡亂闖入。
 LONG
 	);
     set("exits", ([
@@ -21,8 +21,8 @@ LONG
         __DIR__"npc/shaoin" : 1,
     ]) );
 
-     create_door("north","垂花门","south", DOOR_CLOSED);
-     create_door("east","小帘门","west", DOOR_CLOSED);
+     create_door("north","垂花門","south", DOOR_CLOSED);
+     create_door("east","小簾門","west", DOOR_CLOSED);
 
 	setup();
 	replace_program(ROOM);

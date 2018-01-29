@@ -9,13 +9,13 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "个");
+                set("unit", "個");
                 set("value", 3000);
                 set("material", "gold");
                 set("armor_prop/unarmed", 2);
                 set("armor_prop/armor", 1);
                 set("armor_prop/spells", 2);
-        set("wear_msg", "$N将$n拿出戴在右手无名指上。\n");
+        set("wear_msg", "$N將$n拿出戴在右手無名指上。\n");
         }
         setup();
 }

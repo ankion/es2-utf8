@@ -16,19 +16,19 @@ string query_rank(object ob)
 			default:
 				if( ((int)ob->query("PKS") > 100) &&
 					((int)ob->query("PKS") > (int)ob->query("MKS")) )
-					return "【 杀人魔 】";
-				if( (int)ob->query("thief") > 10 ) return "【 惯  窃 】";
+					return "【 殺人魔 】";
+				if( (int)ob->query("thief") > 10 ) return "【 慣  竊 】";
 				switch(ob->query("class")) {
 					case "bonze":		return "【 尼  姑 】";
 					case "taoist":		return "【 女  冠 】";
-					case "bandit":		return "【 女飞贼 】";
+					case "bandit":		return "【 女飛賊 】";
 					case "dancer":		return "【 舞  妓 】";
 					case "scholar":		return "【 才  女 】";
 					case "officer":		return "【 女  官 】";
 					case "fighter":		return "【 女武者 】";
-					case "swordsman":	return "【 女剑士 】";
+					case "swordsman":	return "【 女劍士 】";
 					case "alchemist":	return "【 方  士 】";
-					case "shaman":		return "【 巫  医 】";
+					case "shaman":		return "【 巫  醫 】";
 					case "beggar":		return "【 叫化子 】";
 					default:			return "【 平  民 】";
 			}
@@ -36,25 +36,25 @@ string query_rank(object ob)
 	default:
 		switch(wizhood(ob)) {
 			case "(admin)":			return HIW "【 天  神 】" NOR;
-			case "(arch)":			return HIY "【 大巫师 】" NOR;
-			case "(wizard)":		return HIG "【 巫  师 】" NOR;
-			case "(apprentice)":	return HIC "【巫师学徒】" NOR;
+			case "(arch)":			return HIY "【 大巫師 】" NOR;
+			case "(wizard)":		return HIG "【 巫  師 】" NOR;
+			case "(apprentice)":	return HIC "【巫師學徒】" NOR;
 			case "(immortal)":		return HIC "【 仙  人 】" NOR;
 			default:
 				if( ((int)ob->query("PKS") > 100) &&
 					((int)ob->query("PKS") > (int)ob->query("MKS")) )
-					return "【 杀人魔 】";
-				if( (int)ob->query("thief") > 10 ) return "【 惯  窃 】";
+					return "【 殺人魔 】";
+				if( (int)ob->query("thief") > 10 ) return "【 慣  竊 】";
 				switch(ob->query("class")) {
 					case "bonze":		return "【 僧  人 】";
 					case "taoist":		return "【 道  士 】";
-					case "bandit":		return "【 盗  贼 】";
-					case "scholar":		return "【 书  生 】";
+					case "bandit":		return "【 盜  賊 】";
+					case "scholar":		return "【 書  生 】";
 					case "officer":		return "【 官  差 】";
 					case "fighter":		return "【 武  者 】";
-					case "swordsman":	return "【 剑  士 】";
+					case "swordsman":	return "【 劍  士 】";
 					case "alchemist":	return "【 方  士 】";
-					case "shaman":		return "【 巫  医 】";
+					case "shaman":		return "【 巫  醫 】";
 					case "beggar":		return "【 叫化子 】";
 					default:			return "【 平  民 】";
 			}
@@ -75,8 +75,8 @@ string query_respect(object ob)
 		case "女性":
 			switch(ob->query("class")) {
 			case "bonze":
-				if( age < 18 ) return "小师太";
-				else return "师太";
+				if( age < 18 ) return "小師太";
+				else return "師太";
 				break;
 			case "taoist":
 				if( age < 18 ) return "小仙姑";
@@ -92,23 +92,23 @@ string query_respect(object ob)
 		default:
 			switch(ob->query("class")) {
 			case "bonze":
-				if( age < 18 ) return "小师父";
-				else return "大师";
+				if( age < 18 ) return "小師父";
+				else return "大師";
 				break;
 			case "taoist":
 				if( age < 18 ) return "道兄";
-				else return "道长";
+				else return "道長";
 				break;
 			case "fighter":
 			case "swordsman":
 				if( age < 18 ) return "小老弟";
-				else if( age < 50 ) return "壮士";
-				else return "老前辈";
+				else if( age < 50 ) return "壯士";
+				else return "老前輩";
 				break;
 			default:
 				if( age < 20 ) return "小兄弟";
-				else if( age < 50 ) return "壮士";
-				else return "老爷子";
+				else if( age < 50 ) return "壯士";
+				else return "老爺子";
 				break;
 			}
 	}
@@ -127,13 +127,13 @@ string query_rude(object ob)
 		case "女性":
 			switch(ob->query("class")) {
 			case "bonze":
-				return "贼尼";
+				return "賊尼";
 				break;
 			case "taoist":
 				return "妖女";
 				break;
 			default:
-				if( age < 30 ) return "小贱人";
+				if( age < 30 ) return "小賤人";
 				else return "死老太婆";
 				break;
 			}
@@ -141,15 +141,15 @@ string query_rude(object ob)
 		default:
 			switch(ob->query("class")) {
 			case "bonze":
-				if( age < 50 ) return "死秃驴";
-				else return "老秃驴";
+				if( age < 50 ) return "死禿驢";
+				else return "老禿驢";
 				break;
 			case "taoist":
 				return "死牛鼻子";
 				break;
 			default:
 				if( age < 20 ) return "小王八蛋";
-				if( age < 50 ) return "臭贼";
+				if( age < 50 ) return "臭賊";
 				else return "老匹夫";
 				break;
 			}
@@ -169,7 +169,7 @@ string query_self(object ob)
 		case "女性":
 			switch(ob->query("class")) {
 			case "bonze":
-				if( age < 50 ) return "贫尼";
+				if( age < 50 ) return "貧尼";
 				else return "老尼";
 				break;
 			default:
@@ -181,15 +181,15 @@ string query_self(object ob)
 		default:
 			switch(ob->query("class")) {
 			case "bonze":
-				if( age < 50 ) return "贫僧";
-				else return "老纳";
+				if( age < 50 ) return "貧僧";
+				else return "老納";
 				break;
 			case "taoist":
-				return "贫道";
+				return "貧道";
 				break;
 			default:
 				if( age < 50 ) return "在下";
-				else return "老头子";
+				else return "老頭子";
 				break;
 			}
 	}
@@ -208,12 +208,12 @@ string query_self_rude(object ob)
 		case "女性":
 			switch(ob->query("class")) {
 			case "bonze":
-				if( age < 50 ) return "贫尼";
+				if( age < 50 ) return "貧尼";
 				else return "老尼";
 				break;
 			default:
 				if( age < 30 ) return "本姑娘";
-				else return "老娘";
+				else return "老孃";
 				break;
 			}
 		case "男性":
@@ -227,7 +227,7 @@ string query_self_rude(object ob)
 				return "本山人";
 				break;
 			default:
-				if( age < 50 ) return "大爷我";
+				if( age < 50 ) return "大爺我";
 				else return "老子";
 				break;
 			}

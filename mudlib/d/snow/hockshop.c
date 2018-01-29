@@ -6,18 +6,18 @@ inherit HOCKSHOP;
 
 void create()
 {
-	set("short", "丰登当铺");
+	set("short", "豐登當鋪");
 	set("long", @LONG
-这是一家中等规模的当铺，老旧的柜台上放著一张木牌(sign)，屋
-里的光线不是很亮，往东的出口被一块蓝色布帘遮著，上面有「非请莫
-入」的字样，西边有一扇木雕门(door)通往大街。
+這是一家中等規模的當鋪，老舊的櫃檯上放著一張木牌(sign)，屋
+裏的光線不是很亮，往東的出口被一塊藍色布簾遮著，上面有「非請莫
+入」的字樣，西邊有一扇木雕門(door)通往大街。
 LONG
 	);
 	set("item_desc", ([
 		"sign": @TEXT
-本当铺财力雄厚，童叟无欺，欢迎惠顾，绝对保密。
-客倌可以在这里典当(pawn)、卖断(sell)各种货物，铜钱、银两、黄金一概通用。
-要赎回(retrieve)典物，请保持当票完整。
+本當鋪財力雄厚，童叟無欺，歡迎惠顧，絕對保密。
+客倌可以在這裏典當(pawn)、賣斷(sell)各種貨物，銅錢、銀兩、黃金一概通用。
+要贖回(retrieve)典物，請保持當票完整。
 TEXT
 	]) );
 	set("exits", ([
@@ -30,5 +30,5 @@ TEXT
 
 	setup();
 
-	create_door("west", "木雕门", "east", DOOR_CLOSED);
+	create_door("west", "木雕門", "east", DOOR_CLOSED);
 }

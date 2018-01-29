@@ -6,7 +6,7 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("冥府战甲", ({ "hell armor", "armor" }) );
+	set_name("冥府戰甲", ({ "hell armor", "armor" }) );
 	set_weight(70000);
 	if( clonep() )
 		set_default_object(__FILE__);

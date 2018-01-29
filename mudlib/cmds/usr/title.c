@@ -14,7 +14,7 @@ int help(object me)
     write(@HELP
 指令格式: title
  
-显示你目前的阶级和头衔。
+顯示你目前的階級和頭銜。
  
 HELP
     );

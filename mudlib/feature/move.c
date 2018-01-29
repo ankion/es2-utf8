@@ -24,7 +24,7 @@ nomask void add_encumbrance(int w)
 void over_encumbrance()
 {
 	if( !interactive(this_object()) ) return;
-	tell_object(this_object(), "你的负荷过重了！\n");
+	tell_object(this_object(), "你的負荷過重了！\n");
 }
 
 nomask int query_weight() { return weight; }
@@ -49,7 +49,7 @@ varargs int move(mixed dest, int silently)
 
 	// If we are equipped, unequip first.
 	if( query("equipped") && !this_object()->unequip() )
-		return notify_fail("你没有办法取下这样东西。\n");
+		return notify_fail("你沒有辦法取下這樣東西。\n");
 
 	// Find the destination ob for moving.
 	if( objectp(dest) )
@@ -72,9 +72,9 @@ varargs int move(mixed dest, int silently)
 	if( !env && (int)ob->query_encumbrance() + weight()
 		> (int)ob->query_max_encumbrance() ) {
 		if( ob==this_player() )
-			return notify_fail( this_object()->name() + "对你而言太重了。\n");
+			return notify_fail( this_object()->name() + "對你而言太重了。\n");
 		else
-			return notify_fail( this_object()->name() + "对" + ob->name() + "而言太重了。\n");
+			return notify_fail( this_object()->name() + "對" + ob->name() + "而言太重了。\n");
 	}
 
 	// Move the object and update encumbrance
@@ -106,7 +106,7 @@ void remove(string euid)
 	if( userp(this_object()) && euid!=ROOT_UID ) {
 		log_file("destruct", sprintf("%s attempt to destruct user object %s (%s)\n",
 			euid, this_object()->query("id"), ctime(time())));
-		error("你(" + euid + ")不能摧毁其他的使用者。\n");
+		error("你(" + euid + ")不能摧毀其他的使用者。\n");
 	} else if( this_object()->query("equipped")) {
 		if(	!this_object()->unequip() )
 			log_file("destruct", sprintf("Failed to unequip %s when destructed.\n",file_name(this_object())));
@@ -123,7 +123,7 @@ void remove(string euid)
 int move_or_destruct( object dest )
 {
 	if( userp(this_object()) ) {
-		tell_object(this_object(), "一阵时空的扭曲将你传送到另一个地方....\n");
+		tell_object(this_object(), "一陣時空的扭曲將你傳送到另一個地方....\n");
 		move(VOID_OB);
 	}
 }

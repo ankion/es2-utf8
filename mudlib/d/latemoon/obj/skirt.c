@@ -11,14 +11,14 @@ void create()
                 set("unit", "件");
                 set("material", "cloth");
                 set("armor_prop/armor", 1);
-        set("wear_msg", "$N将$n拿出系在腰上。\n");
+        set("wear_msg", "$N將$n拿出系在腰上。\n");
         }
      setup();
 }
 int wear()
 {
      if ((string)this_player()->query("gender") !="女性")
-           return notify_fail("只有女生才可穿哦!你变态呀! \n");
+           return notify_fail("只有女生纔可穿哦!你變態呀! \n");
      else {
            ::wear();
           }

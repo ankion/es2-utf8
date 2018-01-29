@@ -5,9 +5,9 @@ void create()
 {
         set("short", "膳房");
         set("long", @LONG
-这是淳于堡主的用膳房。整个房间飘荡着上等竹叶青的酒香和
-令人垂滟欲滴的烤山猪的香气。你似乎听到你的肚子在“咕咕咕”
-的叫了起来。
+這是淳于堡主的用膳房。整個房間飄蕩着上等竹葉青的酒香和
+令人垂灩欲滴的烤山豬的香氣。你似乎聽到你的肚子在“咕咕咕”
+的叫了起來。
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */
@@ -20,7 +20,7 @@ LONG
         ]) );
         
         
-        create_door("north", "玉帘门", "south", DOOR_CLOSED);
+        create_door("north", "玉簾門", "south", DOOR_CLOSED);
         
         setup();
 }

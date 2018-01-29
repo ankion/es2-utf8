@@ -5,8 +5,8 @@
 
 inherit F_CLEAN_UP;
 
-string *gift_ranking = ({"下下之选","下等", "中下", "中等", "中上", "上等",
-	"上上之选"});
+string *gift_ranking = ({"下下之選","下等", "中下", "中等", "中上", "上等",
+	"上上之選"});
 
 string bar_string = "■■■■■■■■■■■■■■■■■■■■■■■■■";
 string blank_string = "□□□□□□□□□□□□□□□□□□□□□□□□□";
@@ -36,14 +36,14 @@ int main(object me, string arg)
 		ob = present(arg, environment(me));
 		if (!ob) ob = find_player(arg);
 		if (!ob) ob = find_living(arg);
-		if (!ob) return notify_fail("你要察看谁的状态？\n");
+		if (!ob) return notify_fail("你要察看誰的狀態？\n");
 	} else
-		return notify_fail("只有巫师能察看别人的状态。\n");
+		return notify_fail("只有巫師能察看別人的狀態。\n");
 
 	my = ob->query_entire_dbase();
 
 	line = sprintf("▼ " BOLD "%s" NOR "%s\n", RANK_D->query_rank(ob), ob->short(1) );
-	line += sprintf(" %s岁%s%s，%s生。\n",
+	line += sprintf(" %s歲%s%s，%s生。\n",
 		chinese_number(ob->query("age")), 
 		ob->query("gender"),
 		ob->query("race"),
@@ -51,8 +51,8 @@ int main(object me, string arg)
 
 	if( wizardp(me) || (int)ob->query("age") >= 18 ) {
 		line += sprintf(
-			" 膂力:[%s] 胆识:[%s] 悟性:[%s] 灵性:[%s]\n"
-			" 定力:[%s] 容貌:[%s] 根骨:[%s] 福缘:[%s]\n",
+			" 膂力:[%s] 膽識:[%s] 悟性:[%s] 靈性:[%s]\n"
+			" 定力:[%s] 容貌:[%s] 根骨:[%s] 福緣:[%s]\n",
 			display_attr(my["str"], ob->query_str()),
 			display_attr(my["cor"], ob->query_cor()),
 			display_attr(my["int"], ob->query_int()),
@@ -73,20 +73,20 @@ int main(object me, string arg)
 
 	if( mapp(my["family"]) ) {
 		if( my["family"]["master_name"] )
-			line = sprintf("%s 你的师父是%s。\n",
+			line = sprintf("%s 你的師父是%s。\n",
 				line, my["family"]["master_name"] );
 	}
 
 	//line += " <精>  " + tribar_graph(my["gin"], my["eff_gin"], my["max_gin"], GRN) + "\n";
-	//line += " <气>  " + tribar_graph(my["kee"], my["eff_kee"], my["max_kee"], HIR) + "\n";
+	//line += " <氣>  " + tribar_graph(my["kee"], my["eff_kee"], my["max_kee"], HIR) + "\n";
 	//line += " <神>  " + tribar_graph(my["sen"], my["eff_sen"], my["max_sen"], HIB) + "\n";
 
-    line += sprintf(" 精：%s%4d/%4d %s(%3d%%)" NOR "  灵力：%s%4d/%4d (+%d)\n" NOR,
+    line += sprintf(" 精：%s%4d/%4d %s(%3d%%)" NOR "  靈力：%s%4d/%4d (+%d)\n" NOR,
 		status_color(my["gin"], my["eff_gin"]),	my["gin"],	my["eff_gin"],
 		status_color(my["eff_gin"], my["max_gin"]),	my["eff_gin"] * 100 / my["max_gin"],
 		status_color(my["atman"], my["max_atman"]),	my["atman"], my["max_atman"],
 		my["atman_factor"] );
-    line += sprintf(" 气：%s%4d/%4d %s(%3d%%)" NOR "  内力：%s%4d/%4d (+%d)\n" NOR,
+    line += sprintf(" 氣：%s%4d/%4d %s(%3d%%)" NOR "  內力：%s%4d/%4d (+%d)\n" NOR,
 		status_color(my["kee"], my["eff_kee"]),	my["kee"], my["eff_kee"],
 		status_color(my["eff_kee"], my["max_kee"]),	my["eff_kee"] * 100 / my["max_kee"],
 		status_color(my["force"], my["max_force"]),	my["force"], my["max_force"],
@@ -98,7 +98,7 @@ int main(object me, string arg)
 		my["mana_factor"] );
 
 /*
-	line += sprintf(" 食物：%d/%d，饮水：%d/%d\n\n",
+	line += sprintf(" 食物：%d/%d，飲水：%d/%d\n\n",
 		my["food"], ob->max_food_capacity(), my["water"], ob->max_water_capacity());
 */
 	if( objectp(weapon = ob->query_temp("weapon")) )
@@ -111,21 +111,21 @@ int main(object me, string arg)
 	dodge_points = COMBAT_D->skill_power(ob, "dodge", SKILL_USAGE_DEFENSE);
 /*
 	line += " 食物：" + tribar_graph(my["food"], ob->max_food_capacity(), ob->max_food_capacity(), YEL) + "\n";
-	line += " 饮水：" + tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), CYN) + "\n";
+	line += " 飲水：" + tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), CYN) + "\n";
 */
-	line += sprintf(" 攻击力： " HIY "%d (+%d)" NOR "    防御力： " HIY "%d (+%d)\n" NOR,
+	line += sprintf(" 攻擊力： " HIY "%d (+%d)" NOR "    防禦力： " HIY "%d (+%d)\n" NOR,
 		attack_points/100 + 1, ob->query_temp("apply/damage"),
 		(dodge_points + (weapon? parry_points: (parry_points/10)))/100 + 1, ob->query_temp("apply/armor"));
 
-	line += sprintf(" 总共杀过 %d 个人，其中有 %d 个是其他玩家。\n",
+	line += sprintf(" 總共殺過 %d 個人，其中有 %d 個是其他玩家。\n",
 		my["MKS"] + my["PKS"], my["PKS"]);
 
-	line += sprintf(" 杀    气： " RED "%d    " NOR, ob->query("bellicosity") );
-	line += sprintf(" 潜    能： " HIY "%d (%d%%)\n" NOR,
+	line += sprintf(" 殺    氣： " RED "%d    " NOR, ob->query("bellicosity") );
+	line += sprintf(" 潛    能： " HIY "%d (%d%%)\n" NOR,
 		(int)ob->query("potential") - (int)ob->query("learned_points"),
 		(1 + (int)ob->query("learned_points")) * 100 / (1 + (int)ob->query("potential")) );
-	line += sprintf(" 实战经验： " HIM "%d    " NOR, ob->query("combat_exp") );
-	line += sprintf(" 综合评价： " HIC "%d\n\n" NOR, ob->query("score") );
+	line += sprintf(" 實戰經驗： " HIM "%d    " NOR, ob->query("combat_exp") );
+	line += sprintf(" 綜合評價： " HIC "%d\n\n" NOR, ob->query("score") );
 
 	write(line);
 	return 1;
@@ -163,13 +163,13 @@ int help(object me)
 {
 	write(@HELP
 指令格式 : score
-           score <对象名称>                   (巫师专用)
+           score <對象名稱>                   (巫師專用)
 
-这个指令可以显示你(□)或指定对象(含怪物)的基本资料。
-基本资料的设定请参阅 'help setup'。
+這個指令可以顯示你(□)或指定對象(含怪物)的基本資料。
+基本資料的設定請參閱 'help setup'。
 
-为了避免玩家为了「天赋」的数值而反覆创造人物，因此限定只有在综合评价达到
-100 以上的玩家或巫师才看得到天赋状况。
+爲了避免玩家爲了「天賦」的數值而反覆創造人物，因此限定只有在綜合評價達到
+100 以上的玩家或巫師纔看得到天賦狀況。
 
 see also : hp
 HELP

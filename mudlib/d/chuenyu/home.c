@@ -2,11 +2,11 @@ inherit ROOM;
 #include <room.h>
 void create()
 {
-        set("short", "刘家小房");
+        set("short", "劉家小房");
         set("long", @LONG
-这是一所很破旧的木屋。每当山风吹来，都会发出“吱吱呀呀”
-的声音。南侧是一个小小的厨房。木屋的后面是一个精巧的花园，花
-园里穿来阵阵打闹之声。一个翠绿的小草坪就在西面。
+這是一所很破舊的木屋。每當山風吹來，都會發出“吱吱呀呀”
+的聲音。南側是一個小小的廚房。木屋的後面是一個精巧的花園，花
+園裏穿來陣陣打鬧之聲。一個翠綠的小草坪就在西面。
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -16,7 +16,7 @@ LONG
               "southwest" : __DIR__"dustyroad3",
               ]));
               
-              create_door("southwest", "木门", "northeast", DOOR_CLOSED);
+              create_door("southwest", "木門", "northeast", DOOR_CLOSED);
               
               
               set("objects", ([

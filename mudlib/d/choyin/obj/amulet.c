@@ -11,8 +11,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "个");
-		set("long", "一个用红线绑著的平安符，据说可以避邪。\n");
+		set("unit", "個");
+		set("long", "一個用紅線綁著的平安符，據說可以避邪。\n");
 		set("material", "paper");
 		set("value", 60);
 		set("armor_prop/karma", 1);

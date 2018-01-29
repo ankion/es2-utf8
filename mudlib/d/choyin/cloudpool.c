@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "云梦大泽");
+	set("short", "雲夢大澤");
 	set("long", @LONG
-云梦大泽八百里,雾气沼沼,商旅绝行.
+雲夢大澤八百里,霧氣沼沼,商旅絕行.
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

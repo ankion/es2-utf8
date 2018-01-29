@@ -36,7 +36,7 @@ void restore_autoload()
 		}
 		err = catch(ob = new(file));
 		if( err || !ob ) {
-			write("你觉得似乎失落了什麽重要的东西，最好通知一下巫师。\n");
+			write("你覺得似乎失落了什麼重要的東西，最好通知一下巫師。\n");
 			log_file("AUTOLOAD", sprintf("Fail to autoload %s of %s, error %s\n",
 				file, this_object()->query("name"), err));
 			continue;

@@ -11,7 +11,7 @@ int main(object me, string arg)
 	seteuid(geteuid(me));
     if (!arg) return help(me);
 	file = resolve_path(me->query("cwd"), arg);
-	if( file_size(file)<0 ) return notify_fail("没有这个档案。\n");
+	if( file_size(file)<0 ) return notify_fail("沒有這個檔案。\n");
 	tail(file);
 	return 1;
 }
@@ -19,9 +19,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-指令格式 : tail <档案>
+指令格式 : tail <檔案>
 
-此指令可让你(□)直接读取某档案最末尾的几行。
+此指令可讓你(□)直接讀取某檔案最末尾的幾行。
 HELP
     );
     return 1;

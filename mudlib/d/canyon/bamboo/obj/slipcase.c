@@ -5,14 +5,14 @@ inherit ITEM;
 void create()
 {
 	object obj;
-	set_name("书匣", ({ "slipcase" }) );
+	set_name("書匣", ({ "slipcase" }) );
 	set_weight(4000);
     set_max_encumbrance(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-        set("unit", "个");
-        set("long", "这是一个铜制的书匣，可以用来装一些书。\n");
+        set("unit", "個");
+        set("long", "這是一個銅製的書匣，可以用來裝一些書。\n");
 		set("value", 1);
 	}
 	obj=new(__DIR__"parry_book");

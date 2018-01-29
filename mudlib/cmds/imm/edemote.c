@@ -8,10 +8,10 @@ int main(object me, string arg)
 {
 	mapping emote;
 
-	if( !arg ) return notify_fail("你要编辑什麽 emote？\n");
+	if( !arg ) return notify_fail("你要編輯什麼 emote？\n");
 
 	if( sscanf(arg, "-d %s", arg) ) {
-		write("删除 emote：" + arg + "\n");
+		write("刪除 emote：" + arg + "\n");
 		EMOTE_D->delete_emote(arg);
 		return 1;
 	}
@@ -29,15 +29,15 @@ int main(object me, string arg)
 	emote = EMOTE_D->query_emote(arg);
 	emote = (["updated":geteuid(me)]);
 
-	write("编辑 emote：" + arg + "\n");
-	write("讯息可以有好几行，用 . 表示结束。\n");
-	write("讯息中可使用的参数有以下几种：\n");
+	write("編輯 emote：" + arg + "\n");
+	write("訊息可以有好幾行，用 . 表示結束。\n");
+	write("訊息中可使用的參數有以下幾種：\n");
 	write("  $N  自己的名字。\n");
-	write("  $n  使用对象的名字。\n");
-	write("  $P  自己的人称代名词，如你、□、他、她、它、它。\n");
-	write("  $p  使用对象的人称代名词，如你、□、他、她、它、它。\n");
+	write("  $n  使用對象的名字。\n");
+	write("  $P  自己的人稱代名詞，如你、□、他、她、它、它。\n");
+	write("  $p  使用對象的人稱代名詞，如你、□、他、她、它、它。\n");
 	write("————————————————————————————————————\n");
-	write("不指定对象使用这个 emote 时，你自己看到的讯息：\n->");
+	write("不指定對象使用這個 emote 時，你自己看到的訊息：\n->");
 	input_to("get_msg_myself", emote, arg);
 	return 1;
 }
@@ -47,7 +47,7 @@ int get_msg_myself(string msg, mapping emote, string pattern)
 {
 	if (msg==".") {
 		if( !undefinedp(emote["myself"]) ) emote["myself"] += "\n";
-		write("不指定对象使用这个 emote 时，其他人看到的讯息：\n->");
+		write("不指定對象使用這個 emote 時，其他人看到的訊息：\n->");
 		input_to("get_msg_others", emote, pattern);
 		return 1;
 	}
@@ -63,7 +63,7 @@ int get_msg_others(string msg, mapping emote, string pattern)
 {
 	if (msg==".") {
 		if( !undefinedp(emote["others"]) ) emote["others"] += "\n";
-		write("对自己使用这个 emote 时，自己看到的讯息：\n->");
+		write("對自己使用這個 emote 時，自己看到的訊息：\n->");
 		input_to("get_msg_myself_self", emote, pattern);
 		return 1;
 	}
@@ -79,7 +79,7 @@ int get_msg_myself_self(string msg, mapping emote, string pattern)
 {
 	if (msg==".") {
 		if( !undefinedp(emote["myself_self"]) ) emote["myself_self"] += "\n";
-		write("对自己使用这个 emote 时，其他人看到的讯息：\n->");
+		write("對自己使用這個 emote 時，其他人看到的訊息：\n->");
 		input_to("get_msg_others_self", emote, pattern);
 		return 1;
 	}
@@ -95,7 +95,7 @@ int get_msg_others_self(string msg, mapping emote, string pattern)
 {
 	if (msg==".") {
 		if( !undefinedp(emote["others_self"]) ) emote["others_self"] += "\n";
-		write("对别人使用这个 emote 时，自己看到的讯息：\n->");
+		write("對別人使用這個 emote 時，自己看到的訊息：\n->");
 		input_to("get_msg_myself_target", emote, pattern);
 		return 1;
 	}
@@ -111,7 +111,7 @@ int get_msg_myself_target(string msg, mapping emote, string pattern)
 {
 	if (msg==".") {
 		if( !undefinedp(emote["myself_target"]) ) emote["myself_target"] += "\n";
-		write("对别人使用这个 emote 时，使用对象看到的讯息：\n->");
+		write("對別人使用這個 emote 時，使用對象看到的訊息：\n->");
 		input_to("get_msg_target", emote, pattern);
 		return 1;
 	}
@@ -127,7 +127,7 @@ int get_msg_target(string msg, mapping emote, string pattern)
 {
 	if (msg==".") {
 		if( !undefinedp(emote["target"]) ) emote["target"] += "\n";
-		write("对别人使用这个 emote 时，除你自己和使用对象外，其他人看到的讯息：\n->");
+		write("對別人使用這個 emote 時，除你自己和使用對象外，其他人看到的訊息：\n->");
 		input_to("get_msg_others_target", emote, pattern);
 		return 1;
 	}
@@ -144,7 +144,7 @@ int get_msg_others_target(string msg, mapping emote, string pattern)
 	if (msg==".") {
 		if( !undefinedp(emote["others_target"]) ) emote["others_target"] += "\n";
 		EMOTE_D->set_emote(pattern, emote);
-		write("Emote 编辑结束。\n");
+		write("Emote 編輯結束。\n");
 		return 1;
 	}
 	if( !undefinedp(emote["others_target"]) )
@@ -160,21 +160,21 @@ int help(object me)
 write(@HELP
 指令格式 : edemote [-d|-p] <emote>
  
-这个指令可以修改, 删除 emote 或列出其内容. 加上 -d 参数会删除
-指定的 emote, -p 参数则会列出指定 emote 的内容. 列出的顺序与编
-辑 emote 时相同.
+這個指令可以修改, 刪除 emote 或列出其內容. 加上 -d 參數會刪除
+指定的 emote, -p 參數則會列出指定 emote 的內容. 列出的順序與編
+輯 emote 時相同.
  
-输入 emote 讯息时有三个项目: 没有目标, 指定目标或是对自己. 若
-不想有某项讯息, 则直接在空白行输入 '.' 跳过.
+輸入 emote 訊息時有三個項目: 沒有目標, 指定目標或是對自己. 若
+不想有某項訊息, 則直接在空白行輸入 '.' 跳過.
  
-一个 emote 讯息可以有很多行, 在空白行输入 '.' 结束输入该项 emote.
+一個 emote 訊息可以有很多行, 在空白行輸入 '.' 結束輸入該項 emote.
  
-编辑 emote 时可以用以下的符号来表示:
+編輯 emote 時可以用以下的符號來表示:
  
 $N : 自己的名字.
-$n : 目标的名字.
-$P : 自己的人称代名词.
-$p : 目标的人称代名词.
+$n : 目標的名字.
+$P : 自己的人稱代名詞.
+$p : 目標的人稱代名詞.
  
 HELP
     );

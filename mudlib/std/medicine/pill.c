@@ -13,7 +13,7 @@ void init()
 
 int do_eat(string arg)
 {
-	if( !id(arg) ) return notify_fail("你要吃什麽？\n");
+	if( !id(arg) ) return notify_fail("你要吃什麼？\n");
 	
 }
 

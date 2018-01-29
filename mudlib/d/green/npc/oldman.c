@@ -37,7 +37,7 @@ void ask_for_help()
         helper = present("old woman", environment(this_object()));
         if (!helper || helper->is_fighting()) return;
 	tell_room(environment(helper), helper->name()+"喊道: "+
-	"老公我来帮你了!\n", ({this_object(), helper}) );
+	"老公我來幫你了!\n", ({this_object(), helper}) );
         helper->kill_ob(query_temp("killer"));
         return;
 }

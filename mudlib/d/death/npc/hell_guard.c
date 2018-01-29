@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	string *order = ({"子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"});
+	string *order = ({"子", "醜", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"});
 
-	set_name( (order[random(12)]) + "阴鬼牙将", ({ "hell guardian", "guardian" }) );
+	set_name( (order[random(12)]) + "陰鬼牙將", ({ "hell guardian", "guardian" }) );
 	set("long",
-		"一个负责看守鬼门关的阴卒，他们是鬼卒中的精锐，负责阻挡想要\n"
+		"一個負責看守鬼門關的陰卒，他們是鬼卒中的精銳，負責阻擋想要\n"
 		"侵入酆都城的妖魔鬼怪。\n");
 
 	set("max_gin", 1500);

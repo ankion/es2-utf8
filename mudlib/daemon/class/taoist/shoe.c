@@ -4,12 +4,12 @@ inherit EQUIP;
 
 void create()
 {
-	set_name("七星翻云靴", ({ "cloudy shoes", "shoes" }) );
+	set_name("七星翻雲靴", ({ "cloudy shoes", "shoes" }) );
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "双");
+		set("unit", "雙");
 		set("value", 6000);
 		set("material", "cloth");
 		set("armor_type", "feet");

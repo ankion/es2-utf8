@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("僵尸侍者", ({ "trainer" }) );
-        set("nickname", "僵尸侍者");
+        set_name("殭屍侍者", ({ "trainer" }) );
+        set("nickname", "殭屍侍者");
         set("gender", "男性");
         set("age", 27);
         set("long",
 
-"僵尸侍者是林忌的弟子，着一身黑色的道袍\n"
+"殭屍侍者是林忌的弟子，着一身黑色的道袍\n"
 );
         set("combat_exp", 14000);
         set("score", 200);
@@ -36,14 +36,14 @@ void create()
 
         set("inquiry", ([
                 "谷衣心法":
-"谷衣心法是我茅山派为对抗邪魔外道所创的内功心法。\n",
+"谷衣心法是我茅山派爲對抗邪魔外道所創的內功心法。\n",
                 "茅山派":
-"我茅山派自张天师开山立派至今，世世代代皆以降妖伏魔为己任。\n"
+"我茅山派自張天師開山立派至今，世世代代皆以降妖伏魔爲己任。\n"
         ]) );
         set("chat_chance", 25);
         set("chat_msg", ({
-                "僵尸侍者说道：我们茅山派实力最强！谁敢欺负我们？\n",
-                "僵尸侍者说道：大家快加入茅山派吧! \n",
+                "殭屍侍者說道：我們茅山派實力最強！誰敢欺負我們？\n",
+                "殭屍侍者說道：大家快加入茅山派吧! \n",
                 (:random_move :)
         }) );
 
@@ -90,9 +90,9 @@ int accept_fight(object me)
 {
         if( (string)me->query("family/family_name")=="茅山派" ) {
                 command("nod");
-                command("say 进招吧。");
+                command("say 進招吧。");
                 return 1;
         }
-        command("say 茅山派不和别派的人过招。");
+        command("say 茅山派不和別派的人過招。");
         return 0;
 }

@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "北驿道");
+        set("short", "北驛道");
         set("long", @LONG
-你正走在一条青石铺地的大驿道上，四周人来人往。挑担子的
-苦力，赶着大车的马夫，赴京传书的军人，熙熙攘攘，非常热闹。
-不时还有两三骑快马从身边飞驰而过，引起一阵骚动。道路两旁各
-有一片小树林，南边就是京师。
+你正走在一條青石鋪地的大驛道上，四周人來人往。挑擔子的
+苦力，趕着大車的馬伕，赴京傳書的軍人，熙熙攘攘，非常熱鬧。
+不時還有兩三騎快馬從身邊飛馳而過，引起一陣騷動。道路兩旁各
+有一片小樹林，南邊就是京師。
 LONG
         );
 
@@ -18,7 +18,7 @@ LONG
                 "south"          : "/d/city/northdoor" ]) );
 
         set("outdoors", "city"); 
-        create_door("enter", "城门", "out" );
+        create_door("enter", "城門", "out" );
         setup();
         replace_program(ROOM); 
 }

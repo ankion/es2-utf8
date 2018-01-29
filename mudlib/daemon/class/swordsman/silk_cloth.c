@@ -4,7 +4,7 @@ inherit EQUIP;
 
 void create()
 {
-        set_name("丝绸马褂", ({ "silk cloth", "cloth" }) );
+        set_name("絲綢馬褂", ({ "silk cloth", "cloth" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);

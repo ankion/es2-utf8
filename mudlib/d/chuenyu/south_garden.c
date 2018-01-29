@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "南花园");
+        set("short", "南花園");
         set("long", @LONG
-你站在黑松城堡的南花园里。花园里长满了各式各样奇花异草。
-再往北则是雄伟的黑松阁。
+你站在黑松城堡的南花園裏。花園裏長滿了各式各樣奇花異草。
+再往北則是雄偉的黑松閣。
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */

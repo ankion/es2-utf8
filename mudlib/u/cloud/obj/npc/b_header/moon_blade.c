@@ -14,13 +14,13 @@ void create()
                 set("unit", "把");
                 set("long",
                         
-"这是一把耀眼的利刃，刀背上面带有道凹槽，乃是陈剑秋的成名武器。\n");
+"這是一把耀眼的利刃，刀背上面帶有道凹槽，乃是陳劍秋的成名武器。\n");
                         
                 set("value", 1800);
                 set("material", "steel");
                 set("wield_msg", 
-"只听见「飕」地一声，$N的手中已经多了一把$n。\n");
-                set("unequip_msg", "$N将手中的$n插入腰间的剑鞘。\n");
+"只聽見「颼」地一聲，$N的手中已經多了一把$n。\n");
+                set("unequip_msg", "$N將手中的$n插入腰間的劍鞘。\n");
         }
         init_blade(40);
         setup();

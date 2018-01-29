@@ -15,10 +15,10 @@ void create()
 		set("value", 500);
 		set("material", "steel");
 		set("long",
-			"这种斧头的刃长柄短，是专门用来做兵器的斧头，近战具有相当强的\n"
-			"杀伤力。\n");
+			"這種斧頭的刃長柄短，是專門用來做兵器的斧頭，近戰具有相當強的\n"
+			"殺傷力。\n");
 		set("wield_msg", "$N抽出一柄$n握在手中。\n");
-		set("unequip_msg", "$N将手中的$n插入腰间的束带间。\n");
+		set("unequip_msg", "$N將手中的$n插入腰間的束帶間。\n");
 		set("weapon_prop/attack", 3);
 		set("weapon_prop/defense", -2);
 	}

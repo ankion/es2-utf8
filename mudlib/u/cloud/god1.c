@@ -8,10 +8,10 @@ string look_sign();
 
 void create()
 {
-	set("short", "场院");
+	set("short", "場院");
 	set("long", @LONG
-    这里好象是大户人家子弟玩乐的场院, 原来建有秋千架的草地，
-已经成了荆棘丛生的荒草场了。再往西是一座凉亭，亭子似乎也快要倒塌了...
+    這裏好象是大戶人家子弟玩樂的場院, 原來建有秋千架的草地，
+已經成了荊棘叢生的荒草場了。再往西是一座涼亭，亭子似乎也快要倒塌了...
 LONG
         );
 
@@ -22,7 +22,7 @@ LONG
 //	set("objects", ([
 //	]) );
 
-        create_door("east", "木门", "west", DOOR_CLOSED);
+        create_door("east", "木門", "west", DOOR_CLOSED);
 
         setup();
 

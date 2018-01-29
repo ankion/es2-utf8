@@ -5,14 +5,14 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("灵芝", ({ "magical agaric", "agaric" }) );
+	set_name("靈芝", ({ "magical agaric", "agaric" }) );
 	set_weight(35);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("long",
-			"灵芝是一种相当昂贵的药材，但是许\多方士都把灵芝当成重要的\n"
-			"药品。\n");
+			"靈芝是一種相當昂貴的藥材，但是許\多方士都把靈芝當成重要的\n"
+			"藥品。\n");
 		set("unit", "株");
 		set("value", 4000);
 		set("food_remaining", 1);

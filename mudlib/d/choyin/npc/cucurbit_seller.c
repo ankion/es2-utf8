@@ -5,7 +5,7 @@ inherit F_VENDOR;
 
 void create()
 {
-	set_name("卖糖葫芦的", ({ "cucurbit chapman", "chapman" }) );
+	set_name("賣糖葫蘆的", ({ "cucurbit chapman", "chapman" }) );
 	set("gender", "男性" );
 	set("age", 42);
 	set("combat_exp", 30);
@@ -15,10 +15,10 @@ void create()
 	]) );
 	set("chat_chance", 15);
 	set("chat_msg", ({
-		"卖糖葫芦的吆喝道：糖葫芦！好甜好香的糖葫芦！\n",
+		"賣糖葫蘆的吆喝道：糖葫蘆！好甜好香的糖葫蘆！\n",
 	}) );
 	set("inquiry", ([
-		"糖葫芦" : (: do_vendor_list :),
+		"糖葫蘆" : (: do_vendor_list :),
 	]) );
 	setup();
 }

@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("妇人", ({ "lady" }) );
-	set("long", "一个衣饰华丽的妇人正跪在这里虔诚地膜拜著。\n");
+	set_name("婦人", ({ "lady" }) );
+	set("long", "一個衣飾華麗的婦人正跪在這裏虔誠地膜拜著。\n");
 	set("age", 32);
 	set("gender", "女性");
 	set("attitude", "peaceful");

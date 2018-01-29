@@ -8,10 +8,10 @@ string look_sign(object me);
 
 void create()
 {
-        set("short", "赌场");
+        set("short", "賭場");
 	set("long", @LONG
-这里是赌场的二楼，很多人在围着几张桌子高声叫嚷，煞是热闹。
-靠近门口的地方有一块乌木雕成的招牌(sign)。
+這裏是賭場的二樓，很多人在圍着幾張桌子高聲叫嚷，煞是熱鬧。
+靠近門口的地方有一塊烏木雕成的招牌(sign)。
 LONG
         );
       set("exits", ([
@@ -19,7 +19,7 @@ LONG
       ]) );
 
         set("item_desc", ([
-            "sign": "招牌写著：赌(bet)：押注一两纹银，赢了得二两。\n",
+            "sign": "招牌寫著：賭(bet)：押注一兩紋銀，贏了得二兩。\n",
         ]) );
 
         setup();

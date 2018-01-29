@@ -11,7 +11,7 @@ void create()
 		set_default_object(__FILE__);
 	else {
 		set("unit", "口");
-		set("long", "这是一口寻常的布袋，可以用来装一些杂物。\n");
+		set("long", "這是一口尋常的布袋，可以用來裝一些雜物。\n");
 		set("value", 1);
 	}
 }

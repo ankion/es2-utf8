@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("五爪金龙", ({ "dragon" }) );
+	set_name("五爪金龍", ({ "dragon" }) );
 	set("long",
-		"这是一只生长在璃山的五爪金龙，它身上的鳞片闪闪发著耀眼的光芒。\n");
+		"這是一隻生長在璃山的五爪金龍，它身上的鱗片閃閃發著耀眼的光芒。\n");
 
-	set("race", "野兽");
+	set("race", "野獸");
 	set("age", 600);
 	set("attitude", "friendly");
 
@@ -22,7 +22,7 @@ void create()
 	set("spi", 70);
 	set("int", 40);
 
-	set("limbs", ({ "头部", "身体", "前爪", "後爪", "尾巴" }) );
+	set("limbs", ({ "頭部", "身體", "前爪", "後爪", "尾巴" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set_temp("apply/attack", 100);

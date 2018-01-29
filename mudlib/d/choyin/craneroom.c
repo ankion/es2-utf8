@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "树冠");
+        set("short", "樹冠");
         set("long",@LONG
-古树果非寻常之物，树冠白雾升腾，上接霄汉，如仙境一般，让人流连忘返...
+古樹果非尋常之物，樹冠白霧升騰，上接霄漢，如仙境一般，讓人流連忘返...
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */

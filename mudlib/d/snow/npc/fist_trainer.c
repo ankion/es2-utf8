@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("李火狮", ({ "trainer", "lee" }) );
-	set("title", "拳法教练");
+	set_name("李火獅", ({ "trainer", "lee" }) );
+	set("title", "拳法教練");
 	set("gender", "男性" );
 	set("age", 28);
 	set("str", 26);
 	set("int", 14);
 	set("long",
-		"李火狮是个孔武有力的大块头，他正在训练他的弟子们习练「柳家拳\n"
+		"李火獅是個孔武有力的大塊頭，他正在訓練他的弟子們習練「柳家拳\n"
 		"法」。\n" );
 	set("combat_exp", 3000);
 	set("attitude", "heroism");
@@ -21,9 +21,9 @@ void create()
 	set("force_factor", 1);
 
 	set("inquiry", ([
-		"here": "这里当然是淳风武馆，不然还是哪里？\n",
-		"name": "在下姓李，名字就叫火狮，人称李教头的便是我。\n",
-		"柳家拳法": "哦....说来惭愧，小弟这套拳法还没学得到家, 柳馆主就教我在这里传艺。\n"
+		"here": "這裏當然是淳風武館，不然還是哪裏？\n",
+		"name": "在下姓李，名字就叫火獅，人稱李教頭的便是我。\n",
+		"柳家拳法": "哦....說來慚愧，小弟這套拳法還沒學得到家, 柳館主就教我在這裏傳藝。\n"
 	]) );
 
 	set_skill("unarmed", 30);
@@ -36,18 +36,18 @@ void create()
 
 int recognize_apprentice(object ob)
 {
-	if( (string)ob->query("family/family_name")=="封山剑派" ) return 1;
-	command("say 对不起，这位" + RANK_D->query_respect(ob) + "，您不是我们武馆的弟子。");
-	return notify_fail( "李火狮不愿意教你拳法。\n");
+	if( (string)ob->query("family/family_name")=="封山劍派" ) return 1;
+	command("say 對不起，這位" + RANK_D->query_respect(ob) + "，您不是我們武館的弟子。");
+	return notify_fail( "李火獅不願意教你拳法。\n");
 }
 
 int accept_fight(object me)
 {
-	if( (string)me->query("family/family_name")=="封山剑派" ) {
+	if( (string)me->query("family/family_name")=="封山劍派" ) {
 		command("nod");
-		command("say 进招吧。");
+		command("say 進招吧。");
 		return 1;
 	}
-	command("say 馆主吩咐过，不许和来这里的客人过招。");
+	command("say 館主吩咐過，不許和來這裏的客人過招。");
 	return 0;
 }

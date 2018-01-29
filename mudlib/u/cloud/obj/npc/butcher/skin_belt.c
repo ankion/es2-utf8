@@ -6,12 +6,12 @@ inherit EQUIP;
 
 void create()
 {
-        set_name( "牛皮束带", ({ "skin belt", "belt" }) );
+        set_name( "牛皮束帶", ({ "skin belt", "belt" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "条");
+                set("unit", "條");
                 set("value", 5000);
                 set("material", "skin");
                 set("armor_type", "waist");

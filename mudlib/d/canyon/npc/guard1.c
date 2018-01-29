@@ -8,8 +8,8 @@ void create()
 	set("gender", "男性");
 	set("age", 24);
 	set("long",
-        	"风沙满面，无精打采，毫无生气的样子，真难以想像是这\n"
-                "□的守军。\n");
+        	"風沙滿面，無精打采，毫無生氣的樣子，真難以想像是這\n"
+                "□的守軍。\n");
 
 	set("attitude", "peaceful");
 

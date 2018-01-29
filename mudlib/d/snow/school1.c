@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "淳风武馆大门");
+	set("short", "淳風武館大門");
 	set("long", @LONG
-你现在正站在一间大宅院的入口，两只巨大的石狮镇守在大门的两
-侧，一阵阵吆喝与刀剑碰撞的声音从院子中传来。通过红漆大门(door)
-往东可以望见许多身穿灰衣的汉子正在操练。
+你現在正站在一間大宅院的入口，兩隻巨大的石獅鎮守在大門的兩
+側，一陣陣吆喝與刀劍碰撞的聲音從院子中傳來。通過紅漆大門(door)
+往東可以望見許多身穿灰衣的漢子正在操練。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -21,7 +21,7 @@ LONG
 	set("objects", ([
 		__DIR__"npc/guard": 1 ]) );
 
-	create_door("east", "红漆大门", "west", DOOR_CLOSED);
+	create_door("east", "紅漆大門", "west", DOOR_CLOSED);
 
 	set("item_desc", ([
 		"door": (: look_door, "east" :),

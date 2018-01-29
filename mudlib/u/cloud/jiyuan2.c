@@ -8,9 +8,9 @@ string look_sign(object me);
 
 void create()
 {
-        set("short", "怡红院二楼");
+        set("short", "怡紅院二樓");
 	set("long", @LONG
-这是怡红院的姑娘们陪客人们饮酒品茗，吟诗作赋的地方，甚是幽
+這是怡紅院的姑娘們陪客人們飲酒品茗，吟詩作賦的地方，甚是幽
 雅。
 LONG
         );

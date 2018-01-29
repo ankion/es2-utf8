@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("书生", ({ "scholar" }) );
-	set("long", "一个看起来相当斯文的书生，正拿著一本书摇头晃脑地读著。\n");
+	set_name("書生", ({ "scholar" }) );
+	set("long", "一個看起來相當斯文的書生，正拿著一本書搖頭晃腦地讀著。\n");
 	set("age", 23);
 	set("attitude", "peaceful");
 	set("combat_exp", 10);

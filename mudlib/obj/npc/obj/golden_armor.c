@@ -6,7 +6,7 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("天兵战甲", ({ "golden armor", "armor" }) );
+	set_name("天兵戰甲", ({ "golden armor", "armor" }) );
 	set_weight(50000);
 	if( clonep() )
 		set_default_object(__FILE__);

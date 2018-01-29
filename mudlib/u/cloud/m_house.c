@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "张百万家");
+	set("short", "張百萬家");
 	set("long", @LONG
-这里是张百万的府宅，常人可进不来
+這裏是張百萬的府宅，常人可進不來
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

@@ -4,14 +4,14 @@ void create()
 {
         object ob;
 
-        set_name("蓝小蝶", ({ "shao-de" }) );
+        set_name("藍小蝶", ({ "shao-de" }) );
         set("gender", "女性" );
         set("age",18);
         set("long", @TEXT
-她长得十分漂亮！让你忍不住多瞧她几眼，从她身上
-你闻到淡淡的香气。她很有礼貌的向你点头，优雅的
-动作，轻盈的步伐，好美哦!
-她是晚月庄主蓝止萍的养女，平常庄内的接待是看她。
+她長得十分漂亮！讓你忍不住多瞧她幾眼，從她身上
+你聞到淡淡的香氣。她很有禮貌的向你點頭，優雅的
+動作，輕盈的步伐，好美哦!
+她是晚月莊主藍止萍的養女，平常莊內的接待是看她。
 TEXT
 );
        set("class", "dancer");
@@ -26,7 +26,7 @@ TEXT
        set("max_force", 2000);
        set("force_factor",2);
        set_temp("apply/armor", 50);
-       create_family("晚月庄",3,"大弟子");
+       create_family("晚月莊",3,"大弟子");
 
         setup();
         ob = carry_object(__DIR__"obj/needle");
@@ -51,13 +51,13 @@ void greeting(object ob)
         if( !ob || !present(ob, environment(this_object())) ) return;
         switch( random(2) ) {
                 case 0:
-                  say( "小蝶对你微笑，和善的对你说：\n  这位" + 
+                  say( "小蝶對你微笑，和善的對你說：\n  這位" + 
 RANK_D->query_respect(ob)
-                   + "，你好！欢迎来到晚月庄。请坐！\n");
+                   + "，你好！歡迎來到晚月莊。請坐！\n");
                         break;
                 case 1:
-                  say( "小蝶对你微笑，纤细的双手捧著茶，\n 说道：这位" +
+                  say( "小蝶對你微笑，纖細的雙手捧著茶，\n 說道：這位" +
 RANK_D->query_respect(ob)
-                   + "，你好！欢迎来到晚月庄。请用茶！\n");
+                   + "，你好！歡迎來到晚月莊。請用茶！\n");
         }
 }

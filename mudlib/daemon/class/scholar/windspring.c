@@ -8,20 +8,20 @@ inherit SWORD;
 
 void create()
 {
-        set_name( CYN "风泉之剑" NOR, ({ "sword of windspring", "sword" }) );
+        set_name( CYN "風泉之劍" NOR, ({ "sword of windspring", "sword" }) );
         set_weight(14000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
                 set("long",
-                        "这是步玄派历代相传的掌门信物，湛蓝色的剑身跟鹅黄色剑柄，使\n"
-                        "得风泉之剑成为具有「剑之王者」的美誉，除此之外，这把剑也是\n"
-                        "削铁如泥的利器。\n");
+                        "這是步玄派歷代相傳的掌門信物，湛藍色的劍身跟鵝黃色劍柄，使\n"
+                        "得風泉之劍成爲具有「劍之王者」的美譽，除此之外，這把劍也是\n"
+                        "削鐵如泥的利器。\n");
                 set("value", 35000);
                 set("material", "sapphire");
-                set("wield_msg", "$N「刷」地一声抽出一柄闪著寒光的$n握在手中。\n");
-                set("unequip_msg", "$N将手中的$n插入腰间的剑鞘。\n");
+                set("wield_msg", "$N「刷」地一聲抽出一柄閃著寒光的$n握在手中。\n");
+                set("unequip_msg", "$N將手中的$n插入腰間的劍鞘。\n");
                 set("weapon_prop/courage", 15);
                 set("weapon_prop/intelligence", 15);
                 set("weapon_prop/personality", 15);
@@ -48,8 +48,8 @@ void owner_is_killed(object killer)
         soul->reset_action();
 
         tell_room(environment(killer),
-                "\n你看到风泉之剑掉落在地上 ... \n"
-                "\n不 ... 它飘了起来！一个人形忽然浮现，手中正握著风泉之剑！\n\n");
+                "\n你看到風泉之劍掉落在地上 ... \n"
+                "\n不 ... 它飄了起來！一個人形忽然浮現，手中正握著風泉之劍！\n\n");
         soul->chant();
 	destruct(this_object());
 }

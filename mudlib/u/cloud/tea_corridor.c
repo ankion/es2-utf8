@@ -10,7 +10,7 @@ void create()
 {
 	set("short", "香茗坊茶窖");
 	set("long", @LONG
-茶窖里有几个大竹箩，里面装满了茶叶。 
+茶窖裏有幾個大竹籮，裏面裝滿了茶葉。 
 LONG
         );
 
@@ -21,7 +21,7 @@ LONG
 //	set("objects", ([
 //	]) );
 
-        create_door("south", "木雕门", "north", DOOR_CLOSED);
+        create_door("south", "木雕門", "north", DOOR_CLOSED);
 
         setup();
 

@@ -18,7 +18,7 @@ int help(object me)
 write(@HELP
 指令格式 : test <某人>
 
-用来测试武功技能的强弱。
+用來測試武功技能的強弱。
 HELP
     );
     return 1;

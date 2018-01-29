@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("采花妞", ({ "little girl", "girl" }) );
+        set_name("採花妞", ({ "little girl", "girl" }) );
         set("gender", "女性" );
         set("age", 9);
         set("long", "天真的小女孩正在玩耍着 \n");
@@ -16,7 +16,7 @@ void create()
         set_skill("throwing", 50);
 
         set("inquiry", ([
-                "小娟" : "这要到黑松山去问。", 
+                "小娟" : "這要到黑松山去問。", 
         ]) );
 
         setup();

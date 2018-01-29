@@ -11,12 +11,12 @@ int exert(object me, object target)
         int skill;
 
         if( target != me ) return 
-notify_fail("你只能用天邪神功提升自己的战斗力。\n");
+notify_fail("你只能用天邪神功提升自己的戰鬥力。\n");
 
         if( (int)me->query("force") < 100 )     return 
-notify_fail("你的内力不够。\n");
+notify_fail("你的內力不夠。\n");
         if( (int)me->query_temp("powerup") ) return 
-notify_fail("你已经在运功中了。\n");
+notify_fail("你已經在運功中了。\n");
 
         skill = me->query_skill("force");
 
@@ -26,7 +26,7 @@ notify_fail("你已经在运功中了。\n");
 
         message_vision(
                 HIR 
-"$N微一凝神，运起天邪神功，全身骨节发出一阵爆豆般的声响！\n" NOR, me);
+"$N微一凝神，運起天邪神功，全身骨節發出一陣爆豆般的聲響！\n" NOR, me);
 
         me->add_temp("apply/attack", skill/3);
         me->add_temp("apply/dodge", skill/3);
@@ -45,6 +45,6 @@ void remove_effect(object me, int amount)
         me->add_temp("apply/attack", - amount);
         me->add_temp("apply/dodge", - amount);
         me->delete_temp("powerup");
-        tell_object(me, "你的天邪神功运行完毕，将内力收回丹田。\n");
+        tell_object(me, "你的天邪神功運行完畢，將內力收回丹田。\n");
 }
  

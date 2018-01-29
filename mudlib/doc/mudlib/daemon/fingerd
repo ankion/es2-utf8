@@ -1,21 +1,21 @@
 □ FINGER_D
 
 string age_string(int time)
-将传入的数字转换为日月时的型别.
+將傳入的數字轉換爲日月時的型別.
 
 string finger_all()
-列出线上所有使用者, 他们的中英文姓名, 上线时间长短及由那里连过来等
-资料.
+列出線上所有使用者, 他們的中英文姓名, 上線時間長短及由那裏連過來等
+資料.
 
 string finger_user(string name)
-取得某个使用者的连线资料. 如果该使用者是其他的 MUD 的使用者, 则此
-request 会由 GFINGER_SERVER 负责. 若是 local 的玩家, 则显示该玩
-家的相关资料.
+取得某個使用者的連線資料. 如果該使用者是其他的 MUD 的使用者, 則此
+request 會由 GFINGER_SERVER 負責. 若是 local 的玩家, 則顯示該玩
+家的相關資料.
 
 varargs string remote_finger_user(string name, int chinese_flag)
-其他的 MUD 若有需要我们某个使用者的资料时, REQUEST 将由这个函数处理.
-如果 chinese_flag 有传过来, 表示对方也可以看得到中文, 则所有相关资料
-将以中文显示. 否则以英文显示.
+其他的 MUD 若有需要我們某個使用者的資料時, REQUEST 將由這個函數處理.
+如果 chinese_flag 有傳過來, 表示對方也可以看得到中文, 則所有相關資料
+將以中文顯示. 否則以英文顯示.
 
 Elon@ES2
 drafted: 07-13-95

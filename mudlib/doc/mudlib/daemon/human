@@ -1,16 +1,16 @@
 □ HUMAN 
 
-BASE_WEIGHT 	体重
+BASE_WEIGHT 	體重
 
 void create()
-设定人类的基本资料及属性.
-单位, 性别, 是否会说话, 身体的各部份 ... etc.
+設定人類的基本資料及屬性.
+單位, 性別, 是否會說話, 身體的各部份 ... etc.
 
 void setup_human(object ob)
-设定人类的各项资料. 
+設定人類的各項資料. 
 
 mapping query_action()
-传回动作词.
+傳回動作詞.
 
 Elon@ES2
 drafted: 07-13-95

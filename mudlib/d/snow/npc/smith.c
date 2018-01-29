@@ -4,17 +4,17 @@ inherit NPC;
 
 void create()
 {
-	set_name("王铁匠", ({ "wang", "smith" }) );
+	set_name("王鐵匠", ({ "wang", "smith" }) );
 	set("gender", "男性" );
 	set("age", 33);
-	set("long", "王铁匠正用铁钳夹住一块红热的铁块放进炉中。\n");
+	set("long", "王鐵匠正用鐵鉗夾住一塊紅熱的鐵塊放進爐中。\n");
 	set("combat_exp", 400);
 	set("inquiry", ([
-		"name": "小人姓王，单名一个恒字，可是小人西瓜大的字识不到一担，只有王字会写。\n",
-		"here": "这里是小人糊口的铺子，小人一家五口都住在后边的屋子。\n",
-		"锄头": "锄头... 抱歉，锄头已经卖光了...\n",
-		"铲子": "对不起，小人店里的铲子都给人订走了。\n",
-		"铁锤": "铁锤？小人做的铁锤坚固又耐用，一把只要三百文钱。\n"
+		"name": "小人姓王，單名一個恆字，可是小人西瓜大的字識不到一擔，只有王字會寫。\n",
+		"here": "這裏是小人餬口的鋪子，小人一家五口都住在後邊的屋子。\n",
+		"鋤頭": "鋤頭... 抱歉，鋤頭已經賣光了...\n",
+		"鏟子": "對不起，小人店裏的鏟子都給人訂走了。\n",
+		"鐵錘": "鐵錘？小人做的鐵錘堅固又耐用，一把只要三百文錢。\n"
 	]) );
 	setup();
 	carry_object(__DIR__"obj/hammer")->wield();
@@ -22,7 +22,7 @@ void create()
 
 int buy_object(object who, string what)
 {
-	if( what=="铁锤" ) return 300;
+	if( what=="鐵錘" ) return 300;
 	return 0;
 }
 
@@ -32,5 +32,5 @@ void compelete_trade(object who, string what)
 
 	ob = new(__DIR__"obj/hammer");
 	ob->move(who);
-	message_vision("$N交给$n一把沈甸甸的打铁用铁锤。\n", this_object(), who);
+	message_vision("$N交給$n一把沈甸甸的打鐵用鐵錘。\n", this_object(), who);
 }

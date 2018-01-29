@@ -11,8 +11,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "一个绿皮墨纹的大西瓜，不但解渴，还能填肚子。\n");
-		set("unit", "个");
+		set("long", "一個綠皮墨紋的大西瓜，不但解渴，還能填肚子。\n");
+		set("unit", "個");
 		set("value", 60);
 		set("drink_func",1);
 		set("food_remaining", 8);
@@ -34,6 +34,6 @@ int finish_eat()
 {
 	set_name("西瓜皮", ({ "bone" }) );
 	set_weight(150);
-	set("long", "一块啃得精光的西瓜皮。\n");
+	set("long", "一塊啃得精光的西瓜皮。\n");
 	return 1;
 }

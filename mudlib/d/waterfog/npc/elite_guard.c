@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("水烟阁红衣武士", ({ "waterfog elite guard", "guard" }) );
+	set_name("水煙閣紅衣武士", ({ "waterfog elite guard", "guard" }) );
 	set("gender", "男性");
 	set("age", 38);
-	set("long", "这个人身著红色水烟阁武士服色，眼神十分锐利。\n");
+	set("long", "這個人身著紅色水煙閣武士服色，眼神十分銳利。\n");
 
 	set("attitude", "peaceful");
 	set("combat_exp", 100000);
@@ -26,8 +26,8 @@ void create()
 	set("chat_msg_combat", ({
 		(: exert_function, "recover" :),
 		(: exert_function, "powerup" :),
-		"红衣武士喝道：这点玩意儿也敢上水烟阁撒野，真是不自量力！\n",
-		"红衣武士说道：快快滚下山去，别在这里罗唆！\n",
+		"紅衣武士喝道：這點玩意兒也敢上水煙閣撒野，真是不自量力！\n",
+		"紅衣武士說道：快快滾下山去，別在這裏羅唆！\n",
 	}) );
 
 	set_skill("force", 80);
@@ -53,13 +53,13 @@ void create()
 
 int accept_fight(object me)
 {
-	command("say 这位" + RANK_D->query_respect(me) + "，在下正在执行勤务，恕不奉陪。");
+	command("say 這位" + RANK_D->query_respect(me) + "，在下正在執行勤務，恕不奉陪。");
 	return 0;
 }
 
 void accept_kill(object me)
 {
-	command("say 哼 ... 原来阁下是找麻烦来著？");
+	command("say 哼 ... 原來閣下是找麻煩來著？");
 	exert_function("powerup");
 }
 

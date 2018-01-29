@@ -24,11 +24,11 @@ int perform(object me, object target)
 			ob = new (LOGIN_OB);
 			ob->set("id", target_id);
 			if ( !ob->restore())
-				return notify_fail("没有这个人啊？你要化装成谁的模样？\n");
+				return notify_fail("沒有這個人啊？你要化裝成誰的模樣？\n");
 			target = ob;
 			}
 		    else 
-			return notify_fail("你要化装成谁的模样？\n");
+			return notify_fail("你要化裝成誰的模樣？\n");
 		}
 	
 	ob = me;

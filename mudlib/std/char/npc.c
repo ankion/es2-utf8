@@ -34,7 +34,7 @@ int accept_fight(object who)
 			command("say 哼！出招吧！\n");
 			break;
 		default:
-			command("say 想倚多为胜，这不是欺人太甚吗！\n");
+			command("say 想倚多爲勝，這不是欺人太甚嗎！\n");
 			return 0;
 	}
 
@@ -44,8 +44,8 @@ int accept_fight(object who)
 		switch(att) {
 			case "friendly":
 				command("say " + RANK_D->query_self(this_object())
-					+ "怎麽可能是" + RANK_D->query_respect(who)
-					+ "的对手？\n");
+					+ "怎麼可能是" + RANK_D->query_respect(who)
+					+ "的對手？\n");
 				return 0;
 			case "aggressive":
 			case "killer":
@@ -54,7 +54,7 @@ int accept_fight(object who)
 			default:
 				if( !is_fighting() )
 					command("say 既然" + RANK_D->query_respect(who)
-						+ "赐教，" + RANK_D->query_self(this_object())
+						+ "賜教，" + RANK_D->query_self(this_object())
 						+ "只好奉陪。\n");
 		}
 		return 1;
@@ -78,7 +78,7 @@ int return_home(object home)
 	||	!mapp(environment()->query("exits")) ) return 0;
 
 	// Leave for home now.
-	message("vision", this_object()->name() + "急急忙忙地离开了。\n",
+	message("vision", this_object()->name() + "急急忙忙地離開了。\n",
 		environment(), this_object());
 	return move(home);
 }

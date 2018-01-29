@@ -4,7 +4,7 @@ inherit WAIST;
 
 void create()
 {
-        set_name(CYN "青绫绸裙" NOR, ({ "skirt" }) );
+        set_name(CYN "青綾綢裙" NOR, ({ "skirt" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -14,7 +14,7 @@ void create()
                 set("material", "cloth");
                 set("armor_prop/armor", 4);
                 set("rmor_prop/dodge", 1);
-        set("wear_msg", "$N将$n拿出系在腰上。\n");
+        set("wear_msg", "$N將$n拿出系在腰上。\n");
         }
         setup();
 }

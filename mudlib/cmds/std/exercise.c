@@ -11,30 +11,30 @@ int main(object me, string arg)
         seteuid(getuid());
         
         if( me->is_fighting() )
-                return notify_fail("战斗中不能练内功，会走火入魔。\n");
+                return notify_fail("戰鬥中不能練內功，會走火入魔。\n");
 
         if( !stringp(me->query_skill_mapped("force")) )
-                return notify_fail("你必须先用 enable 
-选择你要用的内功心法。\n");
+                return notify_fail("你必須先用 enable 
+選擇你要用的內功心法。\n");
 
         if( !arg
         ||      !sscanf(arg, "%d", kee_cost) )
-                return notify_fail("你要花多少气练功？\n");
+                return notify_fail("你要花多少氣練功？\n");
 
         if( kee_cost < 10 ) return notify_fail("你最少要花 10 
-点「气」才能练功。\n");
+點「氣」才能練功。\n");
 
         if( (int)me->query("kee") < kee_cost )
                 return 
-notify_fail("你现在的气太少了，无法产生内息运行全身经脉。\n");
+notify_fail("你現在的氣太少了，無法產生內息運行全身經脈。\n");
 
         if( (int)me->query("sen") * 100 / (int)me->query("max_sen") < 70 )
-                return notify_fail("你现在精神状况太差了，无法凝神专一！\n");
+                return notify_fail("你現在精神狀況太差了，無法凝神專一！\n");
 
         if( (int)me->query("gin") * 100 / (int)me->query("max_gin") < 70 )
-                return notify_fail("你现在精力不够，无法控制内息的流动！\n");
+                return notify_fail("你現在精力不夠，無法控制內息的流動！\n");
 
-        write("你坐下来运气用功，一股内息开始在体内流动。\n");
+        write("你坐下來運氣用功，一股內息開始在體內流動。\n");
 
         me->receive_damage("kee", kee_cost);
 
@@ -43,7 +43,7 @@ notify_fail("你现在的气太少了，无法产生内息运行全身经脉。\
                 + (int)me->query("con") ) / 300;
 
         if( force_gain < 1 ) {
-                write("但是当你行功完毕，只觉得全身□麻。\n");
+                write("但是當你行功完畢，只覺得全身□麻。\n");
                 return 1;
         }
 
@@ -54,10 +54,10 @@ notify_fail("你现在的气太少了，无法产生内息运行全身经脉。\
                         ((int)me->query_skill("force", 1) + 
 me->query_skill("force")/5) * 10 ) {
                         
-write("当你的内息遍布全身经脉时却没有功力提升的迹象，似乎内力修为已经遇到了瓶�
+write("當你的內息遍佈全身經脈時卻沒有功力提升的跡象，似乎內力修爲已經遇到了瓶�
 薄n");
                 } else {
-                        write("你的内力增强了！\n");
+                        write("你的內力增強了！\n");
                         me->add("max_force", 1);
                 }
                 me->set("force", me->query("max_force"));
@@ -69,12 +69,12 @@ write("当你的内息遍布全身经脉时却没有功力提升的迹象，似�
 int help(object me)
 {
         write(@HELP
-指令格式 : exercise [<耗费「气」的量，预设值 30>]
+指令格式 : exercise [<耗費「氣」的量，預設值 30>]
 
-运气练功，控制体内的气在各经脉间流动，藉以训练人体肌肉骨骼的耐
-力、爆发力，并且用内力的形式将能量储备下来。
+運氣練功，控制體內的氣在各經脈間流動，藉以訓練人體肌肉骨骼的耐
+力、爆發力，並且用內力的形式將能量儲備下來。
 
-请参考 help stats
+請參考 help stats
 HELP
         );
         return 1;

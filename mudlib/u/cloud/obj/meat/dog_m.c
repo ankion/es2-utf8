@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("long", "哇! 好香的狗肉! 不吃还等什么?\n");
+		set("long", "哇! 好香的狗肉! 不吃還等什麼?\n");
 		set("unit", "斤");
 		set("value", 60);
         	set("food_remaining", 3);
@@ -23,9 +23,9 @@ void create()
 
 int finish_eat()
 {
-        set_name("狗骨头", ({ "rib" }) );
+        set_name("狗骨頭", ({ "rib" }) );
         set_weight(250);
-        set("long", "啃得精光的狗骨头。\n");
+        set("long", "啃得精光的狗骨頭。\n");
         return 1;
 }
 

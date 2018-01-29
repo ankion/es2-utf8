@@ -10,7 +10,7 @@ void create()
             set("gender", "女性" );
         set("age", 15+random(50));
         set("long",
-                "这是一位来雪亭镇的外地旅客.\n");
+                "這是一位來雪亭鎮的外地旅客.\n");
         set("chat_chance", 40);
         set("chat_msg", ({
 (: random_move :)

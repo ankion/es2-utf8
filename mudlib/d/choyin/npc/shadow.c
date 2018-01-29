@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("朦胧鬼影", ({ "shadow" }) );
+	set_name("朦朧鬼影", ({ "shadow" }) );
 	set("long",
-		"一个高大的身影，看起来像是个人，不过 ....\n");
+		"一個高大的身影，看起來像是個人，不過 ....\n");
 	set("age", 91);
 	
 	set("str", 44);

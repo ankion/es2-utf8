@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "厢房");
+	set("short", "廂房");
 	set("long", @LONG
-这是一间供香客或其他江湖同道休息挂单的客房, 屋子里只是简
-单地摆放著几件家俱。从西边的天井中, 传来了阵阵的花香。
+這是一間供香客或其他江湖同道休息掛單的客房, 屋子裏只是簡
+單地擺放著幾件傢俱。從西邊的天井中, 傳來了陣陣的花香。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
@@ -18,7 +18,7 @@ LONG
         set("objects", ([
             "/d/temple/npc/old_taoist" : 1 ]) );
 
-        create_door("west", "木门", "east");
+        create_door("west", "木門", "east");
 
 	setup();
 }

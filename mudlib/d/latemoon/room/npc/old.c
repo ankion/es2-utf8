@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("无名老妇", ({ "old" }) );
+	set_name("無名老婦", ({ "old" }) );
       set("title", "看管人" );
-	set("long", "这个老妇人不知姓甚名谁, 她在晚月很久了, 一直看管\n书房, 连庄主都对她很尊敬。\n");
+	set("long", "這個老婦人不知姓甚名誰, 她在晚月很久了, 一直看管\n書房, 連莊主都對她很尊敬。\n");
       set("gender", "女性" );
 	set("age", 62);
 	set("attitude", "peaceful");
@@ -16,10 +16,10 @@ void create()
 	set("cps", 26);
 	set("per", 29);
 	set("inquiry", ([
-		"here": "这里是书房，有些鞭法教材存放在这儿。",
+		"here": "這裏是書房，有些鞭法教材存放在這兒。",
 		"trouble":
-			"实不相瞒，这杀手是我的私生女，但已误入歧途 ...\n我一直舍不得亲手杀了她，你若能帮忙我会非常感谢。 \n只是要以令牌为证，唉 ...",
-		"令牌" : "就在我儿身上 ...你拿到了就给我。",
+			"實不相瞞，這殺手是我的私生女，但已誤入歧途 ...\n我一直捨不得親手殺了她，你若能幫忙我會非常感謝。 \n只是要以令牌爲證，唉 ...",
+		"令牌" : "就在我兒身上 ...你拿到了就給我。",
 	]) );
       set("class", "dancer");
       set("combat_exp", 500000);
@@ -34,7 +34,7 @@ void create()
       set("force", 1000);
       set("max_force", 800);
       set("force_factor", 10);
-      create_family("晚月庄", 1, "前辈");
+      create_family("晚月莊", 1, "前輩");
 
       setup();
       carry_object("/d/latemoon/obj/deer_boot")->wear();
@@ -49,11 +49,11 @@ int accept_object(object me, object ob)
 	if( !ob->id("###token###") ) return 0;
 	command("sigh");
       if( (int)me->query( "max_force" ) < 160 
-               && ((string)me->query("family/family_name")=="晚月庄") )
+               && ((string)me->query("family/family_name")=="晚月莊") )
       {
-         command("say 作为感谢，我传你一些内力。");
-         message_vision( "无名老妇手抵在$N的后心，头上冒出丝丝白气。 \n", me );
-         message( "vision", "你感觉到一股热气传了过来。 \n", me );
+         command("say 作爲感謝，我傳你一些內力。");
+         message_vision( "無名老婦手抵在$N的後心，頭上冒出絲絲白氣。 \n", me );
+         message( "vision", "你感覺到一股熱氣傳了過來。 \n", me );
          iNeiLiTrans = 160-(int)me->query( "max_force" );
          if( iNeiLiTrans>50 ) 
              iNeiLiTrans = random( 50 );
@@ -66,7 +66,7 @@ int accept_object(object me, object ob)
       }
       else
       {
-         command("say 作为感谢，我给你一本寒雪鞭法密笈。");
+         command("say 作爲感謝，我給你一本寒雪鞭法密笈。");
          book = new(__DIR__"obj/whip_book");
          book->move(me);	
         //delete("inquiry/trouble");

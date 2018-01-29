@@ -7,7 +7,7 @@ void create()
 	set("age", 14);
 	set("attitude", "heroism");
 	set("long",
-		"一个长得眉清目秀的小男孩, 正努力地在打扫石阶\n");
+		"一個長得眉清目秀的小男孩, 正努力地在打掃石階\n");
 	set("title", "茅山派第八代弟子");
 	set("class", "taoist");
 	set("combat_exp", 1500);

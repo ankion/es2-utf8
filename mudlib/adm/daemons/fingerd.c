@@ -40,14 +40,14 @@ string finger_user(string name)
 
 	if( sscanf(name, "%s@%s", name, mud)==2 ) {
 		GFINGER_Q->send_finger_q(mud, name, this_player(1));
-		return "网路指令传送过程可能需要一些时间，请稍候。\n";
+		return "網路指令傳送過程可能需要一些時間，請稍候。\n";
 	}
 
 	ob = new(LOGIN_OB);
 	ob->set("id", name);
-	if( !ob->restore() ) return "没有这个玩家。\n";
-	msg =  sprintf("\n英文代号：\t%s\n姓    名：\t%s\n权限等级：\t%s\n"
-		"电子邮件地址：\t%s\n上次连线地址：\t%s( %s )\n\n",
+	if( !ob->restore() ) return "沒有這個玩家。\n";
+	msg =  sprintf("\n英文代號：\t%s\n姓    名：\t%s\n權限等級：\t%s\n"
+		"電子郵件地址：\t%s\n上次連線地址：\t%s( %s )\n\n",
 		ob->query("id"),
 		ob->query("name"),
 		SECURITY_D->get_status(name),
@@ -56,7 +56,7 @@ string finger_user(string name)
 		ctime(ob->query("last_on"))
 	);
 	if( objectp(body = find_player(name)) && geteuid(body)==name ) {
-		msg += sprintf("\n%s目前正在从 %s 连线中。\n", body->name(1),
+		msg += sprintf("\n%s目前正在從 %s 連線中。\n", body->name(1),
 			query_ip_name(body));
 	}
 	destruct(ob);
@@ -71,10 +71,10 @@ varargs string remote_finger_user(string name, int chinese_flag)
 	ob = new(LOGIN_OB);
 	ob->set("id", name);
 	if( !ob->restore() )
-		return chinese_flag ? "没有这个玩家。\n" : "No such user.\n";
+		return chinese_flag ? "沒有這個玩家。\n" : "No such user.\n";
 	if( chinese_flag ) msg =  sprintf(
-		"\n英文代号：\t%s\n姓    名：\t%s\n权限等级：\t%s\n"
-		"电子邮件地址：\t%s\n上次连线地址：\t%s( %s )\n\n",
+		"\n英文代號：\t%s\n姓    名：\t%s\n權限等級：\t%s\n"
+		"電子郵件地址：\t%s\n上次連線地址：\t%s( %s )\n\n",
 		ob->query("id"),
 		ob->query("name"),
 		SECURITY_D->get_status(name),
@@ -93,7 +93,7 @@ varargs string remote_finger_user(string name, int chinese_flag)
 	if( body = find_player(name) ) {
 		if( !this_player() || this_player()->visible(body) )
 			msg += chinese_flag ?
-				("\n" + ob->query("name") + "目前正在线上。\n"):
+				("\n" + ob->query("name") + "目前正在線上。\n"):
 				("\n" + capitalize(name) + " is currently connected.\n");
 	}
 

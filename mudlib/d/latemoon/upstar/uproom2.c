@@ -4,13 +4,13 @@ inherit ROOM;
 
 void create()
 {
-     set("short", "翠湘阁");
+     set("short", "翠湘閣");
 	set("long", @LONG
-这是晚月庄的舞曲步法研究室, 名曰「翠湘」。墙上刻画著各种
-基本步法与一些诗词曲赋。在每一位美女图的姿态形体之中，那种翩
-然起舞的曼妙舞姿，含蕴许多珍贵奇妙的舞步。你可以看到几位师姐
-一起走著奇特的步法，正在试著模拟这些舞步，一边低头沉思要如何
-运用，十分的投入。
+這是晚月莊的舞曲步法研究室, 名曰「翠湘」。牆上刻畫著各種
+基本步法與一些詩詞曲賦。在每一位美女圖的姿態形體之中，那種翩
+然起舞的曼妙舞姿，含蘊許多珍貴奇妙的舞步。你可以看到幾位師姐
+一起走著奇特的步法，正在試著模擬這些舞步，一邊低頭沉思要如何
+運用，十分的投入。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -21,7 +21,7 @@ LONG
     set("objects", ([
         __DIR__"npc/shinfun" : 1,
     ]) );
-    create_door("south","木门","north", DOOR_CLOSED);
+    create_door("south","木門","north", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

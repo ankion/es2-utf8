@@ -5,7 +5,7 @@ void create()
         set_name("商人", ({ "trader"}) );
         set("gender", "男性" );
         set("age", 42);
-        set("long", "这是一位从关外来的商人。\n");
+        set("long", "這是一位從關外來的商人。\n");
         set("combat_exp", 5000);
         set("attitude", "friendly");
         set("env/wimpy", 50);
@@ -15,8 +15,8 @@ void create()
         map_skill("unarmed", "bloodystrike");
         set("chat_chance", 30);
         set("chat_msg", ({
-                "什么世道，几个臭钱就可以买官作。\n",
-		"这年头，生意不好做啊！\n",
+                "什麼世道，幾個臭錢就可以買官作。\n",
+		"這年頭，生意不好做啊！\n",
 		(: random_move :),
         }) );
         set("chat_chance_combat", 15);

@@ -3,13 +3,13 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-	"$n一招「天玑离枢」轻轻巧巧地避了开去。\n",
-	"只见$n身影一晃，一式「天璇乱步」早已避在七尺之外。\n",
-	"$n使出「倒转天权」，轻轻松松地闪过。\n",
-	"$n左足一点，一招「逐影天枢」腾空而起，避了开去。\n",
-	"可是$n使一招「风动玉衡」，身子轻轻飘了开去。\n",
-	"$n身影微动，已经藉一招「开阳薄雾」轻轻闪过。\n",
-	"但是$n一招「瑶光音迟」使出，早已绕到$N身后！\n"
+	"$n一招「天璣離樞」輕輕巧巧地避了開去。\n",
+	"只見$n身影一晃，一式「天璇亂步」早已避在七尺之外。\n",
+	"$n使出「倒轉天權」，輕輕鬆鬆地閃過。\n",
+	"$n左足一點，一招「逐影天樞」騰空而起，避了開去。\n",
+	"可是$n使一招「風動玉衡」，身子輕輕飄了開去。\n",
+	"$n身影微動，已經藉一招「開陽薄霧」輕輕閃過。\n",
+	"但是$n一招「瑤光音遲」使出，早已繞到$N身後！\n"
 });
 
 int valid_skill_usage(string usage)
@@ -20,7 +20,7 @@ int valid_skill_usage(string usage)
 int valid_learn(object me)
 {
 	if( (int)me->query("max_force") < 50 )
-		return notify_fail("你的内力不够，没有办法练倒乱七星步。\n");
+		return notify_fail("你的內力不夠，沒有辦法練倒亂七星步。\n");
 
 	return 1;
 }
@@ -34,7 +34,7 @@ int practice_skill(object me)
 {
 	if( (int)me->query("kee") < 30
 	||	(int)me->query("force") < 3 )
-		return notify_fail("你的气或内力不够，不能练倒乱七星步法。\n");
+		return notify_fail("你的氣或內力不夠，不能練倒亂七星步法。\n");
 	me->receive_damage("kee", 30);
 	me->add("force", -3);
 	return 1;

@@ -7,11 +7,11 @@ string look_notice();
 
 void create()
 {
-        set("short", "京师西二门");
+        set("short", "京師西二門");
         set("long", @LONG
-你来到京师的西二门，西二门虽不如京师的其他几个城门高大。
-但高高的城墙也非一般人所能攀越，城墙上贴着几张布告(notice)。
-西边是城外，据说一直往西就可到达一个仙境。东边就是京师的街
+你來到京師的西二門，西二門雖不如京師的其他幾個城門高大。
+但高高的城牆也非一般人所能攀越，城牆上貼着幾張佈告(notice)。
+西邊是城外，據說一直往西就可到達一個仙境。東邊就是京師的街
 道了。
 LONG
         );
@@ -28,22 +28,22 @@ LONG
         set("objects", ([
                 __DIR__"npc/guard" : 3 ,]) );  
 
-        create_door("out", "城门", "enter" );
+        create_door("out", "城門", "enter" );
         setup();
 }
 
 string look_notice()
 {
-     return "布告上写著：行人出入需缴纳一两黄金。\n";
+     return "佈告上寫著：行人出入需繳納一兩黃金。\n";
 }
 
 int valid_leave(object me,string dir)
 {
         if ( dir=="out" &&
-                ( !(string) me->query("marks/京师")
+                ( !(string) me->query("marks/京師")
                 || !(string) me->query("marks/令牌") ) ) {
-                tell_object (me, "京师守城兵说道：没有官府通令，任何人不能出入京师。\n");
-                return notify_fail("出城方向的路被京师守城兵挡住了。\n");
+                tell_object (me, "京師守城兵說道：沒有官府通令，任何人不能出入京師。\n");
+                return notify_fail("出城方向的路被京師守城兵擋住了。\n");
                 }
 
         if (me->query("marks/令牌")) {

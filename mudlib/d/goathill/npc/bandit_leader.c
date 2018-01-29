@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("土匪首领", ({ "bandit leader", "bandit", "leader" }) );
+	set_name("土匪首領", ({ "bandit leader", "bandit", "leader" }) );
 	set("gender", "男性");
 	set("age", 31);
 	set("long",
-		"这个土匪看起来相当强悍，至少你从他的动作就可以看得出来他显然\n"
-		"是练过武功\的硬手，并不是泛泛之辈。\n");
+		"這個土匪看起來相當強悍，至少你從他的動作就可以看得出來他顯然\n"
+		"是練過武功\的硬手，並不是泛泛之輩。\n");
 	set("combat_exp", 14000);
 	set("attitude", "aggressive");
 	set_skill("axe", 70);

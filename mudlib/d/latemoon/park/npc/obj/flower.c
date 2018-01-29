@@ -3,7 +3,7 @@ inherit COMBINED_ITEM;
 void create()
 {
     set_name("小花蕊", ({ "pistil" }));
-    set("long", "这是一朵金黄色的奇特花蕊，有一种淡淡香气。\n");
+    set("long", "這是一朵金黃色的奇特花蕊，有一種淡淡香氣。\n");
     set("unit", "朵");
     set("base_unit", "株");
     set("base_weight", 20);
@@ -25,11 +25,11 @@ int do_eat(string arg)
     J = me->query_condition("rose_poison");
     if ( J < 10)  I = 0;
     if ( J >= 10) I = J - 10;
-    if( !arg || arg != "pistil" ) return notify_fail("你要吃甚么呢? \n");
+    if( !arg || arg != "pistil" ) return notify_fail("你要吃甚麼呢? \n");
 
 	message_vision(
-       "$N拿出一朵小花蕊，一口给吞了下去。\n"
-       "只见$N脸上泛起一阵红晕，整个人看起来好多了! \n",me );
+       "$N拿出一朵小花蕊，一口給吞了下去。\n"
+       "只見$N臉上泛起一陣紅暈，整個人看起來好多了! \n",me );
     me->receive_heal("sen", 50);
     me->apply_condition("rose_poison", I);
 

@@ -6,7 +6,7 @@ inherit NPC;
 
 void create()
 {
-	set_name("独眼头陀", ({ "one-eyed monk", "monk" }) );
+	set_name("獨眼頭陀", ({ "one-eyed monk", "monk" }) );
 	set("gender", "男性" );
 	set("class", "bonze");
 	set("age", 46);
@@ -15,8 +15,8 @@ void create()
 	set("cps", 12);
 	set("int", 20);
 	set("long",
-		"瞧这个头陀的模样与服色，似乎不是山烟寺的僧人，但是他大喇喇地站在\n"
-		"这里，一副不可一世的样子。\n" );
+		"瞧這個頭陀的模樣與服色，似乎不是山煙寺的僧人，但是他大喇喇地站在\n"
+		"這裏，一副不可一世的樣子。\n" );
 
 	set("combat_exp", 60000);
     set("attitude", "heroism");

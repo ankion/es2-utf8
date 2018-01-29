@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("园工", ({ "gardener" }) );
+        set_name("園工", ({ "gardener" }) );
         set("nickname", "黑松一剪");
         set("gender", "男性");
         set("age", 32);
         set("long",
-"黑松一剪是方园几十里有名的园工。一把大剪使的出神如化。");
+"黑松一剪是方園幾十裏有名的園工。一把大剪使的出神如化。");
         set("combat_exp", 2000);
         set("score", 200);
         set("str", 20);

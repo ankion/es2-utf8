@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("鸨母", ({ "mother" }) );
+	set_name("鴇母", ({ "mother" }) );
 	set("gender", "女性" );
 	set("age", 49);
 	set("str", 10);
 	set("per", 26);
 	set("long", @LONG
-    鸨母是个浓妆艳抹的中年女子，身材微胖，全身上下珠光宝气。
+    鴇母是個濃妝豔抹的中年女子，身材微胖，全身上下珠光寶氣。
 LONG
 );
 	set("combat_exp", 10);
@@ -21,10 +21,10 @@ LONG
 
 	set("chat_chance_combat", 15);
 	set("chat_msg_combat", ({
-		"鸨母说道：你当这里是什么地方，敢来这里骚扰？\n",
+		"鴇母說道：你當這裏是什麼地方，敢來這裏騷擾？\n",
 	}) );
 	set("inquiry", ([
-		"怡红院": "哎呀！就是我们这里啊，您里面请",
+		"怡紅院": "哎呀！就是我們這裏啊，您裏面請",
 	]) );
 
 	setup();

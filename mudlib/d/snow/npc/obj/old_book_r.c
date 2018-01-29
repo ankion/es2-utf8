@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name("旧书", ({ "book" }));
+	set_name("舊書", ({ "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("unit", "本");
 		set("long",
-			"一本民间赖以决定播种、施肥时机的农民历，对你而言显然没有多大用处。\n");
+			"一本民間賴以決定播種、施肥時機的農民曆，對你而言顯然沒有多大用處。\n");
 		set("value", 30);
 		set("material", "paper");
 	}

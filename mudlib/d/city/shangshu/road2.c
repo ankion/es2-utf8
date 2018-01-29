@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "小径");
+        set("short", "小徑");
         set("long",@LONG
-这里是尚书府的小径。小径继续向北延伸着，透过树丛隐隐约约
-地看到那儿似乎有一间小屋。从这儿向东走就是一间客房，据说客房
-里住的是一位贵客。不过一般人不允许进。
+這裏是尚書府的小徑。小徑繼續向北延伸着，透過樹叢隱隱約約
+地看到那兒似乎有一間小屋。從這兒向東走就是一間客房，據說客房
+裏住的是一位貴客。不過一般人不允許進。
 LONG
         );
 
@@ -27,7 +27,7 @@ LONG
 
 	set("outdoors", "city");
 	
-	create_door ("east", "木门", "west", DOOR_CLOSED);
+	create_door ("east", "木門", "west", DOOR_CLOSED);
 
         setup();
 }
@@ -35,8 +35,8 @@ LONG
 int valid_leave(object me,string dir)
 {
         if ( dir!="south" &&  present("trainer", environment(this_player()))
-                && !(string)me->query("marks/尚书") )
-        return notify_fail("护院伸手拦住了你的去路，喝道：闯什么闯！\n");
+                && !(string)me->query("marks/尚書") )
+        return notify_fail("護院伸手攔住了你的去路，喝道：闖什麼闖！\n");
 
         return ::valid_leave(me,dir);
 }

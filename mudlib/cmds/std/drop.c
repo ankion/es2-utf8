@@ -12,19 +12,19 @@ int main(object me, string arg)
 	int i, amount;
 	string item;
 
-	if(!arg) return notify_fail("你要丢弃什麽东西？\n");
+	if(!arg) return notify_fail("你要丟棄什麼東西？\n");
 
 	if(sscanf(arg, "%d %s", amount, item)==2) {
 		if( !objectp(obj = present(item, me)) )
-			return notify_fail("你身上没有这样东西。\n");
+			return notify_fail("你身上沒有這樣東西。\n");
 		if( stringp(obj->query("no_drop")) )
 			return notify_fail( (string)obj->query("no_drop") );
 		if( !obj->query_amount() )
-			return notify_fail( obj->name() + "不能被分开丢弃。\n");
+			return notify_fail( obj->name() + "不能被分開丟棄。\n");
 		if( amount < 1 )
-			return notify_fail("东西的数量至少是一个。\n");
+			return notify_fail("東西的數量至少是一個。\n");
 		if( amount > obj->query_amount() )
-			return notify_fail("你没有那麽多的" + obj->name() + "。\n");
+			return notify_fail("你沒有那麼多的" + obj->name() + "。\n");
 		else if( amount == (int)obj->query_amount() )
 			return do_drop(me, obj);
 		else {
@@ -45,7 +45,7 @@ int main(object me, string arg)
 	}
 
 	if(!objectp(obj = present(arg, me)))
-		return notify_fail("你身上没有这样东西。\n");
+		return notify_fail("你身上沒有這樣東西。\n");
 	return do_drop(me, obj);
 }
 
@@ -54,16 +54,16 @@ int do_drop(object me, object obj)
 	mixed no_drop;
 
 	if( no_drop = obj->query("no_drop") )
-		return notify_fail( stringp(no_drop) ? no_drop : "这样东西不能随意丢弃。\n");
+		return notify_fail( stringp(no_drop) ? no_drop : "這樣東西不能隨意丟棄。\n");
 
 	if (obj->move(environment(me))) {
 		if( obj->is_character() )
-			message_vision("$N将$n从背上放了下来，躺在地上。\n", me, obj);
+			message_vision("$N將$n從背上放了下來，躺在地上。\n", me, obj);
 		else {
-			message_vision( sprintf("$N丢下一%s$n。\n",	obj->query("unit")),
+			message_vision( sprintf("$N丟下一%s$n。\n",	obj->query("unit")),
 				me, obj );
 			if( !obj->query("value") && !obj->value() ) {
-				write("因为这样东西并不值钱，所以人们并不会注意到它的存在。\n");
+				write("因爲這樣東西並不值錢，所以人們並不會注意到它的存在。\n");
 				destruct(obj);
 			}
 		}
@@ -75,9 +75,9 @@ int do_drop(object me, object obj)
 int help(object me)
 {
 	write(@HELP
-指令格式 : drop <物品名称>
+指令格式 : drop <物品名稱>
  
-这个指令可以让你丢下你所携带的物品.
+這個指令可以讓你丟下你所攜帶的物品.
  
 HELP
     );

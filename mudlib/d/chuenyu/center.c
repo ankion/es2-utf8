@@ -2,20 +2,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "黑松阁正厅");
+        set("short", "黑松閣正廳");
         set("long", @LONG
-黑松阁正厅完全是用檀香木打造的。一阵阵的檀香飘过来，
-使你心旷神夷。厅口悬着一幅字画，写道：“是非成败转头空，
-青山依旧在，几度夕阳红。”整幅字画是用一条很粗的绳子挂起
-来的。
+黑松閣正廳完全是用檀香木打造的。一陣陣的檀香飄過來，
+使你心曠神夷。廳口懸着一幅字畫，寫道：“是非成敗轉頭空，
+青山依舊在，幾度夕陽紅。”整幅字畫是用一條很粗的繩子掛起
+來的。
 LONG
         );
         set("exits", ([
         "west" : __DIR__"west_blackge",
         ]));
         set("item_desc", ([
-        "rope": "这根绳子顺着墙垂下来，你似乎可以拉(pull)它，但是你有一种不祥的感觉。\n",
-        "绳子": "这根绳子顺着墙垂下来，你似乎可以拉(pull)它，但是你有一种不祥的感觉。\n",
+        "rope": "這根繩子順着牆垂下來，你似乎可以拉(pull)它，但是你有一種不祥的感覺。\n",
+        "繩子": "這根繩子順着牆垂下來，你似乎可以拉(pull)它，但是你有一種不祥的感覺。\n",
         ]) );
         
         
@@ -37,15 +37,15 @@ int roping(string arg)
         ob = this_player();
         if(!arg || arg=="")
         {
-                write("你要拉什么？\n");
+                write("你要拉什麼？\n");
                 return 1;
         }
-        if( arg == "rope" || arg == "绳子" )
+        if( arg == "rope" || arg == "繩子" )
         {
         me = this_player();
-        message_vision("$N试着拉了一下绳子，触动了翻板，整个人“轰隆”一声掉了下去！\n", me);
+        message_vision("$N試着拉了一下繩子，觸動了翻板，整個人“轟隆”一聲掉了下去！\n", me);
         me->move(__DIR__"tunnel1");
-        message_vision("$N“轰隆”一声，从上面掉了下来！摔得你好痛！\n", me);
+        message_vision("$N“轟隆”一聲，從上面掉了下來！摔得你好痛！\n", me);
         i = (int)ob->query("eff_kee");
         damage = random(10)+5  ;
         ob->set("eff_kee",(int) i - damage );

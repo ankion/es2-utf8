@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "卧室");
+        set("short", "臥室");
         set("long", @LONG
-这是淳于堡主起居的地方。东面的楼梯向下通向黑松阁东厅，
-西面的楼梯向下通向黑松阁西厅。北面是一个小小的阳台。西面则
+這是淳于堡主起居的地方。東面的樓梯向下通向黑松閣東廳，
+西面的樓梯向下通向黑松閣西廳。北面是一個小小的陽臺。西面則
 是堡主的膳房。
 LONG
         );
@@ -16,7 +16,7 @@ LONG
             "westdown" : __DIR__"west_blackge",
               "eastdown" : __DIR__"east_blackge",
 ]));
-        create_door("south", "玉帘门", "north", DOOR_CLOSED);
+        create_door("south", "玉簾門", "north", DOOR_CLOSED);
         
         setup();
         

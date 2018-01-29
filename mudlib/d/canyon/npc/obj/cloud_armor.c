@@ -8,7 +8,7 @@ inherit ARMOR;
 
 void create()
 {
-	set_name(RED"火 云 "HIB"战 甲"NOR,({ "cloud armor","armor" }) );
+	set_name(RED"火 雲 "HIB"戰 甲"NOR,({ "cloud armor","armor" }) );
 	set_weight(12000);
 	if( clonep() )
 		set_default_object(__FILE__);

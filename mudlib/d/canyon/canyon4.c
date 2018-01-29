@@ -7,9 +7,9 @@ void create()
 {
         set("short","隘口中道");
 	set("long",@LONG                                   
-来到这□，风势比其他地方大了许多，或许是因为东边为军营入口通
-风较为良好的原因，南方一十里路的地方就是京城关口－天驼关的入口，
-在西边的山壁似乎过于平滑，不太自然，或许这□有什么秘密也说不定。
+來到這□，風勢比其他地方大了許多，或許是因爲東邊爲軍營入口通
+風較爲良好的原因，南方一十里路的地方就是京城關口－天駝關的入口，
+在西邊的山壁似乎過於平滑，不太自然，或許這□有什麼祕密也說不定。
 LONG
 	); // eof(long)
 	
@@ -34,28 +34,28 @@ int do_swear(string arg)
 
 	me=this_player();
 	
-	if (!this_player()->query_temp("军营/swear") ) return 0;
+	if (!this_player()->query_temp("軍營/swear") ) return 0;
 	
-	if (!arg) return notify_fail("天空突然一声轰响:不要吵～～～\n");
+	if (!arg) return notify_fail("天空突然一聲轟響:不要吵～～～\n");
 	
-	if (arg != "我爱安尼席洛特尔" && arg != "我爱东方故事II")
-		return notify_fail("天空突然一声轰响:不要吵～～～\n");
+	if (arg != "我愛安尼席洛特爾" && arg != "我愛東方故事II")
+		return notify_fail("天空突然一聲轟響:不要吵～～～\n");
 		
-	this_player()->set_temp("军营/swear", 0);
+	this_player()->set_temp("軍營/swear", 0);
 	
-    	message_vision(HIB"突然间一阵强光将"HIW"$N"HIB"给罩住了\n"NOR,me);
-    	message_vision(HIW"轰隆～～～～～～～～～～～～～～～～～～\n"NOR,me);
-    	message_vision(HIW"～～～～～轰隆～～～～～轰隆～～～～～～\n"NOR,me);
-    	message_vision(HIW"～～～～～～～轰隆～～～～～～～～轰隆～\n"NOR,me);
-    	message_vision(HIC"$N"HIW"惨叫了一声:哇，好痛啊～～～～～～\n"NOR,me);
+    	message_vision(HIB"突然間一陣強光將"HIW"$N"HIB"給罩住了\n"NOR,me);
+    	message_vision(HIW"轟隆～～～～～～～～～～～～～～～～～～\n"NOR,me);
+    	message_vision(HIW"～～～～～轟隆～～～～～轟隆～～～～～～\n"NOR,me);
+    	message_vision(HIW"～～～～～～～轟隆～～～～～～～～轟隆～\n"NOR,me);
+    	message_vision(HIC"$N"HIW"慘叫了一聲:哇，好痛啊～～～～～～\n"NOR,me);
     	message_vision(HIW"～～～～～～～～～～～～～～～～～～～～\n"NOR,me);
     	message_vision(HIW"～～～～～～～～～～～～～～～～～～～～\n"NOR,me);
     	message_vision(HIW"～～～～～～～～～～～～～～～～～～～～\n"NOR,me);
     	message_vision(HIW"～～～～～～～～～～～～～～～～～～～～\n"NOR,me);
     	message_vision(HIW"～～～～～～～～～～～～～～～～～～～～\n"NOR,me);
     
-    	tell_room(__DIR__"blackmarket",me->name()+"被传送过来了。\n");
-    	tell_room(environment(me),me->name()+"突然间消失了\n",me);
+    	tell_room(__DIR__"blackmarket",me->name()+"被傳送過來了。\n");
+    	tell_room(environment(me),me->name()+"突然間消失了\n",me);
     	this_player()->move(__DIR__"blackmarket");
     	return 1;
 

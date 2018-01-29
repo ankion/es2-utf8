@@ -4,13 +4,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "丹炉");
+	set("short", "丹爐");
 	set("long", @LONG
-雷霆不断击向一粒粒仙丹,仙丹慢慢由黑转为红色.你注意到炉门好象开着.
+雷霆不斷擊向一粒粒仙丹,仙丹慢慢由黑轉爲紅色.你注意到爐門好象開着.
 LONG
 	);
          
-        tell_room("d/choyin/tongbhill","山洞中喷出一股烈焰, 烤得你觉得自己象个夏威夷烤乳猪......\n"); 
+        tell_room("d/choyin/tongbhill","山洞中噴出一股烈焰, 烤得你覺得自己象個夏威夷烤乳豬......\n"); 
         set("exits",(["out":__DIR__"tongbhill",])); 
         set("no-magic",1);
         set("objects", ([

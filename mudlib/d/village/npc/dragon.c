@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("白鳞冰龙", ({ "icedragon","dragon" }) );
+	set_name("白鱗冰龍", ({ "icedragon","dragon" }) );
 	set("long",
-		"一只浑身长满白鳞的龙，\n");
+		"一隻渾身長滿白鱗的龍，\n");
 
-	set("race", "野兽");
+	set("race", "野獸");
 	set("age", 600);
 	set("attitude", "aggressive");
 
@@ -22,7 +22,7 @@ void create()
 	set("spi", 70);
 	set("int", 20);
         set("con",1000);
-	set("limbs", ({ "头部", "身体", "前爪", "後爪", "尾巴" }) );
+	set("limbs", ({ "頭部", "身體", "前爪", "後爪", "尾巴" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set_temp("apply/attack", 50);

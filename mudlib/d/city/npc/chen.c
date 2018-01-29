@@ -5,18 +5,18 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("陈天星", ({ "master chen", "master" }) );
-	set("title", "振远镖局总镖头");
-        set("nickname", "刀拳双绝");
-        set("rank_info/respect", "陈总镖头");
+        set_name("陳天星", ({ "master chen", "master" }) );
+	set("title", "振遠鏢局總鏢頭");
+        set("nickname", "刀拳雙絕");
+        set("rank_info/respect", "陳總鏢頭");
         set("gender", "男性" );
         set("age", 63);
 
         set("long",@LONG
-陈天星从十五岁出道至今已经有近五十个年头了。二十五岁时自己
-创建了振远镖局，苦心经营三十八载，使之而今成为京师第一大镖
-局.而他凭着春风快意刀法和天邪神掌被江湖同道称为「刀掌双绝」
-。绮云镇的陈剑秋是其侄子，如今也赫赫有名。
+陳天星從十五歲出道至今已經有近五十個年頭了。二十五歲時自己
+創建了振遠鏢局，苦心經營三十八載，使之而今成爲京師第一大鏢
+局.而他憑着春風快意刀法和天邪神掌被江湖同道稱爲「刀掌雙絕」
+。綺雲鎮的陳劍秋是其侄子，如今也赫赫有名。
 LONG);
 
         set("attitude", "peaceful");
@@ -33,14 +33,14 @@ LONG);
         set("force_factor", 40);
 
 	set("inquiry", ([
-		"name": "呵呵…你连我都不知道嘛？去打听打听吧。\n",
-		"振远镖局": "这可是我一手创建的啊！可惜我也老了。\n",
-		"陈剑秋": "他是我侄子，有什么事找他？\n",
-		"天邪神掌": "那是我和於兰天武交换武功学的\n",
-		"拜师": "是剑秋推荐的嘛？可有他的信物？\n"
+		"name": "呵呵…你連我都不知道嘛？去打聽打聽吧。\n",
+		"振遠鏢局": "這可是我一手創建的啊！可惜我也老了。\n",
+		"陳劍秋": "他是我侄子，有什麼事找他？\n",
+		"天邪神掌": "那是我和於蘭天武交換武功學的\n",
+		"拜師": "是劍秋推薦的嘛？可有他的信物？\n"
 		]));
 
-        create_family("振远镖局", 0, "总镖头");
+        create_family("振遠鏢局", 0, "總鏢頭");
         assign_apprentice("弟子", 0);
 
         set_skill("force", 100);
@@ -69,18 +69,18 @@ int accept_object(object who, object ob)
 {
 	if ((string)ob->query("id") != "letter") {
 		command("angry");
-		tell_object(who, "不要戏弄我！\n");
+		tell_object(who, "不要戲弄我！\n");
 		return 1;
 		}
 
 	if ((string)ob->query("master_id") != (string)who->query("id")) {
-		message_vision("陈天星狐疑地望着$N，说
-这是你的嘛？\n", who);
+		message_vision("陳天星狐疑地望着$N，說
+這是你的嘛？\n", who);
 		return 1;
 		}
 
         command("smile");
-        command("say 果然是剑秋侄儿推荐来的。我收你啦。\n");
+        command("say 果然是劍秋侄兒推薦來的。我收你啦。\n");
         command("recruit " + who->query("id") );
 	
 	return 1;
@@ -89,7 +89,7 @@ int accept_object(object who, object ob)
 void recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) ) {
-		ob->set("title", "振远镖局第一代弟子");
+		ob->set("title", "振遠鏢局第一代弟子");
                 ob->set("class", "guardman");
 		}
 }

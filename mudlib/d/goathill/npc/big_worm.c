@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("大岩蛭", ({ "big rock leech", "leech" }) );
+	set_name("大巖蛭", ({ "big rock leech", "leech" }) );
 	set("long",
-		"一条色作浅灰，带著白色斑点的水蛭模样怪虫，口中露出六对白森森\n"
-		"的牙齿，看起来恶心极了。\n");
+		"一條色作淺灰，帶著白色斑點的水蛭模樣怪蟲，口中露出六對白森森\n"
+		"的牙齒，看起來噁心極了。\n");
 
-	set("race", "野兽");
-	set("unit", "条");
+	set("race", "野獸");
+	set("unit", "條");
 	set("age", 5);
 
 	set("max_gin", 200);
@@ -26,7 +26,7 @@ void create()
 	set("kar", 5);
 	set("per", 0);
 
-	set("limbs", ({ "头部", "躯干" }) );
+	set("limbs", ({ "頭部", "軀幹" }) );
 	set("verbs", ({ "bite" }) );
 
 	set_temp("apply/attack", 60);

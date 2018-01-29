@@ -9,7 +9,7 @@ void create()
         set("gender", "男性" );
         set("age", 22);
         set("long",
-"这位店小二正笑咪咪地忙著，还不时拿起挂在脖子上的抹布擦脸。\n"
+"這位店小二正笑咪咪地忙著，還不時拿起掛在脖子上的抹布擦臉。\n"
 	);
 
         set("combat_exp", 5);
@@ -38,13 +38,13 @@ int go_up (string arg)
         if ( !me || environment(me) != environment() ) return 0;
 
         if( arg == "up" ) {
-		if (!(me->query("rank")) && !(me->query("marks/酒楼"))) { 
-			message_vision("店小二对$N一白眼:你是谁呀，闯什么闯！\n",me);
-			write("上楼的路被店小二挡住了 。\n");
+		if (!(me->query("rank")) && !(me->query("marks/酒樓"))) { 
+			message_vision("店小二對$N一白眼:你是誰呀，闖什麼闖！\n",me);
+			write("上樓的路被店小二擋住了 。\n");
 			return 1;
 			}
 		    else {
-			message_vision ("店小二高声喊道:$N楼上请\n", me);
+			message_vision ("店小二高聲喊道:$N樓上請\n", me);
 			me->move("/d/city/jiulou_2");
 			return 1;
 			}
@@ -56,20 +56,20 @@ int go_up (string arg)
 int accept_object(object who, object ob)
 {
         if ( ob->value() < 1000 ) {
-                command("say 这点钱，还不够买酒喝。");
+                command("say 這點錢，還不夠買酒喝。");
                 command("drop all");
                 return 1;
 	        }
 
-        if ( !who->query("marks/酒楼") )  {
+        if ( !who->query("marks/酒樓") )  {
                 if( ob->value() >= 1000 ) {
-                        command("say 谢谢这位客官了。");   
-                        who->set("marks/酒楼",1);
+                        command("say 謝謝這位客官了。");   
+                        who->set("marks/酒樓",1);
                         return 1;
                 	}
                 }
             else
-                command("say 真是谢谢你了。\n");
+                command("say 真是謝謝你了。\n");
 
         return 1;
 }

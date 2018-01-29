@@ -4,10 +4,10 @@ inherit ITEM;
 
 void create()
 {
-        set_name("过招要旨" , ({ "parrybook" }) );
+        set_name("過招要旨" , ({ "parrybook" }) );
         set_weight(600);
         set("unit", "本");
-        set("long", "这是一本介绍拆招卸力之法的入门书\n");
+        set("long", "這是一本介紹拆招卸力之法的入門書\n");
         set("value", 100);
         set("skill", ([
                 "name":                 "parry",      

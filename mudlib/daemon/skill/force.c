@@ -18,7 +18,7 @@ void skill_improved(object me)
         s = me->query_skill("force", 1);
         if( s%10==9 && (int)me->query("con") < s/4) {
                 tell_object(me, HIW 
-"由於你的内功修炼有成，你的体质改善了。\n" NOR);
+"由於你的內功修煉有成，你的體質改善了。\n" NOR);
                 me->add("con", 2);
         }
 }

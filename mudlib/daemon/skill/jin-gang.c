@@ -7,17 +7,17 @@ int valid_learn(object me) { return 1; }
 int practice_skill(object me)
 {
         return 
-notify_fail("金刚不坏功只能用学的。\n");
+notify_fail("金剛不壞功只能用學的。\n");
 }
 
  
 int effective_level() { return 20;}
 
 string *absorb_msg = ({
-        "$n双臂一震，金刚不坏功力决堤似的澎湃而出。\n",
-        "$n施展出金刚不坏功中的「弹」字诀，一股弹力传入$N的体内。\n",
-        "$n使出一招「苦海无涯」，凝虚为实，浑身硬如金刚。\n",
-        "$n施展出金刚不坏功，对抗$N的一击之力。\n",
+        "$n雙臂一震，金剛不壞功力決堤似的澎湃而出。\n",
+        "$n施展出金剛不壞功中的「彈」字訣，一股彈力傳入$N的體內。\n",
+        "$n使出一招「苦海無涯」，凝虛爲實，渾身硬如金剛。\n",
+        "$n施展出金剛不壞功，對抗$N的一擊之力。\n",
 });
 
 string query_absorb_msg()

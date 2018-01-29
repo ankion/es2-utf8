@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-	set_name("护寺武僧", ({ "monk guard", "guard" }) );
+	set_name("護寺武僧", ({ "monk guard", "guard" }) );
 	set("gender", "男性" );
 	set("age", 25);
 	set("str", 30);
@@ -16,13 +16,13 @@ void create()
 	set("kar", 22);
 	set("con", 24);
 	set("long", @LONG
-    知客僧伫立在佛像前，那虚闭的双眼中似乎透出一道仁慈而有力的
+    知客僧佇立在佛像前，那虛閉的雙眼中似乎透出一道仁慈而有力的
 光芒。
 LONG
 );
 	set("attitude", "heroism");
 	set("inquiry", ([
-		"山烟寺": "这里就是山烟寺，施主有何贵干?",
+		"山煙寺": "這裏就是山煙寺，施主有何貴幹?",
 	]) );
 
         set("atman", 300);
@@ -54,9 +54,9 @@ LONG
 int accept_fight(object me)
 {
         if( (string)me->query("class")=="bonze" )
-                command("say 你身为佛家弟子，竟敢违反清规！");
+                command("say 你身爲佛家弟子，竟敢違反清規！");
         else
-                command("say 佛门圣地也是可随意骚扰的么！");
+                command("say 佛門聖地也是可隨意騷擾的麼！");
 	return 1;
 }
 

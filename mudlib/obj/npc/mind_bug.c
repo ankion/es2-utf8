@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("观想虫", ({ "mind bug", "bug" }) );
-        set("race", "野兽");
+        set_name("觀想蟲", ({ "mind bug", "bug" }) );
+        set("race", "野獸");
         set("age", 3);
         set("long", 
-"这是一只由修道人的杂念绮思所化的观想虫，会缠住人的魂魄。\n");
+"這是一隻由修道人的雜念綺思所化的觀想蟲，會纏住人的魂魄。\n");
         
         set("str", 24);
         set("cor", 26);
@@ -17,7 +17,7 @@ void create()
         set("max_gin", 250);
         set("max_sen", 600);
 
-        set("limbs", ({ "头部", "身体", "前脚", "後脚", "尾巴" }) );
+        set("limbs", ({ "頭部", "身體", "前腳", "後腳", "尾巴" }) );
         set("verbs", ({ "bite", "claw" }) );
         
         if( this_player() ) {
@@ -42,11 +42,11 @@ void die()
         if( objectp(owner_ob = find_player(owner)) ) {
                 if( (object)query_temp("last_damage_from") != owner_ob ) {
                         tell_object(owner_ob, 
-"你的观想虫被人杀死了！\n你觉得一阵天旋地转....\n");
+"你的觀想蟲被人殺死了！\n你覺得一陣天旋地轉....\n");
                         owner_ob->unconcious();
                 } else {
                         tell_object(owner_ob, 
-"你杀死了你的观想虫，并且从中悟到了一些咒术的道理。\n");
+"你殺死了你的觀想蟲，並且從中悟到了一些咒術的道理。\n");
                         owner_ob->improve_skill("spells", 
 random((int)owner_ob->query("spi")/2)+1);
                 }

@@ -6,10 +6,10 @@ void create()
 {
      set("short", "佛堂");
 	set("long", @LONG
-这是专供庄内祭祀的佛堂，是一座精构楼阁，屋顶覆以琉璃瓦，四
-角钻尖覆以鎏金铜瓦。堂内供奉  人灵「区冥」，旁有雨神「天龙」、
-火神「凤凰」。两翼有琉璃鹤照壁，姿态生动。四周置陈神□佛像，□
-盘塔磬，及一股檀香的气息。
+這是專供莊內祭祀的佛堂，是一座精構樓閣，屋頂覆以琉璃瓦，四
+角鑽尖覆以鎏金銅瓦。堂內供奉  人靈「區冥」，旁有雨神「天龍」、
+火神「鳳凰」。兩翼有琉璃鶴照壁，姿態生動。四周置陳神□佛像，□
+盤塔磬，及一股檀香的氣息。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -20,7 +20,7 @@ LONG
     set("objects", ([
         __DIR__"npc/statue" : 1,
     ]) );
-    create_door("east","檀香木门","west", DOOR_CLOSED);
+    create_door("east","檀香木門","west", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

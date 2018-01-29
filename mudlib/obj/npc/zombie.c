@@ -8,10 +8,10 @@ void do_bite();
 
 void create()
 {
-        set_name("僵尸", ({ "zombie" }) );
+        set_name("殭屍", ({ "zombie" }) );
         set("long",
                 
-"这是一具被人用符咒控制的僵尸，从它苍白的脸上看不出任何喜怒哀乐。\n");
+"這是一具被人用符咒控制的殭屍，從它蒼白的臉上看不出任何喜怒哀樂。\n");
         set("max_gin", 400);
         set("max_kee", 400);
         set("max_sen", 60);
@@ -23,9 +23,9 @@ void create()
         set("cor", 40);
         set("chat_chance", 15);
         set("chat_msg_combat", ({
-                "僵尸口中发出荷荷的叫声。\n",
-                "僵尸的脸上开始痉挛，一阵抽搐，发狂似地大叫。\n",
-                "僵尸五指箕张，咬牙切齿，露出狰狞的笑容。\n",
+                "殭屍口中發出荷荷的叫聲。\n",
+                "殭屍的臉上開始痙攣，一陣抽搐，發狂似地大叫。\n",
+                "殭屍五指箕張，咬牙切齒，露出猙獰的笑容。\n",
                 (: do_bite :),
         }) );
         set_skill("unarmed", 30);
@@ -49,7 +49,7 @@ void dispell()
         object corpse;
 
         if( environment() ) {
-                say( name() + "缓缓地倒了下来，化为一滩血水。\n");
+                say( name() + "緩緩地倒了下來，化爲一灘血水。\n");
         }
 
         destruct(this_object());
@@ -70,7 +70,7 @@ int heal_up()
         &&      (int)master->query("atman") > 10 ) {
                 message("tell",
                         HIR + name() + 
-"告诉你：我...需...要...你...的...力...量...\n" NOR,
+"告訴你：我...需...要...你...的...力...量...\n" NOR,
                         master );
                 master->add("atman", -10);
                 master->receive_damage("gin", 1);
@@ -87,7 +87,7 @@ void do_bite()
 {
         object *enemy;
 
-        say( name() + "口中喷出一股中人欲呕的臭气，使你觉得头晕脑胀。\n" );
+        say( name() + "口中噴出一股中人慾嘔的臭氣，使你覺得頭暈腦脹。\n" );
         enemy = query_enemy();
         for(int i=0; i<sizeof(enemy); i++) {
                 if( !enemy[i] ) continue;

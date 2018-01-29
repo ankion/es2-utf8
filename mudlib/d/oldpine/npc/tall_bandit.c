@@ -7,7 +7,7 @@ void create()
 	set_name("土匪", ({ "bandit" }) );
 	set("gender", "男性");
 	set("age", 27);
-	set("long",	"这家伙长得高高瘦瘦，脸色苍白，一付无精打采的样子。\n");
+	set("long",	"這傢伙長得高高瘦瘦，臉色蒼白，一付無精打采的樣子。\n");
 	set("combat_exp", 900);
 	set("score", 100);
 	set("attitude", "aggressive");

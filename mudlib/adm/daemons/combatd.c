@@ -10,35 +10,35 @@
 inherit F_DBASE;
 
 string *guard_msg = ({
-        CYN "$N注视著$n的行动，企图寻找机会出手。\n" NOR,
-        CYN "$N正盯著$n的一举一动，随时准备发动攻势。\n" NOR,
-        CYN "$N缓缓地移动脚步，想要找出$n的破绽。\n" NOR,
-        CYN "$N目不转睛地盯著$n的动作，寻找进攻的最佳时机。\n" NOR,
-        CYN "$N慢慢地移动著脚步，伺机出手。\n" NOR,
+        CYN "$N注視著$n的行動，企圖尋找機會出手。\n" NOR,
+        CYN "$N正盯著$n的一舉一動，隨時準備發動攻勢。\n" NOR,
+        CYN "$N緩緩地移動腳步，想要找出$n的破綻。\n" NOR,
+        CYN "$N目不轉睛地盯著$n的動作，尋找進攻的最佳時機。\n" NOR,
+        CYN "$N慢慢地移動著腳步，伺機出手。\n" NOR,
 });
 
 string *catch_hunt_msg = ({
-        HIW "$N和$n仇人相见分外眼红，立刻打了起来！\n" NOR,
-        HIW "$N对著$n大喝：「可恶，又是你！」\n" NOR,
-        HIW "$N和$n一碰面，二话不说就打了起来！\n" NOR,
-        HIW "$N一眼瞥见$n，「哼」的一声冲了过来！\n" NOR,
-        HIW "$N一见到$n，愣了一愣，大叫：「我宰了你！」\n" NOR,
-        HIW "$N喝道：「$n，我们的帐还没算完，看招！」\n" NOR,
+        HIW "$N和$n仇人相見分外眼紅，立刻打了起來！\n" NOR,
+        HIW "$N對著$n大喝：「可惡，又是你！」\n" NOR,
+        HIW "$N和$n一碰面，二話不說就打了起來！\n" NOR,
+        HIW "$N一眼瞥見$n，「哼」的一聲衝了過來！\n" NOR,
+        HIW "$N一見到$n，愣了一愣，大叫：「我宰了你！」\n" NOR,
+        HIW "$N喝道：「$n，我們的帳還沒算完，看招！」\n" NOR,
         HIW "$N喝道：「$n，看招！」\n" NOR,});
 
 string *winner_msg = ({
-        CYN "\n$N哈哈大笑，说道：承让了！\n\n" NOR,
-        CYN "\n$N双手一拱，笑著说道：承让！\n\n" NOR,
-        CYN "\n$N胜了这招，向後跃开三尺，笑道：承让！\n\n" NOR,
-        CYN "\n$n脸色微变，说道：佩服，佩服！\n\n" NOR,
-        CYN "\n$n向後退了几步，说道：这场比试算我输了，佩服，佩服！\n\n" NOR,
-        CYN "\n$n向後一纵，躬身做揖说道：阁下武艺不凡，果然高明！\n\n" NOR,
+        CYN "\n$N哈哈大笑，說道：承讓了！\n\n" NOR,
+        CYN "\n$N雙手一拱，笑著說道：承讓！\n\n" NOR,
+        CYN "\n$N勝了這招，向後躍開三尺，笑道：承讓！\n\n" NOR,
+        CYN "\n$n臉色微變，說道：佩服，佩服！\n\n" NOR,
+        CYN "\n$n向後退了幾步，說道：這場比試算我輸了，佩服，佩服！\n\n" NOR,
+        CYN "\n$n向後一縱，躬身做揖說道：閣下武藝不凡，果然高明！\n\n" NOR,
 });
 
 void create()
 {
         seteuid(getuid());
-        set("name", "战斗精灵");
+        set("name", "戰鬥精靈");
         set("id", "combatd");
 }
 
@@ -46,104 +46,104 @@ string damage_msg(int damage, string type)
 {
         string str;
 
-//      return "造成 " + damage + " 点" + type + "。\n";
+//      return "造成 " + damage + " 點" + type + "。\n";
 
-        if( damage == 0 ) return "结果没有造成任何伤害。\n";
+        if( damage == 0 ) return "結果沒有造成任何傷害。\n";
 
         switch( type ) {
-        case "□伤":
-        case "割伤":
-                if( damage < 10 ) return "结果只是轻轻地划破$p的皮肉。\n";
+        case "□傷":
+        case "割傷":
+                if( damage < 10 ) return "結果只是輕輕地劃破$p的皮肉。\n";
                 else if( damage < 20 ) return 
-"结果在$p$l划出一道细长的血痕。\n";
+"結果在$p$l劃出一道細長的血痕。\n";
                 else if( damage < 40 ) return 
-"结果「嗤」地一声划出一道伤口！\n";
+"結果「嗤」地一聲劃出一道傷口！\n";
                 else if( damage < 80 ) return 
-"结果「嗤」地一声划出一道血淋淋的伤口！\n";
+"結果「嗤」地一聲劃出一道血淋淋的傷口！\n";
                 else if( damage < 160 ) return 
-"结果「嗤」地一声划出一道又长又深的伤口，溅得$N满脸鲜血！\n";
+"結果「嗤」地一聲劃出一道又長又深的傷口，濺得$N滿臉鮮血！\n";
                 else return 
-"结果只听见$n一声惨嚎，$w已在$p$l划出一道深及见骨的可怕伤口！！\n";
+"結果只聽見$n一聲慘嚎，$w已在$p$l劃出一道深及見骨的可怕傷口！！\n";
                 break;
-        case "刺伤":
-                if( damage < 10 ) return "结果只是轻轻地刺破$p的皮肉。\n";
-                else if( damage < 20 ) return "结果在$p$l刺出一个创口。\n";
+        case "刺傷":
+                if( damage < 10 ) return "結果只是輕輕地刺破$p的皮肉。\n";
+                else if( damage < 20 ) return "結果在$p$l刺出一個創口。\n";
                 else if( damage < 40 ) return 
-"结果「噗」地一声刺入了$n$l寸许！\n";
+"結果「噗」地一聲刺入了$n$l寸許！\n";
                 else if( damage < 80 ) return 
-"结果「噗」地一声刺进$n的$l，使$p不由自主地退了几步！\n";
+"結果「噗」地一聲刺進$n的$l，使$p不由自主地退了幾步！\n";
                 else if( damage < 160 ) return 
-"结果「噗嗤」地一声，$w已在$p$l刺出一个血肉□糊的血窟窿！\n";
+"結果「噗嗤」地一聲，$w已在$p$l刺出一個血肉□糊的血窟窿！\n";
                 else return 
-"结果只听见$n一声惨嚎，$w已在$p的$l对穿而出，鲜血溅得满地！！\n";
+"結果只聽見$n一聲慘嚎，$w已在$p的$l對穿而出，鮮血濺得滿地！！\n";
                 break;
-        case "瘀伤":
+        case "瘀傷":
                 if( damage < 10 ) return 
-"结果只是轻轻地碰到，比拍苍蝇稍微重了点。\n";
-                else if( damage < 20 ) return "结果在$p的$l造成一处瘀青。\n";
+"結果只是輕輕地碰到，比拍蒼蠅稍微重了點。\n";
+                else if( damage < 20 ) return "結果在$p的$l造成一處瘀青。\n";
                 else if( damage < 40 ) return 
-"结果一击命中，$n的$l登时肿了一块老高！\n";
+"結果一擊命中，$n的$l登時腫了一塊老高！\n";
                 else if( damage < 80 ) return 
-"结果一击命中，$n闷哼了一声显然吃了不小的亏！\n";
+"結果一擊命中，$n悶哼了一聲顯然吃了不小的虧！\n";
                 else if( damage < 120 ) return 
-"结果「砰」地一声，$n退了两步！\n";
+"結果「砰」地一聲，$n退了兩步！\n";
                 else if( damage < 160 ) return 
-"结果这一下「砰」地一声打得$n连退了好几步，差一点摔倒！\n";
+"結果這一下「砰」地一聲打得$n連退了好幾步，差一點摔倒！\n";
                 else if( damage < 240 ) return 
-"结果重重地击中，$n「哇」地一声吐出一口鲜血！\n";
+"結果重重地擊中，$n「哇」地一聲吐出一口鮮血！\n";
                 else return 
-"结果只听见「砰」地一声巨响，$n像一捆稻草般飞了出去！！\n";
+"結果只聽見「砰」地一聲巨響，$n像一捆稻草般飛了出去！！\n";
                 break;
         default:
-                if( !type ) type = "伤害";
-                if( damage < 10 ) str =  "结果只是勉强造成一处轻微";
-                else if( damage < 20 ) str = "结果造成轻微的";
-                else if( damage < 30 ) str = "结果造成一处";
-                else if( damage < 50 ) str = "结果造成一处严重";
-                else if( damage < 80 ) str = "结果造成颇为严重的";
-                else if( damage < 120 ) str = "结果造成相当严重的";
-                else if( damage < 170 ) str = "结果造成十分严重的";
-                else if( damage < 230 ) str = "结果造成极其严重的";
-                else str =  "结果造成非常可怕的严重";
+                if( !type ) type = "傷害";
+                if( damage < 10 ) str =  "結果只是勉強造成一處輕微";
+                else if( damage < 20 ) str = "結果造成輕微的";
+                else if( damage < 30 ) str = "結果造成一處";
+                else if( damage < 50 ) str = "結果造成一處嚴重";
+                else if( damage < 80 ) str = "結果造成頗爲嚴重的";
+                else if( damage < 120 ) str = "結果造成相當嚴重的";
+                else if( damage < 170 ) str = "結果造成十分嚴重的";
+                else if( damage < 230 ) str = "結果造成極其嚴重的";
+                else str =  "結果造成非常可怕的嚴重";
                 return str + type + "！\n";
         }
 }
 
 string eff_status_msg(int ratio)
 {
-        if( ratio==100 ) return HIG "看起来气血充盈，并没有受伤。" NOR;
+        if( ratio==100 ) return HIG "看起來氣血充盈，並沒有受傷。" NOR;
         if( ratio > 95 ) return HIG 
-"似乎受了点轻伤，不过光从外表看不大出来。" NOR;
-        if( ratio > 90 ) return HIY "看起来可能受了点轻伤。" NOR;
-        if( ratio > 80 ) return HIY "受了几处伤，不过似乎并不碍事。" NOR;
-        if( ratio > 60 ) return HIY "受伤不轻，看起来状况并不太好。" NOR;
+"似乎受了點輕傷，不過光從外表看不大出來。" NOR;
+        if( ratio > 90 ) return HIY "看起來可能受了點輕傷。" NOR;
+        if( ratio > 80 ) return HIY "受了幾處傷，不過似乎並不礙事。" NOR;
+        if( ratio > 60 ) return HIY "受傷不輕，看起來狀況並不太好。" NOR;
         if( ratio > 40 ) return HIR 
-"气息粗重，动作开始散乱，看来所受的伤著实不轻。" NOR;
-        if( ratio > 30 ) return HIR "已经伤痕累累，正在勉力支撑著不倒下去。" 
+"氣息粗重，動作開始散亂，看來所受的傷著實不輕。" NOR;
+        if( ratio > 30 ) return HIR "已經傷痕累累，正在勉力支撐著不倒下去。" 
 NOR;
-        if( ratio > 20 ) return HIR "受了相当重的伤，只怕会有生命危险。" NOR;
+        if( ratio > 20 ) return HIR "受了相當重的傷，只怕會有生命危險。" NOR;
         if( ratio > 10 ) return RED 
-"伤重之下已经难以支撑，眼看就要倒在地上。" NOR;
-        if( ratio > 5  ) return RED "受伤过重，已经奄奄一息，命在旦夕了。" 
+"傷重之下已經難以支撐，眼看就要倒在地上。" NOR;
+        if( ratio > 5  ) return RED "受傷過重，已經奄奄一息，命在旦夕了。" 
 NOR;
-        return RED "受伤过重，已经有如风中残烛，随时都可能断气。" NOR;
+        return RED "受傷過重，已經有如風中殘燭，隨時都可能斷氣。" NOR;
 }
 
 string status_msg(int ratio)
 {
-        if( ratio==100 ) return HIG "看起来充满活力，一点也不累。" NOR;
-        if( ratio > 95 ) return HIG "似乎有些疲惫，但是仍然十分有活力。" NOR;
-        if( ratio > 90 ) return HIY "看起来可能有些累了。" NOR;
+        if( ratio==100 ) return HIG "看起來充滿活力，一點也不累。" NOR;
+        if( ratio > 95 ) return HIG "似乎有些疲憊，但是仍然十分有活力。" NOR;
+        if( ratio > 90 ) return HIY "看起來可能有些累了。" NOR;
         if( ratio > 80 ) return HIY 
-"动作似乎开始有点不太灵光，但是仍然有条不紊。" NOR;
-        if( ratio > 60 ) return HIY "气喘嘘嘘，看起来状况并不太好。" NOR;
-        if( ratio > 40 ) return HIR "似乎十分疲惫，看来需要好好休息了。" NOR;
+"動作似乎開始有點不太靈光，但是仍然有條不紊。" NOR;
+        if( ratio > 60 ) return HIY "氣喘噓噓，看起來狀況並不太好。" NOR;
+        if( ratio > 40 ) return HIR "似乎十分疲憊，看來需要好好休息了。" NOR;
         if( ratio > 30 ) return HIR 
-"已经一副头重脚轻的模样，正在勉力支撑著不倒下去。" NOR;
-        if( ratio > 20 ) return HIR "看起来已经力不从心了。" NOR;
+"已經一副頭重腳輕的模樣，正在勉力支撐著不倒下去。" NOR;
+        if( ratio > 20 ) return HIR "看起來已經力不從心了。" NOR;
         if( ratio > 10 ) return RED 
-"摇头晃脑、歪歪斜斜地站都站不稳，眼看就要倒在地上。" NOR;
-        return RED "已经陷入半昏迷状态，随时都可能摔倒晕去。" NOR;
+"搖頭晃腦、歪歪斜斜地站都站不穩，眼看就要倒在地上。" NOR;
+        return RED "已經陷入半昏迷狀態，隨時都可能摔倒暈去。" NOR;
 }
 
 varargs void report_status(object ob, int effective)
@@ -419,7 +419,7 @@ your["learned_points"] < 100 )
         if( wizardp(me) && (string)me->query("env/combat")=="verbose" ) {
                 if( damage > 0 )
                         tell_object(me, sprintf( GRN 
-"AP：%d，DP：%d，PP：%d，伤害力：%d\n" NOR,
+"AP：%d，DP：%d，PP：%d，傷害力：%d\n" NOR,
                                 ap/100, dp/100, pp/100, damage));
                 else
                         tell_object(me, sprintf( GRN 
@@ -450,11 +450,11 @@ winner_msg[random(sizeof(winner_msg))], me, victim);
         &&      victim->query_temp("guarding") ) {
                 victim->set_temp("guarding", 0);
                 if( random(my["cps"]) < 5 ) {
-                        message_vision("$N一击不中，露出了破绽！\n", me);
+                        message_vision("$N一擊不中，露出了破綻！\n", me);
                         do_attack(victim, me, victim->query_temp("weapon"), 
 TYPE_QUICK);
                 } else {
-                        message_vision("$N见$n攻击失误，趁机发动攻击！\n", 
+                        message_vision("$N見$n攻擊失誤，趁機發動攻擊！\n", 
 victim, me);
                         do_attack(victim, me, victim->query_temp("weapon"), 
 TYPE_RIPOSTE);
@@ -540,20 +540,20 @@ void start_berserk(object me, object obj)
         )       return;
 
         bellicosity = (int)me->query("bellicosity");
-        message_vision("$N用一种异样的眼神扫视著在场的每一个人。\n", me);
+        message_vision("$N用一種異樣的眼神掃視著在場的每一個人。\n", me);
 
         if(     (int)me->query("force") > (random(bellicosity) + 
 bellicosity)/2 ) return;
 
         if( bellicosity > (int)me->query("score") 
         &&      !wizardp(obj) ) {
-                message_vision("$N对著$n喝道：" + RANK_D->query_self_rude(me)
-                        + "看你实在很不顺眼，去死吧。\n", me, obj);
+                message_vision("$N對著$n喝道：" + RANK_D->query_self_rude(me)
+                        + "看你實在很不順眼，去死吧。\n", me, obj);
                 me->kill_ob(obj);
         } else {
-                message_vision("$N对著$n喝道：喂！" + RANK_D->query_rude(obj)
+                message_vision("$N對著$n喝道：喂！" + RANK_D->query_rude(obj)
                         + "，" + RANK_D->query_self_rude(me) + 
-"正想找人打架，陪我玩两手吧！\n",
+"正想找人打架，陪我玩兩手吧！\n",
                         me, obj);
                 me->fight_ob(obj);
         }
@@ -637,10 +637,10 @@ void announce(object ob, string event)
                         break;
                 case "unconcious":
                         
-message_vision("\n$N脚下一个不稳，跌在地上一动也不动了。\n\n", ob);
+message_vision("\n$N腳下一個不穩，跌在地上一動也不動了。\n\n", ob);
                         break;
                 case "revive":
-                        message_vision("\n$N慢慢睁开眼睛，清醒了过来。\n\n", 
+                        message_vision("\n$N慢慢睜開眼睛，清醒了過來。\n\n", 
 ob);
                         break;
         }
@@ -687,7 +687,7 @@ void killer_reward(object killer, object victim)
 
                 bls = 10;
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        sprintf("%s被%s杀死了。", victim->name(1), 
+                        sprintf("%s被%s殺死了。", victim->name(1), 
 killer->name(1)));
         } else {
                 killer->add("MKS", 1);
@@ -697,7 +697,7 @@ killer->name(1)));
 		if((quest =  killer->query("quest"))  &&
 		   (victim->name(1) == quest["quest"]) &&
 		   ((int) killer->query("task_time") >= time())) {
-		        tell_object(killer,"恭喜你！你又完成了一项任务！\n");
+		        tell_object(killer,"恭喜你！你又完成了一項任務！\n");
       			exp = quest["exp_bonus"]/2 + random(quest["exp_bonus"]/2);
   			pot = quest["pot_bonus"]/2 + random(quest["pot_bonus"]/2);
      		   	score = quest["score"]/2 + random(quest["score"]/2);
@@ -723,10 +723,10 @@ killer->name(1)));
         		bonus = (int) killer->query("score");
         		bonus += score;
         		killer->set("score", bonus);
-        		tell_object(killer,HIW"你被奖励了：\n" +
-        		chinese_number(exp) + "点实战经验\n"+
-        		chinese_number(pot) + "点潜能\n" +
-        		chinese_number(score)+"点综合评价\n"NOR);
+        		tell_object(killer,HIW"你被獎勵了：\n" +
+        		chinese_number(exp) + "點實戰經驗\n"+
+        		chinese_number(pot) + "點潛能\n" +
+        		chinese_number(score)+"點綜合評價\n"NOR);
         		killer->set("quest", 0 );
 			
 			tfinished = killer->query("tfinished");

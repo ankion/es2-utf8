@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("渔夫", ({ "fisher" }) );
+	set_name("漁夫", ({ "fisher" }) );
 	set("gender", "男性" );
 	set("age", 35);
        	set("long", @LONG 
-一个精壮的汉子，头戴斗笠，身披蓑衣。偶尔抬头一看的眼神
+一個精壯的漢子，頭戴斗笠，身披蓑衣。偶爾擡頭一看的眼神
 中精光大盛，很有可能是江湖中人。
 LONG
 );
@@ -16,15 +16,15 @@ LONG
 	set("attitude", "friendly");
         set("chat_chance", 2);
        	set("chat_msg", ({
-"渔夫嘀咕着：不知这水怪又吃了几个人。\n",
+"漁夫嘀咕着：不知這水怪又吃了幾個人。\n",
        }) );
 
         set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-"有种的去杀了那水怪，打我算什么英雄？！\n",
+"有種的去殺了那水怪，打我算什麼英雄？！\n",
         }) );
 	set("inquiry", ([
-		"桂花" : "华中理工大学的桂花树比晚月庄多多了，你知道吗？",
+		"桂花" : "華中理工大學的桂花樹比晚月莊多多了，你知道嗎？",
 	]) );
 
 	set_skill("parry", 30);

@@ -7,16 +7,16 @@ inherit ITEM;
 
 void create()
 {
-    set_name( "悟疾风劲竹书", ({ "book" }) );
+    set_name( "悟疾風勁竹書", ({ "book" }) );
 	set_weight(800);
 	if ( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("unit", "把");
 		set("long",@LONG
-直竹贵地生，风吹动不止，起迄中空立，随风飘不定，斯乃劲风竹
+直竹貴地生，風吹動不止，起迄中空立，隨風飄不定，斯乃勁風竹
 
-						   柳淳风
+						   柳淳風
 LONG
 		);
 		set("value", 100);

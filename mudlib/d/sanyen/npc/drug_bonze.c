@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-     set_name("药僧", ({"drug bonze", "bonze"}));
+     set_name("藥僧", ({"drug bonze", "bonze"}));
      set("gender", "男性");
      set("class", "bonze");
      set("age",25);
-     set("long","一位长得相当精壮的年轻僧人, 他正在整理药材。\n");
+     set("long","一位長得相當精壯的年輕僧人, 他正在整理藥材。\n");
      set("combat_exp", 1800);
      set("attitude", "heroism");
 

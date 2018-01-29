@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("酒楼守卫", ({ "hotel guard", "guard" }) );
+	set_name("酒樓守衛", ({ "hotel guard", "guard" }) );
 	set("long",
-		"一个身穿蓝布衣的人，从他锐利的眼神跟神情，显然是个练家子。\n");
+		"一個身穿藍布衣的人，從他銳利的眼神跟神情，顯然是個練家子。\n");
 	set("age", 29);
 	set("attitude", "peaceful");
 	set("combat_exp", 100000);
@@ -33,7 +33,7 @@ void create()
 
 int accept_fight(object me)
 {
-	command("say 掌柜的有交代，不准任何人在这里打架！");
+	command("say 掌櫃的有交代，不準任何人在這裏打架！");
 	return 0;
 }
 
@@ -44,7 +44,7 @@ void accept_kill(object me)
 	fellow = all_inventory(environment())->help_hotel_guard(this_object(), me);
 	fellow -= ({ 0 });
 	if( sizeof(fellow) ) {
-		command("say 有强人打劫哪... 快去报官！");
+		command("say 有強人打劫哪... 快去報官！");
 		me->set("vendetta/authority", 1);
 	}
 }
@@ -52,7 +52,7 @@ void accept_kill(object me)
 int help_hotel_guard(object me, object foe)
 {
 	if( me==this_object() ) return 0;
-	command("say 干什么？！");
+	command("say 幹什麼？！");
 	kill_ob(foe);
 	return 1;
 }

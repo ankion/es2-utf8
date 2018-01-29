@@ -5,18 +5,18 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "晚月庄大门");
+	set("short", "晚月莊大門");
 	set("long", @LONG
-你来到了这个小径的尽头，一个有著朱红漆大门大宅
-院矗立在你的面前，门口挂著两串灯笼(lantern),上面写
-得有字，像这样一间豪华的大宅院出现在这样的乡间野外
-，使你觉得有些突兀，大宅的南边、东边都是茂密的林子
-，看来也没有其他的路。
+你來到了這個小徑的盡頭，一個有著硃紅漆大門大宅
+院矗立在你的面前，門口掛著兩串燈籠(lantern),上面寫
+得有字，像這樣一間豪華的大宅院出現在這樣的鄉間野外
+，使你覺得有些突兀，大宅的南邊、東邊都是茂密的林子
+，看來也沒有其他的路。
 LONG
 	);
 	set("item_desc", ([
-		"lantern" : "灯笼上几个娟秀的字迹写著：\n"
-			BRED HIW "晚霞西照人影依稀 \n月影高挂和风婉约 \n" NOR
+		"lantern" : "燈籠上幾個娟秀的字跡寫著：\n"
+			BRED HIW "晚霞西照人影依稀 \n月影高掛和風婉約 \n" NOR
 	]) );
 
 	set("exits", ([
@@ -24,7 +24,7 @@ LONG
 		"west" :		__DIR__"front_yard",
 	]));
 	
-	create_door ("east", "拱门", "west", DOOR_CLOSED);
+	create_door ("east", "拱門", "west", DOOR_CLOSED);
  
 	set("outdoors", "latemoon");
 

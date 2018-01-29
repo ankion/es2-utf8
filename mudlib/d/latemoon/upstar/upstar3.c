@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "二楼走廊");
+    set("short", "二樓走廊");
 	set("long", @LONG
-你走在后厅二楼的走廊上，庄内像这样的走廊很多，你若没有地
-理概念很容易迷路。长长的走道中, 纯金铸成的长灯架上挂了一排饰
-丽的宫灯! 入夜之后灯火辉煌! 十分美丽!
+你走在後廳二樓的走廊上，莊內像這樣的走廊很多，你若沒有地
+理概念很容易迷路。長長的走道中, 純金鑄成的長燈架上掛了一排飾
+麗的宮燈! 入夜之後燈火輝煌! 十分美麗!
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -18,7 +18,7 @@ LONG
 
 ]));
 
-    create_door("south","木门","north", DOOR_CLOSED);
+    create_door("south","木門","north", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

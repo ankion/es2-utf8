@@ -6,19 +6,19 @@ inherit ITEM;
 
 void create()
 {
-	set_name( HIG "古 剑" NOR, ({ "old sword", "sword"}));
+	set_name( HIG "古 劍" NOR, ({ "old sword", "sword"}));
 	set_weight(800);
 	if ( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("unit", "把");
 		set("long",@LONG
-行云流水，如劲风之竹，气聚于锋，如晦如明，斯行于技，缓动而
-瞬攻，乃徐如林，急如风，不动如山，侵略如火。
+行雲流水，如勁風之竹，氣聚於鋒，如晦如明，斯行於技，緩動而
+瞬攻，乃徐如林，急如風，不動如山，侵略如火。
 LONG
 		);
 		set("value", 100);
-		set("material", "铜");
+		set("material", "銅");
 		set("skill", ([
 		"name" :		"sword",
 			"exp_required" :  2500,

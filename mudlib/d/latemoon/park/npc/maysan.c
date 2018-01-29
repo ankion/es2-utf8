@@ -6,7 +6,7 @@ void create()
         set("gender", "女性" );
         set("age",20);
         set("long", @TEXT
-她看起来成熟中带有一些韵味。飘逸的长发
+她看起來成熟中帶有一些韻味。飄逸的長髮
 十分迷人。
 TEXT
 );
@@ -22,7 +22,7 @@ TEXT
         set("force", 300);
         set("max_force", 300);
 
-       create_family("晚月庄",4,"弟子");
+       create_family("晚月莊",4,"弟子");
         setup();
          carry_object("/d/latemoon/obj/flower_boot")->wear();
 }

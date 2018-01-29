@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-     set_name("清虚", ({"ching-shiu", "ching", "shiu"}) );
+     set_name("清虛", ({"ching-shiu", "ching", "shiu"}) );
      set("gender", "男性");
      set("age", 36);
      set("class", "taoist");
      set("title", "茅山派第六代弟子");
-     set("long", "一位神色和平的中年道士, 他正在教授他的徒弟如何运功\导气\n");
+     set("long", "一位神色和平的中年道士, 他正在教授他的徒弟如何運功\導氣\n");
      set("attitude", "peaceful");
      set("combat_exp", 10000);
 

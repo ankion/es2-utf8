@@ -5,69 +5,69 @@
 
 mapping weapon_actions = ([
         "slash": ([
-                "damage_type":  "割伤",
-                "action":               "$N挥动$w，斩向$n的$l",
+                "damage_type":  "割傷",
+                "action":               "$N揮動$w，斬向$n的$l",
                 "parry":                20,
                 ]),
         "slice": ([
-                "damage_type":  "砍伤",
+                "damage_type":  "砍傷",
                 "action":               "$N用$w往$n的$l砍去",
                 "dodge":                20,
                 ]),
         "chop": ([
-                "damage_type":  "劈伤",
-                "action":               "$N的$w朝著$n的$l劈将过去",
+                "damage_type":  "劈傷",
+                "action":               "$N的$w朝著$n的$l劈將過去",
                 "parry":                -20,
                 ]),
         "hack": ([
-                "action":               "$N挥舞$w，对准$n的$l一阵乱砍",
-                "damage_type":  "砍伤",
+                "action":               "$N揮舞$w，對準$n的$l一陣亂砍",
+                "damage_type":  "砍傷",
                 "damage":               30,
                 "dodge":                30,
                 ]),
         "thrust": ([
-                "damage_type":  "刺伤",
+                "damage_type":  "刺傷",
                 "action":               "$N用$w往$n的$l刺去",
                 "dodge":                15,
                 "parry":                -15,
                 ]),
         "pierce": ([
                 "action":               "$N的$w往$n的$l狠狠地一捅",
-                "damage_type":  "刺伤",
+                "damage_type":  "刺傷",
                 "dodge":                -30,
                 "parry":                -30,
                 ]),
         "whip": ([
-                "action":               "$N将$w一扬，往$n的$l抽去",
-                "damage_type":  "鞭伤",
+                "action":               "$N將$w一揚，往$n的$l抽去",
+                "damage_type":  "鞭傷",
                 "dodge":                -20,
                 "parry":                30,
                 ]),
         "impale": ([
-                "action":               "$N用$w往$n的$l直戳过去",
-                "damage_type":  "刺伤",
+                "action":               "$N用$w往$n的$l直戳過去",
+                "damage_type":  "刺傷",
                 "dodge":                -10,
                 "parry":                -10,
                 ]),
         "bash": ([
-                "action":               "$N挥舞$w，往$n的$l用力一□",
-                "damage_type":  "挫伤",
+                "action":               "$N揮舞$w，往$n的$l用力一□",
+                "damage_type":  "挫傷",
                 "post_action":  (: call_other, __FILE__, "bash_weapon" :),
                 ]),
         "crush": ([
-                "action":               "$N高高举起$w，往$n的$l当头砸下",
-                "damage_type":  "挫伤",
+                "action":               "$N高高舉起$w，往$n的$l當頭砸下",
+                "damage_type":  "挫傷",
                 "post_action":  (: call_other, __FILE__, "bash_weapon" :),
                 ]),
         "slam": ([
                 "action":               
-"$N手握$w，眼露凶光，猛地对准$n的$l挥了过去",
-                "damage_type":  "挫伤",
+"$N手握$w，眼露兇光，猛地對準$n的$l揮了過去",
+                "damage_type":  "挫傷",
                 "post_action":  (: call_other, __FILE__, "bash_weapon" :),
                 ]),
         "throw": ([
-                "action":               "$N将$w对准$n的$l射了过去",
-                "damage_type":  "刺伤",
+                "action":               "$N將$w對準$n的$l射了過去",
+                "damage_type":  "刺傷",
                 "post_action":  (: call_other, __FILE__, "throw_weapon" :),
                 ]),
 ]);
@@ -115,30 +115,30 @@ void bash_weapon(object me, object victim, object weapon, int damage)
                         + (int)victim->query("str");
                 wap = random(wap);
                 if( wap > 2 * wdp ) {
-                        message_vision(HIW "$N只觉得手中" + ob->name() + 
-"把持不定，脱手飞出！\n" NOR,
+                        message_vision(HIW "$N只覺得手中" + ob->name() + 
+"把持不定，脫手飛出！\n" NOR,
                                 victim);
                         ob->unequip();
                         ob->move(environment(victim));
                         victim->reset_action();
                 } else if( wap > wdp ) {
-                        message_vision("$N只觉得手中" + ob->name() + 
-"一震，险些脱手！\n",
+                        message_vision("$N只覺得手中" + ob->name() + 
+"一震，險些脫手！\n",
                                 victim);
                 } else if( wap > wdp / 2 ) {
-                        message_vision(HIW "只听见「啪」地一声，$N手中的" + 
+                        message_vision(HIW "只聽見「啪」地一聲，$N手中的" + 
 ob->name()
-                                + "已经断为两截！\n" NOR, victim );
+                                + "已經斷爲兩截！\n" NOR, victim );
                         ob->unequip();
                         ob->move(environment(victim));
-                        ob->set("name", "断掉的" + ob->query("name"));
+                        ob->set("name", "斷掉的" + ob->query("name"));
                         ob->set("value", (int)ob->query("value") / 10);
                         ob->set("weapon_prop", 0);
                         victim->reset_action();
                 } else {
                         message_vision("$N的" + weapon->name() + "和$n的" + 
 ob->name()
-                                + "相击，冒出点点的火星。\n", me, victim);
+                                + "相擊，冒出點點的火星。\n", me, victim);
                 }
         }
 }

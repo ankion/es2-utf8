@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name("域摩经", ({ "book" }));
+	set_name("域摩經", ({ "book" }));
 	set_weight(600);
 	set("unit", "本");
 	set("long",
-		"这是魔道修炼者梦寐以求的内功\秘诀「地灵心法」，书中记载了逆天而\n"
-		"生、反转五行生克与内脏的心法。\n");
+		"這是魔道修煉者夢寐以求的內功\祕訣「地靈心法」，書中記載了逆天而\n"
+		"生、反轉五行生剋與內臟的心法。\n");
 	set("value", 100);
 	set("skill", ([
 		"name": 		"phantomforce",	// name of the skill

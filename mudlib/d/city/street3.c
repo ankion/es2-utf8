@@ -6,11 +6,11 @@ void do_climb (string arg);
 
 void create()
 {
-        set("short", "京师东街");
+        set("short", "京師東街");
         set("long", @LONG
-这是京师东街的南段。整个东街都被掌管天下兵马印的尚书府占
-据了，东边便是尚书府的大门，南边则是尚书府高耸的围墙(wall)，
-北去的道路一直通向振远总局。
+這是京師東街的南段。整個東街都被掌管天下兵馬印的尚書府佔
+據了，東邊便是尚書府的大門，南邊則是尚書府高聳的圍牆(wall)，
+北去的道路一直通向振遠總局。
 LONG
         );
         set("exits", ([ 
@@ -20,7 +20,7 @@ LONG
 		]));
 
 	set("item_desc", ([
-		"wall": (: "一段高高的院墙，但对轻功好的人爬上(climb)似非难事。\n" :),
+		"wall": (: "一段高高的院牆，但對輕功好的人爬上(climb)似非難事。\n" :),
 		]) );
 
         set("outdoors", "city");
@@ -35,7 +35,7 @@ void init ()
 
 void do_climb (string arg)
 {
-	if ((arg == "wall") || (arg == "up") || (arg == "墙")) 
+	if ((arg == "wall") || (arg == "up") || (arg == "牆")) 
 		this_player()->move(__DIR__"wall");
 }
 	

@@ -70,7 +70,7 @@ int do_emote(object me, string verb, string arg)
 		target = present(arg, environment(me));
 		if(!objectp(target)) return 0;
 		if( !target->is_character() )
-			return notify_fail("你要对谁做这个动作？\n"); 
+			return notify_fail("你要對誰做這個動作？\n"); 
 		target_gender = target->query("gender");
 		if( target==me ) {
 			msg_postfix = "_self";
@@ -107,7 +107,7 @@ int do_emote(object me, string verb, string arg)
 		message("emote", CYN + str + NOR, environment(me), ({me, target}));
 		else {
 
-message("channel:chat", BLU +"【闲聊】"+ str + NOR, users());
+message("channel:chat", BLU +"【閒聊】"+ str + NOR, users());
         
 
 		}

@@ -19,7 +19,7 @@ void create()
         set("attitude", "heroism");
 
         set("long",@LONG
-这是一位黑松堡的家丁，专负责盘察去黑松堡的行人。
+這是一位黑松堡的家丁，專負責盤察去黑松堡的行人。
 LONG);
 
         set("combat_exp", 2000);
@@ -49,8 +49,8 @@ void checklooking(object ob)
 
          if ( random((int)ob->query("per")) < 20  )
          {
-        command("say 家丁喝道：站住！你干什么的。");
-        command("say 看你那贼眉鼠眼，尖嘴猴腮的样儿，决不是什么好东西！");
+        command("say 家丁喝道：站住！你幹什麼的。");
+        command("say 看你那賊眉鼠眼，尖嘴猴腮的樣兒，決不是什麼好東西！");
                 kill_passenger(ob);
          }
 }

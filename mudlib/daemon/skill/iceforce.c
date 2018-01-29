@@ -9,7 +9,7 @@ int valid_learn(object me) { return 1; }
 int practice_skill(object me)
 {
         return 
-notify_fail("意寒功只能用学的，或是从运用(exert)中增加熟练度。\n");
+notify_fail("意寒功只能用學的，或是從運用(exert)中增加熟練度。\n");
 }
 
 string exert_function_file(string func)
@@ -28,7 +28,7 @@ foo) ) {
                         victim->receive_wound("kee", (damage_bonus + foo));
                         victim->apply_condition("iceshock", factor/3);
                         return 
-"$N的招式挟著一股阴寒无比的劲风使得$n不禁打了个寒噤。\n";
+"$N的招式挾著一股陰寒無比的勁風使得$n不禁打了個寒噤。\n";
                 }
         }
         return foo;

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "灵心观广场");
+	set("short", "靈心觀廣場");
 	set("long", @LONG
-你正站在灵心观前的广场前, 一片用石英岩铺成的广场。一对雄
-伟的石狮子站在庙门的两侧, 狮子的两侧立著两根雕著龙纹的石柱。
-广场的中央还有一个大香炉, 香炉里正冒著袅袅的香烟。
+你正站在靈心觀前的廣場前, 一片用石英岩鋪成的廣場。一對雄
+偉的石獅子站在廟門的兩側, 獅子的兩側立著兩根雕著龍紋的石柱。
+廣場的中央還有一個大香爐, 香爐里正冒著嫋嫋的香菸。
 LONG
 	);
 
@@ -22,7 +22,7 @@ LONG
      "south" : __DIR__"entrance",
 ]));
 
-     create_door("north", "红漆木门", "south");
+     create_door("north", "紅漆木門", "south");
 
      set("outdoors", "temple");
 

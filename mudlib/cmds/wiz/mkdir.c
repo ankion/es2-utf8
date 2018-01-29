@@ -16,16 +16,16 @@ int main(object me, string arg)
 	if( mkdir(dir) )
 		write("Ok.\n");
 	else
-		write("你没有在这里建子目录的权利。\n");
+		write("你沒有在這裏建子目錄的權利。\n");
 	return 1;	
 }
 
 int help(object me)
 {
 	write(@HELP
-指令格式 : mkdir <子目录名>
+指令格式 : mkdir <子目錄名>
 
-建立一个子目录。
+建立一個子目錄。
 HELP
 	);
 	return 1;

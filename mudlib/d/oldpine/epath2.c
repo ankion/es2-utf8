@@ -4,23 +4,23 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "小石桥");
+	set("short", "小石橋");
 	set("long", @LONG
-你现在正站在一座长满青苔的古桥上，桥下是一条山涧，几股清泉
-在乱石之中向山下奔流，桥北边不远处有一个瀑布(waterfall) ，从山
-壁上犹如一条白练般垂了下来，瀑布两旁的石壁十分陡峭，高度和山涧
+你現在正站在一座長滿青苔的古橋上，橋下是一條山澗，幾股清泉
+在亂石之中向山下奔流，橋北邊不遠處有一個瀑布(waterfall) ，從山
+壁上猶如一條白練般垂了下來，瀑布兩旁的石壁十分陡峭，高度和山澗
 旁的松林相差了近三、四十丈。
 LONG
 	);
 	set("item_desc", ([
 		"waterfall":
-			"这个瀑布从数百丈高的山壁上冲激而下，流入一个山涧底的小水潭\n"
-			"，水潭两边的石壁垂下许\多的藤蔓(vine)，你注意到瀑布后面似乎\n"
-			"有什么东西在发著光。\n",
+			"這個瀑布從數百丈高的山壁上衝激而下，流入一個山澗底的小水潭\n"
+			"，水潭兩邊的石壁垂下許\多的藤蔓(vine)，你注意到瀑布後面似乎\n"
+			"有什麼東西在發著光。\n",
 		"vine":
-			"其中有一根藤蔓距离你比较近，你可以试著抓住(hold)藤蔓，看看\n"
-			"能不能像泰山一样荡过去，看看瀑布后面有什么？\n"
-			"对了，提醒你一点，这座石桥下面是高约百丈的山涧深谷....。\n"
+			"其中有一根藤蔓距離你比較近，你可以試著抓住(hold)藤蔓，看看\n"
+			"能不能像泰山一樣蕩過去，看看瀑布後面有什麼？\n"
+			"對了，提醒你一點，這座石橋下面是高約百丈的山澗深谷....。\n"
 	]) );
 	set("exits", ([ /* sizeof() == 2 */
   "west" : "/d/oldpine/epath1",
@@ -39,19 +39,19 @@ void init()
 int do_hold_vine(string arg)
 {
 	if( !arg || arg!= "vine" )
-		return notify_fail("你要抓住什么？\n");
-	message_vision("$N爬上石桥的护栏，伸手往不远处的一根藤蔓抓去....\n",
+		return notify_fail("你要抓住什麼？\n");
+	message_vision("$N爬上石橋的護欄，伸手往不遠處的一根藤蔓抓去....\n",
 		this_player());
 	if( random((int)this_player()->query_skill("dodge")) < 5 ) {
-		message_vision("\n只听见一声杀猪般的惨叫，$N已经往山涧中坠了下去。\n\n", this_player());
+		message_vision("\n只聽見一聲殺豬般的慘叫，$N已經往山澗中墜了下去。\n\n", this_player());
 		tell_room(__DIR__"waterfall",
-			"你听到有人高声惊叫，一条人影从上方掉了下来，「扑通」一声跌进潭中。\n");
+			"你聽到有人高聲驚叫，一條人影從上方掉了下來，「撲通」一聲跌進潭中。\n");
 		this_player()->move(__DIR__"waterfall");
 	} else {
-		message_vision("$N手脚俐落地攀附著藤蔓，慢慢地爬下山涧....。\n",
+		message_vision("$N手腳俐落地攀附著藤蔓，慢慢地爬下山澗....。\n",
 			this_player() );
 		tell_room(__DIR__"passage",
-			"忽然一条人影从南边的帘幕穿了出来。\n");
+			"忽然一條人影從南邊的簾幕穿了出來。\n");
 		this_player()->move(__DIR__"passage");
 	}
 	return 1;

@@ -6,8 +6,8 @@ void sell_drug();
 void create()
 {
         seteuid(getuid());
-        set_name("沈万年",({"shen wen-nien","shen"}));
-        set("title","沈记商行掌柜");
+        set_name("沈萬年",({"shen wen-nien","shen"}));
+        set("title","沈記商行掌櫃");
         set("gender", "男性" );
         set("age",45);
         set("combat_exp",30);
@@ -16,7 +16,7 @@ void create()
         set_temp("apply/attack",3);
         set("inquiry", ([
             "玉佩" : (: give_jade :),
-            "蒙汗药" : (: sell_drug :),
+            "蒙汗藥" : (: sell_drug :),
         ]) );
         setup();
         carry_object("/obj/cloth")->wear();
@@ -32,16 +32,16 @@ void init()
 int list_item()
 {
         write("你看到:\n");
-        write("柜子上一堆冥纸和香烛等, 标价 10 文钱. 墙上挂著几把竹扫帚,\n");
-        write("每把 50 文钱. 柜台上摆\著一块木牌, 上面写著:\n");
-        write("棺材: 时价. 没看到的东西问一下掌柜的, 我们应该都有.\n");
+        write("櫃子上一堆冥紙和香燭等, 標價 10 文錢. 牆上掛著幾把竹掃帚,\n");
+        write("每把 50 文錢. 櫃檯上擺\著一塊木牌, 上面寫著:\n");
+        write("棺材: 時價. 沒看到的東西問一下掌櫃的, 我們應該都有.\n");
         return 1;
 }
  
 int buy_item()
 {
         command("shake");
-        command("say 我不卖东西给陌生人!");
+        command("say 我不賣東西給陌生人!");
         return 1;
 }
  
@@ -50,13 +50,13 @@ void give_jade()
         object ob;
         if (this_player()->query_temp("give_alcohol")) {
                if(this_player()->query_temp("had_jade")) {
-                    command("say 你真贪心耶... ");
+                    command("say 你真貪心耶... ");
                     return;
                 }
                 ob = new("/d/green/obj/jade");
 		if (ob->violate_unique()) {
 		command("hmm");
-		command("say 这样东西... 刚刚有人来要过了.");
+		command("say 這樣東西... 剛剛有人來要過了.");
 		command("shrug");
 		destruct(ob);
 		return;
@@ -74,7 +74,7 @@ void sell_drug()
 {
         if (this_player()->query_temp("know_drug")) {
             command("whisper "+(string)this_player()->query("id")+
-            " 一份只要 10 两银子, 保证有效喔.\n");
+            " 一份只要 10 兩銀子, 保證有效喔.\n");
             command("grin");
             this_player()->set_temp("can_buy_drug",1);
         }
@@ -90,27 +90,27 @@ int accept_object(object who, object ob)
 		drug = new("/obj/slumber_drug");
                 drug->move(this_player());
                 tell_room(environment(this_player()),
-                "老板鬼鬼祟祟地塞了一样东西给"
+                "老闆鬼鬼祟祟地塞了一樣東西給"
                     +(string)this_player()->name()+"。\n",
                     ({this_object(), this_player()}) );
-                tell_object(this_player(),"老板塞了一包蒙汗药给你。\n");
+                tell_object(this_player(),"老闆塞了一包蒙汗藥給你。\n");
                 }
                 else {
                 command("shake");
-                command("say 想骗我啊?\n");
+                command("say 想騙我啊?\n");
                 this_player()->delete_temp("give_alcohol");
                 this_player()->delete_temp("know_drug");
                 }
         } else {
 				if(!ob->value()) { 
-					if(ob->name()=="单刀") {
+					if(ob->name()=="單刀") {
 						call_out("dest_stuff",3,ob);
 						return 1;
 					}
 					else
 					return 0;
 				} else {
-                command("say 我不知道你给我钱干嘛, 不过谢啦!");
+                command("say 我不知道你給我錢幹嘛, 不過謝啦!");
                 command("grin");
                 }
         }

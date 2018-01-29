@@ -6,9 +6,9 @@ void create()
 {
         set("short", "黑松淳于");
         set("long", @LONG
-你站立在一座宏伟的城堡之前，城门(door)之上挂着一块金匾。金匾上
-龙飞凤舞的写着四个大字“黑松淳于”，金匾左下角刚劲草书落款：
-“淳于怀太”，“壬子年一月十八日”。
+你站立在一座宏偉的城堡之前，城門(door)之上掛着一塊金匾。金匾上
+龍飛鳳舞的寫着四個大字“黑松淳于”，金匾左下角剛勁草書落款：
+“淳于懷太”，“壬子年一月十八日”。
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -19,7 +19,7 @@ LONG
 ]));
         set("outdoors", "chuenyu");
         
-        create_door("north", "城门", "south", DOOR_CLOSED);
+        create_door("north", "城門", "south", DOOR_CLOSED);
         
         setup();
 }
@@ -32,8 +32,8 @@ void init()
         exp = ob->query("combat_exp");
         if(exp < 2000) {
         ob->move(__DIR__"high_b_mtn2.c");
-//        message_vision(HIW"\n$N被黑松堡散出的强烈杀气当了回来。\n\n" NOR, ob);
-        message_vision("\n$N被黑松堡散出的强烈杀气当了回来。\n\n" , ob);        }
+//        message_vision(HIW"\n$N被黑松堡散出的強烈殺氣當了回來。\n\n" NOR, ob);
+        message_vision("\n$N被黑松堡散出的強烈殺氣當了回來。\n\n" , ob);        }
          }
 }
                                        

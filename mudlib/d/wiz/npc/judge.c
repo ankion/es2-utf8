@@ -9,11 +9,11 @@ int in_ask, answer;
 
 void create()
 {
-	set_name("审判官", ({ "judge" }) );
-	set("short", "专门对付机器人的" HIY "审判官" NOR "(judge)" );
+	set_name("審判官", ({ "judge" }) );
+	set("short", "專門對付機器人的" HIY "審判官" NOR "(judge)" );
 	set("long",
-		"这是一位审查玩家是否是机器人的审判官，你必须答对(answer)他三个问题才能\n"
-		"脱离他的掌握。\n");
+		"這是一位審查玩家是否是機器人的審判官，你必須答對(answer)他三個問題才能\n"
+		"脫離他的掌握。\n");
 
 	set("gender", "男性");
 	set("age", 40);
@@ -52,27 +52,27 @@ void chat()
 	switch(random(5)) {
 		case 0: 
 			answer = a + b;
-			oper = chinese_number(a) + "加上" + chinese_number(b)+ "等于多少？";
+			oper = chinese_number(a) + "加上" + chinese_number(b)+ "等於多少？";
 			break;
 		case 1: 
 			answer = a - b;
-			oper = chinese_number(a) + "减去" + chinese_number(b)+ "等于多少？";
+			oper = chinese_number(a) + "減去" + chinese_number(b)+ "等於多少？";
 			break;
 		case 2: 
 			if( a * b < 200 ) {
 				answer = a * b;
-				oper = chinese_number(a) + "乘上" + chinese_number(b)+ "等于多少？";
+				oper = chinese_number(a) + "乘上" + chinese_number(b)+ "等於多少？";
 			} else {
 				answer = (a * b) % 10;
-				oper = chinese_number(a) + "乘上" + chinese_number(b)+ "，个位数等于多少？";
+				oper = chinese_number(a) + "乘上" + chinese_number(b)+ "，個位數等於多少？";
 			}
 			break;
 		case 3: 
 			answer = a % b;
-			oper = chinese_number(a) + "除以" + chinese_number(b)+ "馀于多少？";
+			oper = chinese_number(a) + "除以" + chinese_number(b)+ "餘於多少？";
 			break;
 		case 4:
-			oper = chinese_number(a) + "和" + chinese_number(b)+ "的最大公因数是多少？";
+			oper = chinese_number(a) + "和" + chinese_number(b)+ "的最大公因數是多少？";
 			if( b < a ) { c = b; b = a; a = c; }
 			while( a > 1 && b%a > 1 ) {
 				c = a;
@@ -82,14 +82,14 @@ void chat()
 			answer = b%a == 1 ? 1 : a;
 			break;
 	}
-	command("say " + oper + "，请在二十秒内作答(answer)。");
+	command("say " + oper + "，請在二十秒內作答(answer)。");
 	in_ask = 1;
 	call_out("say_answer", 20);
 }
 
 void say_answer()
 {
-	command("say 这么简单都不会？答案等于" + chinese_number(answer) + "。");
+	command("say 這麼簡單都不會？答案等於" + chinese_number(answer) + "。");
 	in_ask = 0;	
 }
 
@@ -98,20 +98,20 @@ int do_answer(string arg)
 	string s;
 	int ans;
 
-	if( !in_ask ) return notify_fail("你必须等下一题。\n");
-	if( !arg ) return notify_fail("请你回答一个数字。\n");
+	if( !in_ask ) return notify_fail("你必須等下一題。\n");
+	if( !arg ) return notify_fail("請你回答一個數字。\n");
 
 	message_vision( CYN "$N答道：" + arg + "\n" NOR, this_player());
 	
 	if( sscanf(arg, "%d", ans)==1 ) {
 		if( ans==answer ) {
 			this_player()->add_temp("robot_check", 1);
-			command("say 答对了！");
+			command("say 答對了！");
 			command("pat " + this_player()->query("id") );
 			remove_call_out("say_answer");
 			in_ask = 0;
 			if( this_player()->query_temp("robot_check") >= 3 ) {
-				command("say 很好，你看起来不像机器人，你可以走了。\n");
+				command("say 很好，你看起來不像機器人，你可以走了。\n");
 				if( stringp(s = this_player()->query_temp("old_startroom")) )
 					this_player()->set("startroom", s);
 				this_player()->delete_temp("robot_check");
@@ -121,10 +121,10 @@ int do_answer(string arg)
 					this_player()->move(START_ROOM);
 			}
 		} else {
-			command("say 错！");
+			command("say 錯！");
 			add_temp("wrong/" + this_player()->query("id"), 1);
 			if( query_temp("wrong/" + this_player()->query("id")) > 3 ) {
-				command("say " + this_player()->name() + "你再给我乱猜啊，去死吧。\n");
+				command("say " + this_player()->name() + "你再給我亂猜啊，去死吧。\n");
 				this_player()->receive_damage("kee", 100, this_object());
 				this_player()->die();
 			}

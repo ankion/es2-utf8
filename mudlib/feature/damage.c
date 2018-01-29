@@ -13,9 +13,9 @@ varargs int receive_damage(string type, int damage, object who)
 {
 	int val;
 
-	if( damage < 0 ) error("F_DAMAGE: 伤害值为负值。\n");
+	if( damage < 0 ) error("F_DAMAGE: 傷害值爲負值。\n");
 	if( type!="gin" && type!="kee" && type!="sen" )
-		error("F_DAMAGE: 伤害种类错误( 只能是 gin, kee, sen 其中之一 )。\n");
+		error("F_DAMAGE: 傷害種類錯誤( 只能是 gin, kee, sen 其中之一 )。\n");
 
 	if( objectp(who) ) set_temp("last_damage_from", who);
 	val = (int)query(type) - damage;
@@ -32,9 +32,9 @@ varargs int receive_wound(string type, int damage, object who)
 {
 	int val;
 
-	if( damage < 0 ) error("F_DAMAGE: 伤害值为负值。\n");
+	if( damage < 0 ) error("F_DAMAGE: 傷害值爲負值。\n");
 	if( type!="gin" && type!="kee" && type!="sen" )
-		error("F_DAMAGE: 伤害种类错误( 只能是 gin, kee, sen 其中之一 )。\n");
+		error("F_DAMAGE: 傷害種類錯誤( 只能是 gin, kee, sen 其中之一 )。\n");
 
 	if( objectp(who) ) set_temp("last_damage_from", who);
 	val = (int)query("eff_" + type) - damage;
@@ -56,9 +56,9 @@ int receive_heal(string type, int heal)
 {
 	int val;
 
-	if( heal < 0 ) error("F_DAMAGE: 恢复值为负值。\n");
+	if( heal < 0 ) error("F_DAMAGE: 恢復值爲負值。\n");
 	if( type!="gin" && type!="kee" && type!="sen" )
-		error("F_DAMAGE: 恢复种类错误( 只能是 gin, kee, sen 其中之一 )。\n");
+		error("F_DAMAGE: 恢復種類錯誤( 只能是 gin, kee, sen 其中之一 )。\n");
 
 	val = (int)query(type) + heal;
 
@@ -72,9 +72,9 @@ int receive_curing(string type, int heal)
 {
 	int max, val;
 
-	if( heal < 0 ) error("F_DAMAGE: 恢复值为负值。\n");
+	if( heal < 0 ) error("F_DAMAGE: 恢復值爲負值。\n");
 	if( type!="gin" && type!="kee" && type!="sen" )
-		error("F_DAMAGE: 恢复种类错误( 只能是 gin, kee, sen 其中之一 )。\n");
+		error("F_DAMAGE: 恢復種類錯誤( 只能是 gin, kee, sen 其中之一 )。\n");
 
 	val = (int)query("eff_" + type);
 	max = (int)query("max_" + type);
@@ -100,7 +100,7 @@ void unconcious()
 
 	this_object()->remove_all_enemy();
 
-	message("system", HIR "\n你的眼前一黑，接著什麽也不知道了....\n\n" NOR,
+	message("system", HIR "\n你的眼前一黑，接著什麼也不知道了....\n\n" NOR,
 		this_object());
 	this_object()->disable_player(" <昏迷不醒>");
 	set("gin", 0);
@@ -121,7 +121,7 @@ varargs void revive(int quiet)
 	if( !quiet ) {
 		COMBAT_D->announce(this_object(), "revive");
 		set_temp("block_msg/all", 0);
-		message("system", HIY "\n慢慢地你终於又有了知觉....\n\n" NOR,
+		message("system", HIY "\n慢慢地你終於又有了知覺....\n\n" NOR,
 			this_object());
 	} else
 		set_temp("block_msg/all", 0);

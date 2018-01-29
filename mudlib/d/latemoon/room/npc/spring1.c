@@ -6,10 +6,10 @@ void create()
         set("gender", "女性" );
         set("age",18);
         set("long", @TEXT
-她看起来成熟中带有一些稚气。飘逸的长发
-十分迷人。她是个孤儿，从小与妹妹圆春被
-庄主收留，她很聪明，在第四代弟子中算是
-武功很出色的一个。
+她看起來成熟中帶有一些稚氣。飄逸的長髮
+十分迷人。她是個孤兒，從小與妹妹圓春被
+莊主收留，她很聰明，在第四代弟子中算是
+武功很出色的一個。
 TEXT
 );
        set("class", "dancer");
@@ -24,7 +24,7 @@ TEXT
         set("force", 300);
         set("max_force", 300);
 
-       create_family("晚月庄",4,"弟子");
+       create_family("晚月莊",4,"弟子");
         setup();
         carry_object("/d/latemoon/obj/flower_boot")->wear();
 }

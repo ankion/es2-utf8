@@ -5,10 +5,10 @@ inherit ROOM;
 void create()
 {
 // this place can check on player's dodge, if toolow, drop them!
-        set("short", "铁索桥");
+        set("short", "鐵索橋");
         set("long", @LONG
-山顶强劲的风吹得铁索桥左右晃动，脚下的万丈深渊使你头晕目旋。
-你竭尽全力的维持身体平衡。
+山頂強勁的風吹得鐵索橋左右晃動，腳下的萬丈深淵使你頭暈目旋。
+你竭盡全力的維持身體平衡。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */
@@ -34,11 +34,11 @@ int do_climb(string arg)
 {
         if( !arg || arg!="chain" ) 
 	{
-	     write("这里只有一条铁链（chain）。\n");
+	     write("這裏只有一條鐵鏈（chain）。\n");
              return 1;
 	}
 
-        message_vision("$N抓紧铁链，顺着铁索桥走了下去。\n",
+        message_vision("$N抓緊鐵鏈，順着鐵索橋走了下去。\n",
                 this_player() );
         this_player()->move(__DIR__"base_b_m");
 

@@ -7,24 +7,24 @@ inherit F_SAVE;
 
 void create()
 {
-	set_name( "孙悟空", ({ "sun goku", "sun", "goku" }) );
+	set_name( "孫悟空", ({ "sun goku", "sun", "goku" }) );
 	if( !restore() ) {
-		set("short", "来自「七龙珠」的" HIC "孙悟空" NOR "(Sun goku)");
+		set("short", "來自「七龍珠」的" HIC "孫悟空" NOR "(Sun goku)");
 		set("long",
-			"孙悟空是来自鸟山明的漫画「七龙珠」，你别小看他现在一付傻头傻脑的样子\n"
-			"，他可是 ESII 第一个自我成长型的 NPC，从他被创造出来以后，他所获得的\n"
-			"战斗经验都会储存下来。\n" );
+			"孫悟空是來自鳥山明的漫畫「七龍珠」，你別小看他現在一付傻頭傻腦的樣子\n"
+			"，他可是 ESII 第一個自我成長型的 NPC，從他被創造出來以後，他所獲得的\n"
+			"戰鬥經驗都會儲存下來。\n" );
 		set("gender", "男性" );
-		set("race", "赛亚人");
+		set("race", "賽亞人");
 		set("chat_chance", 15);
 		set("chat_msg", ({
 			(: this_object(), "random_move" :),
-			CYN "孙悟空说道：哈罗！来比武吧？\n" NOR,
-			CYN "孙悟空翻了个跟斗，用一只手指撑在地下，说道：这招你会不会啊？\n" NOR,
+			CYN "孫悟空說道：哈羅！來比武吧？\n" NOR,
+			CYN "孫悟空翻了個跟斗，用一隻手指撐在地下，說道：這招你會不會啊？\n" NOR,
 		}) );
 		set("chat_msg_coombat", ({
-			CYN "\n孙悟空扮个鬼脸，说道：来呀！再来呀！\n" NOR,
-			CYN "\n孙悟空说道：这一招是爷爷教我的，厉害吧！\n" NOR,
+			CYN "\n孫悟空扮個鬼臉，說道：來呀！再來呀！\n" NOR,
+			CYN "\n孫悟空說道：這一招是爺爺教我的，厲害吧！\n" NOR,
 		}) );
 
 		// We have 7 pills per reset.
@@ -83,14 +83,14 @@ int accept_fight(object who)
 {
 	if( is_fighting() ) {
 		if( random(query("eff_kee")) > (int)query("kee") ) {
-			say( CYN "孙悟空大叫：这么多人我打一个？不行不行，等我打败这些人再跟你打！\n" NOR);
+			say( CYN "孫悟空大叫：這麼多人我打一個？不行不行，等我打敗這些人再跟你打！\n" NOR);
 			return 0;
 		} else {
-			say( CYN "孙悟空大叫：这么多人我打一个？没关系，我一定让你们好看！\n" NOR);
+			say( CYN "孫悟空大叫：這麼多人我打一個？沒關係，我一定讓你們好看！\n" NOR);
 			return 1;
 		}
 	}
-	say( CYN "孙悟空很高兴地说道：好啊，好啊，我要出招了...\n" NOR);
+	say( CYN "孫悟空很高興地說道：好啊，好啊，我要出招了...\n" NOR);
 	return 1;
 }
 
@@ -100,7 +100,7 @@ int receive_damage(string type, int pts)
 
 	damage = ::receive_damage(type, pts);
 	if( (type=="kee") && (damage > (int)query("max_kee") / 5) ) {
-		say( CYN "孙悟空捂著受伤的地方，说道：好痛啊...真有你的....\n" NOR);
+		say( CYN "孫悟空捂著受傷的地方，說道：好痛啊...真有你的....\n" NOR);
 		if( random(query("kee")) < damage)
 			random_move();
 	}
@@ -109,7 +109,7 @@ int receive_damage(string type, int pts)
 	&&	(((int)query("kee")) < 20 
 		|| ((int)query("gin") < 20) 
 		|| ((int)query("sen") < 20) )) {
-		say( HIY "孙悟空从口袋摸出一粒花梨塔猫仙人给他的仙豆吞了下去。\n" NOR);
+		say( HIY "孫悟空從口袋摸出一粒花梨塔貓仙人給他的仙豆吞了下去。\n" NOR);
 		set("gin", query("eff_gin"));
 		set("kee", query("eff_kee"));
 		set("sen", query("eff_sen"));
@@ -139,6 +139,6 @@ void kill_ob(object ob)
 
 void defeated_enemy(object ob)
 {
-	say(CYN "孙悟空作出一个 V 字型的手势，说道：我赢了！" NOR);
+	say(CYN "孫悟空作出一個 V 字型的手勢，說道：我贏了！" NOR);
 	remove_killer(ob);
 }

@@ -5,11 +5,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("卖花姑娘", ({ "flower seller", "seller" }) );
+        set_name("賣花姑娘", ({ "flower seller", "seller" }) );
         set("gender", "女性" );
         set("age", 19);
         set("per", 40);
-        set("long", "美丽的卖花姑娘正在向行人售花儿\n");
+        set("long", "美麗的賣花姑娘正在向行人售花兒\n");
         set("combat_exp", 700);
         set("attitude", "friendly");
         set_skill("unarmed", 40);
@@ -18,7 +18,7 @@ void create()
         set_skill("throwing", 100);
 
         set("inquiry", ([
-                "小娟" : "这要到黑松山去问。", 
+                "小娟" : "這要到黑松山去問。", 
         ]) );
         set("chat_chance", 5);
         set("chat_msg", ({
@@ -56,34 +56,34 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(6) ) {
                 case 0:
-                        say( " 卖花姑娘笑着道：这位"
+                        say( " 賣花姑娘笑着道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，买朵黑牡丹吗？ \n");
+                                + "，買朵黑牡丹嗎？ \n");
                         break;
                 case 1:
-                        say( " 卖花姑娘笑着道：这位"
+                        say( " 賣花姑娘笑着道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，买朵黄枚瑰吗？ \n");
+                                + "，買朵黃枚瑰嗎？ \n");
                         break;
                 case 2:
-                        say( " 卖花姑娘笑着道：这位"
+                        say( " 賣花姑娘笑着道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，买朵白茶花吗？ \n");
+                                + "，買朵白茶花嗎？ \n");
                         break;
                 case 3:
-                        say( " 卖花姑娘笑着道：这位"
+                        say( " 賣花姑娘笑着道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，买朵紫罗兰吗？ \n");
+                                + "，買朵紫羅蘭嗎？ \n");
                         break;
                 case 4:
-                        say( " 卖花姑娘笑着道：这位"
+                        say( " 賣花姑娘笑着道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，买朵红枚瑰吗？ \n");
+                                + "，買朵紅枚瑰嗎？ \n");
                         break;
                 case 5:
-                        say( " 卖花姑娘笑着道：这位"
+                        say( " 賣花姑娘笑着道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，买朵黄枚瑰吗？ \n");
+                                + "，買朵黃枚瑰嗎？ \n");
                         break;
 
         }

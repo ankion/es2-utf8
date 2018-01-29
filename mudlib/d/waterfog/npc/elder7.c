@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("颜违", ({ "yen wei", "yen", "wei" }) );
-	set("title", "水烟阁七长老");
+	set_name("顏違", ({ "yen wei", "yen", "wei" }) );
+	set("title", "水煙閣七長老");
 	set("gender", "男性");
 	set("age", 53);
 	set("long",
-		"颜违是水烟阁七位长老中最年轻的，虽然他的武功\跟其他六位长老\n"
-		"相比仍略逊一筹，但是他办事十分精明干练，因此七长老每年都派\n"
-		"他出外办理武林大会事宜。\n");
+		"顏違是水煙閣七位長老中最年輕的，雖然他的武功\跟其他六位長老\n"
+		"相比仍略遜一籌，但是他辦事十分精明幹練，因此七長老每年都派\n"
+		"他出外辦理武林大會事宜。\n");
 
 	set("attitude", "peaceful");
 	set("combat_exp", 270000);

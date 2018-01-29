@@ -12,7 +12,7 @@ int help(object me)
   write(@HELP
 指令格式 : version
  
-这个指令会显示游戏目前所用的 MudOS driver 版本.
+這個指令會顯示遊戲目前所用的 MudOS driver 版本.
  
 HELP
     );

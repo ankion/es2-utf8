@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short","内厅穿堂");
+    set("short","內廳穿堂");
 	set("long", @LONG
-你从后廊往西出了内厅进入穿堂。往北是内院，一条宽过道，西  
-面立著一个粉油大影壁，后有一大半门，小小的一所庭宇。
+你從後廊往西出了內廳進入穿堂。往北是內院，一條寬過道，西  
+面立著一個粉油大影壁，後有一大半門，小小的一所庭宇。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -17,6 +17,6 @@ LONG
 	]));
 
 
-	create_door("east","仪门","west", DOOR_CLOSED);
+	create_door("east","儀門","west", DOOR_CLOSED);
 	setup();
 }

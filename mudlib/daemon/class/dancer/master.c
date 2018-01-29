@@ -9,16 +9,16 @@ void use_poison();
 
 void create()
 {
-        set_name("蓝止萍", ({ "master dancer", "master", "dancer" }) );
+        set_name("藍止萍", ({ "master dancer", "master", "dancer" }) );
 
-        set("title", "晚月庄主");
-        set("nickname", "回音仙子");
+        set("title", "晚月莊主");
+        set("nickname", "迴音仙子");
         set("gender", "女性");
         set("age", 22);
         set("long",
                 
-"蓝止萍是一个十分出色的美女，她弹的一手琵琶更是闻名千里，许多\n"
-                "王侯子弟，富商豪客都为她天下无双的美貌与琴艺倾倒。\n");
+"藍止萍是一個十分出色的美女，她彈的一手琵琶更是聞名千里，許多\n"
+                "王侯子弟，富商豪客都爲她天下無雙的美貌與琴藝傾倒。\n");
         set("attitude", "peaceful");
         set("class", "dancer");
         set("apprentice_available", 10);
@@ -39,10 +39,10 @@ void create()
         set("chat_chance_combat", 60);
         set("chat_msg_combat", ({
                 
-"蓝止萍嫣然一笑，一个转身迳自舞了起来，对眼前这场恶斗似乎全不放在心上。\n",
-                "蓝止萍脚步轻移，翩翩地转了几个圈，回眸一笑。\n",
-                "蓝止萍用手扶了扶自己的发簪，像是怕被对手碰歪似地。\n",
-                "蓝止萍笑嘻嘻地拾起地上一片从" HIM "魔鞭翩珑" NOR 
+"藍止萍嫣然一笑，一個轉身逕自舞了起來，對眼前這場惡鬥似乎全不放在心上。\n",
+                "藍止萍腳步輕移，翩翩地轉了幾個圈，回眸一笑。\n",
+                "藍止萍用手扶了扶自己的髮簪，像是怕被對手碰歪似地。\n",
+                "藍止萍笑嘻嘻地拾起地上一片從" HIM "魔鞭翩瓏" NOR 
 "上落下的花瓣。\n",
                 (: use_poison :),
                 (: exert_function, "chillgaze" :),
@@ -68,7 +68,7 @@ void create()
         map_skill("force", "iceforce");
         map_skill("whip", "snowwhip");
 
-        create_family("晚月庄", 1, "庄主");
+        create_family("晚月莊", 1, "莊主");
 
         set_temp("apply/defense", 100);
 
@@ -90,23 +90,23 @@ void attempt_apprentice(object ob)
 {
         if( query("apprentice_available") ) {
                 if( find_call_out("do_recruit") != -1 )
-                        command("say 慢著，一个一个来。");
+                        command("say 慢著，一個一個來。");
                 else
                         call_out("do_recruit", 2, ob);
         } else {
-                command("say 本庄主今天已经收了十个弟子，不想再收徒了。");
+                command("say 本莊主今天已經收了十個弟子，不想再收徒了。");
         }
 }
 
 void do_recruit(object ob)
 {
         if( (string)ob->query("gender") != "女性" )
-                command("say 男人都不是好东西，滚开！");
+                command("say 男人都不是好東西，滾開！");
         else {
-                command("say 很好，只要你对本庄主忠心耿耿，好处是少不了的。");
+                command("say 很好，只要你對本莊主忠心耿耿，好處是少不了的。");
                 if( (int)ob->query("per") > 25 && (int)ob->query("age") < 20 )
                         
-message_vision("$N暧昧地抚摸著$n的脸，说道：特别是像你这样的女孩 ....\n", 
+message_vision("$N曖昧地撫摸著$n的臉，說道：特別是像你這樣的女孩 ....\n", 
 this_object(), ob);
                 command("recruit " + ob->query("id") );
         }
@@ -130,7 +130,7 @@ void use_poison()
         if( ob->query_condition("rose_poison") ) return;
 
         tell_object(ob, 
-"你觉得脸上似乎沾上了什麽东西，伸手一摸却什麽也没有。\n");
+"你覺得臉上似乎沾上了什麼東西，伸手一摸卻什麼也沒有。\n");
         if( random(query("combat_exp")) > (int)ob->query("combat_exp") )
                 ob->apply_condition("rose_poison", 20);
 }

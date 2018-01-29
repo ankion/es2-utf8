@@ -7,7 +7,7 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
 	if( me->is_busy() )
-		return notify_fail("你上一个动作还没完成。\n");
+		return notify_fail("你上一個動作還沒完成。\n");
 
 	if( !arg ) {
 		write("You commit suicide.\n");
@@ -15,11 +15,11 @@ int main(object me, string arg)
 	}
 
 	if( arg!="-f" ) 
-		return notify_fail("自杀有两种，您是要永远死掉还是重新投胎？\n");
+		return notify_fail("自殺有兩種，您是要永遠死掉還是重新投胎？\n");
 
 	write(
-		"如果您选择永远死掉的自杀方式，这个人物的资料就永远删除了，请务必\n"
-		"考虑清楚，确定的话请输入您的密码：");
+		"如果您選擇永遠死掉的自殺方式，這個人物的資料就永遠刪除了，請務必\n"
+		"考慮清楚，確定的話請輸入您的密碼：");
 	input_to("check_password", 1, me, 1);
 	return 1;
 }
@@ -32,13 +32,13 @@ void check_password(string passwd, object me, int forever)
 	link_ob = me->query_temp("link_ob");
 	old_pass = link_ob->query("password");
 	if( crypt(passwd, old_pass)!=old_pass ) {
-		write("密码错误！\n");
+		write("密碼錯誤！\n");
 		return;
 	}
 
 	if (forever) {
 		tell_object( me,
-			HIR "\n\n你决定要自杀了，如果三分钟内不後悔，就真的永别了。\n\n\n" NOR);
+			HIR "\n\n你決定要自殺了，如果三分鐘內不後悔，就真的永別了。\n\n\n" NOR);
 		me->set_temp("suicide_countdown", 10);
 		me->start_busy( (: this_object(), "slow_suicide" :) );
 	}
@@ -53,7 +53,7 @@ int slow_suicide(object me)
 	me->add_temp("suicide_countdown", -1);
 	if( stage > 1 ) {
 		if( stage%5 == 0 )
-			tell_object(me, HIR "你还有 " + stage + " 秒的时间可以後悔。\n" NOR);
+			tell_object(me, HIR "你還有 " + stage + " 秒的時間可以後悔。\n" NOR);
 		return 1;
 	}
 
@@ -66,9 +66,9 @@ int slow_suicide(object me)
 	seteuid(getuid());
 	rm( link_ob->query_save_file() + SAVE_EXTENSION );
 	rm( me->query_save_file() + SAVE_EXTENSION );
-		write("好吧，永别了:)。\n");
+		write("好吧，永別了:)。\n");
 	tell_room(environment(me), me->name() +
-		"自杀了，以後你再也看不到这个人了。\n", ({me}));
+		"自殺了，以後你再也看不到這個人了。\n", ({me}));
 	destruct(me);
 	return 0;
 }
@@ -78,14 +78,14 @@ int help (object me)
         write(@HELP
 指令格式: suicide [-f]
  
-如果因为某种原因你不想活了, 你可以选择自杀.
-自杀分两种:
+如果因爲某種原因你不想活了, 你可以選擇自殺.
+自殺分兩種:
  
 suicide    : 重新投胎
-suicide -f : 永远的除去玩家资料, 系统会要求你
-             输入密码以确认身份.
+suicide -f : 永遠的除去玩家資料, 系統會要求你
+             輸入密碼以確認身份.
  
-请慎重选择 :)
+請慎重選擇 :)
  
 HELP
 );

@@ -4,7 +4,7 @@ void create()
 {
         set("short", "山洞");
         set("long", @LONG
-这里就是半山腰处的山洞。四壁空无一物，极为荒凉......
+這裏就是半山腰處的山洞。四壁空無一物，極爲荒涼......
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */

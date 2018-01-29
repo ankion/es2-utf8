@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "泓水南侧");
+        set("short", "泓水南側");
         set("long", @LONG
-这里靠近南岸，江水甚是寒冷。从这儿已能望到山烟寺的一角。
+這裏靠近南岸，江水甚是寒冷。從這兒已能望到山煙寺的一角。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

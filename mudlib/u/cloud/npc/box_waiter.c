@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("伙计", ({ "waiter" }) );
-        set("title", "棺材铺");
+        set_name("夥計", ({ "waiter" }) );
+        set("title", "棺材鋪");
         set("gender", "男性" );
         set("age", 35);
-        set("long", "他一副垂头丧气的样子，一脸倒霉相。\n");
+        set("long", "他一副垂頭喪氣的樣子，一臉倒黴相。\n");
         set("str", 30);
 	set("cor", 35);
         set("int", 14);

@@ -8,9 +8,9 @@ string look_sign(object me);
 
 void create()
 {
-        set("short", "赌场");
+        set("short", "賭場");
 	set("long", @LONG
-你现在正站在赌场里。靠近门口的地方有一块乌木雕成的招牌(sign)。
+你現在正站在賭場裏。靠近門口的地方有一塊烏木雕成的招牌(sign)。
 LONG
         );
         set("exits", ([
@@ -19,7 +19,7 @@ LONG
         ]) );
 
         set("item_desc", ([
-          "sign": "招牌上写着：赌，胜者赢双。\n",
+          "sign": "招牌上寫着：賭，勝者贏雙。\n",
         ]) );
 
         set("objects", ([

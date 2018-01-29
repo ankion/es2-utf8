@@ -3,7 +3,7 @@ inherit NPC;
  
 void create()
 {
-        set_name("芙云", ({ "fuyun" }) );
+        set_name("芙雲", ({ "fuyun" }) );
         set("gender", "女性" );
         set("age",17);
         set("long", @TEXT

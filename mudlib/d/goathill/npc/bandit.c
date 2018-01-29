@@ -8,7 +8,7 @@ void create()
 	set("gender", "男性");
 	set("age", 26);
 	set("long",
-		"一个眼神凶恶的土匪，脸上好几条长长的刀疤，看起来就知道不好惹。\n");
+		"一個眼神兇惡的土匪，臉上好幾條長長的刀疤，看起來就知道不好惹。\n");
 	set("combat_exp", 6000);
 	set("attitude", "aggressive");
 	set_skill("blade", 40);

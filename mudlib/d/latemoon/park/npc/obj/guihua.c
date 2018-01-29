@@ -6,11 +6,11 @@ inherit THROWING;
 
 void create()
 {
-        set_name("红桂花", ({ "osmanthus flower", "flower" }) );
+        set_name("紅桂花", ({ "osmanthus flower", "flower" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long",     "才摘的桂花，发出阵阵淡淡的幽香。\n");
+                set("long",     "才摘的桂花，發出陣陣淡淡的幽香。\n");
                 set("unit", "把");
                 set("base_unit", "粒");
                 set("base_weight", 1);

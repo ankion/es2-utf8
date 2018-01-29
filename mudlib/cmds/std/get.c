@@ -14,29 +14,29 @@ int main(object me, string arg)
 	object obj, *inv, env, obj2;
 	int i, amount;
 
-	if( !arg ) return notify_fail("你要捡起什麽东西？\n");
+	if( !arg ) return notify_fail("你要撿起什麼東西？\n");
 	if( me->is_busy() )
-		return notify_fail("你上一个动作还没有完成！\n");
+		return notify_fail("你上一個動作還沒有完成！\n");
 
 	// Check if a container is specified.
 	if( sscanf(arg, "%s from %s", arg, from)==2 ) {
 		env = present(from, me);
 		if(!env) env = present(from, environment(me));
-		if(!env) return notify_fail("你找不到 " + from + " 这样东西。\n");
+		if(!env) return notify_fail("你找不到 " + from + " 這樣東西。\n");
 		if(living(env) && (wiz_level(me) <= wiz_level(env)))
-			return notify_fail("你的巫师等级必须比对方高，才能搜身。\n");
+			return notify_fail("你的巫師等級必須比對方高，才能搜身。\n");
 	} else env = environment(me);
 
 	// Check if a certain amount is specified.
 	if(sscanf(arg, "%d %s", amount, item)==2) {
 		if( !objectp(obj = present(item, env)) )
-			return notify_fail("这里没有这样东西。\n");
+			return notify_fail("這裏沒有這樣東西。\n");
 		if( !obj->query_amount() )
-			return notify_fail( obj->name() + "不能被分开拿走。\n");
+			return notify_fail( obj->name() + "不能被分開拿走。\n");
 		if( amount < 1 )
-			return notify_fail("东西的个数至少是一个。\n");
+			return notify_fail("東西的個數至少是一個。\n");
 		if( amount > obj->query_amount() )
-			return notify_fail("这里没有那麽多的" + obj->name() + "。\n");
+			return notify_fail("這裏沒有那麼多的" + obj->name() + "。\n");
 		else if( amount == (int)obj->query_amount() ) {
 			return do_get(me, obj);
 		} else {
@@ -52,12 +52,12 @@ int main(object me, string arg)
 
 	// Check if we are makeing a quick get.
 	if(arg=="all") {
-		if( me->is_fighting() )	return notify_fail("你还在战斗中！只能一次拿一样。\n");
+		if( me->is_fighting() )	return notify_fail("你還在戰鬥中！只能一次拿一樣。\n");
 		if( !env->query_max_encumbrance() )	return notify_fail("那不是容器。\n");
 
 		inv = all_inventory(env);
 		if( !sizeof(inv) )
-			return notify_fail("那里面没有任何东西。\n");
+			return notify_fail("那裏面沒有任何東西。\n");
 
 		for(i=0; i<sizeof(inv); i++) {
 			if( inv[i]->is_character() || inv[i]->query("no_get") ) continue;
@@ -68,10 +68,10 @@ int main(object me, string arg)
 	}
 
 	if( !objectp(obj = present(arg, env)) || living(obj) )
-		return notify_fail("你附近没有这样东西。\n");
+		return notify_fail("你附近沒有這樣東西。\n");
 
 	if( obj->query("no_get") && !wizardp(me) )
-		return notify_fail("这个东西拿不起来。\n");
+		return notify_fail("這個東西拿不起來。\n");
 	
 	return do_get(me, obj);
 }
@@ -87,7 +87,7 @@ int do_get(object me, object obj)
 	if( obj->is_character() ) {
 		if( living(obj) ) return 0;
 		//	if( !userp(obj) && !obj->is_corpse() )
-		//		return notify_fail("你只能背负其他玩家的身体。\n");
+		//		return notify_fail("你只能揹負其他玩家的身體。\n");
 		// If we try to save someone from combat, take the risk :P
 	} else {
 		if( obj->query("no_get") && !wizardp(me) ) return 0;
@@ -97,13 +97,13 @@ int do_get(object me, object obj)
 	if( obj->move(me) ) {
 		if( me->is_fighting() ) me->start_busy(1);
 		if( obj->is_character() )
-			message_vision( "$N将$n扶了起来背在背上。\n", me, obj );
+			message_vision( "$N將$n扶了起來背在背上。\n", me, obj );
 		else
 			message_vision( sprintf("$N%s一%s$n。\n", 
-				old_env==environment(me)? "捡起":
+				old_env==environment(me)? "撿起":
 					(old_env->is_character() ?
-						"从" + old_env->name() + "身上" + (equipped? "除下" : "搜出"):
-						"从" + old_env->name() + "中拿出"),
+						"從" + old_env->name() + "身上" + (equipped? "除下" : "搜出"):
+						"從" + old_env->name() + "中拿出"),
 				obj->query("unit")), me, obj );
 		return 1;
 	}
@@ -113,9 +113,9 @@ int do_get(object me, object obj)
 int help(object me)
 {
 	write(@HELP
-指令格式 : get <物品名称> [from <容器名>]
+指令格式 : get <物品名稱> [from <容器名>]
  
-这个指令可以让你捡起地上或容器内的某样物品.
+這個指令可以讓你撿起地上或容器內的某樣物品.
  
 HELP
     );

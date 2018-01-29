@@ -6,7 +6,7 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("水烟阁武士氅", ({ "guard suit", "suit" }) );
+	set_name("水煙閣武士氅", ({ "guard suit", "suit" }) );
 	set_weight(7000);
 	if( clonep() )
 		set_default_object(__FILE__);

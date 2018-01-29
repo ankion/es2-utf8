@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("水烟阁司事", ({ "waterfog watcher", "watcher" }) );
+	set_name("水煙閣司事", ({ "waterfog watcher", "watcher" }) );
 	set("gender", "男性");
 	set("age", 34);
-	set("long", "这个人看起来十分和蔼可亲，一双眼睛炯炯有神。\n");
+	set("long", "這個人看起來十分和藹可親，一雙眼睛炯炯有神。\n");
 
 	set("attitude", "peaceful");
 	set("combat_exp", 60000);

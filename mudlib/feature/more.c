@@ -21,7 +21,7 @@ void more(string cmd, string *text, int line)
 		case "q":
 			return;
 	}
-	printf("== 未完继续 " HIY "%d%%" NOR " == (ENTER 继续下一页，q 离开，b 前一页)",
+	printf("== 未完繼續 " HIY "%d%%" NOR " == (ENTER 繼續下一頁，q 離開，b 前一頁)",
 		(line*100/sizeof(text)) );
 	input_to("more", text, line);
 }

@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("狱卒", ({ "prison guard", "guard" }) );
-        set("long", "这是黑松堡的狱卒\n");
+        set_name("獄卒", ({ "prison guard", "guard" }) );
+        set("long", "這是黑松堡的獄卒\n");
         set("attitude", "heroism");
 
         set("str", 27);

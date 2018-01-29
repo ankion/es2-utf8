@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("银色岩蛭", ({ "silver rock leech", "leech" }) );
+	set_name("銀色巖蛭", ({ "silver rock leech", "leech" }) );
 	set("long",
-		"这条岩蛭看起来银光闪闪，跟其他丑恶的岩蛭大不相同，你注意到它\n"
-		"口中白牙中竟微微地发著光，不知道肚子里藏了什么东西。\n");
+		"這條巖蛭看起來銀光閃閃，跟其他醜惡的巖蛭大不相同，你注意到它\n"
+		"口中白牙中竟微微地發著光，不知道肚子裏藏了什麼東西。\n");
 
-	set("race", "野兽");
-	set("unit", "条");
+	set("race", "野獸");
+	set("unit", "條");
 	set("age", 145);
 
 	set("max_gin", 1500);
@@ -26,7 +26,7 @@ void create()
 	set("kar", 80);
 	set("per", 10);
 
-	set("limbs", ({ "头部", "躯干" }) );
+	set("limbs", ({ "頭部", "軀幹" }) );
 	set("verbs", ({ "bite" }) );
 
 	set_temp("apply/attack", 90);

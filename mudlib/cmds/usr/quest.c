@@ -9,14 +9,14 @@ int main(object me, string arg)
         int nowtime = time();
         mapping quest;
         if(!(quest =  me->query("quest")))
-               return notify_fail("你现在没有任何任务！\n");
-        write("你现在的任务是" + quest["quest_type"] +
+               return notify_fail("你現在沒有任何任務！\n");
+        write("你現在的任務是" + quest["quest_type"] +
  "『" + quest["quest"] + "』。\n");
         nowtime = (int) me->query("task_time") - time();
         if( nowtime  > 0 )
                 time_period(nowtime, me);
         else
-                write("但是你已经没有足够的时间来完成它了。\n");
+                write("但是你已經沒有足夠的時間來完成它了。\n");
 
         return 1;
 }
@@ -33,10 +33,10 @@ int time_period(int timep, object me)
         if(d) time = chinese_number(d) + "天";
         else time = "";
 
-        if(h) time += chinese_number(h) + "小时";
+        if(h) time += chinese_number(h) + "小時";
         if(m) time += chinese_number(m) + "分";
         time += chinese_number(s) + "秒";
-        tell_object(me,"你还有" + time + "去完成它。\n");
+        tell_object(me,"你還有" + time + "去完成它。\n");
         return 1;
 }
 

@@ -5,12 +5,12 @@ inherit NPC;
 void create()
 {
 	set_name("赫造基", ({ "adviser" }));
-	set("title","军师");
+	set("title","軍師");
 	set("gender", "男性");
 	set("age", 44);
 	set("long",
-        	"道光满面，□智不言而现，气象万千，显然是茅山术高手中的高\n"
-        	"手，经纶羽扇，和大将军正是绝配。\n");
+        	"道光滿面，□智不言而現，氣象萬千，顯然是茅山術高手中的高\n"
+        	"手，經綸羽扇，和大將軍正是絕配。\n");
 
 	set("attitude", "peaceful");
 
@@ -20,7 +20,7 @@ void create()
 	set("combat_exp", 300000);
         
         set("inquiry", ([
-        	"兵器库" : "先看看你的诚意再说罗。\n",
+        	"兵器庫" : "先看看你的誠意再說羅。\n",
         ]) );
         
         set("chat_chance_combat", 80);
@@ -77,19 +77,19 @@ int accept_object(object who,object ob)
                 return 1;
 	}
                                                                                                                                                                 
-	if( !who->query_temp("军营/swear") ) {
+	if( !who->query_temp("軍營/swear") ) {
 		if( ob->value() >= 800 ) {
-            	   command("say 好极了，我就告诉你一项秘密吧。");
-            	   command("say 在那片光滑的山壁前发誓(swear) 我爱.....。");
-                   command("say 或许\你可以发现奇特的事喔。");
-                   who->set_temp("军营/swear", 1);
+            	   command("say 好極了，我就告訴你一項祕密吧。");
+            	   command("say 在那片光滑的山壁前發誓(swear) 我愛.....。");
+                   command("say 或許\你可以發現奇特的事喔。");
+                   who->set_temp("軍營/swear", 1);
 		   return 1;
 		} else {
-		   command("say 钱太少了吧！没收。");
+		   command("say 錢太少了吧！沒收。");
 		   return 1;
 		}
 	} else 
-		command("say 即然你那么有心，那我就勉强收起来了。");
+		command("say 即然你那麼有心，那我就勉強收起來了。");
 	
 	return 1;
 }

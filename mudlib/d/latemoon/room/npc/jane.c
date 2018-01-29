@@ -18,7 +18,7 @@ TEXT
         set("force", 7000);
         set("max_force", 7000);
         set("force_factor", 30);
-        create_family("晚月庄", 1, "前辈");
+        create_family("晚月莊", 1, "前輩");
 
         setup();
         carry_object(__DIR__"obj/deer_boot")->wear();
@@ -27,6 +27,6 @@ TEXT
 
 void attempt_apprentice(object ob)
 {
-     command("say 拜师! 不敢当，我都老了!你去找「芷萍」好了，看她收不收你? ");
+     command("say 拜師! 不敢當，我都老了!你去找「芷萍」好了，看她收不收你? ");
      return 0;
 }

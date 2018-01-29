@@ -6,14 +6,14 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg)
 {
-	if( !arg ) return notify_fail("你要替自己取什麽绰号？\n");
+	if( !arg ) return notify_fail("你要替自己取什麼綽號？\n");
         if ( arg == "none" ) {
              me->set("nickname",0);
              write("OK!\n");
              return 1 ;
         }
 	if( strlen(arg) > 50 )
-		return notify_fail("你的绰号太长了，想一个短一点的、响亮一点的。\n");
+		return notify_fail("你的綽號太長了，想一個短一點的、響亮一點的。\n");
 
 	arg = replace_string(arg, "$BLK$", BLK);
 	arg = replace_string(arg, "$RED$", RED);
@@ -39,21 +39,21 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-指令格式 : nick <外号, 绰号>
+指令格式 : nick <外號, 綽號>
  
-这个指令可以让你为自己取一个响亮的名号或头衔，你如果希望在绰号中
-使用 ANSI 的控制字元改变颜色，可以用以下的控制字串：
+這個指令可以讓你爲自己取一個響亮的名號或頭銜，你如果希望在綽號中
+使用 ANSI 的控制字元改變顏色，可以用以下的控制字串：
 
-$BLK$ - 黑色		$NOR$ - 恢复正常颜色
-$RED$ - 红色		$HIR$ - 亮红色
-$GRN$ - 绿色		$HIG$ - 亮绿色
-$YEL$ - 土黄色		$HIY$ - 黄色
-$BLU$ - 深蓝色		$HIB$ - 蓝色
-$MAG$ - 浅紫色		$HIM$ - 粉红色
-$CYN$ - 蓝绿色		$HIC$ - 天青色
-$WHT$ - 浅灰色		$HIW$ - 白色
+$BLK$ - 黑色		$NOR$ - 恢復正常顏色
+$RED$ - 紅色		$HIR$ - 亮紅色
+$GRN$ - 綠色		$HIG$ - 亮綠色
+$YEL$ - 土黃色		$HIY$ - 黃色
+$BLU$ - 深藍色		$HIB$ - 藍色
+$MAG$ - 淺紫色		$HIM$ - 粉紅色
+$CYN$ - 藍綠色		$HIC$ - 天青色
+$WHT$ - 淺灰色		$HIW$ - 白色
  
-其中系统自动会在字串尾端加一个 $NOR$。
+其中系統自動會在字串尾端加一個 $NOR$。
 
 HELP
         );

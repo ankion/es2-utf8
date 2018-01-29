@@ -4,12 +4,12 @@ int time_period(int timep, object me);
 
 void create()	
 {
-        set_name("朱鸿雪", ({ "Zhu hongxue", "zhu hongxue", "zhu" }) );	
+        set_name("朱鴻雪", ({ "Zhu hongxue", "zhu hongxue", "zhu" }) );	
 
         set("gender", "女性");	        
 	set("age", 69);
         set("long",
-               "朱鸿雪慈眉善目，可又有谁能想到她竟是杀手组织中人。\n");	
+               "朱鴻雪慈眉善目，可又有誰能想到她竟是殺手組織中人。\n");	
         set("attitude", "peaceful");	
         set("skill_public",1);	
         set("str", 26000);	
@@ -39,7 +39,7 @@ void create()
         set("max_force", 5000);	
         set("force_factor", 10);	
 
-        create_family("东方神教", 2, "教主");	
+        create_family("東方神教", 2, "教主");	
 
         setup();	
 
@@ -49,7 +49,7 @@ void create()
 
 int accept_fight(object me)	
 {
-        command("say 生命可贵！不要自寻死路！");	
+        command("say 生命可貴！不要自尋死路！");	
         return 0;	
 }
 
@@ -89,15 +89,15 @@ int give_quest ()
         me = this_player();	
 // Let's see if this player still carries an un-expired task	
         if ((int)me->query("combat_exp") <= 1000) {	
-		message_vision("朱鸿雪奇怪的眼神盯着$N,说:" 就凭你这种小角色也想来这？\n");
-		message_vision("还不快滚!\n");	
+		message_vision("朱鴻雪奇怪的眼神盯着$N,說:" 就憑你這種小角色也想來這？\n");
+		message_vision("還不快滾!\n");	
 	        return 0;	
 		}
        if((quest =  me->query("quest"))) {	
        		if( ((int) me->query("task_time")) >  time() )	
                 	return 0;	
 	    else {	
-                message_vision("朱鸿雪向$N一甩袍袖，说道：真没用！不过看在你还回来见老夫的份上，就在给你一次机会．\n", me);		
+                message_vision("朱鴻雪向$N一甩袍袖，說道：真沒用！不過看在你還回來見老夫的份上，就在給你一次機會．\n", me);		
                 me->set("kee", me->query("kee")/2+1);	
 		}
 		}
@@ -127,8 +127,8 @@ int give_quest ()
         timep = quest["time"];	
         time_period(timep, me);
 
-	if (quest["quest_type"] == "杀") 	 
-       	tell_object(me,"替我杀了『"+quest["quest"]+"』。\n" NOR);	 
+	if (quest["quest_type"] == "殺") 	 
+       	tell_object(me,"替我殺了『"+quest["quest"]+"』。\n" NOR);	 
 
         quest["exp_bonus"]=quest["exp_bonus"];
         quest["pot_bonus"]=quest["pot_bonus"];	      
@@ -154,10 +154,10 @@ int time_period(int timep, object me)
         if(d) time = chinese_number(d) + "天";	     
 	   else time = "";
 
-        if(h) time += chinese_number(h) + "小时";
+        if(h) time += chinese_number(h) + "小時";
         if(m) time += chinese_number(m) + "分";	  
         time += chinese_number(s) + "秒";	
 
-        tell_object(me,HIW "朱鸿雪沉思了一会儿，说道：\n请在" + time + "内");	     
+        tell_object(me,HIW "朱鴻雪沉思了一會兒，說道：\n請在" + time + "內");	     
 	return 1;
 }		

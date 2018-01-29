@@ -19,7 +19,7 @@ void create()
 		set("armor_prop/name", ({"黑衣人"}) );
 		set("armor_prop/short", ({"黑衣人(figure)"}) );
 		set("armor_prop/long", ({
-			"一个身穿黑色夜行衣，看起来神秘兮兮的家伙。\n"
+			"一個身穿黑色夜行衣，看起來神祕兮兮的傢伙。\n"
 		}) );
 	}
 	setup();

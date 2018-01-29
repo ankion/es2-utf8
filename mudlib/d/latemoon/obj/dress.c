@@ -5,7 +5,7 @@ inherit CLOTH;
 
 void create()
 {
-        set_name( HIM "紫霜血蝉衣" NOR, ({ "bloody dress", "dress" }) );
+        set_name( HIM "紫霜血蟬衣" NOR, ({ "bloody dress", "dress" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);

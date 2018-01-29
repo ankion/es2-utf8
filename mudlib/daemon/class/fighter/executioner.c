@@ -6,20 +6,20 @@ inherit NPC;
 
 void create()
 {
-        set_name("潘军禅", ({ "master executioner", "executioner", "master" }) 
+        set_name("潘軍禪", ({ "master executioner", "executioner", "master" }) 
 );
-        set("title", "水烟阁执法使");
-        set("nickname", HIC "书 剑 侠" NOR);
+        set("title", "水煙閣執法使");
+        set("nickname", HIC "書 劍 俠" NOR);
         set("gender", "男性");
         set("age", 28);
         set("long",
                 
-"潘军禅是当今武林的一位传奇性人物，以他仅仅二十八岁的年龄竟能做到\n"
+"潘軍禪是當今武林的一位傳奇性人物，以他僅僅二十八歲的年齡竟能做到\n"
                 
-"水烟阁执法使的职位，著实是一位不简单的人物。潘军禅是封山剑派掌门\n"
+"水煙閣執法使的職位，著實是一位不簡單的人物。潘軍禪是封山劍派掌門\n"
                 
-"柳淳风的结拜义弟，但是他为人其实十分风趣，又好交朋友，丝毫不会摆\n"
-                "出武林执法者的架子。\n" );
+"柳淳風的結拜義弟，但是他爲人其實十分風趣，又好交朋友，絲毫不會擺\n"
+                "出武林執法者的架子。\n" );
 
         set("attitude", "friendly");
         set("combat_exp", 1000000);

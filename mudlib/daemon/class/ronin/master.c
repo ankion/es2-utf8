@@ -5,7 +5,7 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("早川直义", ({ "master ronin", "ronin" }) );
+	set_name("早川直義", ({ "master ronin", "ronin" }) );
 	set("gender", "男性");
 	set("age", 52);
 	set("attitude", "peaceful");
@@ -24,7 +24,7 @@ void create()
 	set("chat_msg", ({
 	}) );
 */
-	create_family("鬼笠馆浪人", 11, "宗道");
+	create_family("鬼笠館浪人", 11, "宗道");
 
 /*
 	set("chat_chance_combat", 80);
@@ -57,8 +57,8 @@ void attempt_apprentice(object me)
 {
 	command("look " + me->query("id"));
 	if( me->can_afford(100) ) {
-		command("say 我们花紫会只收化子，" + RANK_D->query_respect(me)
-			+ "您还是回去享福吧。\n");
+		command("say 我們花紫會只收化子，" + RANK_D->query_respect(me)
+			+ "您還是回去享福吧。\n");
 		return;
 	} else {
 		command("nod");

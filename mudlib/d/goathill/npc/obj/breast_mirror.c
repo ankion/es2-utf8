@@ -6,7 +6,7 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("护心镜", ({ "breast mirror", "mirror" }) );
+	set_name("護心鏡", ({ "breast mirror", "mirror" }) );
 	set_weight(6000);
 	if( clonep() )
 		set_default_object(__FILE__);

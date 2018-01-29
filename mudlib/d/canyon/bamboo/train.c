@@ -4,14 +4,14 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "洞内石室");
+	set("short", "洞內石室");
 	set("long", @LONG
-飕飕的风不停地向你身上袭卷而来，石室的四周竟有四个大洞各
-分布东南西北四方，向洞外望去亦是一遍遍的竹林，和之前的竹林只
-差在于风势的大小，强风无情的猛击挺立的竹子，竹子左右摇晃的抵
-抗著，正是一幅柔以破刚之图，壁上有一石制书柜(bookcase)，正散
-出阵阵的蓝光，和之前所遇之正气一脉相连，匣中似有一物，看来才
-是正气的来源。
+颼颼的風不停地向你身上襲捲而來，石室的四周竟有四個大洞各
+分佈東南西北四方，向洞外望去亦是一遍遍的竹林，和之前的竹林只
+差在於風勢的大小，強風無情的猛擊挺立的竹子，竹子左右搖晃的抵
+抗著，正是一幅柔以破剛之圖，壁上有一石制書櫃(bookcase)，正散
+出陣陣的藍光，和之前所遇之正氣一脈相連，匣中似有一物，看來才
+是正氣的來源。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
@@ -19,7 +19,7 @@ LONG
 ]));
 
         set("item_desc", ([
-        "bookcase" : "看起来是个普普通通的柜子，或许\你可以search看看。\n",
+        "bookcase" : "看起來是個普普通通的櫃子，或許\你可以search看看。\n",
 	]) );
 
 	setup();
@@ -38,11 +38,11 @@ int search_case(string arg)
 	
 	me=this_player();
 	if ( query_temp("got") ) {
-		message_vision("$N在书柜找了找但没找到些什么\n",me); 
+		message_vision("$N在書櫃找了找但沒找到些什麼\n",me); 
 		return 1;
 	}
 	
-	message_vision("$N在书柜中找了到一个书匣\n",me);
+	message_vision("$N在書櫃中找了到一個書匣\n",me);
 	obj=new(__DIR__"obj/slipcase");
 	obj->move(me);
 	set_temp("got", 1);

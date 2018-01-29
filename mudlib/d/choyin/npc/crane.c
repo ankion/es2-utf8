@@ -2,9 +2,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("仙鹤",({"crane"}) );
-        set("long", "白羽如雪，不似凡间之物。 \n");
-        set("race", "野兽");
+        set_name("仙鶴",({"crane"}) );
+        set("long", "白羽如雪，不似凡間之物。 \n");
+        set("race", "野獸");
         set("unit", "只");
         set("max_gin", 300);
         set("max_kee", 900);

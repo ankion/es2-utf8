@@ -12,14 +12,14 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "这是一把当年张家老祖宗退隐时皇上赐的宝刀");
+                set("long", "這是一把當年張家老祖宗退隱時皇上賜的寶刀");
                 set("value", 20000);
                 set("material", "crimsonsteel");
         }
         init_dagger(40);
 
-        set("wield_msg", "$N从腰间抽出一把亮闪闪的$n握在手中。\n");
-        set("unwield_msg", "$N将手中的$n别在腰间。\n");
+        set("wield_msg", "$N從腰間抽出一把亮閃閃的$n握在手中。\n");
+        set("unwield_msg", "$N將手中的$n別在腰間。\n");
 
 
         setup();

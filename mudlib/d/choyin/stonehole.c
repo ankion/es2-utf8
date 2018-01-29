@@ -6,7 +6,7 @@ void create()
 {
 	set("short", "石室");
 	set("long", @LONG
-石室黑漆漆的,双目不见物.你的双手好象触到了什么东西(object),惧意顿生.
+石室黑漆漆的,雙目不見物.你的雙手好象觸到了什麼東西(object),懼意頓生.
 LONG
 	);
 	set("no_clean_up", 0);

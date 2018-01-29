@@ -6,7 +6,7 @@ inherit SURCOAT;
 
 void create()
 {
-	set_name("狼皮披风", ({ "wolfskin cloak", "cloak" }) );
+	set_name("狼皮披風", ({ "wolfskin cloak", "cloak" }) );
 	set_weight(9000);
 	if( clonep() )
 		set_default_object(__FILE__);

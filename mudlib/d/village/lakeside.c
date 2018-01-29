@@ -6,9 +6,9 @@ void create()
 {
 	set("short", "玉螺湖畔");
 	set("long", @LONG
-玉螺湖以产的螺蛳洁白如玉而得名，并且湖中盛产味道鲜美的鲈鱼。
-有很多渔夫泛舟湖上，以网鱼捕螺为生。但现在他们都站在岸边，面带愁
-容，不清楚有什么变故发生。岸边还散落了几艘木船(boat)。
+玉螺湖以產的螺螄潔白如玉而得名，並且湖中盛產味道鮮美的鱸魚。
+有很多漁夫泛舟湖上，以網魚捕螺爲生。但現在他們都站在岸邊，面帶愁
+容，不清楚有什麼變故發生。岸邊還散落了幾艘木船(boat)。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -21,7 +21,7 @@ LONG
 	
 	set("item_desc", ([
 		"boat":
-		"关内能经常见到的渔船，你可以划着(paddle)它到湖中心。
+		"關內能經常見到的漁船，你可以划着(paddle)它到湖中心。
 " ]) );
 	set("no_clean_up", 0);
 
@@ -37,11 +37,11 @@ void init()
 int do_paddle(string arg)
 {
 	if(!arg || arg=="")
-		return notify_fail("你要划什么？\n");
+		return notify_fail("你要劃什麼？\n");
 	if( arg!="boat" && arg!="船" )
-		return notify_fail("不划船你想划什么？\n");
-	message_vision("$N跳上渔船，奋力向湖心划去。\n", this_player());
-	write("你终于划到湖中心了。\n");
+		return notify_fail("不划船你想劃什麼？\n");
+	message_vision("$N跳上漁船，奮力向湖心劃去。\n", this_player());
+	write("你終於劃到湖中心了。\n");
 	this_player()->move(__DIR__"lake");
 	return 1;
 }
@@ -49,6 +49,6 @@ int do_paddle(string arg)
 int valid_leave(object me,string dir)
 {
         if( dir=="west" )
-            return notify_fail( "这么大的一片湖，你想走过去吗？\n" );
+            return notify_fail( "這麼大的一片湖，你想走過去嗎？\n" );
         return ::valid_leave(me,dir);
 }

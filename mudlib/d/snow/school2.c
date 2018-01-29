@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "淳风武馆教练场");
+	set("short", "淳風武館教練場");
 	set("long", @LONG
-你现在正站在一个宽敞的教练场中，地上铺著黄色的细砂，许多人
-正在这里努力地操练著，北边是一间高大的兵器厅，往东则是武馆师父
-们休息的大厅。
+你現在正站在一個寬敞的教練場中，地上鋪著黃色的細砂，許多人
+正在這裏努力地操練著，北邊是一間高大的兵器廳，往東則是武館師父
+們休息的大廳。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */
@@ -24,7 +24,7 @@ LONG
 ]));
 	set("outdoors", "snow");
 
-	create_door("west", "红漆大门", "east", DOOR_CLOSED);
+	create_door("west", "紅漆大門", "east", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

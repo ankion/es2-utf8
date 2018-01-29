@@ -4,11 +4,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("老板娘", ({ "woman" }) );
-        set("title", "绸缎庄");
+        set_name("老闆娘", ({ "woman" }) );
+        set("title", "綢緞莊");
         set("gender", "女性" );
         set("age", 29);
-//        set("long", "李掌柜是不难看的女人，一直经营着祖传鞋店生意。\n");
+//        set("long", "李掌櫃是不難看的女人，一直經營着祖傳鞋店生意。\n");
         set("combat_exp", 300000);
         set("attitude", "friendly");
         set("max_atman", 1000); 
@@ -32,9 +32,9 @@ void create()
         map_skill("sword", "fonxansword");
 
         set("inquiry", ([
-                "here": "这里是京师绸缎庄，没钱别进来！\n",
-                "name": "在下姓陶，闺名不能告诉你。\n",
-                "衣服": "您需要什么样的？",
+                "here": "這裏是京師綢緞莊，沒錢別進來！\n",
+                "name": "在下姓陶，閨名不能告訴你。\n",
+                "衣服": "您需要什麼樣的？",
         ]) );
         
         set("vendor_goods", ([
@@ -68,15 +68,15 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "老板娘道：这位"
+                        say( "老闆娘道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，您需要什么？\n");
+                                + "，您需要什麼？\n");
                         break;
                 case 1:
-                        say( "老板娘神秘地对你说：要南大食堂磁卡吗？\n");
+                        say( "老闆娘神祕地對你說：要南大食堂磁卡嗎？\n");
                         break;
                 case 2:
-                        say( "老板娘悄声说道：奴家可是湖南人哦。\n");
+                        say( "老闆娘悄聲說道：奴家可是湖南人哦。\n");
                         break;
         }
 }

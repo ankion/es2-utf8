@@ -4,16 +4,16 @@ inherit EQUIP;
 
 void create()
 {
-	set_name("战斗力探测器", ({ "detector", "glass", "device" }) );
+	set_name("戰鬥力探測器", ({ "detector", "glass", "device" }) );
 	set_weight(300);
-	set("unit", "个");
+	set("unit", "個");
 	set("long",
-		"这是来自「七龙珠」的战斗力探测器，你可以用它来探测(detect)别人\n"
-		"的战斗力。\n");
+		"這是來自「七龍珠」的戰鬥力探測器，你可以用它來探測(detect)別人\n"
+		"的戰鬥力。\n");
 	set("value", 500);
 	set("type", "misc");
 	set("apply", ([
-		"头部":	0,
+		"頭部":	0,
 	]) );
 }
 
@@ -31,7 +31,7 @@ int do_detect(string arg)
 	if( arg ) ob = present(arg, environment(this_player()));
 	else ob = this_player()->query_opponent();
 
-	if( !ob ) return notify_fail("你要探测谁的战斗力？\n");
+	if( !ob ) return notify_fail("你要探測誰的戰鬥力？\n");
 
 	sen = (int)ob->query("sen");
 	if( stringp(skill = ob->query("attack_skill")) )
@@ -39,7 +39,7 @@ int do_detect(string arg)
 	else
 		sk = 0;
 
-	printf("探测器显示%s的战斗力是：%d\n",
+	printf("探測器顯示%s的戰鬥力是：%d\n",
 		ob->query("name"), 
 		(sk*sk*sk) * (100 + sen) / 100 + (int)ob->query("combat_exp") );
 

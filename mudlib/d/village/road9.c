@@ -7,9 +7,9 @@ void create()
 {
 	set("short", "青石小路");
 	set("long", @LONG
-两只小燕子落到柳枝上，叽叽喳喳叫个不停，它们的家可能在附近。
-在小路的西面是一片绿油油的稻田，几个农民在田间忙碌；东面是地主田
-老财的宅院，难得一个地主的房子并不是特别奢华，只有三间屋子。
+兩隻小燕子落到柳枝上，嘰嘰喳喳叫個不停，它們的家可能在附近。
+在小路的西面是一片綠油油的稻田，幾個農民在田間忙碌；東面是地主田
+老財的宅院，難得一個地主的房子並不是特別奢華，只有三間屋子。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */
@@ -17,7 +17,7 @@ LONG
   "west" : __DIR__"field",
   "east" : __DIR__"lordhouse1",
 ]));
-	create_door("east","田老财家大门","west",DOOR_CLOSED);
+	create_door("east","田老財家大門","west",DOOR_CLOSED);
 	set("no_clean_up", 0);
 
 	setup();

@@ -20,7 +20,7 @@ void compelete_trade(object me, string what)
 	if( stringp(ob_file = query("vendor_goods/" + what)) ) {
 		ob = new(ob_file);
 		ob->move(me);
-		message_vision("$N向$n买下一" + ob->query("unit") + ob->query("name") + "。\n",
+		message_vision("$N向$n買下一" + ob->query("unit") + ob->query("name") + "。\n",
 			me, this_object() );
 	}
 }
@@ -28,10 +28,10 @@ void compelete_trade(object me, string what)
 string price_string(int v)
 {
 	if( v%10000 == 0 )
-		return (v/10000) + "两黄金";
+		return (v/10000) + "兩黃金";
 	if( v%100 == 0 )
-		return (v/100) + "两银子";
-	return v + "文钱";
+		return (v/100) + "兩銀子";
+	return v + "文錢";
 }
 
 string get_vendor_list(string arg)
@@ -43,7 +43,7 @@ string get_vendor_list(string arg)
 	if( !mapp(goods = query("vendor_goods")) ) return 0;
 	if( arg && !this_object()->id(arg) ) return 0;
 	id = keys(goods);
-	list = "你可以购买下列这些东西：\n";
+	list = "你可以購買下列這些東西：\n";
 	for(i=0; i<sizeof(id); i++)
 		list += sprintf("%s(%s)：%10s\n",
             goods[id[i]]->name(),

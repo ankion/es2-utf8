@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "后殿");
+	set("short", "後殿");
 	set("long", @LONG
-你正站在灵心观的后殿, 正中央供奉著茅山派开山祖师张天师的
-画像, 在画像的下方摆放著当年张天师收妖伏魔时所用的宝剑。剑的
-两旁陪祀著历代掌门人的牌位。走出南边的红漆木门可以看到天井。
+你正站在靈心觀的後殿, 正中央供奉著茅山派開山祖師張天師的
+畫像, 在畫像的下方擺放著當年張天師收妖伏魔時所用的寶劍。劍的
+兩旁陪祀著歷代掌門人的牌位。走出南邊的紅漆木門可以看到天井。
 LONG
 	);
     set("item_desc", ([
@@ -19,6 +19,6 @@ LONG
      "south" : __DIR__"corridor5",
 ]));
 
-     create_door("south", "红漆木门", "north", DOOR_CLOSED);
+     create_door("south", "紅漆木門", "north", DOOR_CLOSED);
 	setup();
 }

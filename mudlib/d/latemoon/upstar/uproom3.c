@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-     set("short", "缀芳阁");
+     set("short", "綴芳閣");
 	set("long", @LONG
-这是晚月庄让弟子们静修的地方, 名曰「缀芳」。简单的布置加上
-一座檀香炉, 你觉得这绝对是一个静修(ponder)的好场所。空气中弥漫
-著一股肃穆的气息, 使人很容易进入忘我的境界。
+這是晚月莊讓弟子們靜修的地方, 名曰「綴芳」。簡單的佈置加上
+一座檀香爐, 你覺得這絕對是一個靜修(ponder)的好場所。空氣中瀰漫
+著一股肅穆的氣息, 使人很容易進入忘我的境界。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -20,7 +20,7 @@ LONG
         __DIR__"npc/huei" : 1,
      "/d/latemoon/obj/cake" : 1,
     ]) );
-    create_door("north","木门","south", DOOR_CLOSED);
+    create_door("north","木門","south", DOOR_CLOSED);
 	setup();
 }
 void init()
@@ -32,10 +32,10 @@ int do_ponder(string arg)
        object who;
 
        who = this_player();
-       message_vision("$N双手合掌，安静的坐在地上。\n" ,who);
+       message_vision("$N雙手合掌，安靜的坐在地上。\n" ,who);
        who->receive_damage("sen",50);
        if( (int)who->query("bellicosity") > 0)
            who->add("bellicosity", - (random((int)who->query("kar")) + 7 ) );
-       message_vision("$N彷佛变的较为祥合慈善了! \n" , who);
+       message_vision("$N彷佛變的較爲祥合慈善了! \n" , who);
     return 1;
 }

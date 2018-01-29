@@ -7,12 +7,12 @@ string look_notice(object me);
 
 void create()
 {
-        set("short", "京师南门");
+        set("short", "京師南門");
         set("long", @LONG
-这是京师的南门。高大的城门正上“京师南门”几个大字格外
-显眼。城墙上贴着几张官家布告(notice)。西北方是京师的监狱，
-关押着一些要犯，因此这里的官兵们也戒备森严。南边是城外，不
-时走来几个赴京赶考的举子。北边就是京师，一个灯红酒绿的地方。
+這是京師的南門。高大的城門正上“京師南門”幾個大字格外
+顯眼。城牆上貼着幾張官家佈告(notice)。西北方是京師的監獄，
+關押着一些要犯，因此這裏的官兵們也戒備森嚴。南邊是城外，不
+時走來幾個赴京趕考的舉子。北邊就是京師，一個燈紅酒綠的地方。
 LONG
         );
 
@@ -28,25 +28,25 @@ LONG
         set("objects", ([
                 __DIR__"npc/guard" : 3 ,]) );  
 
-        create_door("out", "城门", "enter");
+        create_door("out", "城門", "enter");
         setup();
 }
 
 string look_notice(object me)
 {
        if( wizardp(me) )
-                return "告示上写著：悬赏捉拿灵儿、阿泰。\n";
+                return "告示上寫著：懸賞捉拿靈兒、阿泰。\n";
         else
-                return "告示上写著：今年文武大选。\n";
+                return "告示上寫著：今年文武大選。\n";
 }
 
 int valid_leave(object me,string dir)
 {
         if ( dir=="out" &&
-                ( !(string) me->query("marks/京师")
+                ( !(string) me->query("marks/京師")
                 || !(string) me->query("marks/令牌") ) ) {
-                tell_object (me, "京师守城兵说道：没有官府通令，任何人不能出入京师。\n");
-                return notify_fail("出城方向的路被京师守城兵挡住了。\n");
+                tell_object (me, "京師守城兵說道：沒有官府通令，任何人不能出入京師。\n");
+                return notify_fail("出城方向的路被京師守城兵擋住了。\n");
                 }
 
         if (me->query("marks/令牌")) {

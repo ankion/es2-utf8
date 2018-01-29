@@ -5,12 +5,12 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("人参", ({ "ginseng" }) );
+	set_name("人蔘", ({ "ginseng" }) );
 	set_weight(50);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "一根约食指长的人参，据说常吃这种补品可以延年益寿。\n");
+		set("long", "一根約食指長的人蔘，據說常吃這種補品可以延年益壽。\n");
 		set("unit", "根");
 		set("value", 3000);
 		set("food_remaining", 1);

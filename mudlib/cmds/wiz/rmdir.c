@@ -16,16 +16,16 @@ int main(object me, string arg)
 	if( rmdir(dir) )
 		write("Ok.\n");
 	else
-		write("删除失败。\n");
+		write("刪除失敗。\n");
 	return 1;	
 }
 
 int help(object me)
 {
 	write(@HELP
-指令格式 : rmdir <子目录名>
+指令格式 : rmdir <子目錄名>
 
-删除一个子目录。
+刪除一個子目錄。
 HELP
 	);
 	return 1;

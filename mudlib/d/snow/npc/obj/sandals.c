@@ -12,7 +12,7 @@ void create()
 		set_default_object(__FILE__);
 	else {
 		set("material", "wood");
-		set("unit", "双");
+		set("unit", "雙");
 		set("value", 10);
 		set("armor_prop/dodge", 0 );
 	}

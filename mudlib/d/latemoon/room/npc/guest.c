@@ -3,7 +3,7 @@ inherit NPC;
  
 void create()
 {
-        set_name("芙云", ({ "fuyun" }) );
+        set_name("芙雲", ({ "fuyun" }) );
         set("gender", "女性" );
         set("age",17);
         set("long", @TEXT
@@ -20,7 +20,7 @@ TEXT
         set("max_force",800);
         set("force_factor", 10);
         set("attitude","peaceful");
-        create_family("逍遥派",7,"弟子");
+        create_family("逍遙派",7,"弟子");
         setup();
         add_money("silver", 5);
         carry_object("/obj/example/sword")->wield();

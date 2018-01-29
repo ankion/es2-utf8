@@ -12,7 +12,7 @@ void create()
 	set("cor", 24);
 	set("cps", 12);
 	set("int", 20);
-	set("long", "这个僧人跛了右腿，脸上没有什么表情，一副若有所思的样子。\n");
+	set("long", "這個僧人跛了右腿，臉上沒有什麼表情，一副若有所思的樣子。\n");
 	set("combat_exp", 4000);
 	set("attitude", "friendly");
 
@@ -42,6 +42,6 @@ void create()
 
 int accept_fight(object me)
 {
-	command("say 阿弥陀佛！贫僧武功\低微，又是个残废，施主不要开这种玩笑。\n");
+	command("say 阿彌陀佛！貧僧武功\低微，又是個殘廢，施主不要開這種玩笑。\n");
 	return 0;
 }

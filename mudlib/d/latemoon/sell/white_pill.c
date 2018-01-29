@@ -3,11 +3,11 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-     set_name(HIW "白凤丸" NOR ,({"white pill","pill" }));
+     set_name(HIW "白鳳丸" NOR ,({"white pill","pill" }));
 	set("long",
-   "这是一颗纯白亮丽的丸子，闻了闻有一种上等药材的味道。\n");
-	set("unit", "颗");
-	set("base_unit", "颗");
+   "這是一顆純白亮麗的丸子，聞了聞有一種上等藥材的味道。\n");
+	set("unit", "顆");
+	set("base_unit", "顆");
 	set("base_weight", 200);
 	set_amount(1);
 }
@@ -20,12 +20,12 @@ void init()
 
 int do_eat(string arg)
 {
-    if( !arg || arg != "pill")  return notify_fail("你要吃甚么呢? \n");
+    if( !arg || arg != "pill")  return notify_fail("你要吃甚麼呢? \n");
 
 	message_vision(
-	   "$N拿出一颗大丸子，一口给吞了下去。\n"
+	   "$N拿出一顆大丸子，一口給吞了下去。\n"
 
-	"只见$N全身冒出一阵白烟，整个人看起来非常有精神! \n",this_player());
+	"只見$N全身冒出一陣白煙，整個人看起來非常有精神! \n",this_player());
     this_player()->receive_heal("gin", 100);
 	this_player()->receive_heal("kee", 300);
 	this_player()->receive_heal("sen",100);

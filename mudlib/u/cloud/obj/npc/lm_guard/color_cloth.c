@@ -11,7 +11,7 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "这件淡绿色的绸衫上面绣著几只彩蝶，煞是好看。\n");
+		set("long", "這件淡綠色的綢衫上面繡著幾隻彩蝶，煞是好看。\n");
 		set("unit", "件");
 		set("value", 800);
 		set("material", "cloth");

@@ -4,11 +4,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("李掌柜", ({ "seller" }) );
+        set_name("李掌櫃", ({ "seller" }) );
         set("title", "鞋店");
         set("gender", "女性" );
         set("age", 30);
-        set("long", "李掌柜是不难看的女人，一直经营着祖传鞋店生意。\n");
+        set("long", "李掌櫃是不難看的女人，一直經營着祖傳鞋店生意。\n");
         set("combat_exp", 220000);
         set("attitude", "friendly");
         set_skill("unarmed", 150);
@@ -16,7 +16,7 @@ void create()
         set_skill("sword", 120);
 
         set("inquiry", ([
-                "鞋" : "您需要什么样的？",
+                "鞋" : "您需要什麼樣的？",
         ]) );
        set("vendor_goods", ([
                 "deer boots": __DIR__"obj/deer_boot",
@@ -51,15 +51,15 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "李掌柜道：这位"
+                        say( "李掌櫃道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，您需要什么样的鞋？。\n");
+                                + "，您需要什麼樣的鞋？。\n");
                         break;
                 case 1:
-                        say( "李掌柜白了你一眼，冷冷地说：你有美钞吗？\n");
+                        say( "李掌櫃白了你一眼，冷冷地說：你有美鈔嗎？\n");
                         break;
                 case 2:
-           say( "李掌柜忽然间说道：好久没去华工了，不知朋友是否还好吗。\n");
+           say( "李掌櫃忽然間說道：好久沒去華工了，不知朋友是否還好嗎。\n");
                         break;
         }
 }

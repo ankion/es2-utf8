@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("水烟阁武士", ({ "waterfog guard", "guard" }) );
+	set_name("水煙閣武士", ({ "waterfog guard", "guard" }) );
 	set("gender", "男性");
 	set("age", 34);
-	set("long", "这个人相貌十分魁梧。\n");
+	set("long", "這個人相貌十分魁梧。\n");
 
 	set("attitude", "peaceful");
 	set("combat_exp", 20000);

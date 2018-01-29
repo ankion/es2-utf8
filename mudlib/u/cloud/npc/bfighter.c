@@ -20,25 +20,25 @@ void create()
         set("env/wimpy", 30);
 
         set("long",@LONG
-这是一位镖局的趟子手，负责镖局的护镖任务。
+這是一位鏢局的趟子手，負責鏢局的護鏢任務。
 LONG);
 
-        create_family("振远镖局", 2, "趟子手");
+        create_family("振遠鏢局", 2, "趟子手");
 
         set("combat_exp", 10000);
         set("score", 200);
 
         set("chat_chance", 20);
         set("chat_msg", ({
-                "趟子手喊道：振远镖局..., 盛名远扬...\n",
+                "趟子手喊道：振遠鏢局..., 盛名遠揚...\n",
                 (:random_move :)
         }) );
 
         set("chat_chance_combat", 40);
         set("chat_msg_combat", ({
-                "趟子手喊道：教你尝尝我的厉害！\n",
-                "趟子手叫道：我们镖局可不是好惹的！\n"
-                "趟子手大叫：我一定要杀了你，替镖局扬名！\n"
+                "趟子手喊道：教你嚐嚐我的厲害！\n",
+                "趟子手叫道：我們鏢局可不是好惹的！\n"
+                "趟子手大叫：我一定要殺了你，替鏢局揚名！\n"
         }) );
 
         set_skill("unarmed", 60);

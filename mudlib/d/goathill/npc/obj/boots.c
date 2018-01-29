@@ -13,7 +13,7 @@ void create()
 	else {
 		set("value", 400);
 		set("material", "fur");
-		set("unit", "双");
+		set("unit", "雙");
 		set("armor_prop/armor", 7);
 		set("armor_prop/defense", 1);
 	}

@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "西厢房走道");
+   set("short", "西廂房走道");
 	set("long", @LONG
-你走在西厢房走道上。长长的走道中，纯金成的长灯架上挂了一排
-饰丽的宫灯! 走道两旁摆设了许多奇花异草，空气中弥漫一种淡淡的香
-气。在一柱柱雕饰华丽的长柱，刻画许多彩绘的图形，美不胜收。西面
-你看到一扇门。
+你走在西廂房走道上。長長的走道中，純金成的長燈架上掛了一排
+飾麗的宮燈! 走道兩旁擺設了許多奇花異草，空氣中瀰漫一種淡淡的香
+氣。在一柱柱雕飾華麗的長柱，刻畫許多彩繪的圖形，美不勝收。西面
+你看到一扇門。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -19,7 +19,7 @@ LONG
 
 ]));
 
-   create_door("west","雕饰厢门","east", DOOR_CLOSED);
+   create_door("west","雕飾廂門","east", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

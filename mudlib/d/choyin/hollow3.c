@@ -2,15 +2,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "寒谷尽头");
+        set("short", "寒谷盡頭");
         set("long", @LONG
-两面皆为峭壁，光滑无物。一株寒谷幽兰,暗香浮动，沁人心脾。山壁天然行成
-一空穴(vase),积满寒露.
+兩面皆爲峭壁，光滑無物。一株寒谷幽蘭,暗香浮動，沁人心脾。山壁天然行成
+一空穴(vase),積滿寒露.
 LONG
         );
         set("item_desc", ([
                 "vase":
-                    "石穴呈瓶状,想是用来插(interject)什么东东的.\n",
+                    "石穴呈瓶狀,想是用來插(interject)什麼東東的.\n",
                           ]) );
         set("exits", ([ /* sizeof() == 1 */
                 "east" : __DIR__"hollow1",
@@ -30,10 +30,10 @@ void init()
 }
 int do_interject(string arg)
 {
-        if( !arg || arg!="orchid" ) return notify_fail ("你要用什么？\n");
-        message_vision("寒谷幽兰忽地绽放,幻出七色光华.$N轻轻地飘起...\n",
+        if( !arg || arg!="orchid" ) return notify_fail ("你要用什麼？\n");
+        message_vision("寒谷幽蘭忽地綻放,幻出七色光華.$N輕輕地飄起...\n",
                 this_player());
-        tell_room("/d/latemoon/bamboo",this_player()->query("name") + "轻轻飘落.\n");
+        tell_room("/d/latemoon/bamboo",this_player()->query("name") + "輕輕飄落.\n");
         this_player()->move("/d/latemoon/bamboo");
         return 1;
 }

@@ -5,11 +5,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("林三爷", ({ "boxboss", "lin" }) );
-        set("title", "棺材铺老板");
+        set_name("林三爺", ({ "boxboss", "lin" }) );
+        set("title", "棺材鋪老闆");
         set("gender", "男性" );
         set("age", 55);
-        set("long", "这位面目慈善的老人经营棺材铺已经有很多年了。\n");
+        set("long", "這位面目慈善的老人經營棺材鋪已經有很多年了。\n");
         set("str", 29);
         set("int", 14);
 	set("max_kee",800);
@@ -22,8 +22,8 @@ void create()
 	set_temp("apply/armor",20);
 
         set("inquiry", ([
-                "棺材" : "您这么年轻就要棺材，早了点吧？",
-                "香茗坊" : "您也知道'碧海银针'？茶楼就在街对面，我常去的。", 
+                "棺材" : "您這麼年輕就要棺材，早了點吧？",
+                "香茗坊" : "您也知道'碧海銀針'？茶樓就在街對面，我常去的。", 
         ]) );
 
         setup();

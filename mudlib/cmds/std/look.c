@@ -11,20 +11,20 @@ int look_living(object me, object obj);
 int look_room_item(object me, string arg);
 
 string *per_msg = ({
-	"可是人间仙子！\n",
-	"有沉鱼落雁之容，美如天仙！\n",
-	"面容姣好，颇有几分姿色。\n",
-	"笑颜如桃花，讨人喜爱。\n",
+	"可是人間仙子！\n",
+	"有沉魚落雁之容，美如天仙！\n",
+	"面容姣好，頗有幾分姿色。\n",
+	"笑顏如桃花，討人喜愛。\n",
 	"相貌普普通通。\n",
-	"的相貌嘛，。。。马马虎虎吧。\n",
+	"的相貌嘛，。。。馬馬虎虎吧。\n",
 });
 
 string *per_msg_m = ({
-	"可貌似潘安，潇洒异常。\n",
-	"人长得挺英俊的，颇吸引人。\n",
-	"浓眉大目的，有点男子汉的气概。\n",
+	"可貌似潘安，瀟灑異常。\n",
+	"人長得挺英俊的，頗吸引人。\n",
+	"濃眉大目的，有點男子漢的氣概。\n",
 	"五官端正，相貌平常。\n",
-	"相貌猥琐，看起来不怎么舒服。\n",
+	"相貌猥瑣，看起來不怎麼舒服。\n",
 });
 
 void create() { seteuid(getuid()); } 
@@ -51,7 +51,7 @@ int look_room(object me, object env)
 	string str, *dirs;
 
 	if( !env ) {
-		write("你的四周灰蒙蒙地一片，什麽也没有。\n");
+		write("你的四周灰濛濛地一片，什麼也沒有。\n");
 		return 1;
 	}
 	str = sprintf( "\n▲ %s - %s\n  %s\n%s",
@@ -67,11 +67,11 @@ int look_room(object me, object env)
 				dirs[i] = 0;
 		dirs -= ({ 0 });
 		if( sizeof(dirs)==0 )
-			str += "  这里没有任何明显的出路。\n";
+			str += "  這裏沒有任何明顯的出路。\n";
 		else if( sizeof(dirs)==1 )
-			str += "  这里唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
+			str += "  這裏唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
 		else
-			str += sprintf("  这里明显的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
+			str += sprintf("  這裏明顯的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
 				implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs)-1]);
 	}
 //	str += env->door_description();
@@ -98,7 +98,7 @@ int look_item(object me, object obj)
     inv = all_inventory(obj);
 	if( sizeof(inv) ) {
 		inv = map_array(inv, "inventory_look", this_object() );
-		message("vision", sprintf("里面有：\n  %s\n",
+		message("vision", sprintf("裏面有：\n  %s\n",
 			implode(inv, "\n  ") ), me);
 	}
 	return 1;
@@ -112,27 +112,27 @@ int look_living(object me, object obj)
 	int personal;
 
 	if( me!=obj )
-		message("vision", me->name() + "正盯著你看，不知道打些什麽主意。\n", obj);
+		message("vision", me->name() + "正盯著你看，不知道打些什麼主意。\n", obj);
 
     str = sprintf( "\n▼ %s\n%s\n", obj->short(), replace_string(obj->long(), "\n", "") );
 
 	pro = (obj==me) ? gender_self(obj->query("gender")) : gender_pronoun(obj->query("gender"));
 
-	if( (string)obj->query("race")=="人类"
+	if( (string)obj->query("race")=="人類"
 	&&	intp(obj->query("age")) )
-		str += sprintf("%s看起来约%s多岁。\n", pro, chinese_number(obj->query("age") / 10 * 10));
+		str += sprintf("%s看起來約%s多歲。\n", pro, chinese_number(obj->query("age") / 10 * 10));
 
 	
 	// 查看相貌
 	if (me == obj) {
 		if ((int)me->query("age") > 14)
-			str += sprintf("你很象镜子中的自己啊!\n");
+			str += sprintf("你很象鏡子中的自己啊!\n");
 		    else 
-			str += sprintf("你才十四岁啊，有什么好看的？\n");
+			str += sprintf("你才十四歲啊，有什麼好看的？\n");
 		}
-	    else if((string)obj->query("race")=="人类"){
+	    else if((string)obj->query("race")=="人類"){
 		if ((int)obj->query("age") < 15)
-			str += sprintf("十四岁的小孩都是天天真真的模样。\n");
+			str += sprintf("十四歲的小孩都是天天真真的模樣。\n");
 		    else {
 			personal = (int)obj->query("per");		
 			if (obj->query("gender") == "女性") {
@@ -172,28 +172,28 @@ int look_living(object me, object obj)
 		if( fam["generation"]==my_fam["generation"] ) {
 			if( (string)obj->query("gender") == "男性" )
 				str += sprintf( pro + "是你的%s%s。\n",
-					my_fam["master_id"] == fam["master_id"] ? "": "同门",
-					my_fam["enter_time"] > fam["enter_time"] ? "师兄": "师弟");
+					my_fam["master_id"] == fam["master_id"] ? "": "同門",
+					my_fam["enter_time"] > fam["enter_time"] ? "師兄": "師弟");
 			else
 				str += sprintf( pro + "是你的%s%s。\n",
-					my_fam["master_id"] == fam["master_id"] ? "": "同门",
-					my_fam["enter_time"] > fam["enter_time"] ? "师姐": "师妹");
+					my_fam["master_id"] == fam["master_id"] ? "": "同門",
+					my_fam["enter_time"] > fam["enter_time"] ? "師姐": "師妹");
 		} else if( fam["generation"] < my_fam["generation"] ) {
 			if( my_fam["master_id"] == obj->query("id") )
-				str += pro + "是你的师父。\n";
+				str += pro + "是你的師父。\n";
 			else if( my_fam["generation"] - fam["generation"] > 1 )
-				str += pro + "是你的同门长辈。\n";
+				str += pro + "是你的同門長輩。\n";
 			else if( fam["enter_time"] < my_fam["enter_time"] )
-				str += pro + "是你的师伯。\n";
+				str += pro + "是你的師伯。\n";
 			else
-				str += pro + "是你的师叔。\n";
+				str += pro + "是你的師叔。\n";
 		} else {
 			if( fam["generation"] - my_fam["generation"] > 1 )
-				str += pro + "是你的同门晚辈。\n";
+				str += pro + "是你的同門晚輩。\n";
 			else if( fam["master_id"] == me->query("id") )
 				str += pro + "是你的弟子。\n";
 			else
-				str += pro + "是你的师侄。\n";
+				str += pro + "是你的師侄。\n";
 		}
 	}
 
@@ -205,7 +205,7 @@ int look_living(object me, object obj)
 		inv = map_array(inv, "inventory_look", this_object(), obj->is_corpse()? 0 : 1 );
 		inv -= ({ 0 });
 		if( sizeof(inv) )
-			str += sprintf( obj->is_corpse() ? "%s的遗物有：\n%s\n" : "%s身上带著：\n%s\n",
+			str += sprintf( obj->is_corpse() ? "%s的遺物有：\n%s\n" : "%s身上帶著：\n%s\n",
 				pro, implode(inv, "\n") );
 	}
 
@@ -218,7 +218,7 @@ int look_living(object me, object obj)
 	if( obj!=me 
 	&&	living(obj)
 	&&	random((int)obj->query("bellicosity")/10) > (int)me->query("per") ) {
-		write( obj->name() + "突然转过头来瞪你一眼。\n");
+		write( obj->name() + "突然轉過頭來瞪你一眼。\n");
 		COMBAT_D->auto_fight(obj, me, "berserk");
 	}
 
@@ -246,7 +246,7 @@ int look_room_item(object me, string arg)
 	mapping item, exits;
 
 	if( !objectp(env = environment(me)) )
-		return notify_fail("这里只有灰蒙蒙地一片，什麽也没有。\n");
+		return notify_fail("這裏只有灰濛濛地一片，什麼也沒有。\n");
 
 	if( mapp(item = env->query("item_desc")) && !undefinedp(item[arg]) ) {
 		if( stringp(item[arg]) )
@@ -265,7 +265,7 @@ int look_room_item(object me, string arg)
 		}
 		return 1;
 	}
-	return notify_fail("你要看什麽？\n");
+	return notify_fail("你要看什麼？\n");
 }
 
 int help (object me)
@@ -273,7 +273,7 @@ int help (object me)
 	write(@HELP
 指令格式: look [<物品>|<生物>|<方向>]
  
-这个指令让你查看你所在的环境、某件物品、生物、或是方向。
+這個指令讓你查看你所在的環境、某件物品、生物、或是方向。
  
 HELP
 );

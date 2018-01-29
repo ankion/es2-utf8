@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "一把暗红色、两丈多长的巨杵。\n");
+                set("long", "一把暗紅色、兩丈多長的巨杵。\n");
 		set("value", 20000);
                 set("material", "crimson gold");
         }

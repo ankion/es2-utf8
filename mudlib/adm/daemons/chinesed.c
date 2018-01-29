@@ -9,10 +9,10 @@
 
 inherit F_SAVE;
 
-static string *c_digit = ({ "零","十","百","千","万","亿","兆" });
+static string *c_digit = ({ "零","十","百","千","萬","億","兆" });
 static string *c_num = ({"零","一","二","三","四","五","六","七","八","九","十"});
 static string *sym_tien = ({ "甲","乙","丙","丁","戊","己","庚","辛","壬","癸" });
-static string *sym_dee = ({ "子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥" });
+static string *sym_dee = ({ "子","醜","寅","卯","辰","巳","午","未","申","酉","戌","亥" });
 
 
 mapping dict = ([]);
@@ -30,7 +30,7 @@ void remove() { save(); }
 
 string chinese_number(int i)
 {
-	if( i<0 ) return "负" + chinese_number(-i);
+	if( i<0 ) return "負" + chinese_number(-i);
 	if( i<11 ) return c_num[i];
 	if( i<20 ) return c_num[10] + c_num[i-10];
 	if( i<100 ) {
@@ -117,7 +117,7 @@ string chinese_date(int date)
 
 	local = localtime(date);
 
-	return sprintf("%s%s年%s月%s日%s时%s刻",
+	return sprintf("%s%s年%s月%s日%s時%s刻",
 		sym_tien[local[LT_YEAR]%10], sym_dee[local[LT_YEAR]%12],
 		chinese_number(local[LT_MON]+1),
 		chinese_number(local[LT_MDAY] + (local[LT_HOUR]>23? 1 : 0)),

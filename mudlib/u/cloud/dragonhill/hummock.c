@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "卧龙岗");
+        set("short", "臥龍崗");
         set("long", @LONG
-这是位于雪亭和绮云两镇间的一道山梁。据说山上时常有强盗拦路
-抢劫。
+這是位於雪亭和綺雲兩鎮間的一道山樑。據說山上時常有強盜攔路
+搶劫。
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */

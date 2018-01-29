@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("游客", ({ "visitor"}));
+        set_name("遊客", ({ "visitor"}));
         if(random(10)<7)
             set("gender", "男性" );
         else
             set("gender", "女性" );
         set("age", 15+random(50));
         set("long",
-	"这是一位来乔阴县游玩的游客。\n");
+	"這是一位來喬陰縣遊玩的遊客。\n");
 
 	set("env/wimpy",20);
 	set("max_kee",1000);
@@ -23,8 +23,8 @@ void create()
 	set_temp("apply/armor",30);
 	
 	set ("inquiry", ([
-		"here": "我游历过大半个中国，小小的乔阴县对我能有什么秘密？\n",
-		"忘忧草": "这个。。好象是给狮子衔去了。\n",
+		"here": "我遊歷過大半個中國，小小的喬陰縣對我能有什麼祕密？\n",
+		"忘憂草": "這個。。好象是給獅子銜去了。\n",
 		]) );
 
         setup();

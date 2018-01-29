@@ -6,7 +6,7 @@ inherit NPC;
 
 void create()
 {
-	set_name("扫地僧", ({ "work bonze","bonze" }) );
+	set_name("掃地僧", ({ "work bonze","bonze" }) );
 	set("gender", "男性" );
 	set("class", "bonze");
 	set("age", 26);
@@ -15,8 +15,8 @@ void create()
 	set("cps", 12);
 	set("int", 20);
 	set("long",
-		"一个肥肥胖胖的僧人, 看他拿著扫把有一下没一下的扫著, 就知道他\n"
-		"平常也是摸鱼大王。\n" );
+		"一個肥肥胖胖的僧人, 看他拿著掃把有一下沒一下的掃著, 就知道他\n"
+		"平常也是摸魚大王。\n" );
 
 	set("combat_exp", 200);
 	set("attitude", "friendly");
@@ -43,6 +43,6 @@ void create()
 
 int accept_fight(object me)
 {
-    command("say 阿弥陀佛！贫僧武功\低微，施主不要开这种玩笑。\n");
+    command("say 阿彌陀佛！貧僧武功\低微，施主不要開這種玩笑。\n");
     return 0;
 }

@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("魔法入门", ({ "magicbook" }));
+        set_name("魔法入門", ({ "magicbook" }));
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -12,7 +12,7 @@ void create()
                 set("unit", "本");
                 set("long",
                         
-"这似乎是一本魔法的入门书，里面说了一些稀奇古怪的和一般的武学不同的东西\n"
+"這似乎是一本魔法的入門書，裏面說了一些稀奇古怪的和一般的武學不同的東西\n"
                 );
                 set("value", 260);
                 set("material", "paper");

@@ -11,8 +11,8 @@ void create()
         set("str", 1);
         set("per", 30);
         set("long", @LONG
-小娟姓刘，是这里刘老农的独生女。今年十六岁，人长的漂靓又大方。
-小娟已经被折磨的遍体鳞伤。
+小娟姓劉，是這裏劉老農的獨生女。今年十六歲，人長的漂靚又大方。
+小娟已經被折磨的遍體鱗傷。
 LONG
 );
         set("max_gin", 500);
@@ -30,7 +30,7 @@ LONG
         
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
-"小娟说道：唉！ 没料道你和那些坏人是一伙的！\n",
+"小娟說道：唉！ 沒料道你和那些壞人是一夥的！\n",
         }) );
         
         setup();
@@ -41,7 +41,7 @@ LONG
 
 int accept_fight(object me)
 {
-        command("say 小女子哪里是您的对手？");
+        command("say 小女子哪裏是您的對手？");
         return 0;
 }
 
@@ -51,7 +51,7 @@ void init()
         object ob;
         if( interactive( ob = this_player()))
         remove_call_out("followhim");
-        if((int) ob->query("marks/老刘本人") == 1)
+        if((int) ob->query("marks/老劉本人") == 1)
         {
         set_leader(0);
         call_out("goaway", 5);
@@ -67,7 +67,7 @@ void messageing()
         room = find_object(__DIR__"dungeon");
         if(environment() == room) {
         command("say 救我！救救我呀！");
-        command("emote 竭力挣扎，渐渐从绳索里摆脱出来……。");
+        command("emote 竭力掙扎，漸漸從繩索裏擺脫出來……。");
 }
 }
 void followhim(object ob)
@@ -77,7 +77,7 @@ room = find_object(__DIR__"dungeon");
 if(environment() == room)
 if( present(ob, environment()))
 {       set_leader(ob);
-        ob->set("marks/老刘", 1);
+        ob->set("marks/老劉", 1);
 }
 }
 

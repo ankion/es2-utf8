@@ -11,14 +11,14 @@ void create()
 {
 	set_name("信箱", ({ "mailbox", "box" }) );
 	set("long",
-		"这是一个用来寄信、收信的信箱，你可以用以下指令来处理你的邮件：\n\n"
-		"mail <某人>               寄信给别人。\n"
-		"forward <信件编号> <某人> 将某封信转寄给别人。\n"
+		"這是一個用來寄信、收信的信箱，你可以用以下指令來處理你的郵件：\n\n"
+		"mail <某人>               寄信給別人。\n"
+		"forward <信件編號> <某人> 將某封信轉寄給別人。\n"
 		"from                      查看信箱中的信件。\n"
-		"read <信件编号>           阅\读一封信件。\n"
-		"discard <信件编号>        丢弃一封信件。\n"
+		"read <信件編號>           閱\讀一封信件。\n"
+		"discard <信件編號>        丟棄一封信件。\n"
 	);
-	set("unit", "个");
+	set("unit", "個");
 	set("no_drop", 1);
 	set("no_insert", 1);
 
@@ -70,7 +70,7 @@ void send_mail(string rcvr, mapping mail)
 	// Acquire the login object of receiver and mark the arrival of newmail.
 	ob = FINGER_D->acquire_login_ob(rcvr);
 	if( !ob ) {
-		write("没有这个人存在。\n");
+		write("沒有這個人存在。\n");
 		return;
 	}
 	ob->add("new_mail", 1);
@@ -99,16 +99,16 @@ int do_mail(string arg)
 	if( this_player()!=environment() ) return 0;
 
 	if( !arg || arg=="" )
-		return notify_fail("你要寄信给谁？\n");
+		return notify_fail("你要寄信給誰？\n");
 
 	mail = ([
 		"from":	this_player()->name(1) + "(" + this_player()->query("id") + ")",
-		"title": "无题",
+		"title": "無題",
 		"to": arg,
 		"time": time(),
 		"text": ""
 	]);
-	write("信件标题：");
+	write("信件標題：");
 	input_to("get_mail_title", mail);
 	return 1;
 }
@@ -116,14 +116,14 @@ int do_mail(string arg)
 void get_mail_title(string str, mapping mail)
 {
 	if( str!="" ) mail["title"] = str;
-	write("信件内容：\n");
+	write("信件內容：\n");
 	this_player()->edit( (: get_mail_text, mail :) );
 }
 
 void get_mail_text(mapping mail, string str)
 {
 	mail["text"] = str;
-	write("您自己要留一份备份吗(y/n)？[n]");
+	write("您自己要留一份備份嗎(y/n)？[n]");
 	input_to("confirm_copy", mail);
 }
 
@@ -139,10 +139,10 @@ int do_from()
 	int i;
 
 	if( !pointerp(mails) || !sizeof(mails) ) {
-		write("你的信箱中目前没有任何信件。\n");
+		write("你的信箱中目前沒有任何信件。\n");
 		return 1;
 	}
-	write("你的信箱中现在共有 " + sizeof(mails) + " 封信件：\n\n");
+	write("你的信箱中現在共有 " + sizeof(mails) + " 封信件：\n\n");
 	for(i=0; i<sizeof(mails); i++)
 		printf("%2d %-50s 寄信人：%-20s\n",
 			i+1, mails[i]["title"], mails[i]["from"] );
@@ -155,14 +155,14 @@ int do_read(string arg)
 	int num;
 
 	if( !arg || !sscanf(arg, "%d", num) )
-		return notify_fail("你要读哪一封信？\n");
+		return notify_fail("你要讀哪一封信？\n");
 
 	if( !pointerp(mails) || num < 1 || num > sizeof(mails) )
-		return notify_fail("没有这个编号的信件。\n");
+		return notify_fail("沒有這個編號的信件。\n");
 
 	num --;
 
-	printf("信件标题：%s\n寄 信 人：%s\n\n%s\n",
+	printf("信件標題：%s\n寄 信 人：%s\n\n%s\n",
 		mails[num]["title"], mails[num]["from"], mails[num]["text"] );
 
 	return 1;
@@ -173,10 +173,10 @@ int do_discard(string arg)
 	int num;
 
 	if( !arg || !sscanf(arg, "%d", num) )
-		return notify_fail("你要丢弃哪一封信？\n");
+		return notify_fail("你要丟棄哪一封信？\n");
 
 	if( !pointerp(mails) || num > sizeof(mails) )
-		return notify_fail("没有这个编号的信件。\n");
+		return notify_fail("沒有這個編號的信件。\n");
 
 	num --;
 
@@ -194,10 +194,10 @@ int do_forward(string arg)
 	mapping m;
 
 	if( !arg || sscanf(arg, "%d %s", num, dest)!=2 )
-		return notify_fail("你要将哪一封信转寄给别人？\n");
+		return notify_fail("你要將哪一封信轉寄給別人？\n");
 
 	if( !pointerp(mails) || num > sizeof(mails) )
-		return notify_fail("没有这个编号的信件。\n");
+		return notify_fail("沒有這個編號的信件。\n");
 
 	num --;
 
@@ -205,7 +205,7 @@ int do_forward(string arg)
 	m["title"] = mails[num]["title"];
 	m["text"] = mails[num]["text"];
 	m["time"] = mails[num]["time"];
-	m["from"] = mails[num]["from"] + "/转寄自" + this_player()->query("name");
+	m["from"] = mails[num]["from"] + "/轉寄自" + this_player()->query("name");
 	m["to"] = dest;
 	send_mail( dest, m );
 	write("Ok.\n");

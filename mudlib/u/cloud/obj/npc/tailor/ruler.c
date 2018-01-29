@@ -13,7 +13,7 @@ void create()
 		set_default_object(__FILE__);
 	else {
 		set("unit", "把");
-		set("long", "一把量衣用的尺子，比一般的宽些。\n");
+		set("long", "一把量衣用的尺子，比一般的寬些。\n");
 		set("value", 30);
 		set("material", "wood");
 		set("wield_msg", "$N拿出一把$n抄在手中。\n");

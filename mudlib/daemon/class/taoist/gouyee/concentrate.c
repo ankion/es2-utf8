@@ -7,10 +7,10 @@ int exert(object me, object target)
         int mana_gain;
 
         if( target && target!=me )
-                return notify_fail("「灵神诀」只能用来恢复自己的法力。\n");
+                return notify_fail("「靈神訣」只能用來恢復自己的法力。\n");
 
         if( (int)me->query("force") < 30 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("你的內力不夠。\n");
 
         
         mana_gain =  10 + (int)me->query_skill("force")/5;
@@ -22,8 +22,8 @@ int exert(object me, object target)
         me->receive_damage("sen", 10);
 
         message_vision(
-                HIY "$N闭目凝神，用谷衣心法的内力运转了一次「灵神诀」...\n"
-                "一股青气从$N身上散出，汇聚在$P的顶心，然後缓缓淡去。\n" NOR, 
+                HIY "$N閉目凝神，用谷衣心法的內力運轉了一次「靈神訣」...\n"
+                "一股青氣從$N身上散出，匯聚在$P的頂心，然後緩緩淡去。\n" NOR, 
 me);
 
         if( me->is_fighting() ) me->start_busy(1);

@@ -6,7 +6,7 @@ inherit CLOTH;
 
 void create()
 {
-	set_name("水烟阁司事褂", ({ "watcher suit", "suit" }) );
+	set_name("水煙閣司事褂", ({ "watcher suit", "suit" }) );
 	set_weight(7000);
 	if( clonep() )
 		set_default_object(__FILE__);

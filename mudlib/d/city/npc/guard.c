@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("京师守城兵", ({ "City guard", "guard" }) );
+        set_name("京師守城兵", ({ "City guard", "guard" }) );
         set("long",
-          "这是个正在这里站岗的京师官兵，虽然和许多武林人物比起来，官兵\n"
-          "们的武功实在稀松平常，但是他们是有组织、有纪律的战士，谁也不\n"
-          "轻易地招惹他们。\n");
+          "這是個正在這裏站崗的京師官兵，雖然和許多武林人物比起來，官兵\n"
+          "們的武功實在稀鬆平常，但是他們是有組織、有紀律的戰士，誰也不\n"
+          "輕易地招惹他們。\n");
 
         set("attitude", "peaceful");
         set("vendetta_mark", "authority");
@@ -31,15 +31,15 @@ void create()
 
         set("chat_chance_combat", 15);
         set("chat_msg_combat", ({
-                "守城官兵喝道：还不快放下武器束手就缚？\n",
-                "守城官兵喝道：大胆刁民！竟敢在天子脚下造反？\n"
+                "守城官兵喝道：還不快放下武器束手就縛？\n",
+                "守城官兵喝道：大膽刁民！竟敢在天子腳下造反？\n"
         }) );
 
         set("inquiry",  ([
                 "出城":
-                        "你可以在京城里找一找，说不定可以找到一些出城的令牌。\n",
+                        "你可以在京城裏找一找，說不定可以找到一些出城的令牌。\n",
                "out":
-                       "你可以在京城里找一找，说不定可以找到一些出城的令牌。\n",
+                       "你可以在京城裏找一找，說不定可以找到一些出城的令牌。\n",
                 ]) );
 
         set_skill("unarmed", 90);
@@ -72,8 +72,8 @@ int do_out()
         me = this_player();
              if( !me->query("marks/令牌") )
              {
-                command("say 没有官府通令，任何人不能出入京师。");
-                write("出城方向的路被京师守城兵挡住了 。\n");
+                command("say 沒有官府通令，任何人不能出入京師。");
+                write("出城方向的路被京師守城兵擋住了 。\n");
                 return 1;
              }
              else
@@ -88,8 +88,8 @@ int go_out(string arg)
         {
              if( !me->query("marks/\101\156\105\106") )
              {
-                command("say 没有官府通令，任何人不能出入京师。");
-                write("出城方向的路被京师守城兵挡住了 。\n");
+                command("say 沒有官府通令，任何人不能出入京師。");
+                write("出城方向的路被京師守城兵擋住了 。\n");
 		return 1;
              }
              else
@@ -115,13 +115,13 @@ int accept_object(object who, object ob)
 //        if ( (string)ob->name() != "官府通令")
 	if ( ob->query("id") != "token") 
         {
-                command("say 这是什么东西啊！你想偷渡呀？");
+                command("say 這是什麼東西啊！你想偷渡呀？");
                 return 0;
         }
 
-//        if ( !who->query("marks/京师") ) 
+//        if ( !who->query("marks/京師") ) 
 //	{
-                say("京师守城兵连忙说道：原来是官府中人，您请出城。\n");
+                say("京師守城兵連忙說道：原來是官府中人，您請出城。\n");
                 who->set("marks/令牌",1);
 //                return 1;
 //	}

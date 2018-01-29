@@ -3,8 +3,8 @@ inherit NPC;
  
 void create()
 {
-        set_name("龙韶吟", ({ "shaoin","shao" }) );
-        set("title", "晚月庄第三代弟子");
+        set_name("龍韶吟", ({ "shaoin","shao" }) );
+        set("title", "晚月莊第三代弟子");
         set("gender", "女性" );
         set("age",17);
         set("long", @TEXT
@@ -39,8 +39,8 @@ void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
      if ((string)ob->query("gender") == "男性" ) {
-          say( HIY "韶吟惊慌生气的怒斥： 喂! 兄台不要乱闯! \n" NOR);
-           say( HIM "她的眼神骤变，隐约中似乎让人神智渐模糊! \n" NOR);
+          say( HIY "韶吟驚慌生氣的怒斥： 喂! 兄臺不要亂闖! \n" NOR);
+           say( HIM "她的眼神驟變，隱約中似乎讓人神智漸模糊! \n" NOR);
           ob->receive_damage("sen", 20);
           ob->apply_condition("rose_poison", 2);
        this_object()->add("force", 50);
@@ -56,6 +56,6 @@ int hit_ob(object ob1, object ob, int damage)
         if( random(damage) > (int)ob->query_temp("apply/armor")
         &&      (int)ob->query_condition("rose_poison") < 20 ) {
                 ob->apply_condition("rose_poison", 10);
-                tell_object(ob, HIG "你觉得被打中的地方一阵麻痒！\n" NOR );
+                tell_object(ob, HIG "你覺得被打中的地方一陣麻癢！\n" NOR );
         }
 }

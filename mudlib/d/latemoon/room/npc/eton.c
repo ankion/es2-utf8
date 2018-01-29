@@ -2,12 +2,12 @@ inherit NPC;
  
 void create()
 {
-        set_name("金仪彤", ({ "eton","zhin" }) );
+        set_name("金儀彤", ({ "eton","zhin" }) );
         set("gender", "女性" );
         set("age", 27);
         set("long", @TEXT
-她国色天香，娇丽无伦；温柔娴静，秀绝人寰。
-可惜眉心上有一道地煞纹干犯紫斗，恐要玉手
+她國色天香，嬌麗無倫；溫柔嫺靜，秀絕人寰。
+可惜眉心上有一道地煞紋干犯紫鬥，恐要玉手
 染血，浩劫武林。
 TEXT
 );
@@ -23,7 +23,7 @@ TEXT
         set("force", 1000);
         set("max_force", 500);
 
-        create_family("晚月庄",3,"弟子");
+        create_family("晚月莊",3,"弟子");
         setup();
         carry_object("/d/latemoon/obj/deer_boot")->wear();
         carry_object("/d/latemoon/obj/necklace");

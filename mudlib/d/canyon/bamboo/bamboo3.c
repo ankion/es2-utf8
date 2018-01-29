@@ -6,11 +6,11 @@ void create()
 {
 	set("short", "竹林道");
 	set("long", @LONG
-北方有一个大黄石堵住去路，洋洋洒洒的蓝光从大黄石的四周漫
-漫而出，竹林参天，在此成一半凹型，团团围住了北方的去路，若想
-一窥究竟，看来非得推开这巨大的黄石才行，风势愈来愈强，四周的
-竹子发出了嗡嗡的鸣声，彷佛叫人不要靠近，此地之主人看似不欢迎
-别人来参观。
+北方有一個大黃石堵住去路，洋洋灑灑的藍光從大黃石的四周漫
+漫而出，竹林參天，在此成一半凹型，團團圍住了北方的去路，若想
+一窺究竟，看來非得推開這巨大的黃石才行，風勢愈來愈強，四周的
+竹子發出了嗡嗡的鳴聲，彷佛叫人不要靠近，此地之主人看似不歡迎
+別人來參觀。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
@@ -37,7 +37,7 @@ int do_move(string arg)
 	if ( ((int)me->query("force") < 560) ||
 	     ((int)me->query("max_force") < 560) ||
 	     ((int)me->query("force_factor") < 40 ) ) { 
-		tell_object(me, "你出力不太够喔！\n");
+		tell_object(me, "你出力不太夠喔！\n");
 		return 1;
 	}
 
@@ -48,7 +48,7 @@ int do_move(string arg)
 	if( query("exits/enter") ) return 1;
 	
 	set("exits/enter",__DIR__"train");
-        message_vision("$N将大黄石缓缓的向左边移动，而出现了一个小小的隙缝。\n"
+        message_vision("$N將大黃石緩緩的向左邊移動，而出現了一個小小的隙縫。\n"
         		,me);
 	return 1;
 }
@@ -57,7 +57,7 @@ int do_enter()
 {
 	if( !query("exits/enter") ) return 0;
 	
-	message_vision("当$N通过隙缝，大黄石又急速地合闭。\n",this_player());
+	message_vision("當$N通過隙縫，大黃石又急速地合閉。\n",this_player());
 	delete("exits/enter");
 	this_player()->move(__DIR__"train");
 	return 1;
@@ -69,7 +69,7 @@ int go_enter(string arg)
 	        
 	if( arg!="enter" ) return 0;
 	
-	message_vision("当$N通过隙缝，大黄石又急速地合闭。\n",this_player());
+	message_vision("當$N通過隙縫，大黃石又急速地合閉。\n",this_player());
 	delete("exits/enter");
 	this_player()->move(__DIR__"train");
 	return 1;

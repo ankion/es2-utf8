@@ -8,8 +8,8 @@ string ask_me(object who);
 
 void create()
 {
-	set_name("安惜迩", ({ "annihir" }) );
-	set("title", "钱庄老板");
+	set_name("安惜邇", ({ "annihir" }) );
+	set("title", "錢莊老闆");
 	set("gender", "男性" );
 	set("age", 26);
 
@@ -23,11 +23,11 @@ void create()
 	set("kar", 25);
 
 	set("long",
-		"安惜迩是个看起来相当斯文的年轻人，不过有时候会有些心不在焉的\n"
-		"样子，雪亭镇的居民对安惜迩都觉得有点神秘莫测的感觉，为什么他\n"
-		"年纪轻轻就身为一家大钱庄的老板，还有他一身稀奇古怪的武功，所\n"
-		"幸安惜迩似乎天性恬淡，甚至有些隐者的风骨，只要旁人不去惹他，\n"
-		"他也绝不会去招惹旁人。\n");
+		"安惜邇是個看起來相當斯文的年輕人，不過有時候會有些心不在焉的\n"
+		"樣子，雪亭鎮的居民對安惜邇都覺得有點神祕莫測的感覺，爲什麼他\n"
+		"年紀輕輕就身爲一家大錢莊的老闆，還有他一身稀奇古怪的武功，所\n"
+		"幸安惜邇似乎天性恬淡，甚至有些隱者的風骨，只要旁人不去惹他，\n"
+		"他也絕不會去招惹旁人。\n");
 
 	set("combat_exp", 200000);
 	set("attitude", "friendly");
@@ -46,10 +46,10 @@ void create()
 
 	set("chat_chance_combat", 40);
 	set("chat_msg_combat", ({
-		CYN "安惜迩似笑非笑地望著你，脸上的神气古理古怪，不知道在想些什么？\n" NOR,
-		CYN "安惜迩的身影晃了一下，似乎在你身上各处大穴摸了一下，不过也许是你的错觉。\n" NOR,
-		CYN "安惜迩神情忽然严肃了起来，不过好像是在想自己的事，与你无关。\n" NOR,
-		CYN "安惜迩忽然呵呵呵地笑了起来，却不知道在笑些什么....\n" NOR,
+		CYN "安惜邇似笑非笑地望著你，臉上的神氣古理古怪，不知道在想些什麼？\n" NOR,
+		CYN "安惜邇的身影晃了一下，似乎在你身上各處大穴摸了一下，不過也許是你的錯覺。\n" NOR,
+		CYN "安惜邇神情忽然嚴肅了起來，不過好像是在想自己的事，與你無關。\n" NOR,
+		CYN "安惜邇忽然呵呵呵地笑了起來，卻不知道在笑些什麼....\n" NOR,
 		(: perform_action, "sword.counterattack" :),
 		(: cast_spell, "drainerbolt" :),
 		(: cast_spell, "feeblebolt" :),
@@ -86,7 +86,7 @@ void create()
 
 int accept_fight(object me)
 {
-	command("say 咦... 要打就真打吧，光是较量多没意思？");
+	command("say 咦... 要打就真打吧，光是較量多沒意思？");
 	command("grin");
 	kill_ob(me);
 	return 1;

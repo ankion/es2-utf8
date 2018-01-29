@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("宝官", ({ "judge" }) );
+        set_name("寶官", ({ "judge" }) );
         set("gender", "男性" );
         set("age", 22);
-        set("long", "他脸上的表情仿佛是看到了你口袋里的钱一般。\n");
+        set("long", "他臉上的表情彷彿是看到了你口袋裏的錢一般。\n");
         set("per", 25);
         set("combat_exp", 500);
         set("attitude", "friendly");
@@ -15,7 +15,7 @@ void create()
         set_skill("parry", 70);
 
         set("inquiry", ([
-                "赌" : "客官您把钱给我就行了。\n",
+                "賭" : "客官您把錢給我就行了。\n",
         ]) );
 
         setup();
@@ -40,10 +40,10 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "快来赌，快来赌啦！\n");
+                        say( "快來賭，快來賭啦！\n");
                         break;
                 case 1:
-                        say( "赢了可是利滚利啊！\n");
+                        say( "贏了可是利滾利啊！\n");
                         break;
         }
 }
@@ -72,20 +72,20 @@ int accept_object(object who, object ob)
 
         val = ob->value();
         if( !val ){
-                return notify_fail("物品不能折价，您还是先去折现吧！\n");
+                return notify_fail("物品不能折價，您還是先去折現吧！\n");
                 return 0;
         }
         else{
-                say("什么？ 您押小？！好的。\n"); 
+                say("什麼？ 您押小？！好的。\n"); 
                 if( random(10) < 8 ) {
-                        say( "宝官说道：开！押大的赢啦！这位"
+                        say( "寶官說道：開！押大的贏啦！這位"
                                 + RANK_D->query_respect(who)
-                                + "，您下次一定好运！\n");
+                                + "，您下次一定好運！\n");
                 }
                 else{
-                        say( "宝官说道：开！押小的赢啦！这位"
+                        say( "寶官說道：開！押小的贏啦！這位"
                                 + RANK_D->query_respect(who)
-                                + "真是好运道！这是您的赢头。\n");
+                                + "真是好運道！這是您的贏頭。\n");
                         pay_player(this_player(), val * 2);
                 }
         return 1;

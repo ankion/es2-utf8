@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "卧龙岗南坡");
+        set("short", "臥龍崗南坡");
         set("long", @LONG
-这是卧龙岗的东南坡。东南的路通向绮云镇，往北就要过岗了。
+這是臥龍崗的東南坡。東南的路通向綺雲鎮，往北就要過崗了。
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */

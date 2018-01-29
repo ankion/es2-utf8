@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name("残破刀谱", ({ "book" }));
+	set_name("殘破刀譜", ({ "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("unit", "本");
 		set("long",
-			"这似乎是一本什么刀谱的前几页，虽然并没有关于招式的详细解说，可是\n"
-			"前面有关刀法的总纲与精义倒是不少。\n");
+			"這似乎是一本什麼刀譜的前幾頁，雖然並沒有關於招式的詳細解說，可是\n"
+			"前面有關刀法的總綱與精義倒是不少。\n");
 		set("value", 260);
 		set("material", "paper");
 		set("skill", ([

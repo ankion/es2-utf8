@@ -6,11 +6,11 @@ static int current_day_phase;
 mapping *day_phase;
 
 string *weather_msg = ({
-	"天空中万里无云",
-	"几朵淡淡的云彩妆点著清朗的天空",
-	"白云在天空中飘来飘去",
-	"厚厚的云层堆积在天边",
-	"天空中乌云密布",
+	"天空中萬里無雲",
+	"幾朵淡淡的雲彩妝點著清朗的天空",
+	"白雲在天空中飄來飄去",
+	"厚厚的雲層堆積在天邊",
+	"天空中烏雲密佈",
 });
 
 mapping *read_table(string file);
@@ -73,11 +73,11 @@ void event_noon()
 		if( !environment(ob[i])->query("outdoors") ) continue;
 		if( !ob[i]->query("mana") ) continue;
 		if( !(skill = ob[i]->query_skill("spells", 1) )) {
-			tell_object(ob[i], "你觉得一阵晕眩，好像有一股能量从身上被人吸走了。\n");
+			tell_object(ob[i], "你覺得一陣暈眩，好像有一股能量從身上被人吸走了。\n");
 			ob[i]->set("mana", 0);
 			ob[i]->receive_damage("sen", 0);
 		} else if( skill < 25 ) {
-			tell_object(ob[i], "随著太阳升到天空的正中央，你觉得你的法力开始消失了。\n");
+			tell_object(ob[i], "隨著太陽升到天空的正中央，你覺得你的法力開始消失了。\n");
 			ob[i]->set("mana", (int)ob[i]->query("mana") * skill / 25 );
 		}
 	}

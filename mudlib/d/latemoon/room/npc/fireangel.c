@@ -3,14 +3,14 @@ inherit NPC;
  
 void create()
 {
-         set_name("凤凰", ({ "phoenix","fire" }) );
-        set("title", "护庄神像");
+         set_name("鳳凰", ({ "phoenix","fire" }) );
+        set("title", "護莊神像");
         set("nick","火神");
         set("gender", "女性" );
         set("age", 27);
         set("long", @TEXT
-火神「凤凰」乃勇士寒于的魂魄所化成的十三个精灵之一。
-由于其奇异神迹，被晚月庄供奉为护庄神兽。
+火神「鳳凰」乃勇士寒於的魂魄所化成的十三個精靈之一。
+由於其奇異神蹟，被晚月莊供奉爲護莊神獸。
 TEXT
 );
         set("combat_exp", 50000000);
@@ -45,7 +45,7 @@ void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
      if ((string)ob->query("gender") == "男性" ) {
-          say( HIY "神像眼神骤变，幻化成七彩凤凰，出现金色光芒。\n" NOR);
+          say( HIY "神像眼神驟變，幻化成七彩鳳凰，出現金色光芒。\n" NOR);
           kill_ob(ob);
           ob->fight_ob(this_object());
           return;

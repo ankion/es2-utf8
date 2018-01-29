@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("杀手", ({ "killer" }) );
-        set("title","蒙面杀手" );
+        set_name("殺手", ({ "killer" }) );
+        set("title","蒙面殺手" );
         set("gender","女性" );
         set("age",23);
         set("long",
                 
-"这是个蒙面杀手，眉眼看起来有些面熟。\n");
+"這是個蒙面殺手，眉眼看起來有些面熟。\n");
 
 //        set("vendetta_mark", "authority");
         set("pursuer", 1);
@@ -31,8 +31,8 @@ void create()
 
         set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-                "蒙面杀手喝道：为什么杀我？\n",
-                "蒙面杀手叹道：你知道我心里有多痛苦吗？！\n"
+                "蒙面殺手喝道：爲什麼殺我？\n",
+                "蒙面殺手嘆道：你知道我心裏有多痛苦嗎？！\n"
         }) );
 
         set_skill("unarmed",40);

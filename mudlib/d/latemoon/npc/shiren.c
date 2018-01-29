@@ -2,13 +2,13 @@ inherit NPC;
  
 void create()
 {
-        set_name("袭人", ({ "Shi Ren", "shi ren","shi" }) );
+        set_name("襲人", ({ "Shi Ren", "shi ren","shi" }) );
         set("gender", "女性" );
         set("age",28);
         set("long", @TEXT
-她有著春花般的脸儿，青山似的眉黛，灵活如秋波的眼睛，
-高低适宜如玉□的鼻子，珊珊似的小口。她的特点就是清秀
-大方，如花中之牡丹，鸟中之鸾凤。
+她有著春花般的臉兒，青山似的眉黛，靈活如秋波的眼睛，
+高低適宜如玉□的鼻子，珊珊似的小口。她的特點就是清秀
+大方，如花中之牡丹，鳥中之鸞鳳。
 TEXT
 );
        set("class", "dancer");
@@ -20,7 +20,7 @@ TEXT
         set("max_force", 400);
         set("force_factor", 2);
 
-        create_family("晚月庄",4,"弟子");
+        create_family("晚月莊",4,"弟子");
         setup();
         carry_object(__DIR__"obj/deer_boot")->wear();
         carry_object(__DIR__"obj/belt")->wear();

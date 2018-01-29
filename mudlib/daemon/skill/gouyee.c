@@ -8,7 +8,7 @@ int valid_learn(object me)
 {
         if( (int)me->query("max_mana") < (int)me->query_skill("gouyee") * 5 )
                 return 
-notify_fail("你的魔力不够，无法提升谷衣心法的造诣。\n");
+notify_fail("你的魔力不夠，無法提升谷衣心法的造詣。\n");
 
         return 1;
 }
@@ -16,7 +16,7 @@ notify_fail("你的魔力不够，无法提升谷衣心法的造诣。\n");
 int practice_skill(object me)
 {
         return 
-notify_fail("谷衣心法只能用学的，或是从运用(exert)中增加熟练度。\n");
+notify_fail("谷衣心法只能用學的，或是從運用(exert)中增加熟練度。\n");
 }
 
 string exert_function_file(string func)

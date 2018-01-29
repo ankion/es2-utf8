@@ -3,7 +3,7 @@ inherit NPC;
  
 void create()
 {
-        set_name("上官钰翎", ({ "yulin","yu-girl" }) );
+        set_name("上官鈺翎", ({ "yulin","yu-girl" }) );
         set("nickname", "玉涵湘");
         set("gender", "女性" );
         set("age", 20);

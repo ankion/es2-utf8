@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("土匪喽罗", ({ "bandit" }) );
+	set_name("土匪嘍羅", ({ "bandit" }) );
 	set("gender", "男性");
 	set("age", 33);
 	set("long",
-		"这家伙满脸横肉，一付凶神恶煞的模样，令人望而生畏。\n");
+		"這傢伙滿臉橫肉，一付凶神惡煞的模樣，令人望而生畏。\n");
 	set("combat_exp", 3600);
 //	set("pursuer", 1);
 	set("score", 260);

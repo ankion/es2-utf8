@@ -20,9 +20,9 @@ int main(object me, string arg)
 	env = me->query("env");
  
 	if( !arg || arg=="" ) {
-		write("你目前设定的环境变数有：\n");
+		write("你目前設定的環境變數有：\n");
 		if( !mapp(env) || !sizeof(env) )
-			write("\t没有设定任何环境变数。\n");
+			write("\t沒有設定任何環境變數。\n");
 		else {
 			terms = keys(env);
 			for(i=0; i<sizeof(terms); i++)
@@ -38,12 +38,12 @@ int main(object me, string arg)
  
 	if( term && term!="" ) {
 		if( mapp(env) && undefinedp(env[term]) && sizeof(env) >= MAX_ENV_VARS )
-			return notify_fail("你设的环境变数太多了，请先用 unset 删掉几个吧。\n");
+			return notify_fail("你設的環境變數太多了，請先用 unset 刪掉幾個吧。\n");
 		sscanf(data, "%d", data);
         if((wiz_level(me) == 0) && (member_array(term, wiz_only) != -1))
-            return notify_fail("只有巫师能用这个设定。\n");
+            return notify_fail("只有巫師能用這個設定。\n");
         me->set("env/" + term, data);
-		printf("设定环境变数：%s = %O\n", term, data);
+		printf("設定環境變數：%s = %O\n", term, data);
 		return 1;
 	}
 	return help();
@@ -52,14 +52,14 @@ int main(object me, string arg)
 int help()
 {
 	write(@TEXT
-指令格式：set <变数名> [<变数值>]
+指令格式：set <變數名> [<變數值>]
  
-这个指令让你设定一些环境变数，不加参数时会显示你目前设定的环境变数，不指定
-变数值，则内定值为 "YES"。
+這個指令讓你設定一些環境變數，不加參數時會顯示你目前設定的環境變數，不指定
+變數值，則內定值爲 "YES"。
  
-取消变数设定请用 unset 指令。
+取消變數設定請用 unset 指令。
  
-至於有哪些环境变数可以设定，请见 help settings。
+至於有哪些環境變數可以設定，請見 help settings。
 TEXT
 	);
 	return 1;

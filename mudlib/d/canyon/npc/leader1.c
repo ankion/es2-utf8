@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("小队长", ({ "leader" }));
+	set_name("小隊長", ({ "leader" }));
 	set("gender", "男性");
 	set("age", 30);
 	set("long",
-        	"不苟言笑的样子，带领著小兵驻守隘口的小队长。\n");
+        	"不苟言笑的樣子，帶領著小兵駐守隘口的小隊長。\n");
 
 	set("attitude", "peaceful");
 

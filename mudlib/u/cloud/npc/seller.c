@@ -5,11 +5,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("杂货贩", ({ "seller" }) );
-        set("title", "杂货铺");
+        set_name("雜貨販", ({ "seller" }) );
+        set("title", "雜貨鋪");
         set("gender", "男性" );
         set("age", 32);
-        set("long", "卖杂货的是个年轻汉子，面带微笑。\n");
+        set("long", "賣雜貨的是個年輕漢子，面帶微笑。\n");
         set("combat_exp", 1000);
         set("attitude", "friendly");
         set_skill("unarmed", 60);
@@ -17,7 +17,7 @@ void create()
         set_skill("throwing", 30);
 
         set("inquiry", ([
-                "杂货铺" : "这是祖上传下来的产业，小的在勉力维持。", 
+                "雜貨鋪" : "這是祖上傳下來的產業，小的在勉力維持。", 
         ]) );
 
         set("vendor_goods", ([
@@ -56,12 +56,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "杂货贩笑脸相迎，道：这位"
+                        say( "雜貨販笑臉相迎，道：這位"
                                 + RANK_D->query_respect(ob)
-                                + "，要买什么？\n");
+                                + "，要買什麼？\n");
                         break;
                 case 1:
-                        say( "杂货贩正忙着整理货架\n");
+                        say( "雜貨販正忙着整理貨架\n");
                         break;
         }
 }

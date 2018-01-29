@@ -5,7 +5,7 @@ void create()
         set_name("商人", ({ "trader"}) );
         set("gender", "男性" );
         set("age", 42);
-        set("long", "这是一位从关外来的商人。\n");
+        set("long", "這是一位從關外來的商人。\n");
         set("combat_exp", 80000);
         set("attitude", "friendly");
 //        set("env/wimpy", 50);
@@ -19,12 +19,12 @@ void create()
 
         set("chat_chance", 30);
         set("chat_msg", ({
-                "商人心有余悸地说道：我几乎死在绮云镇阿泰的手中！\n",
+                "商人心有餘悸地說道：我幾乎死在綺雲鎮阿泰的手中！\n",
                 (: random_move :),
         }) );
         set("chat_chance_combat", 15);
         set("chat_msg_combat", ({
-                "商人说道：杀人啦！你难道不怕官府缉拿吗？\n",
+                "商人說道：殺人啦！你難道不怕官府緝拿嗎？\n",
                 (: random_move :),
         }) );
 

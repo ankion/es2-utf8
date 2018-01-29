@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "回廊");
+	set("short", "迴廊");
 	set("long", @LONG
-你现在走在围绕著天井的回廊上, 回廊往东西两侧延伸, 南边就
-是天井, 你也许可以走过去赏赏花, 散散心。在你的北方, 走过那扇
-红漆木门就是后殿, 也是茅山派供奉历代掌门人灵位的地方。
+你現在走在圍繞著天井的迴廊上, 迴廊往東西兩側延伸, 南邊就
+是天井, 你也許可以走過去賞賞花, 散散心。在你的北方, 走過那扇
+紅漆木門就是後殿, 也是茅山派供奉歷代掌門人靈位的地方。
 LONG
 	);
      set("item_desc", ([
@@ -22,6 +22,6 @@ LONG
      "north" : __DIR__"temple2",
 ]));
 
-     create_door("north", "红漆木门", "south", DOOR_CLOSED);
+     create_door("north", "紅漆木門", "south", DOOR_CLOSED);
 	setup();
 }

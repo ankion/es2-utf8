@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "尚书府大门");
+        set("short", "尚書府大門");
         set("long",@LONG
-你来到尚书府大门。门上悬挂着一块很大的黑色牌匾，上面用隶
-书写着三个金字「尚书府」。牌匾上的一行小字表明这是当今皇上所
-题，可以看出其官势显赫。
+你來到尚書府大門。門上懸掛着一塊很大的黑色牌匾，上面用隸
+書寫着三個金字「尚書府」。牌匾上的一行小字表明這是當今皇上所
+題，可以看出其官勢顯赫。
 LONG
         );
 
@@ -25,7 +25,7 @@ LONG
 
         set("outdoors", "city");
 
-	create_door ("east", "大铁门", "west", DOOR_CLOSED);
+	create_door ("east", "大鐵門", "west", DOOR_CLOSED);
 
         setup();
 }
@@ -33,11 +33,11 @@ LONG
 int valid_leave(object me,string dir)
 {
         if ( dir=="east" &&  present("guard", environment(this_player()))
-		&& !(string)me->query("marks/尚书") )
-        return notify_fail("门房伸手拦住了你的去路，喝道：闯什么闯！\n");
+		&& !(string)me->query("marks/尚書") )
+        return notify_fail("門房伸手攔住了你的去路，喝道：闖什麼闖！\n");
 
-	if ((string)me->query("marks/尚书") )
-		me->set("marks/尚书",0);
+	if ((string)me->query("marks/尚書") )
+		me->set("marks/尚書",0);
         return ::valid_leave(me,dir);
 }
 

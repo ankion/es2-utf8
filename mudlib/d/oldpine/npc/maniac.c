@@ -6,11 +6,11 @@ void create()
 {
 	object ob;
 
-	set_name("疯老头子", ({ "mad bad ugly dirty oldman", "man", "oldman" }) );
+	set_name("瘋老頭子", ({ "mad bad ugly dirty oldman", "man", "oldman" }) );
 	set("gender", "男性");
 	set("age", 67);
 	set("long",
-		"这个老头子正对著你龇牙裂嘴，他看起来已经完全疯了。\n");
+		"這個老頭子正對著你齜牙裂嘴，他看起來已經完全瘋了。\n");
 
 	set("str", 30);
 	set("cor", 30);

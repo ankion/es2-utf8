@@ -7,17 +7,17 @@ void consider();
 
 void create()
 {
-	set_name("陆得财", ({ "beggarhead", "beggar" }) );
+	set_name("陸得財", ({ "beggarhead", "beggar" }) );
 
 	set("nickname", "黑水伏蛟");
 	set("gender", "男性");
 	set("age", 52);
 	set("long",
-		"陆得财是一个浑身脏兮兮的老丐，一副无精打采要死不活的样子，可是\n"
-		"武林中人人都识得他身上打著二十三个结的皮酒囊，这不但是「花紫会\n"
-		"」龙头的信物，更是名镇漠南的「黑水伏蛟」独门兵器，只不过陆得财\n"
-		"行踪诡密，据说各处随时都有七、八的他的替身在四处活动，所以你也\n"
-		"很难确定眼前这个陆得财到底是不是真的。\n" );
+		"陸得財是一個渾身髒兮兮的老丐，一副無精打采要死不活的樣子，可是\n"
+		"武林中人人都識得他身上打著二十三個結的皮酒囊，這不但是「花紫會\n"
+		"」龍頭的信物，更是名鎮漠南的「黑水伏蛟」獨門兵器，只不過陸得財\n"
+		"行蹤詭密，據說各處隨時都有七、八的他的替身在四處活動，所以你也\n"
+		"很難確定眼前這個陸得財到底是不是真的。\n" );
 	set("attitude", "peaceful");
 
 	set("str", 30);
@@ -61,7 +61,7 @@ void create()
 	map_skill("unarmed", "spicyclaw");
 	map_skill("force", "serpentforce");
 
-	create_family("花紫会", 4, "龙头");
+	create_family("花紫會", 4, "龍頭");
 
 	setup();
 }
@@ -71,8 +71,8 @@ void attempt_apprentice(object me)
 {
 	command("look " + me->query("id"));
 	if( me->can_afford(100) ) {
-		command("say 我们花紫会只收化子，" + RANK_D->query_respect(me)
-			+ "您还是回去享福吧。\n");
+		command("say 我們花紫會只收化子，" + RANK_D->query_respect(me)
+			+ "您還是回去享福吧。\n");
 		return;
 	} else {
 		command("nod");

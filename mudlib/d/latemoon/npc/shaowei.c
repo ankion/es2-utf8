@@ -2,23 +2,23 @@ inherit NPC;
 #include <ansi.h>
  
 string *make_msg = ({
-    HIY "筱薇微笑的看著你说：你要作竹蜻蜓呀!\n\n" NOR,
-    HIY "筱薇将你给她的竹子仔细的看了一下。说道：不错是根玉竹! \n\n" NOR,
-    HIY "筱薇将竹子周围的叶子弄掉，灵巧的削凿著。\n\n" NOR,
-    HIY "经过不久，筱薇把竹蜻蜓做好了。\n\n" NOR,
-    HIY "筱薇将做好的竹蜻蜓递给你，微笑说道：嗯! 做好了! \n\n" NOR,
+    HIY "筱薇微笑的看著你說：你要作竹蜻蜓呀!\n\n" NOR,
+    HIY "筱薇將你給她的竹子仔細的看了一下。說道：不錯是根玉竹! \n\n" NOR,
+    HIY "筱薇將竹子周圍的葉子弄掉，靈巧的削鑿著。\n\n" NOR,
+    HIY "經過不久，筱薇把竹蜻蜓做好了。\n\n" NOR,
+    HIY "筱薇將做好的竹蜻蜓遞給你，微笑說道：嗯! 做好了! \n\n" NOR,
 });
 
 void create()
 {
-        set_name("蓝筱薇", ({ "shao-wei","shaowei","wei"  }) );
+        set_name("藍筱薇", ({ "shao-wei","shaowei","wei"  }) );
         set("gender", "女性" );
         set("age",18);
         set("long", @TEXT
-她长得十分漂亮！让你忍不住多瞧她几眼，从她身上
-你闻到淡淡的香气。她很有礼貌的向你点头，优雅的
-动作，轻盈的步伐，好美哦!
-她是晚月庄主蓝止萍的养女。
+她長得十分漂亮！讓你忍不住多瞧她幾眼，從她身上
+你聞到淡淡的香氣。她很有禮貌的向你點頭，優雅的
+動作，輕盈的步伐，好美哦!
+她是晚月莊主藍止萍的養女。
 TEXT
 );
        set("class", "dancer");
@@ -34,12 +34,12 @@ TEXT
 
         set("force_factor", 10);
         set("inquiry", ([
-        "舞" : "我舞跳的不好!我比较喜欢静态的活动。\n",
-        "竹蜻蜓" : "咦..!你也喜欢玩啊! 我会做哦! \n" +
-                   "不过我需要一根竹子! 你找来我帮你做! \n",
-        "芳绫" : "听说她贪玩被关在禁闭室。她最爱玩竹蜻蜓了! \n",
+        "舞" : "我舞跳的不好!我比較喜歡靜態的活動。\n",
+        "竹蜻蜓" : "咦..!你也喜歡玩啊! 我會做哦! \n" +
+                   "不過我需要一根竹子! 你找來我幫你做! \n",
+        "芳綾" : "聽說她貪玩被關在禁閉室。她最愛玩竹蜻蜓了! \n",
         ]));
-        create_family("晚月庄",2,"大弟子");
+        create_family("晚月莊",2,"大弟子");
 
         setup();
         carry_object("/d/latemoon/obj/clasp")->wear();
@@ -65,12 +65,12 @@ void greeting(object ob)
         if( !ob || !present(ob, environment(this_object())) ) return;
         switch( random(2) ) {
                 case 0:
-                  say( "筱薇对你微笑，和善的对你点点头。\n");
+                  say( "筱薇對你微笑，和善的對你點點頭。\n");
                         break;
                 case 1:
-                  say( "筱薇对你微笑，以纤细轻柔的声音 \n 说道：这位" +
+                  say( "筱薇對你微笑，以纖細輕柔的聲音 \n 說道：這位" +
 RANK_D->query_respect(ob)
-                   + "，你好！欢迎来到晚月庄。\n");
+                   + "，你好！歡迎來到晚月莊。\n");
         }
 }
 
@@ -81,7 +81,7 @@ int accept_object(object who, object ob)
 
         if ( objname != "竹子")  {
            command("smile");
-            say ( HIY "这要送给我啊?! 怎么好意思!谢谢你。\n" NOR);
+            say ( HIY "這要送給我啊?! 怎麼好意思!謝謝你。\n" NOR);
            command("blush");
              return 1;
             }
@@ -90,7 +90,7 @@ int accept_object(object who, object ob)
 
             who->set_temp("moon/竹子", 1);
          } else {
-             say (HIY "我已经帮你做一个竹蜻蜓了呀! \n" NOR);
+             say (HIY "我已經幫你做一個竹蜻蜓了呀! \n" NOR);
              return 1;
           }
           return 1;

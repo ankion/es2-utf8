@@ -5,9 +5,9 @@ inherit NPC;
 void create()
 {
 	set_name("黑冠巨蟒", ({ "serpent" }) );
-	set("long", "一只乌黑油亮的巨蟒，头上生著一个大肉瘤。\n");
+	set("long", "一隻烏黑油亮的巨蟒，頭上生著一個大肉瘤。\n");
 
-	set("race", "野兽");
+	set("race", "野獸");
 	set("age", 400);
 	set("attitude", "aggressive");
 
@@ -20,7 +20,7 @@ void create()
 	set("spi", 20);
 	set("int", 10);
 
-	set("limbs", ({ "头部", "躯干", "尾巴" }) );
+	set("limbs", ({ "頭部", "軀幹", "尾巴" }) );
 	set("verbs", ({ "bite" }) );
 
 	set_temp("apply/attack", 60);

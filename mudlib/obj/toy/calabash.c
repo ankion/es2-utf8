@@ -5,13 +5,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("青葫芦", ({ "green calabash", "calabash" }) );
+	set_name("青葫蘆", ({ "green calabash", "calabash" }) );
 	set_weight(400);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "这是一个碧绿色的葫芦，青里透黄颜色十分讨人喜爱。\n");
-		set("unit", "个");
+		set("long", "這是一個碧綠色的葫蘆，青裏透黃顏色十分討人喜愛。\n");
+		set("unit", "個");
 		set("value", 80);
 		set("max_liquid", 60);
 	}

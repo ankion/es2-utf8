@@ -6,11 +6,11 @@ string	cross_river();
 
 void create()
 {
-        set_name("船夫", ({ "boater" }) );
+        set_name("船伕", ({ "boater" }) );
         set("title", "渡口");
         set("gender", "男性" );
         set("age", 30);
-        set("long", "船夫的皮肤晒得黝黑，脸上的沧桑是多年摆渡的痕迹。\n");
+        set("long", "船伕的皮膚曬得黝黑，臉上的滄桑是多年擺渡的痕跡。\n");
 	set("str", 27);
         set("combat_exp", 1500);
         set("attitude", "heroism");
@@ -19,8 +19,8 @@ void create()
         set_skill("dodge", 30);
 
         set("inquiry", ([
-		"过江" : (: cross_river :),
-		"摆渡" : (: cross_river :), 
+		"過江" : (: cross_river :),
+		"擺渡" : (: cross_river :), 
         ]) );
 
 	setup();
@@ -30,28 +30,28 @@ void create()
 
 int accept_object(object who, object ob)
 {
-        if( !who->query("marks/船夫") ) {
+        if( !who->query("marks/船伕") ) {
                 if( ob->value() >= 2 ) {
 			command("nod");
-			message("vision", "船夫说：客官可以过江啦！\n",
+			message("vision", "船伕說：客官可以過江啦！\n",
                                  who );
-	                message("vision", "船夫拉过条小船，你走了上去。\n",
+	                message("vision", "船伕拉過條小船，你走了上去。\n",
                         	 who );
-                        who->set("marks/船夫", 1);
+                        who->set("marks/船伕", 1);
                         return 1;
                 } else {
-                        say("这么少？我还要养家呀！\n");
+                        say("這麼少？我還要養家呀！\n");
                         return 0;
                 }
         } else{
-                say("多谢这位"+RANK_D->query_respect(ob)+"！\n");
-		who->set("marks/船夫", 0);
+                say("多謝這位"+RANK_D->query_respect(ob)+"！\n");
+		who->set("marks/船伕", 0);
 	}
         return 1;
 }
 
 string	cross_river()
 {
-	return "交五两银子";
+	return "交五兩銀子";
 }
 

@@ -13,7 +13,7 @@ void create()
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "一件普通的粗布衣服，不值什么钱。\n");
+    set("long", "一件普通的粗布衣服，不值什麼錢。\n");
     set("unit", "件");
     set("material", "cloth");
     set("armor_prop/armor", 1);

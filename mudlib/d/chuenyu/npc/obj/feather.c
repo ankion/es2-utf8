@@ -6,11 +6,11 @@ inherit THROWING;
 
 void create()
 {
-        set_name("鸡毛", ({ "feather" }) );
+        set_name("雞毛", ({ "feather" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","用来清除灰尘的鸡毛\n");
+                set("long","用來清除灰塵的雞毛\n");
                 set("unit", "把");
                 set("base_unit", "片");
                 set("base_weight", 1);

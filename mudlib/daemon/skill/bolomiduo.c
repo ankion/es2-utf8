@@ -7,7 +7,7 @@ int valid_learn(object me) { return 1; }
 int practice_skill(object me)
 {
         return 
-notify_fail("婆萝蜜多心经只能用学的，或是从运用(exert)中增加熟练度。\n");
+notify_fail("婆蘿蜜多心經只能用學的，或是從運用(exert)中增加熟練度。\n");
 }
 
 string exert_function_file(string func)

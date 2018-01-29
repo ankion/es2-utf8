@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("符咒简介", ({ "spellsbook" }));
+        set_name("符咒簡介", ({ "spellsbook" }));
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -12,7 +12,7 @@ void create()
                 set("unit", "本");
                 set("long",
                         
-"这似乎是一本符咒的简介，里面画着一些稀奇古怪的符号\n"
+"這似乎是一本符咒的簡介，裏面畫着一些稀奇古怪的符號\n"
                 );
                 set("value", 260);
                 set("material", "paper");

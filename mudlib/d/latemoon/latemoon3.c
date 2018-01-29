@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-     set("short","傍厅");
+     set("short","傍廳");
 	set("long", @LONG
-这里是晚月庄接待宾客的傍厅，厅中摆了一张桌几，上面摆著
-一块大红镶金桌巾，靠东壁面西设著半旧青缎靠背引枕，两张太师
-椅座。桌几上有一精致的茶壶，旁有盛好的上等茗茶。
+這裏是晚月莊接待賓客的傍廳，廳中擺了一張桌几，上面擺著
+一塊大紅鑲金桌巾，靠東壁面西設著半舊青緞靠背引枕，兩張太師
+椅座。桌几上有一精緻的茶壺，旁有盛好的上等茗茶。
 LONG
 	);
     set("resource/water", 1);
@@ -27,10 +27,10 @@ int valid_leave(object me, string dir)
 
         item = "tea cup";
         if( !objectp(obj = present(item, me)) )  {
-                tell_object(me, "你起身往南离开!\n" NOR );
+                tell_object(me, "你起身往南離開!\n" NOR );
         }  else  {
         if ( me->query_temp("latemoon/茶") ) {
-                tell_object(me, HIC "你将瓷杯交回给雨梅。\n" NOR);
+                tell_object(me, HIC "你將瓷杯交回給雨梅。\n" NOR);
                 me->set_temp("latemoon/茶", 0);
         destruct(obj);
            }

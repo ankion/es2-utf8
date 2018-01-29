@@ -8,8 +8,8 @@ string ask_me(object who);
 
 void create()
 {
-	set_name("刘安禄", ({ "liu anru", "liu" }) );
-	set("title", "门房");
+	set_name("劉安祿", ({ "liu anru", "liu" }) );
+	set("title", "門房");
 	set("gender", "男性" );
 	set("age", 26);
 	set("str", 29);
@@ -17,20 +17,20 @@ void create()
 	set("cps", 30);
 	set("int", 11);
 	set("long",
-		"刘安禄是淳风武馆的门房，除了馆主柳淳风没有人知道他的出身来历，只知\n"
-		"到他的武艺不弱，一手快刀在这一带罕有敌手。\n" );
+		"劉安祿是淳風武館的門房，除了館主柳淳風沒有人知道他的出身來歷，只知\n"
+		"到他的武藝不弱，一手快刀在這一帶罕有敵手。\n" );
 	set("combat_exp", 20000);
 	set("attitude", "heroism");
 	set("chat_chance_combat", 15);
 	set("chat_msg_combat", ({
-		"刘安禄说道：你当这里是什么地方，敢来这里撒野？\n",
-		"刘安禄说道：想我堂堂....呃....连我这个淳风武馆的小小的门房都可以收拾你！\n",
-		"刘安录忽然挥出一刀，招数精奇，但是刀到中途忽然像是想起什么，急忙收招。\n",
-		"刘安禄说道：你快走吧，就算我输了你啦....\n"
+		"劉安祿說道：你當這裏是什麼地方，敢來這裏撒野？\n",
+		"劉安祿說道：想我堂堂....呃....連我這個淳風武館的小小的門房都可以收拾你！\n",
+		"劉安錄忽然揮出一刀，招數精奇，但是刀到中途忽然像是想起什麼，急忙收招。\n",
+		"劉安祿說道：你快走吧，就算我輸了你啦....\n"
 	}) );
 	set("inquiry", ([
-		"刘老三": (: ask_me :),
-		"血手刘三": (: ask_me :)
+		"劉老三": (: ask_me :),
+		"血手劉三": (: ask_me :)
 	]) );
 
 	set_skill("blade", 40);
@@ -55,7 +55,7 @@ string ask_me(object who)
 		else {
 			kill_ob(who);
 			who->fight_ob(this_object());
-			return "老子就是血手刘三，血手刘三就是你老子！纳命来！\n";
+			return "老子就是血手劉三，血手劉三就是你老子！納命來！\n";
 		}
 	}
 
@@ -66,11 +66,11 @@ string ask_me(object who)
 	set_temp("apply/parry", 60);
 	set_temp("apply/damage", 20);
 	set("title", "野羊山寨二寨主");
-	set("nickname", HIR "血手刘三" NOR);
+	set("nickname", HIR "血手劉三" NOR);
 	message("vision",
-		HIY "刘安禄眼中突然放出异样的光芒，颤声说道：看来...你都知道了？\n\n"
-		"刘安禄大喝一声，叫道：既然如此，老子今天豁出去了，纳命来！\n" NOR
-		"刘安禄使开单刀，招数精奇，沈猛狠辣，和刚才简直判若两人！\n",
+		HIY "劉安祿眼中突然放出異樣的光芒，顫聲說道：看來...你都知道了？\n\n"
+		"劉安祿大喝一聲，叫道：既然如此，老子今天豁出去了，納命來！\n" NOR
+		"劉安祿使開單刀，招數精奇，沈猛狠辣，和剛纔簡直判若兩人！\n",
 		environment(), this_object() );
 	set("pursuer", 1);
 	set("attitude", "aggressive");

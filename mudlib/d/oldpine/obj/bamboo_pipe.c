@@ -11,7 +11,7 @@ void create()
 	else {
 		set("unit", "根");
 		set("material", "bamboo");
-		set("long", "一根约两寸多长的竹管，上面戳了三个小孔，也许\可以用来吹奏？\n");
+		set("long", "一根約兩寸多長的竹管，上面戳了三個小孔，也許\可以用來吹奏？\n");
 	}
 }
 
@@ -24,7 +24,7 @@ int do_play(string arg)
 {
 	if( !id(arg) ) return 0;
 
-	message_vision("$N拿起一根" + name() + "呜嘟嘟地吹了起来。\n",
+	message_vision("$N拿起一根" + name() + "嗚嘟嘟地吹了起來。\n",
 		this_player() );
 	environment(this_player())->pipe_notify();
 

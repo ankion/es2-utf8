@@ -3,7 +3,7 @@ inherit COMBINED_ITEM;
 void create()
 {
         set_name("仙丹", ({"tablet"}));
-        set("long",     "这是一粒仙丹，服食可位列仙班。\n"
+        set("long",     "這是一粒仙丹，服食可位列仙班。\n"
 );
         set("unit", "粒");
         set("value",100); 
@@ -20,9 +20,9 @@ void init()
 
 int do_eat(string arg)
 {
-        if( !arg || arg != "tablet")  return notify_fail("你要吃甚么呢? \n");
+        if( !arg || arg != "tablet")  return notify_fail("你要吃甚麼呢? \n");
         message_vision(
-           "$N拿出一粒仙丹，纳入口中. 吃的太急, 鼻涕眼泪流了满脸..\n"
+           "$N拿出一粒仙丹，納入口中. 吃的太急, 鼻涕眼淚流了滿臉..\n"
            ,this_player()  );
         this_player()->receive_heal("gin", 5);
         this_player()->receive_heal("kee", 30);

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "花园");
+        set("short", "花園");
         set("long",@LONG
-尚书府的花园里搜集了许多名贵花卉。从洛阳的牡丹到扬州的琼
-花，你不能不惊诧于这里的全来。四时的花卉竞相开放着，发出沁人
-的香味。从花园东行就是内宅，而西边似乎有一间破屋。
+尚書府的花園裏蒐集了許多名貴花卉。從洛陽的牡丹到揚州的瓊
+花，你不能不驚詫於這裏的全來。四時的花卉競相開放着，發出沁人
+的香味。從花園東行就是內宅，而西邊似乎有一間破屋。
 LONG
         );
 
@@ -23,7 +23,7 @@ LONG
 		__DIR__"npc/gardener":	1,
 		]));
 
-	create_door("east", "帘子", "west", DOOR_CLOSED);
+	create_door("east", "簾子", "west", DOOR_CLOSED);
 
 	set("outdoors", "city");
 

@@ -8,18 +8,18 @@ void converse_one();
 void create()
 {
 //	seteuid(geteuid());
-        set_name("农妇",({"woman"}));
+        set_name("農婦",({"woman"}));
         set("gender","女性");
         set("age",30);
        
 	set("chat_chance",20);
 	set("chat_msg", ({
-		"农妇道：我可怜的儿啊，你到那里去了？\n",
-		"农妇道：你有见到我的儿吗？，他头上梳着两个小抓揪，只有七岁。\n",
-	"农妇叹道：儿啊！\n",
+		"農婦道：我可憐的兒啊，你到那裏去了？\n",
+		"農婦道：你有見到我的兒嗎？，他頭上梳着兩個小抓揪，只有七歲。\n",
+	"農婦嘆道：兒啊！\n",
 	}) ); 
 	set("inquiry",([
-		"儿":"我的儿前两天不见了，我和他爹到处找都找不到。听说黑松山总抓小孩子。\n",
+		"兒":"我的兒前兩天不見了，我和他爹到處找都找不到。聽說黑松山總抓小孩子。\n",
 	]) );
 	
 	set("combat_exp",(20+random(40)));
@@ -39,7 +39,7 @@ void create()
 void wield_weapon()
 {
     if (!query_temp("weapon")) {
-        command("say 没见识过我的菜刀神功\是吧, 接招!");
+        command("say 沒見識過我的菜刀神功\是吧, 接招!");
         command("wield knife");
         set("chat_chance_combat", 10);
     }
@@ -51,7 +51,7 @@ void converse_one()
     object ob;
     ob = this_player();
     if ((int)ob->query("age") < (int)query("age")) {
-        command("say 唉，我那可怜的儿啊，年龄比你还小。!");
+        command("say 唉，我那可憐的兒啊，年齡比你還小。!");
         command("slap "+(string)ob->query("id"));
     }
     else

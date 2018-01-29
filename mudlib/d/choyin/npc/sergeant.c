@@ -8,8 +8,8 @@ void create()
 {
 	set_name("武官", ({ "sergeant" }) );
 	set("long",
-		"一位相貌威武的武官，独自一个人站在这里发呆，似乎正有什么\n"
-		"事困扰著他。\n" );
+		"一位相貌威武的武官，獨自一個人站在這裏發呆，似乎正有什麼\n"
+		"事困擾著他。\n" );
 	set("age", 29);
 	set("combat_exp", 250000);
 	set("env/wimpy", 10);
@@ -18,12 +18,12 @@ void create()
 	set("cps", 28);
 	set("pursuer", 1);
 	set("inquiry", ([
-		"name" : "在下姓陈，名显祖，阁下是？",
-		"here" : "真是不巧，我也是外地来的，对这个地方并不熟悉。",
-		"rumors" : "在下失落了一件重要物事，是装在一个桃木箱子里，不知你有没有看见？",
-		"箱子" : "对，是桃木做成的箱子。",
-		"桃木箱子" : "如果你见著了，麻烦送还给我，在下定当重重报答。",
-		"陈显祖" : "不敢，正是在下，不知阁下有何指教？"
+		"name" : "在下姓陳，名顯祖，閣下是？",
+		"here" : "真是不巧，我也是外地來的，對這個地方並不熟悉。",
+		"rumors" : "在下失落了一件重要物事，是裝在一個桃木箱子裏，不知你有沒有看見？",
+		"箱子" : "對，是桃木做成的箱子。",
+		"桃木箱子" : "如果你見著了，麻煩送還給我，在下定當重重報答。",
+		"陳顯祖" : "不敢，正是在下，不知閣下有何指教？"
 	]) );
 	set_skill("dodge", 70);
 	set_skill("unarmed", 60);
@@ -45,9 +45,9 @@ int accept_object(object me, object ob)
 
 	if( !chest_found && ob->id("peach chest") ) {
 		chest_found = 1;
-		command("say 太好了！就是这个箱子！");
-		command("say 在下出门在外，没有携带太多银两 ... ");
-		command("say 如果您不嫌弃的话，这本古书便请笑纳。");
+		command("say 太好了！就是這個箱子！");
+		command("say 在下出門在外，沒有攜帶太多銀兩 ... ");
+		command("say 如果您不嫌棄的話，這本古書便請笑納。");
 		book = new(__DIR__"obj/magic_book");
 		book->move(this_object());
 		command("give book to " + me->query("id"));

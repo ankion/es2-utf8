@@ -10,7 +10,7 @@ int main(object me, string arg)
 	string *dirs, dir;
 	int i;
 
-	if( !arg ) return notify_fail("你要关闭什麽？\n");
+	if( !arg ) return notify_fail("你要關閉什麼？\n");
 
 	doors = environment(me)->query_doors();
 	if( mapp(doors) ) {
@@ -21,10 +21,10 @@ int main(object me, string arg)
 				dir = dirs[i];
 				break;
 			}
-		if( !dir ) return notify_fail("你要关闭什麽？\n");
+		if( !dir ) return notify_fail("你要關閉什麼？\n");
 	
 		if( environment(me)->close_door(dir) ) {
-			message_vision("$N将" + doors[dir]["name"] + "关上。\n", me);
+			message_vision("$N將" + doors[dir]["name"] + "關上。\n", me);
 			return 1;
 		}
 	}
@@ -37,7 +37,7 @@ int help(object me)
         write(@HELP
 指令格式 : close <door> 或 <方向>
  
-这个指令可以让你关上门.
+這個指令可以讓你關上門.
  
 HELP
     );

@@ -6,11 +6,11 @@ inherit THROWING;
 
 void create()
 {
-	set_name("飞镖", ({ "dart" }) );
+	set_name("飛鏢", ({ "dart" }) );
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long",	"飞镖是一种十分常见的暗器。\n");
+		set("long",	"飛鏢是一種十分常見的暗器。\n");
 		set("unit", "些");
 		set("base_unit", "枝");
 		set("base_weight", 40);

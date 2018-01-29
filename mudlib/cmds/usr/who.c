@@ -26,7 +26,7 @@ mixed main(object me, string arg, int remote)
 					&&	option[i][0]=='@' ) {
 						RWHO_Q->send_rwho_q(option[i][1..sizeof(option[i])],
 							me, opt_long);
-						write("网路讯息已送出，请稍候。\n");
+						write("網路訊息已送出，請稍候。\n");
 						return 1;
 					}
 					return notify_fail("指令格式：who [-l|-i|-w]\n");
@@ -35,7 +35,7 @@ mixed main(object me, string arg, int remote)
 
 	if( opt_long ) {
 		if( (int)me->query("sen") < 30 )
-			return notify_fail("你的精神太差了，没有办法得知其他玩家的详细资料。\n");
+			return notify_fail("你的精神太差了，沒有辦法得知其他玩家的詳細資料。\n");
 		me->receive_damage("sen", 30);
 	}
 
@@ -74,7 +74,7 @@ mixed main(object me, string arg, int remote)
 	}
 		
 	str += "—————————————————————————————————————\n";
-	str = sprintf("%s共有 %d 位使用者连线中，系统负担：%s\n", str, sizeof(list),
+	str = sprintf("%s共有 %d 位使用者連線中，系統負擔：%s\n", str, sizeof(list),
 		query_load_average() + "\n");
 
 	if( remote ) return str;
@@ -101,13 +101,13 @@ int help(object me)
 write(@HELP
 指令格式 : who [-l|-i|-w]
 
-这个指令可以列出所有在线上的玩家及其等级。
+這個指令可以列出所有在線上的玩家及其等級。
 
--l 选项列出较长的讯息。
--i 只列出玩家的英文代号。
--w 只列出线上所有的巫师。
+-l 選項列出較長的訊息。
+-i 只列出玩家的英文代號。
+-w 只列出線上所有的巫師。
 
-相关指令： finger
+相關指令： finger
 HELP
     );
     return 1;

@@ -3,16 +3,16 @@ inherit NPC;
 void create()
 {
 	set_name("蜘蛛", ({ "spider" }) );
-	set("race", "野兽");
+	set("race", "野獸");
 	set("age", 1);
 	set("long",@LONG
-这是一只体型相当大的蜘蛛, 看来有点吓人.
+這是一隻體型相當大的蜘蛛, 看來有點嚇人.
 
 LONG
 	);
 	set("str", 20);
 
-	set("limbs", ({ "头部", "身体" }) );
+	set("limbs", ({ "頭部", "身體" }) );
 	set("verbs", ({ "bite" }) );
 
 	set_temp("apply/attack", 15);

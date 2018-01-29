@@ -11,26 +11,26 @@ int main(object me, string arg)
         int sp, dp;
 
         if( environment(me)->query("no_fight") )
-                return notify_fail("这里禁止行窃。\n");
+                return notify_fail("這裏禁止行竊。\n");
 
         if( me->query_temp("stealing") )
-                return notify_fail("你已经在找机会下手了！\n");
+                return notify_fail("你已經在找機會下手了！\n");
 
         if( !arg || sscanf(arg, "%s from %s", what, who)!=2 ) return
                 notify_fail("指令格式：steal <物品> from <人物>\n");
 
         victim = present(who, environment(me));
         if( !victim || victim==me) return 
-notify_fail("你想行窃的对象不在这里。\n");
+notify_fail("你想行竊的對象不在這裏。\n");
         if( !wizardp(me) && wizardp(victim) )
-                return notify_fail("玩家不能偷巫师身上的东西。\n");
+                return notify_fail("玩家不能偷巫師身上的東西。\n");
 
         if( !ob = present(what, victim) ) {
                 object *inv;
                 inv = all_inventory(victim);
                 if( !sizeof(inv) )
                         return notify_fail( victim->name() + 
-"身上看起来没有什麽值钱的东西好偷。\n");
+"身上看起來沒有什麼值錢的東西好偷。\n");
                 ob = inv[random(sizeof(inv))];
         }
         sp = (int)me->query_skill("stealing") * 5 + (int)me->query("kar") * 2
@@ -44,7 +44,7 @@ notify_fail("你想行窃的对象不在这里。\n");
         if( victim->is_fighting() ) dp *= 10;
         if( ob->query("equipped") ) dp *= 10;
 
-        write("你不动声色地慢慢靠近" + victim->name() + "，等待机会下手 
+        write("你不動聲色地慢慢靠近" + victim->name() + "，等待機會下手 
 ...\n\n");
 
         me->set_temp("stealing", 1);
@@ -59,7 +59,7 @@ dp)
         me->delete_temp("stealing");
 
         if( environment(victim) != environment(me) ) {
-                tell_object(me, "太可惜了，你下手的目标已经走了。\n");
+                tell_object(me, "太可惜了，你下手的目標已經走了。\n");
                 return;
         }
 
@@ -67,7 +67,7 @@ dp)
                 if( !ob->move(me) ) {
                         tell_object(me, "你摸到一" + ob->query("unit") + 
 ob->name() 
-                                + "，可是对你而言太重了，不得不放弃。\n");
+                                + "，可是對你而言太重了，不得不放棄。\n");
                         return;
                 }
                 tell_object(me, HIW "得手了！\n\n" NOR);
@@ -78,7 +78,7 @@ ob->name() + "！\n");
 random(me->query("int")));
                 if( random(sp) < dp/2 )
                         message("vision", "你看到" + me->name() + 
-"鬼鬼祟祟地从"
+"鬼鬼祟祟地從"
                                 + victim->name() + "身上偷走了一" + 
 ob->query("unit")
                                 + ob->name() + "！\n", environment(me), ({ 
@@ -86,14 +86,14 @@ me, victim }) );
         } else {
                 if( random(sp) > dp/2 ) {
                         tell_object(me, victim->name() + 
-"不经意地一转头，你急忙将手缩了回去！\n"
-                                "还好，没有被发现。\n");
+"不經意地一轉頭，你急忙將手縮了回去！\n"
+                                "還好，沒有被發現。\n");
                         return;
                 }
                 tell_object(me, HIR "糟糕！你失手了！\n\n" NOR);
-                message_vision("$N一回头，正好发现$n的手正抓著$P身上的" + 
+                message_vision("$N一回頭，正好發現$n的手正抓著$P身上的" + 
 ob->name() + "！\n\n"
-                        + "$N喝道：「干什麽！」\n\n", victim, me);
+                        + "$N喝道：「幹什麼！」\n\n", victim, me);
                 me->improve_skill("stealing", 1,0 );
                 if( userp(victim) ) victim->fight_ob(me);
                 else victim->kill_ob(me);
@@ -108,9 +108,9 @@ int help(object me)
 write(@HELP
 指令格式 : steal <某物> from <某人>
 
-这个指令让你有机会偷到他人身上的东西。成功了, 当然你就能获得
-该样物品。可是, 马有失蹄, 人总有失风的时候, 当你失败时当然就
-得付出代价, 至於是什麽代价......靠你自己去发掘罗。
+這個指令讓你有機會偷到他人身上的東西。成功了, 當然你就能獲得
+該樣物品。可是, 馬有失蹄, 人總有失風的時候, 當你失敗時當然就
+得付出代價, 至於是什麼代價......靠你自己去發掘羅。
 HELP
     );
     return 1;

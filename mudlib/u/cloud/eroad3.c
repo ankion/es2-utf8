@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "绮云镇街道");
+        set("short", "綺雲鎮街道");
         set("long", @LONG
-这里是绮云镇东头，北面是张家，东南方就是茶场。
+這裏是綺雲鎮東頭，北面是張家，東南方就是茶場。
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */

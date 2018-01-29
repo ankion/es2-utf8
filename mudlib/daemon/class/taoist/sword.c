@@ -8,7 +8,7 @@ inherit SWORD;
 
 void create()
 {
-        set_name( HIR "咒剑王□" NOR, ({ "sword" }) );
+        set_name( HIR "咒劍王□" NOR, ({ "sword" }) );
         set_weight(7000);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -16,13 +16,13 @@ void create()
                 set("unit", "把");
                 set("long",
                         
-"这是一把桃木雕成的古剑，闻起来有一股香味，剑身刻著许多你从未见过的咒\n"
-                        "文，只有剑柄部份有两个依稀可以辨认的篆字：「 王 □ 
+"這是一把桃木雕成的古劍，聞起來有一股香味，劍身刻著許多你從未見過的咒\n"
+                        "文，只有劍柄部份有兩個依稀可以辨認的篆字：「 王 □ 
 」\n");
                 set("value", 18000);
                 set("material", "steel");
-                set("wield_msg", "$N「唰」地一声抽出一把$n握在手中。\n");
-                set("unequip_msg", "$N将手中的$n插入腰间的剑鞘。\n");
+                set("wield_msg", "$N「唰」地一聲抽出一把$n握在手中。\n");
+                set("unequip_msg", "$N將手中的$n插入腰間的劍鞘。\n");
         }
 
         init_sword(44);
@@ -44,7 +44,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                         me->receive_heal("kee", damage);
                         me->receive_heal("sen", damage);
                         return HIY 
-"王□剑发出一股金色的罡气，流遍$N的全身。\n" NOR;
+"王□劍發出一股金色的罡氣，流遍$N的全身。\n" NOR;
                 }
                 return random(me->query_spi());
         }

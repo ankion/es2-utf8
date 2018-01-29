@@ -18,13 +18,13 @@ me->query_skill("force")/2 ) {
                         me->receive_damage( "kee", damage * 2 );
                         me->receive_wound( "kee", damage );
                         if( damage < 10 ) return 
-"$N受到$n的内力反震，闷哼一声。\n";
+"$N受到$n的內力反震，悶哼一聲。\n";
                         else if( damage < 20 ) return 
-"$N被$n以内力反震，「嘿」地一声退了两步。\n";
+"$N被$n以內力反震，「嘿」地一聲退了兩步。\n";
                         else if( damage < 40 ) return 
-"$N被$N以内力一震，胸口有如受到一记重击，连退了五六步！\n";
+"$N被$N以內力一震，胸口有如受到一記重擊，連退了五六步！\n";
                         else return 
-"$N被$n的内力一震，眼前一黑，身子向後飞出丈许！！\n";
+"$N被$n的內力一震，眼前一黑，身子向後飛出丈許！！\n";
                 }
                 if( damage_bonus + damage < 0 ) return - damage_bonus;
                 return damage;

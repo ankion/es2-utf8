@@ -5,7 +5,7 @@ inherit ARMOR;
 
 void create()
 {
-        set_name( HIY "紫铜战盔" NOR,({ "armor" }) );
+        set_name( HIY "紫銅戰盔" NOR,({ "armor" }) );
         set_weight(42000);
         if( clonep() )
                 set_default_object(__FILE__);

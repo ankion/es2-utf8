@@ -9,14 +9,14 @@ void create()
             set_default_object(__FILE__);
         else {
         set("long",
-"这是一杯香味浓郁上等好茶。是招待贵宾品茗的。\n"
- "你闻了闻，好香好香哦!\n");
+"這是一杯香味濃郁上等好茶。是招待貴賓品茗的。\n"
+ "你聞了聞，好香好香哦!\n");
                 set("unit", "杯");
                 set("value", 20);
                 set("max_liquid", 5);
         }
         set("liquid", ([
-        	"name" : "金轩茶",
+        	"name" : "金軒茶",
         	"remaining" : 5,
         	"type" : "water"
         ]) );

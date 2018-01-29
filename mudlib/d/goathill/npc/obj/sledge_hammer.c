@@ -14,7 +14,7 @@ void create()
 		set("unit", "把");
 		set("value", 1600);
 		set("material", "steel");
-		set("long", "一把极其沈重的大槌，要挥动这样的武器非得有过人的膂力不可。\n");
+		set("long", "一把極其沈重的大槌，要揮動這樣的武器非得有過人的膂力不可。\n");
 		set("weapon_prop/attack", -4);
 		set("weapon_prop/defense", 5);
 	}

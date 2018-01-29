@@ -7,11 +7,11 @@ void create()
 {
 	set("short", "草堂");
 	set("long", @LONG
-一间由白茅草搭成的草堂，室内仅有一竹榻，一矮几，四把竹椅．堂前一幅拓片装裱精
-致，上书:
-      书有未曾经我读
-      事无不可对人言
-矮几上摊有书卷(books)放着一支朱砂笔，一房歙砚竟题有岳武穆藏，另几张上好生宣． 
+一間由白茅草搭成的草堂，室內僅有一竹榻，一矮几，四把竹椅．堂前一幅拓片裝裱精
+致，上書:
+      書有未曾經我讀
+      事無不可對人言
+矮几上攤有書卷(books)放着一支硃砂筆，一房歙硯竟題有嶽武穆藏，另幾張上好生宣． 
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -22,12 +22,12 @@ LONG
         set("no_magic", "1");
         set("item_desc", ([
                 "books" : @TEXT
-几上的书信手而放，装帧古朴，竟是宋版书，还有几卷汉碑原拓。你按捺不住好奇心想拿
-起来(scratch)仔细研究一番。
+几上的書信手而放，裝幀古樸，竟是宋版書，還有幾卷漢碑原拓。你按捺不住好奇心想拿
+起來(scratch)仔細研究一番。
 TEXT
 ]));     
 
-        create_door("west", "柴门", "west" , DOOR_CLOSED);    
+        create_door("west", "柴門", "west" , DOOR_CLOSED);    
 	set("no_clean_up", 0);
 
 	setup();
@@ -42,14 +42,14 @@ void init()
 
 int do_dance(string arg)
 {
-     message_vision("也不知道隐士怎么弄的，$N无法跳出专注的舞步。\n",
+     message_vision("也不知道隱士怎麼弄的，$N無法跳出專注的舞步。\n",
                 this_player());   
       return 1;
 }               
 
 int do_pray(string arg)
 {
-     message_vision("也不知道隐士怎么弄的，$N的玛瑙手镯不灵验了。\n",
+     message_vision("也不知道隱士怎麼弄的，$N的瑪瑙手鐲不靈驗了。\n",
                 this_player());       
     return 1;
 }               
@@ -65,21 +65,21 @@ int do_scratch(string arg)
   if( !arg || arg!="books" ) 
   return 0;
   else { ddt = ddt + 1; 
-  message_vision("$N乘人不备，抓起一本书藏入怀中。\n\n",
+  message_vision("$N乘人不備，抓起一本書藏入懷中。\n\n",
                 this_player()); 
 
   switch( random(3) ) {
                 case 0: book = new("/d/choyin/npc/obj/book1");
                         book ->move(ob);
-                        ob->set_temp("choyin/书", ddt); 
+                        ob->set_temp("choyin/書", ddt); 
                         break;
                 case 1: book = new("/d/choyin/npc/obj/book1");
                         book ->move(ob);
-                        ob->set_temp("choyin/书", ddt); 
+                        ob->set_temp("choyin/書", ddt); 
                         break;
                 case 2: book =new("/d/choyin/npc/obj/book2");
                         book ->move(ob);
-                        ob->set_temp("choyin/书", ddt); 
+                        ob->set_temp("choyin/書", ddt); 
                         break; 
                       }
 }
@@ -93,11 +93,11 @@ int valid_leave(object me, string dir)
 
         item = "book";
         if( !objectp(obj = present(item, me)) )  {
-                tell_object(me, "你离开草堂!\n" NOR );
+                tell_object(me, "你離開草堂!\n" NOR );
         }  else  {
             while(objectp(obj = present(item, me)) ) 
-              { if ( me->query_temp("choyin/书") ) {
-                tell_object(me, HIC "你将书放回到矮几。\n" NOR);
+              { if ( me->query_temp("choyin/書") ) {
+                tell_object(me, HIC "你將書放回到矮几。\n" NOR);
                 obj = present(item, me); 
                 destruct(obj);
                                                          }

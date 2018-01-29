@@ -5,8 +5,8 @@ inherit ITEM;
 void create()
 {
     set_name("火摺", ({ "fire" }) );
-    set("unit", "个");
-    set("long","这是一个可以生火的火摺");
+    set("unit", "個");
+    set("long","這是一個可以生火的火摺");
     set_weight(50);
     setup();
 }

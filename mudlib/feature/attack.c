@@ -98,12 +98,12 @@ void biwu_ob(object ob)
 		obkee = ob->query("kee");
 		if (mykee <= 0) {
 			me->set("kee", 1);
-			message_vision("$N拱了拱手，说：“阁下武功不凡，佩服佩服！”\n", me);
+			message_vision("$N拱了拱手，說：“閣下武功不凡，佩服佩服！”\n", me);
 			return;
 			}
 		if (obkee <= 0) {
 			ob->set("kee", 1);
-			message_vision("$N拱了拱手，说：“阁下武功不凡，佩服佩服！”\n", ob);
+			message_vision("$N拱了拱手，說：“閣下武功不凡，佩服佩服！”\n", ob);
 			return;
 			} 		
 	}
@@ -115,7 +115,7 @@ void kill_ob(object ob)
 	if( member_array(ob->query("id"), killer)==-1 )
 		killer += ({ ob->query("id") });
 
-	tell_object(ob, HIR "看起来" + this_object()->name() + "想杀死你！\n" NOR);
+	tell_object(ob, HIR "看起來" + this_object()->name() + "想殺死你！\n" NOR);
 
 	fight_ob(ob);
 }

@@ -4,11 +4,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("保镖", ({ "guard" }) );
-        set("title", "贴身保镖");
+        set_name("保鏢", ({ "guard" }) );
+        set("title", "貼身保鏢");
         set("gender", "男性" );
         set("age", 25);
-        set("long", "你看到一个剽悍的大块头。\n");
+        set("long", "你看到一個剽悍的大塊頭。\n");
         set("str", 29);
         set("int", 14);
 	set("cor", 56);
@@ -20,9 +20,9 @@ void create()
         set_skill("dodge", 220);
 
         set("inquiry", ([
-                "碧玉刀" : "这刀可是个宝物, 
-据说是当年张家老祖宗退隐时皇上赐的。",
-                "镇关西" : "这雪亭镇有谁不知道我家老爷镇大官人！",
+                "碧玉刀" : "這刀可是個寶物, 
+據說是當年張家老祖宗退隱時皇上賜的。",
+                "鎮關西" : "這雪亭鎮有誰不知道我家老爺鎮大官人！",
         ]) );
         setup();
         add_money("silver", 12);

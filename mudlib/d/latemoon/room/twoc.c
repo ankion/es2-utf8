@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "仪门");
+   set("short", "儀門");
 	set("long", @LONG
-你走在后厅内院的仪门，是晚月庄后厅内院长廊走道的相接路
-口。东北方是往膳房的夹道，西面是长廊夹道，南面是到后厅，往北
-则可走出大门前往前院。
+你走在後廳內院的儀門，是晚月莊後廳內院長廊走道的相接路
+口。東北方是往膳房的夾道，西面是長廊夾道，南面是到後廳，往北
+則可走出大門前往前院。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -19,7 +19,7 @@ LONG
 
 ]));
 
-    create_door("south","后厅大门","north", DOOR_CLOSED);
+    create_door("south","後廳大門","north", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

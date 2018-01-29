@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-     set_name("小沙弥", ({"bonze"}));
+     set_name("小沙彌", ({"bonze"}));
      set("gender", "男性");
      set("class", "bonze");
      set("age",15);
-     set("long","一个天真无邪的小和尚, 一颗圆滚滚光溜溜可爱的小光头, 让人看了\n"
-                "就十分的喜欢他。他正在为油灯添上香油。\n");
+     set("long","一個天真無邪的小和尚, 一顆圓滾滾光溜溜可愛的小光頭, 讓人看了\n"
+                "就十分的喜歡他。他正在爲油燈添上香油。\n");
      set("combat_exp",800);
      set("attitude", "friendly");
 
@@ -32,6 +32,6 @@ void create()
 
 int accept_fight(object me)
 {
-     command("say 师父! 救命啊!!  啊....不要打我..:( \n");
+     command("say 師父! 救命啊!!  啊....不要打我..:( \n");
      return 0;
 }

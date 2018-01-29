@@ -12,13 +12,13 @@ void create()
         else {
                 set("unit", "把");
                 set("long",
-                    "这是一把耀眼的利刃。\n");
+                    "這是一把耀眼的利刃。\n");
 
                 set("value", 20000);
                 set("material", "steel");
                 set("wield_msg",
-                    "只见白光一现，$N的手中已经多了一把$n。\n");
-                set("unequip_msg", "$N将手中的$n插入身后的刀鞘。\n");
+                    "只見白光一現，$N的手中已經多了一把$n。\n");
+                set("unequip_msg", "$N將手中的$n插入身後的刀鞘。\n");
         }
         init_blade(35);
         setup();

@@ -5,21 +5,21 @@ int cast_spell(object me, object target)
 	object soldier;
 
 	if( !me->is_fighting() )
-		return notify_fail("只有战斗中才能召唤天将！\n");
+		return notify_fail("只有戰鬥中才能召喚天將！\n");
 	
 	if( (int)me->query("mana") < 100 )
-		return notify_fail("你的法力不够了！\n");
+		return notify_fail("你的法力不夠了！\n");
 
 	if( (int)me->query("sen") < 60 )
-		return notify_fail("你的精神无法集中！\n");
+		return notify_fail("你的精神無法集中！\n");
 
-	message_vision("$N喃喃地念了几句咒语。\n", me);
+	message_vision("$N喃喃地念了幾句咒語。\n", me);
 
 	me->add("mana", -100);
 	me->receive_damage("sen", 60);
 
 	if( random(me->query("max_mana")) < 200 ) {
-		message("vision", "但是什么也没有发生。\n", environment(me));
+		message("vision", "但是什麼也沒有發生。\n", environment(me));
 		return 1;
 	}
 

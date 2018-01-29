@@ -9,7 +9,7 @@ void create()
         set_name("弈者", ({ "chess player", "player" }) );
         set("gender", "男性" );
         set("age", 43);
-        set("long", "一位十分文气的男子，装束象个雅儒。\n");
+        set("long", "一位十分文氣的男子，裝束象個雅儒。\n");
 	set("str", 12);
 	set("int", 28);
         set("combat_exp", 500);
@@ -32,14 +32,14 @@ void create()
 
 string	play_chess()
 {
-  command("say 要比试一盘？好啊！");
+  command("say 要比試一盤？好啊！");
 	if(random(100)<50) {
-	  write("你赢了。\n");
+	  write("你贏了。\n");
 		command( "give chess to " + this_player()->id() );
-		return "好棋技！佩服。无以为报，就给您两枚棋子防身吧！";
+		return "好棋技！佩服。無以爲報，就給您兩枚棋子防身吧！";
 	} else {
-	  write("你输了。\n");
-	  return "承让承让！";
+	  write("你輸了。\n");
+	  return "承讓承讓！";
 	}
 	return 0;
 }

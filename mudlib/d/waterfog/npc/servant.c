@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("仆役", ({ "servant" }) );
+	set_name("僕役", ({ "servant" }) );
 	set("gender", "男性");
 	set("age", 34);
-	set("long", "这个人看起来十分和蔼可亲，看起来不像是会武功\的人。\n");
+	set("long", "這個人看起來十分和藹可親，看起來不像是會武功\的人。\n");
 
 	set("attitude", "friendly");
 	set("combat_exp", 100);

@@ -21,7 +21,7 @@ int main()
 		};
 
 	if ( !tag_havesheet )
-		return notify_fail("有没有搞错？你没有sheet啊。\n");
+		return notify_fail("有沒有搞錯？你沒有sheet啊。\n");
 
 	func_path = (string) ob->query("func_path");
 	func_name = (string) ob->query("func_name");
@@ -37,7 +37,7 @@ int main()
 			func_path->do_scribe_haunt(func_arg);
 			break;
 		default:
-			return notify_fail ("你不会这种符啊！\n");
+			return notify_fail ("你不會這種符啊！\n");
 		}
 
 	return 1;

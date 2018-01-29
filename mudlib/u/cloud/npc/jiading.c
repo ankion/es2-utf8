@@ -5,11 +5,11 @@ inherit NPC;
 void create()
 {
         set_name("家丁", ({ "jiading" }) );
-        set("title", "张府家丁");
+        set("title", "張府家丁");
         set("gender", "男性" );	 
         set("age", 35);
 	set("long", 
-		"张府的家丁的俸禄极高，当然能在张府做事武功也不弱\n");
+		"張府的家丁的俸祿極高，當然能在張府做事武功也不弱\n");
 
 	set("combat_exp", 40000);
 	set_skill("dodge", 70);

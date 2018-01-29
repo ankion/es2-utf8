@@ -4,15 +4,15 @@ inherit NPC;
 
 void create()
 {
-	set_name("黄霸", ({ "hwang", "bandit" }) );
-	set("title", "野羊山土匪头目");
+	set_name("黃霸", ({ "hwang", "bandit" }) );
+	set("title", "野羊山土匪頭目");
 	set("nickname", "日月槌");
 	set("gender", "男性");
 	set("age", 31);
 	set("long",
-		"黄霸原是关外一个山寨的寨主，后来因为逃避官府追捕而到也羊山\n"
-		"避祸，他的成名武器是一对各重四十斤的大金槌，内功\跟横练功\夫\n"
-		"也都有不错的造诣。\n");
+		"黃霸原是關外一個山寨的寨主，後來因爲逃避官府追捕而到也羊山\n"
+		"避禍，他的成名武器是一對各重四十斤的大金槌，內功\跟橫練功\夫\n"
+		"也都有不錯的造詣。\n");
 	set("combat_exp", 150000);
 	set("attitude", "friendly");
 	set("pursuer", 1);

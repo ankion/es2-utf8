@@ -3,19 +3,19 @@
 inherit ROOM;
 void create()
 {
-        set("short","绝壁");
+        set("short","絕壁");
         set("long",@LONG
-    采药人言曰：有仙人乘鹤飞升，径入此山，不知所终.....
-此地林木(tree)繁茂，藤蔓(vine)错杂。南耸绝壁，下临深谷.
-半山腰处，隐隐可见一洞，流云出岫。
+    採藥人言曰：有仙人乘鶴飛昇，徑入此山，不知所終.....
+此地林木(tree)繁茂，藤蔓(vine)錯雜。南聳絕壁，下臨深谷.
+半山腰處，隱隱可見一洞，流雲出岫。
 LONG
        );
         set("item_desc", ([
                 "vine":
-                    "其中有一根藤蔓距离你比较近，你可以试著抓住(hold)藤蔓\n",
+                    "其中有一根藤蔓距離你比較近，你可以試著抓住(hold)藤蔓\n",
 
                 "tree":
-                    "这是一株万年古树，寻常人等休想爬得上去.\n"
+                    "這是一株萬年古樹，尋常人等休想爬得上去.\n"
 
                           ]) );
         set("exits", ([ /* sizeof() == 1 */
@@ -33,9 +33,9 @@ void init()
 int do_climb(string arg)
 {
         if( !arg || arg!="tree" ) return 0;
-        message_vision("$N七手八脚地爬上了古树。\n",
+        message_vision("$N七手八腳地爬上了古樹。\n",
                 this_player());
-        tell_room(__DIR__"craneroom",this_player()->query("name") + "树下爬了上来。\n");
+        tell_room(__DIR__"craneroom",this_player()->query("name") + "樹下爬了上來。\n");
         this_player()->move(__DIR__"craneroom");
         return 1;
 }
@@ -43,15 +43,15 @@ int do_climb(string arg)
 int do_hold(string arg)
 {
         if( !arg || arg!= "vine" )
-                return notify_fail("你要抓住什么？\n");
-        message_vision("$N伸手往不远处的一根藤蔓抓去....\n\n",
+                return notify_fail("你要抓住什麼？\n");
+        message_vision("$N伸手往不遠處的一根藤蔓抓去....\n\n",
                 this_player());
         if( random((int)this_player()->query_skill("dodge")) < 30 ) {
-                message_vision("\n只听见一声杀猪般的惨叫，$N已坠落深谷。。\n\n
+                message_vision("\n只聽見一聲殺豬般的慘叫，$N已墜落深谷。。\n\n
 ", this_player());  
         this_player()->move(__DIR__"hollow");        
       } else {
-                message_vision("$N手脚俐落地攀附著藤蔓，慢慢地爬近山洞。\n\n",
+                message_vision("$N手腳俐落地攀附著藤蔓，慢慢地爬近山洞。\n\n",
                       this_player() );
         this_player()->move(__DIR__"halfhole");  
         }

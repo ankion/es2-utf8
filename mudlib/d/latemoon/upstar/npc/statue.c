@@ -3,14 +3,14 @@ inherit NPC;
  
 void create()
 {
-        set_name("人灵「区冥」",  ({ "statue" }) );
+        set_name("人靈「區冥」",  ({ "statue" }) );
         set("title", "神像");
         set("gender", "女性" );
         set("age", 27);
         set("long", @TEXT
-人灵「区冥」乃勇士寒于的魂魄所化成的十三个精灵之一。
-晚月庄的开山先辈，传说是其后裔子孙。故其为
-晚月庄的祖先神位。
+人靈「區冥」乃勇士寒於的魂魄所化成的十三個精靈之一。
+晚月莊的開山先輩，傳說是其後裔子孫。故其爲
+晚月莊的祖先神位。
 TEXT
 );
         set("combat_exp", 50000000);
@@ -45,7 +45,7 @@ void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
      if ((string)ob->query("class") != "dancer" ) {
-          say( HIY "你有一种奇特的感觉，彷佛有人在盯著你看。\n" NOR);
+          say( HIY "你有一種奇特的感覺，彷佛有人在盯著你看。\n" NOR);
           ob->receive_damage("sen", 20);
           return;
     }

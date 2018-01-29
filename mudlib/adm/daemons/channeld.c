@@ -4,28 +4,28 @@
 #include <net/dns.h>
 
 mapping channels = ([
-        "sys":  ([      "msg_speak": HIB "【系统】%s：%s\n" NOR, "wiz_only": 1 
+        "sys":  ([      "msg_speak": HIB "【系統】%s：%s\n" NOR, "wiz_only": 1 
 ]),
-        "wiz":  ([      "msg_speak": HIY "【巫师】%s：%s\n" NOR, "wiz_only": 
+        "wiz":  ([      "msg_speak": HIY "【巫師】%s：%s\n" NOR, "wiz_only": 
 1 ]),
-        "gwiz": ([      "msg_speak": HIG "【网际巫师】%s：%s\n" NOR,
-                                "msg_emote": HIG "【网际巫师】%s %s.\n" NOR,
+        "gwiz": ([      "msg_speak": HIG "【網際巫師】%s：%s\n" NOR,
+                                "msg_emote": HIG "【網際巫師】%s %s.\n" NOR,
                                 "wiz_only": 1, "intermud": GWIZ, "channel": 
 "CREATOR",
                                 "filter": 1 ]),
-        "es":   ([      "msg_speak": HIR "【东方故事】%s：%s\n" NOR,
-                                "msg_emote": HIR "【东方故事】%s %s.\n" NOR,
+        "es":   ([      "msg_speak": HIR "【東方故事】%s：%s\n" NOR,
+                                "msg_emote": HIR "【東方故事】%s %s.\n" NOR,
                                 "intermud": GCHANNEL, "channel": "es",
                                 "filter": (: $1["MUDLIB"]=="Eastern Stories" 
 :) ]),
-        "twiz": ([      "msg_speak": HIW "【台湾巫师】%s：%s\n" NOR,
-                                "msg_emote": HIW "【台湾巫师】%s %s.\n" NOR,
+        "twiz": ([      "msg_speak": HIW "【臺灣巫師】%s：%s\n" NOR,
+                                "msg_emote": HIW "【臺灣巫師】%s %s.\n" NOR,
                                 "wiz_only":1, "intermud": GCHANNEL, 
 "channel": "twiz",
                                 "filter": (: $1["HOSTADDRESS"][0..2]=="140" 
 :) ]),
-        "chat": ([      "msg_speak": HIC "【闲聊】%s：%s\n" NOR ]),
- "rumor":(["msg_speak": HIM "【谣言】%s：%s\n" NOR,"anonymous": "某人"]), ]);
+        "chat": ([      "msg_speak": HIC "【閒聊】%s：%s\n" NOR ]),
+ "rumor":(["msg_speak": HIM "【謠言】%s：%s\n" NOR,"anonymous": "某人"]), ]);
 
 void create()
 {
@@ -46,7 +46,7 @@ varargs int do_channel(object me, string verb, string arg, int emote)
 
                 if( arg==(string)me->query_temp("last_channel_msg") )
                         return 
-notify_fail("用交谈频道说话请不要重复相同的讯息。\n");
+notify_fail("用交談頻道說話請不要重複相同的訊息。\n");
 
          // If we speaks something in this channel, then must tune it in.
                 tuned_ch = me->query("channels");

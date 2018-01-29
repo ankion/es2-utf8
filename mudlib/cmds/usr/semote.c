@@ -22,7 +22,7 @@ int help(object me)
   write(@HELP
 指令格式 : semote
 
-这个指令可以列出目前所能使用的emote.
+這個指令可以列出目前所能使用的emote.
 HELP
     );
     return 1;

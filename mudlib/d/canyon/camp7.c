@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","副将营帐");
+        set("short","副將營帳");
 	set("long",@LONG                                   
-来到这□，看了四周的景像真会令人不敢相信，和前面的军营竟大不
-相同，虎皮披于军椅，银器列于黑刚曜石桌上，爵为金缘双虎抱图，北侧
-挂著刀、剑、杖，地面上有羊毛软皮铺陈著，确实有副将营帐的味道。
+來到這□，看了四周的景像真會令人不敢相信，和前面的軍營竟大不
+相同，虎皮披于軍椅，銀器列於黑剛曜石桌上，爵爲金緣雙虎抱圖，北側
+掛著刀、劍、杖，地面上有羊毛軟皮鋪陳著，確實有副將營帳的味道。
 LONG
 	); // eof(long)
 	
@@ -26,8 +26,8 @@ LONG
 
 int valid_leave(object me,string dir)
 {
-	if ( dir=="east" && !(string)me->query("marks/军营") )
-        return notify_fail("你还没被允许\进入喔。\n");
+	if ( dir=="east" && !(string)me->query("marks/軍營") )
+        return notify_fail("你還沒被允許\進入喔。\n");
 	
 	return ::valid_leave(me,dir);
 }

@@ -5,8 +5,8 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("陈剑秋", ({ "master guardman", "guardman", "master" }) );
-        set("nickname", "霹雳刀");
+        set_name("陳劍秋", ({ "master guardman", "guardman", "master" }) );
+        set("nickname", "霹靂刀");
         set("gender", "男性" );
         set("age", 38);
         set("str", 28);
@@ -18,14 +18,14 @@ void create()
         set("force", 1000);
         set("force_factor", 3);
 
-        set("rank_info/respect", "陈镖头");
+        set("rank_info/respect", "陳鏢頭");
 
         set("long",@LONG
-    陈剑秋在十几年前创立了振远镖局，凭着一手春风快意刀法在远近
-颇有些名头，因此镖局的生意还算可以。
+    陳劍秋在十幾年前創立了振遠鏢局，憑着一手春風快意刀法在遠近
+頗有些名頭，因此鏢局的生意還算可以。
 LONG);
 
-        create_family("振远镖局", 1, "镖头");
+        create_family("振遠鏢局", 1, "鏢頭");
 
         set("combat_exp", 1000000);
         set("score", 20000);
@@ -47,12 +47,12 @@ LONG);
         map_skill("blade", "spring-blade");
 
         set("inquiry", ([
-                "淳风武馆" : 
-"淳风武馆是先父所创，在下辱承其名，虽忝掌封山门户，不敢忘了先人遗志。",
-                "name": "在下姓陈，人称霹雳刀",
-                "霹雳刀": "江湖上的弟兄看得起在下就这么叫开了，实在是惭愧。",
-		"陈天星": "他是我师叔，如果你帮我找到忘忧草并交给我，我就介绍你去那学艺。",
-		"忘忧草": "我在乔阴县城游玩时丢的，据说被藏在一个隐蔽的地方了。",
+                "淳風武館" : 
+"淳風武館是先父所創，在下辱承其名，雖忝掌封山門戶，不敢忘了先人遺志。",
+                "name": "在下姓陳，人稱霹靂刀",
+                "霹靂刀": "江湖上的弟兄看得起在下就這麼叫開了，實在是慚愧。",
+		"陳天星": "他是我師叔，如果你幫我找到忘憂草並交給我，我就介紹你去那學藝。",
+		"忘憂草": "我在喬陰縣城遊玩時丟的，據說被藏在一個隱蔽的地方了。",
 			]) );
 
         setup();
@@ -63,13 +63,13 @@ void attempt_apprentice(object ob)
 {
         if( ((int)ob->query_cor() < 25) ) {
 // ("cor") < 25) ){ 
-                command("say 走镖危险甚大，依我看" + 
-RANK_D->query_respect(ob) + "似乎不宜冒这份险？");
+                command("say 走鏢危險甚大，依我看" + 
+RANK_D->query_respect(ob) + "似乎不宜冒這份險？");
                 return;
         }
         command("smile");
         command("say 很好，" + RANK_D->query_respect(ob) + 
-"多加努力，本镖局不会亏待你的。\n");
+"多加努力，本鏢局不會虧待你的。\n");
         command("recruit " + ob->query("id") );
 }
 
@@ -83,30 +83,30 @@ int accept_object(object who, object obj)
 {
 	object letter;
 
-	if ((string) obj->query("name") != "忘忧草") {
+	if ((string) obj->query("name") != "忘憂草") {
 		command ("angry");
-		command ("say 你拿什么东西唬我？\n");
+		command ("say 你拿什麼東西唬我？\n");
 		return 1;
 		}
 
-	if ((string) who->query("family/family_name") != "振远镖局") {
+	if ((string) who->query("family/family_name") != "振遠鏢局") {
 		command ("heng");
-		command ("say 你是何人？为什么有我的忘忧草？\n");
+		command ("say 你是何人？爲什麼有我的忘憂草？\n");
 		return 1;
 		}
 
 	if ((string) obj->query("master_id") != (string) who->query("id") ) {
-		message_vision ("$N笑了笑说：“这不是你得到的吧？”。\n", this_object());
+		message_vision ("$N笑了笑說：“這不是你得到的吧？”。\n", this_object());
 		return 1;
 		}
 
-	message_vision ("$N大喜过望，：“好，好，我这就给你写信。”\n", this_object());
-	message_vision ("$N提笔刷刷点点，顷刻间一封信写就。\n", this_object());
-	message_vision ("陈剑秋交给$N一封信件。\n", who);
+	message_vision ("$N大喜過望，：“好，好，我這就給你寫信。”\n", this_object());
+	message_vision ("$N提筆刷刷點點，頃刻間一封信寫就。\n", this_object());
+	message_vision ("陳劍秋交給$N一封信件。\n", who);
 	letter = new  (__DIR__"obj/letter");
 	letter->set("master_id", (string)who->query("id"));
 	letter->move (who);
-	message_vision ("$N说到路上小心，把信直接给陈师叔。\n", this_object());
+	message_vision ("$N說到路上小心，把信直接給陳師叔。\n", this_object());
 	return 1;
 }
  

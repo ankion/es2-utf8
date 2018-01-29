@@ -4,10 +4,10 @@ inherit ROOM ;
 
 void create()
 {
-        set("short","绝地");
+        set("short","絕地");
         set("long",@LONG
-这是一块绝地,四周没有任何出口,你不禁急得要哭了出来,忽然,你发现
-远方有一块大石(stone)动了一下,走近一看,似乎可以推(push)一下。
+這是一塊絕地,四周沒有任何出口,你不禁急得要哭了出來,忽然,你發現
+遠方有一塊大石(stone)動了一下,走近一看,似乎可以推(push)一下。
 LONG
 );
 
@@ -28,27 +28,27 @@ int do_push(string arg)
         object me;
         
         if ( !arg || arg != "stone" )
-                return notify_fail("你要推什麽?\n");
+                return notify_fail("你要推什麼?\n");
         
         me=this_player();
         
         if ( ((int)me->query("force") < 560) ||
              ((int)me->query("max_force") < 560) ||
              ((int)me->query("force_factor") < 40 ) ) { 
-                tell_object(me, "你出力不太够喔！\n");
+                tell_object(me, "你出力不太夠喔！\n");
                 return 1;
         }
 
         me->receive_damage("gin",20);
         me->receive_damage("kee",60);
         me->receive_damage("sen",20);
-        message_vision("$N用力推活动的大岩石,大岩石动了一下\n",me);
+        message_vision("$N用力推活動的大岩石,大岩石動了一下\n",me);
         
         if ( random(3) == 0 ) {
-                message_vision("大岩石滚开了,$N从大岩石后面的小洞钻了出去\n",me);
+                message_vision("大岩石滾開了,$N從大岩石後面的小洞鑽了出去\n",me);
                 this_player()->move(__DIR__"entrance");
-                message("vision","$N从山壁上的一个洞口钻了出来\n",environment(me),me);
-        	tell_room(__DIR__"closed","风一吹,大岩石又滚了回来,把洞口又封住了\n");
+                message("vision","$N從山壁上的一個洞口鑽了出來\n",environment(me),me);
+        	tell_room(__DIR__"closed","風一吹,大岩石又滾了回來,把洞口又封住了\n");
                 return(1);
         }
         return(1);

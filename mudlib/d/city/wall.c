@@ -6,10 +6,10 @@ int do_jump (string arg);
 
 void create()
 {
-	set("short", "院墙");
+	set("short", "院牆");
 	set("long", @LONG
-你爬上了尚书府的院墙，墙里面人来人往的，很是
-热闹。你是跳进去(jump in)，还是回去(jump out)呢？
+你爬上了尚書府的院牆，牆裏麪人來人往的，很是
+熱鬧。你是跳進去(jump in)，還是回去(jump out)呢？
 LONG
 	);
 

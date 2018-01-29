@@ -7,7 +7,7 @@ void create()
      set("age", 43);
      set("class", "taoist");
      set("title", "茅山派第六代弟子");
-     set("long", "一位神情专注的道士, 他正轮值到看守藏经楼。\n");
+     set("long", "一位神情專注的道士, 他正輪值到看守藏經樓。\n");
      set("attitude", "peaceful");
      set("combat_exp", 52000);
      set("chat_chance_combat",50);

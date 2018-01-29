@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("门房", ({ "guard" }) );
+        set_name("門房", ({ "guard" }) );
         set("id", "guard");
 	set("long",
-		"尚书府的门房虽然没什么官衔，但所有想晋见\n"
-		"尚书的白衣无不对他毕恭毕敬的n"
+		"尚書府的門房雖然沒什麼官銜，但所有想晉見\n"
+		"尚書的白衣無不對他畢恭畢敬的n"
 		);
 
         set("attitude", "peaceful");
@@ -22,8 +22,8 @@ void create()
 
         set("chat_chance", 5);
 	set("chat_msg", ({
-        	"门房慢吞吞地说：是。。想见尚书大人的吗？。。\n",
-		"门房嘿嘿地笑了笑，手里比划着一个数字.\n"
+        	"門房慢吞吞地說：是。。想見尚書大人的嗎？。。\n",
+		"門房嘿嘿地笑了笑，手裏比劃着一個數字.\n"
 		}) );
 
         set_skill("unarmed", 90);
@@ -36,20 +36,20 @@ void create()
 
 int accept_object(object who, object ob)
 {
-        if ( !who->query("marks/尚书") ) {
+        if ( !who->query("marks/尚書") ) {
                 if( ob->value() >=30000 ) {
-                        say("门房说道:这位大人，里面请！\n"); 
-                        who->set("marks/尚书",1);
+                        say("門房說道:這位大人，裏面請！\n"); 
+                        who->set("marks/尚書",1);
                         return 1;
 			}  
 	           else {
-       		         say ("鼻子里哼了一声，头掉了过去。\n"); 
+       		         say ("鼻子裏哼了一聲，頭掉了過去。\n"); 
 			 return 1;
        			 }
 		}
 
 	else {
-		say ("大人太客气了\n");
+		say ("大人太客氣了\n");
         	return 1;
 		}
 }

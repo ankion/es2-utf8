@@ -11,7 +11,7 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-        set("long","一把旧旧的菜刀, 刀口几乎被磨平了, 不过还颇具有杀伤力.\n");
+        set("long","一把舊舊的菜刀, 刀口幾乎被磨平了, 不過還頗具有殺傷力.\n");
         set("unit", "把");
 		set("material", "iron");
 	}

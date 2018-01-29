@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("厨子", ({ "cook" }) );
+        set_name("廚子", ({ "cook" }) );
         set("gender", "男性" );
         set("age", 35);
-        set("long", "你看到一个小厨子， 正在用碧玉刀剔猪骨。\n");
+        set("long", "你看到一個小廚子， 正在用碧玉刀剔豬骨。\n");
         set("str", 29);
         set("int", 14);
         set("combat_exp", 2500);
@@ -16,10 +16,10 @@ void create()
         set_skill("parry", 100);
         set_skill("dodge", 150);
         set("inquiry", ([
-                "小娟" : "这要到地牢去找。",
-                "淳于" : "这要到地牢去找。",
-                "淳于怀太" : "这要到地牢去找。",
-                "堡主" :"这要到地牢去找。",
+                "小娟" : "這要到地牢去找。",
+                "淳于" : "這要到地牢去找。",
+                "淳于懷太" : "這要到地牢去找。",
+                "堡主" :"這要到地牢去找。",
         ]) );
 
         setup();
@@ -46,10 +46,10 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                 say( "厨子嘟囔着：“真是的，堡主又在地牢里留涟忘返。”\n");
+                 say( "廚子嘟囔着：“真是的，堡主又在地牢裏留漣忘返。”\n");
                     break;
                 case 1:
-                        say( "厨子道：“去地牢叫堡主上来吃饭。\n");
+                        say( "廚子道：“去地牢叫堡主上來吃飯。\n");
                         break;
         }
 }

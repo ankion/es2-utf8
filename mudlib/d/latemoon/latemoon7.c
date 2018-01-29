@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-     set("short","后院走道");
+     set("short","後院走道");
 	set("long", @LONG
-你走在一条长廊上，两旁都是庭台堂庑，廊上弥漫著一股
-香郁的气息，长廊向东西方延伸而去。东边是后厅院子，西边
-有一间书房。
+你走在一條長廊上，兩旁都是庭臺堂廡，廊上瀰漫著一股
+香郁的氣息，長廊向東西方延伸而去。東邊是後廳院子，西邊
+有一間書房。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -18,7 +18,7 @@ LONG
 
 ]));
 
-   create_door("south","石门","north", DOOR_CLOSED);
+   create_door("south","石門","north", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

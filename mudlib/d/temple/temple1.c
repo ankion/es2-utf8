@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "灵心观大殿");
+	set("short", "靈心觀大殿");
 	set("long", @LONG
-你现在来到灵心观的大殿, 在你的眼前是一尊真武大帝的金身。
-在金身的下方是一张朱红色的大供桌, 上面排满了鲜花素果。在桌子
-的前方则摆放著三四个蒲团。东西两侧的圆形拱门通往连接后殿的回
-廊。走过南边的红漆木门就是广场。
+你現在來到靈心觀的大殿, 在你的眼前是一尊真武大帝的金身。
+在金身的下方是一張硃紅色的大供桌, 上面排滿了鮮花素果。在桌子
+的前方則擺放著三四個蒲團。東西兩側的圓形拱門通往連接後殿的回
+廊。走過南邊的紅漆木門就是廣場。
 LONG
 	);
 
@@ -36,7 +36,7 @@ LONG
 	// To cause the taoist's board to be loaded.
 	call_other("/obj/board/taoist_b", "???");
 
-    create_door("south", "红漆木门", "north");
+    create_door("south", "紅漆木門", "north");
 
 //	replace_program(ROOM);
 }

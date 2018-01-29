@@ -8,10 +8,10 @@ string look_sign(object me);
 
 void create()
 {
-        set("short", "怡红院");
+        set("short", "怡紅院");
         set("long", @LONG
-你现在正站在怡红院里
-    靠近门口的地方有一块乌木雕成的招牌(sign)。
+你現在正站在怡紅院裏
+    靠近門口的地方有一塊烏木雕成的招牌(sign)。
 LONG
         );
         set("exits", ([
@@ -33,6 +33,6 @@ LONG
 
 string look_sign(object me)
 {
-        return "招牌写著：怡红院\n";
+        return "招牌寫著：怡紅院\n";
 }
 

@@ -30,7 +30,7 @@ void send_msg(string channel, string id, string name, string msg, int emoted,
 	||	!ACCESS_CHECK(previous_object())) return;
 
 #ifdef DEBUG
-	set("channel_id", "网路频道精灵");
+	set("channel_id", "網路頻道精靈");
 	CHANNEL_D->do_channel(this_object(), "sys", "prepare to send gchannel message.");
 #endif
 	muds = (mapping)DNS_MASTER->query_muds();
@@ -49,7 +49,7 @@ void send_msg(string channel, string id, string name, string msg, int emoted,
 			|| !(svcs[names[i]]["gwizmsg"] & SVC_UDP))
 				continue;
 #ifdef DEBUG
-	set("channel_id", "网路频道精灵");
+	set("channel_id", "網路頻道精靈");
 	CHANNEL_D->do_channel(this_object(), "sys",
 		sprintf("gchannel message sent to %s.", minfo["NAME"]));
 #endif

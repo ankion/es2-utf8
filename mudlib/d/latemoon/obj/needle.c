@@ -5,11 +5,11 @@ inherit THROWING;
 
 void create()
 {
-    set_name(HIC "绣花针" NOR, ({"needle" }) );
+    set_name(HIC "繡花針" NOR, ({"needle" }) );
      if ( clonep() )
               set_default_object(__FILE__);
      else {
-             set("long", "一种上等铁做成的绣花针\n");
+             set("long", "一種上等鐵做成的繡花針\n");
           set("unit", "些");
           set("base_unit", "根");
           set("base_weight", 30);

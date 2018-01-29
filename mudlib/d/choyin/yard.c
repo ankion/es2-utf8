@@ -6,7 +6,7 @@ void create()
 {
 	set("short", "庭院");
 	set("long", @LONG
-这是一间什麽也没有的空房间。
+這是一間什麼也沒有的空房間。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

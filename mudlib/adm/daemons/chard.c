@@ -9,19 +9,19 @@ void setup_char(object ob)
         mapping my;
 
         if( !stringp(race = ob->query("race")) ) {
-                race = "人类";
-                ob->set("race", "人类");
+                race = "人類";
+                ob->set("race", "人類");
         }
                 
         switch(race) {
-                case "赛亚人":
-                case "人类":
+                case "賽亞人":
+                case "人類":
                         HUMAN_RACE->setup_human(ob);
                         break;
                 case "妖魔":
                         MONSTER_RACE->setup_monster(ob);
                         break;
-                case "野兽":
+                case "野獸":
                         BEAST_RACE->setup_beast(ob);
                         break;
                 default:
@@ -59,10 +59,10 @@ varargs object make_corpse(object victim, object killer)
         }
 
         corpse = new(CORPSE_OB);
-        corpse->set_name( victim->name(1) + "的尸体", ({ "corpse" }) );
+        corpse->set_name( victim->name(1) + "的屍體", ({ "corpse" }) );
         corpse->set("long", victim->long()
                 + "然而，" + gender_pronoun(victim->query("gender")) 
-                + "已经死了，只剩下一具尸体静静地躺在这里。\n");
+                + "已經死了，只剩下一具屍體靜靜地躺在這裏。\n");
         corpse->set("age", victim->query("age"));
         corpse->set("gender", victim->query("gender"));
         corpse->set("victim_name", victim->name(1));

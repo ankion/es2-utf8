@@ -3,11 +3,11 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-	"但是$n身形飘忽，轻轻一纵，早已避开。\n",
-	"$n身随意转，倏地往一旁挪开了三尺，避过了这一招。\n",
-	"可是$n侧身一让，$N这一招扑了个空。\n",
-	"却见$n足不点地，往旁窜开数尺，躲了开去。\n",
-	"$n身形微晃，有惊无险地避开了$N这一招。\n"
+	"但是$n身形飄忽，輕輕一縱，早已避開。\n",
+	"$n身隨意轉，倏地往一旁挪開了三尺，避過了這一招。\n",
+	"可是$n側身一讓，$N這一招撲了個空。\n",
+	"卻見$n足不點地，往旁竄開數尺，躲了開去。\n",
+	"$n身形微晃，有驚無險地避開了$N這一招。\n"
 });
 
 int valid_skill_usage(string usage)
@@ -28,7 +28,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
 	if( (int)me->query("kee") < 30 )
-		return notify_fail("你的体力太差了，不能练火蝠身法。\n");
+		return notify_fail("你的體力太差了，不能練火蝠身法。\n");
 	me->receive_damage("kee", 30);
 	return 1;
 }

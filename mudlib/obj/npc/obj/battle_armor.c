@@ -6,7 +6,7 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("可程式战斗装甲", ({ "battle armor <P>", "armor" }) );
+	set_name("可程式戰鬥裝甲", ({ "battle armor <P>", "armor" }) );
 	set_weight(50000);
 	if( clonep() )
 		set_default_object(__FILE__);

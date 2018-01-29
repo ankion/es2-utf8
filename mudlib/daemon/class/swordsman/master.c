@@ -5,8 +5,8 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("柳淳风", ({ "master swordsman", "swordsman", "master" }) );
-        set("nickname", "风雨双侠");
+        set_name("柳淳風", ({ "master swordsman", "swordsman", "master" }) );
+        set("nickname", "風雨雙俠");
         set("gender", "男性" );
         set("age", 44);
         set("str", 27);
@@ -18,14 +18,14 @@ void create()
         set("force", 1500);
         set("force_factor", 3);
 
-        set("rank_info/respect", "柳馆主");
+        set("rank_info/respect", "柳館主");
 
         set("long",
                 
-"柳淳风是个相当高大的中年儒生，若不是从他腰间挂著的「玄苏剑」你\n"
-                "大概猜不到眼前这个温文儒雅的中年人竟是家大武馆的馆主。\n");
+"柳淳風是個相當高大的中年儒生，若不是從他腰間掛著的「玄蘇劍」你\n"
+                "大概猜不到眼前這個溫文儒雅的中年人竟是家大武館的館主。\n");
 
-        create_family("封山剑派", 13, "掌门人");
+        create_family("封山劍派", 13, "掌門人");
 
         set("combat_exp", 1000000);
         set("score", 200000);
@@ -54,13 +54,13 @@ void create()
         map_skill("dodge", "chaos-steps");
 
         set("inquiry", ([
-                "淳风武馆" : 
-"淳风武馆是先父所创，在下辱承其名，虽忝掌封山门户，不敢忘了先人遗志。",
-                "先人遗志" : 
-"先父临终之时将这武馆交到在下手中，需得好好照看。",
-                "刘安禄" : "刘兄弟在寒舍管事已经五年了，过去之事不须再提。",
-                "name": "你既然知道我是柳□主，怎麽不知道我是柳淳风？",
-                "here": "这里便是淳风武馆。",
+                "淳風武館" : 
+"淳風武館是先父所創，在下辱承其名，雖忝掌封山門戶，不敢忘了先人遺志。",
+                "先人遺志" : 
+"先父臨終之時將這武館交到在下手中，需得好好照看。",
+                "劉安祿" : "劉兄弟在寒舍管事已經五年了，過去之事不須再提。",
+                "name": "你既然知道我是柳□主，怎麼不知道我是柳淳風？",
+                "here": "這裏便是淳風武館。",
         ]) );
 
         setup();
@@ -72,8 +72,8 @@ void attempt_apprentice(object ob)
 {
         if( ((int)ob->query_cor() < 20) 
         ||      ((int)ob->query_cps() < 20)) {
-                command("say 学剑之人必须胆大心细，依我看" + 
-RANK_D->query_respect(ob) + "的资质似乎不宜？");
+                command("say 學劍之人必須膽大心細，依我看" + 
+RANK_D->query_respect(ob) + "的資質似乎不宜？");
                 return;
         }
         command("smile");

@@ -13,7 +13,7 @@ void create()
                 set("value", 400);
                 set("material", "cloth");
                set("armor_prop/armor", 1);
-        set("wear_msg", "$N将$n拿出系在腰上。\n");
+        set("wear_msg", "$N將$n拿出系在腰上。\n");
         }
         setup();
 }

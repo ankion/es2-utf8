@@ -2,9 +2,9 @@
 inherit ROOM;
 void create()
 {
-        set("short", "京师街道");
+        set("short", "京師街道");
         set("long", @LONG
-你来到京师的大街。北边是护国寺的大门，寺内香烟缭绕。
+你來到京師的大街。北邊是護國寺的大門，寺內香菸繚繞。
 LONG
         );
         set("exits", ([ /* sizeof() == 3 */

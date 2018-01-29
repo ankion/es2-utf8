@@ -7,21 +7,21 @@ mapping combat_action =
 	"hoof": ([
 		"action":		"$N用後腿往$n的$l用力一蹬",
 		"damage":		100,
-		"damage_type":	"瘀伤",
+		"damage_type":	"瘀傷",
 	]),
 	"bite": ([
-		"action":		"$N扑上来张嘴往$n的$l狠狠地一咬",
+		"action":		"$N撲上來張嘴往$n的$l狠狠地一咬",
 		"damage":		20,
-		"damage_type":	"咬伤",
+		"damage_type":	"咬傷",
 	]),
 	"claw": ([
 		"action":		"$N用爪子往$n的$l一抓",
-		"damage_type":	"抓伤",
+		"damage_type":	"抓傷",
 	]),
 	"poke": ([
 		"action":		"$N用嘴往$n的$l一啄",
 		"damage":		30,
-		"damage_type":	"刺伤",
+		"damage_type":	"刺傷",
 	]),
 ]);
 
@@ -45,7 +45,7 @@ void setup_beast(object ob)
 			ob->set("default_actions", (: call_other, __FILE__, "query_action" :) );
 		else
 			my["default_actions"] = ([
-				"action": "$N攻击$n的%s，%s\n",
+				"action": "$N攻擊$n的%s，%s\n",
 			]);
 	}
 	

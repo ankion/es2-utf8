@@ -11,7 +11,7 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "一朵热情,奔放的红玫瑰.\n");
+		set("long", "一朵熱情,奔放的紅玫瑰.\n");
 		set("unit", "朵");
 		set("value", 15);
 		set("material", "grass");

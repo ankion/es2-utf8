@@ -3,7 +3,7 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-	"但是$n身法轻灵，翩翩地飘了开去！\n"
+	"但是$n身法輕靈，翩翩地飄了開去！\n"
 });
 
 int valid_skill_usage(string usage)
@@ -14,9 +14,9 @@ int valid_skill_usage(string usage)
 int valid_learn(object me)
 {
 	if( (string)me->query("gender") != "女性" )
-		return notify_fail("七宝天岚舞只有女性才能练。\n");
+		return notify_fail("七寶天嵐舞只有女性才能練。\n");
 	if( (int)me->query("spi") < 20 )
-		return notify_fail("你的灵性不够，没有办法练七宝天岚舞。\n");
+		return notify_fail("你的靈性不夠，沒有辦法練七寶天嵐舞。\n");
 
 	return 1;
 }
@@ -29,7 +29,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
 	if( (int)me->query("sen") < 30 )
-		return notify_fail("你的精神太差了，不能练七宝天岚舞。\n");
+		return notify_fail("你的精神太差了，不能練七寶天嵐舞。\n");
 	me->receive_damage("sen", 30);
 	return 1;
 }

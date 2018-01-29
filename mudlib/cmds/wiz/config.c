@@ -9,10 +9,10 @@ int main(object me, string arg)
 	int num;
 
 	if( !arg || sscanf(arg, "%d", num)!=1 ) {
-		write("Mud 名称：\t\t" + get_config(__MUD_NAME__) + "\n"); 
-		write("网路地址名称伺服器埠号：" + get_config(__ADDR_SERVER_IP__) + "\n"); 
-		write("Mudlib 路径：\t\t" + get_config(__MUD_LIB_DIR__) + "\n"); 
-		write("MudOS 执行档路径：\t" + get_config(__BIN_DIR__) + "\n"); 
+		write("Mud 名稱：\t\t" + get_config(__MUD_NAME__) + "\n"); 
+		write("網路地址名稱伺服器埠號：" + get_config(__ADDR_SERVER_IP__) + "\n"); 
+		write("Mudlib 路徑：\t\t" + get_config(__MUD_LIB_DIR__) + "\n"); 
+		write("MudOS 執行檔路徑：\t" + get_config(__BIN_DIR__) + "\n"); 
 		return 1;
 	}
 

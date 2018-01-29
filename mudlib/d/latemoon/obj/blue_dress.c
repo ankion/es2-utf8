@@ -5,7 +5,7 @@ inherit CLOTH;
 
 void create()
 {
-     set_name( HIC "宝蓝缎衫" NOR, ({ "blue dress", "dress" }) );
+     set_name( HIC "寶藍緞衫" NOR, ({ "blue dress", "dress" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);

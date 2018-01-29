@@ -2,7 +2,7 @@ inherit NPC;
 void create()
 {
         seteuid(getuid());
-        set_name("测试用的小孩 - 不准杀!!!!",({"kid","child"}));
+        set_name("測試用的小孩 - 不準殺!!!!",({"kid","child"}));
         set("gender","男性");
         set("age",(random(8)+7));
         set("combat_exp",99999999);

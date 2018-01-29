@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-	string *order = ({"子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"});
+	string *order = ({"子", "醜", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"});
 
-	set_name( (order[random(12)]) + "阴鬼卒", ({ "hell guard", "guard" }) );
-	set("long", "这是一位来自阴界的守护神，专门担任护法之责。\n");
+	set_name( (order[random(12)]) + "陰鬼卒", ({ "hell guard", "guard" }) );
+	set("long", "這是一位來自陰界的守護神，專門擔任護法之責。\n");
 	set("attitude", "friendly");
 
 	set("max_gin", 1000);
@@ -29,7 +29,7 @@ void create()
 
 	set("chat_chance", 15);
 	set("chat_msg_combat", ({
-		name() + "喝道：孽障！随我赴阴司受审吧。\n"
+		name() + "喝道：孽障！隨我赴陰司受審吧。\n"
 	}) );
 
 	set_skill("fork", 90);
@@ -54,8 +54,8 @@ int heal_up()
 void leave()
 {
 	message("vision",
-		HIB + name() + "说道：末将奉法主召唤，现在已经完成护法任务，就此告辞！\n\n"
-		+ name() + "的身形发出幽暗的蓝光，沈入地下不见了。\n" NOR, environment(),
+		HIB + name() + "說道：末將奉法主召喚，現在已經完成護法任務，就此告辭！\n\n"
+		+ name() + "的身形發出幽暗的藍光，沈入地下不見了。\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }
@@ -67,8 +67,8 @@ void invocation(object who)
 
 	set("possessed", who);
 	message("vision",
-		HIB "一道蓝光从地底升起，蓝光中出现一个手执钢叉、面目狰狞的鬼卒。\n\n"
-		+ name() + "说道：末将奉法主召唤，特来护法！\n" NOR,
+		HIB "一道藍光從地底升起，藍光中出現一個手執鋼叉、面目猙獰的鬼卒。\n\n"
+		+ name() + "說道：末將奉法主召喚，特來護法！\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);

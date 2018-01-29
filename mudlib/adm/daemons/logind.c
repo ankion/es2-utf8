@@ -9,7 +9,7 @@ inherit F_DBASE;
 int wiz_lock_level = WIZ_LOCK_LEVEL;
 string *banned_name = ({
         "你", "你", "我", "他", "她", "它", "它",
-        "安尼席洛特尔",
+        "安尼席洛特爾",
 });
 
 private void get_id(string arg, object ob);
@@ -25,7 +25,7 @@ int check_legal_name(string arg);
 void create() 
 {
         seteuid(getuid());
-        set("channel_id", "连线精灵");
+        set("channel_id", "連線精靈");
 }
 
 void logon(object ob)
@@ -45,7 +45,7 @@ void logon(object ob)
                 else if( wizardp(usr[i]) ) wiz_cnt++;
                 else ppl_cnt++;
         }
-        printf("目前共有 %d 位巫师、%d 位玩家在线上，以及 %d 位使用者尝试连线中。\n\n",
+        printf("目前共有 %d 位巫師、%d 位玩家在線上，以及 %d 位使用者嘗試連線中。\n\n",
                 wiz_cnt, ppl_cnt, login_cnt );
 
         write("您的英文名字：");
@@ -70,8 +70,8 @@ private void get_id(string arg, object ob)
                 ppl = find_body(arg);
         // Only allow reconnect an interactive player when MAX_USERS exceeded.
                 if( !ppl || !interactive(ppl) ) {
-                        write("对不起，" + MUD_NAME + 
-"的使用者已经太多了，请待会再来。\n");
+                        write("對不起，" + MUD_NAME + 
+"的使用者已經太多了，請待會再來。\n");
                         destruct(ob);
                         return;
                 }
@@ -79,9 +79,9 @@ private void get_id(string arg, object ob)
 #endif
 
 //        if( wiz_level(arg) < wiz_lock_level ) {
-//                write("对不起，" + MUD_NAME + "目前限制巫师等级 " + 
+//                write("對不起，" + MUD_NAME + "目前限制巫師等級 " + 
 //WIZ_LOCK_LEVEL
-//                        + " 以上的人才能连线。\n");
+//                        + " 以上的人才能連線。\n");
 //                destruct(ob);
 //                return;
 //        }
@@ -99,18 +99,18 @@ private void get_id(string arg, object ob)
         } else if( file_size(ob->query_save_file() + __SAVE_EXTENSION__) >= 0 
 ) {
                 if( ob->restore() ) {
-                        write("请输入密码：");
+                        write("請輸入密碼：");
                         input_to("get_passwd", 1, ob);
                         return;
                 }
-                write("您的人物储存挡出了一些问题，请利用 guest 
-人物通知巫师处理。\n");
+                write("您的人物儲存擋出了一些問題，請利用 guest 
+人物通知巫師處理。\n");
                 destruct(ob);
                 return;
         }
 
         write("使用 " + (string)ob->query("id") + " 
-这个名字将会创造一个新的人物，您确定吗(y/n)？");
+這個名字將會創造一個新的人物，您確定嗎(y/n)？");
         input_to("confirm_id", ob);
 }
 
@@ -122,7 +122,7 @@ private void get_passwd(string pass, object ob)
         write("\n");
         my_pass = ob->query("password");
         if( crypt(pass, my_pass) != my_pass ) {
-                write("密码错误！\n");
+                write("密碼錯誤！\n");
                 destruct(ob);
                 return;
         }
@@ -135,7 +135,7 @@ private void get_passwd(string pass, object ob)
                         return;
                 }
                 
-write("您要将另一个连线中的相同人物赶出去，取而代之吗？(y/n)");
+write("您要將另一個連線中的相同人物趕出去，取而代之嗎？(y/n)");
                 input_to("confirm_relogin", ob, user);
                 return;
         }
@@ -151,7 +151,7 @@ write("您要将另一个连线中的相同人物赶出去，取而代之吗？(
                         destruct(user);
                 }
         }
-        write("请您重新创造这个人物。\n");
+        write("請您重新創造這個人物。\n");
         confirm_id("y", ob);
 }
 
@@ -161,18 +161,18 @@ private void confirm_relogin(string yn, object ob, object user)
 
         if( yn=="" ) {
                 
-write("您要将另一个连线中的相同人物赶出去，取而代之吗？(y/n)");
+write("您要將另一個連線中的相同人物趕出去，取而代之嗎？(y/n)");
                 input_to("confirm_relogin", ob, user);
                 return;
         }       
 
         if( yn[0]!='y' && yn[0]!='Y' ) {
-                write("好吧，欢迎下次再来。\n");
+                write("好吧，歡迎下次再來。\n");
                 destruct(ob);
                 return;
         } else {
-                tell_object(user, "有人从别处( " + query_ip_number(ob)
-                        + " )连线取代你所控制的人物。\n");
+                tell_object(user, "有人從別處( " + query_ip_number(ob)
+                        + " )連線取代你所控制的人物。\n");
                 log_file( "USAGE", sprintf("%s replaced by %s (%s)\n", 
 user->query("name"),
                         query_ip_name(ob), ctime(time()) ) );
@@ -191,26 +191,26 @@ user->query("name"),
 private void confirm_id(string yn, object ob)
 {
         if( yn=="" ) {
-                write("使用这个名字将会创造一个新的人物，您确定吗(y/n)？");
+                write("使用這個名字將會創造一個新的人物，您確定嗎(y/n)？");
                 input_to("confirm_id", ob);
                 return;
         }       
 
         if( yn[0]!='y' && yn[0]!='Y' ) {
-                write("好吧，那麽请重新输入您的英文名字：");
+                write("好吧，那麼請重新輸入您的英文名字：");
                 input_to("get_id", ob);
                 return;
         }
 
         write( @TEXT
 
-请您想一个有气质，有个性，又不会太奇怪的中文名字，特别要提醒您
-的是，本 mud 是一个以古中国与东方为背景的世界 ，请不要取一些不
-雅或是容易造成他人困扰的名字，这个名字将代表你的人物，而且往後
-将不能再更改，请务必慎重。
+請您想一個有氣質，有個性，又不會太奇怪的中文名字，特別要提醒您
+的是，本 mud 是一個以古中國與東方爲背景的世界 ，請不要取一些不
+雅或是容易造成他人困擾的名字，這個名字將代表你的人物，而且往後
+將不能再更改，請務必慎重。
   ^^^^^^^^^^
-(除了名字之外，本 mud 有许多取绰号、别称的设计，所以郑重建议您
- 取一个比较像名字的中文名字。)
+(除了名字之外，本 mud 有許多取綽號、別稱的設計，所以鄭重建議您
+ 取一個比較像名字的中文名字。)
 
 TEXT
         );
@@ -228,7 +228,7 @@ private void get_name(string arg, object ob)
 
         printf("%O\n", ob);
         ob->set("name", arg);
-        write("请设定您的密码：");
+        write("請設定您的密碼：");
         input_to("new_password", 1, ob);
 }
 
@@ -236,12 +236,12 @@ private void new_password(string pass, object ob)
 {
         write("\n");
         if( strlen(pass)<5 ) {
-                write("密码的长度至少要五个字元，请重设您的密码：");
+                write("密碼的長度至少要五個字元，請重設您的密碼：");
                 input_to("new_password", 1, ob);
                 return;
         }
         ob->set("password", crypt(pass,0) );
-        write("请再输入一次您的密码，以确认您没记错：");
+        write("請再輸入一次您的密碼，以確認您沒記錯：");
         input_to("confirm_password", 1, ob);
 }
 
@@ -251,12 +251,12 @@ private void confirm_password(string pass, object ob)
         write("\n");
         old_pass = ob->query("password");
         if( crypt(pass, old_pass)!=old_pass ) {
-                write("您两次输入的密码并不一样，请重新设定一次密码：");
+                write("您兩次輸入的密碼並不一樣，請重新設定一次密碼：");
                 input_to("new_password", 1, ob);
                 return;
         }
 
-        write("您的电子邮件地址：");
+        write("您的電子郵件地址：");
         input_to("get_email",  ob);
 }
 
@@ -290,7 +290,7 @@ private void get_gender(string gender, object ob, object user)
         else if( gender[0]=='f' || gender[0]=='F' )
                 user->set("gender", "女性" );
         else {
-                write("对不起，您只能选择男性(m)或女性(f)的角色：");
+                write("對不起，您只能選擇男性(m)或女性(f)的角色：");
                 input_to("get_gender", ob, user);
                 return;
         }
@@ -311,7 +311,7 @@ object make_body(object ob)
         user = new(ob->query("body"));
         if(!user) {
                 
-write("现在可能有人正在修改使用者物件的程式，无法进行复制。\n");
+write("現在可能有人正在修改使用者物件的程式，無法進行復制。\n");
                 write(err+"\n");
                 return 0;
         }
@@ -355,7 +355,7 @@ varargs void enter_world(object ob, object user, int silent)
         ob->set_temp("body_ob", user);
         exec(user, ob);
 
-        write("目前权限：" + wizhood(user) + "\n");
+        write("目前權限：" + wizhood(user) + "\n");
         user->setup();
 
         // In case of new player, we save them here right aftre setup 
@@ -385,7 +385,7 @@ varargs void enter_world(object ob, object user, int silent)
                 cat(MOTD);
                 if( ob->query("new_mail") ) {
                         write( GRN + 
-"\n杜宽告诉你：有您的信！请到驿站来一趟...\n\n" + NOR);
+"\n杜寬告訴你：有您的信！請到驛站來一趟...\n\n" + NOR);
                         ob->set("new_mail", 0);
                 }
                 if( user->is_ghost() )
@@ -401,11 +401,11 @@ varargs void enter_world(object ob, object user, int silent)
                         user->set("startroom", START_ROOM);
                 }
                 tell_room(startroom, user->query("name") + 
-"连线进入这个世界。\n",
+"連線進入這個世界。\n",
                         ({user}));
         }
         CHANNEL_D->do_channel( this_object(), "sys",
-                sprintf("%s由%s连线进入。", user->name(), 
+                sprintf("%s由%s連線進入。", user->name(), 
 query_ip_name(user)) );
         UPDATE_D->check_user(user);
 }
@@ -419,11 +419,11 @@ varargs void reconnect(object ob, object user, int silent)
         user->reconnect();
         if( !silent ) {
                 tell_room(environment(user), user->query("name") + 
-"重新连线回到这个世界。\n",
+"重新連線回到這個世界。\n",
                 ({user}));
         }
         CHANNEL_D->do_channel( this_object(), "sys",
-                sprintf("%s由%s重新连线进入。", user->query("name"), 
+                sprintf("%s由%s重新連線進入。", user->query("name"), 
 query_ip_name(user)) );
         UPDATE_D->check_user(user);
 }
@@ -435,12 +435,12 @@ int check_legal_id(string id)
         i = strlen(id);
         
         if( (strlen(id) < 3) || (strlen(id) > 12 ) ) {
-                write("对不起，你的英文名字必须是 3 到 12 个英文字母。\n");
+                write("對不起，你的英文名字必須是 3 到 12 個英文字母。\n");
                 return 0;
         }
         while(i--)
                 if( id[i]<'a' || id[i]>'z' ) {
-                        write("对不起，你的英文名字只能用英文字母。\n");
+                        write("對不起，你的英文名字只能用英文字母。\n");
                         return 0;
                 }
 
@@ -454,21 +454,21 @@ int check_legal_name(string name)
         i = strlen(name);
         
         if( (strlen(name) < 2) || (strlen(name) > 12 ) ) {
-                write("对不起，你的中文名字必须是 1 到 6 个中文字。\n");
+                write("對不起，你的中文名字必須是 1 到 6 箇中文字。\n");
                 return 0;
         }
         while(i--) {
                 if( name[i]<=' ' ) {
-                        write("对不起，你的中文名字不能用控制字元。\n");
+                        write("對不起，你的中文名字不能用控制字元。\n");
                         return 0;
                 }
         }
         if( !is_chinese(name) ) {
-                write("对不起，请您用「中文」取名字。\n");
+                write("對不起，請您用「中文」取名字。\n");
                 return 0;
         }
         if( member_array(name, banned_name)!=-1 ) {
-                write("对不起，这种名字会造成其他人的困扰。\n");
+                write("對不起，這種名字會造成其他人的困擾。\n");
                 return 0;
         }
 

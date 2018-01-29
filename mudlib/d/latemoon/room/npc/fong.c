@@ -2,7 +2,7 @@ inherit NPC;
  
 void create()
 {
-        set_name("凤姐", ({ "Fong","fong" }) );
+        set_name("鳳姐", ({ "Fong","fong" }) );
         set("gender", "女性" );
          set("age", 47);
         set("long", @TEXT
@@ -18,7 +18,7 @@ TEXT
         set("force", 9000);
        set("max_force", 9000);
        set("force_factor", 50);
-        create_family("晚月庄", 1, "前辈");
+        create_family("晚月莊", 1, "前輩");
 
         setup();
         carry_object(__DIR__"obj/deer_boot")->wear();
@@ -27,5 +27,5 @@ TEXT
 
 void attempt_apprentice(object ob)
 {
-     command("say 拜师! 不敢当，我都老了!你去找「芷萍」好了，看她收不收你? ");
+     command("say 拜師! 不敢當，我都老了!你去找「芷萍」好了，看她收不收你? ");
 }

@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-     set_name("清灵", ({"ching-lin", "ching", "lin"}) );
+     set_name("清靈", ({"ching-lin", "ching", "lin"}) );
      set("gender", "男性");
      set("age", 43);
      set("class", "taoist");
      set("title", "茅山派第六代弟子");
-     set("long", "一位神情专注的道士, 他正轮值到看守藏经楼。\n");
+     set("long", "一位神情專注的道士, 他正輪值到看守藏經樓。\n");
      set("attitude", "peaceful");
      set("combat_exp", 50000);
      set("chat_chance_combat",55);

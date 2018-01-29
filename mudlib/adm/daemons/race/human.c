@@ -6,20 +6,20 @@
 inherit F_DBASE;
 
 mapping *combat_action = ({
-	([	"action":		"$N挥拳攻击$n的$l",
-		"damage_type":	"瘀伤",
+	([	"action":		"$N揮拳攻擊$n的$l",
+		"damage_type":	"瘀傷",
 	]),
 	([	"action":		"$N往$n的$l一抓",
-		"damage_type":	"抓伤",
+		"damage_type":	"抓傷",
 	]),
-	([	"action":		"$N往$n的$l狠狠地踢了一脚",
-		"damage_type":	"瘀伤",
+	([	"action":		"$N往$n的$l狠狠地踢了一腳",
+		"damage_type":	"瘀傷",
 	]),
-	([	"action":		"$N提起拳头往$n的$l捶去",
-		"damage_type":	"瘀伤",
+	([	"action":		"$N提起拳頭往$n的$l捶去",
+		"damage_type":	"瘀傷",
 	]),
-	([	"action":		"$N对准$n的$l用力挥出一拳",
-		"damage_type":	"瘀伤",
+	([	"action":		"$N對準$n的$l用力揮出一拳",
+		"damage_type":	"瘀傷",
 	]),
 });
 
@@ -31,9 +31,9 @@ void create()
 	set("can_speak", 1);
 	set("attitude", "peaceful");
 	set("limbs", ({
-		"头部",	"颈部",	"胸口",	"後心",	"左肩",	"右肩",	"左臂",
-		"右臂",	"左手",	"右手",	"腰间",	"小腹",	"左腿",	"右腿",
-		"左脚",	"右脚"
+		"頭部",	"頸部",	"胸口",	"後心",	"左肩",	"右肩",	"左臂",
+		"右臂",	"左手",	"右手",	"腰間",	"小腹",	"左腿",	"右腿",
+		"左腳",	"右腳"
 	}) );
 }
 

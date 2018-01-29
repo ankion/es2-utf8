@@ -6,7 +6,7 @@ void create()
 {
 	set("short", "西大街");
 	set("long", @LONG
-这里是乔阴县城的西大街.
+這裏是喬陰縣城的西大街.
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */

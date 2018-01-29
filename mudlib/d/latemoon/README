@@ -1,35 +1,35 @@
 //  ** /d/latemoon/ **
 
-****  晚月清韵 ****
+****  晚月清韻 ****
 
-晚月庄为十三灵之「 人灵 」之后裔。火神、雷神为之至友!
-以歌舞妓为其职称。全庄分为四部份：
-<1> 晚月前厅 : ( /d/latemoon/ )
-               包括入庄小径，竹林，前厅等大房。前厅为万字型!
-<2> 晚月后厅 : ( /d/latemoon/room/ )
-               为晚月庄内厅厢房。祖师及各子弟厢房，厨房，浴池。
-<3> 湘园     : ( /d/latemoon/park/ )
-               为晚月的后花园。以奇景凉亭著称。
-<4> 前堂楼   : ( /d/latemoon/upstar/ )
-               包括一佛堂，前堂观景楼与二间练功房。
+晚月莊爲十三靈之「 人靈 」之後裔。火神、雷神爲之至友!
+以歌舞妓爲其職稱。全莊分爲四部份：
+<1> 晚月前廳 : ( /d/latemoon/ )
+               包括入莊小徑，竹林，前廳等大房。前廳爲萬字型!
+<2> 晚月後廳 : ( /d/latemoon/room/ )
+               爲晚月莊內廳廂房。祖師及各子弟廂房，廚房，浴池。
+<3> 湘園     : ( /d/latemoon/park/ )
+               爲晚月的後花園。以奇景涼亭著稱。
+<4> 前堂樓   : ( /d/latemoon/upstar/ )
+               包括一佛堂，前堂觀景樓與二間練功房。
 
-**** 任务 ****
+**** 任務 ****
 
-<1> 地点 : 密室 - /d/latemoon/latemoon8
-    讯息 : dancing <密语>   
-    作用 : 传送至  密室 - /d/latemoon/miroom
-           内有  一本 舞林秘笈(Dance-book) ("dodge"-> 41 )
-<2> 地点 : 禁闭房 - /d/latemoon/latemoon6
-    讯息 : give dragonfly to funlin
-    作用 : 知道讯息 ( search bracelet )
+<1> 地點 : 密室 - /d/latemoon/latemoon8
+    訊息 : dancing <密語>   
+    作用 : 傳送至  密室 - /d/latemoon/miroom
+           內有  一本 舞林祕笈(Dance-book) ("dodge"-> 41 )
+<2> 地點 : 禁閉房 - /d/latemoon/latemoon6
+    訊息 : give dragonfly to funlin
+    作用 : 知道訊息 ( search bracelet )
 
-<3> 地点 : 内厅 - /d/latemoon/latemoon2
-    讯息 : search bracelet
-    作用 : 找到  玛瑙手镯(Bracelet onyx)
+<3> 地點 : 內廳 - /d/latemoon/latemoon2
+    訊息 : search bracelet
+    作用 : 找到  瑪瑙手鐲(Bracelet onyx)
 
-<4> 地点 : 客房 - /d/latemoon/room/guest1
-    动作 : 将 芙云(Fuyun) 打死 身上有 密函(Letter)
-    作用 : 用 火摺烧 (fire letter) 出现讯息。
+<4> 地點 : 客房 - /d/latemoon/room/guest1
+    動作 : 將 芙雲(Fuyun) 打死 身上有 密函(Letter)
+    作用 : 用 火摺燒 (fire letter) 出現訊息。
 
 
                                上官逸倩 Seraph ( 84/9/15 )

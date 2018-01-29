@@ -6,17 +6,17 @@ inherit F_VENDOR;
 void create()
 {
   set_name("潘若秋", ({ "seller" }) );
-  set("title", "书局老板");
+  set("title", "書局老闆");
   set("gender", "男性" );
   set("age", 32);
-  set("long", "潘老板长得很白净，一副读书人的老实相。\n");
+  set("long", "潘老闆長得很白淨，一副讀書人的老實相。\n");
   set("combat_exp", 5000);
   set("attitude", "friendly");
   set_skill("unarmed", 70);
   set_skill("dodge", 50);
 
   set("inquiry", ([
-    "书局" : "为读书人办点事也是尽一份心意。", 
+    "書局" : "爲讀書人辦點事也是盡一份心意。", 
   ]) );
 
   set("vendor_goods", ([
@@ -44,16 +44,16 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(4) ) {
                 case 0:
-                        say( "潘若秋迎上来，说道："
+                        say( "潘若秋迎上來，說道："
                                 + RANK_D->query_respect(ob)
-                                + "可是来买书的？\n");
+                                + "可是來買書的？\n");
                         break;
                 case 1:
-                        say( "潘若秋幽幽地叹了口气，说道：“作个读书人难啊！”。\n");
+                        say( "潘若秋幽幽地嘆了口氣，說道：“作個讀書人難啊！”。\n");
                         break;
 
 		case 2:
-			say( "潘若秋真聚精会神地看着书，似乎没注意你的到来。\n");
+			say( "潘若秋真聚精會神地看着書，似乎沒注意你的到來。\n");
 			break;
 
         }

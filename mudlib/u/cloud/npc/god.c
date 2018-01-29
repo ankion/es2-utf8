@@ -4,12 +4,12 @@ int time_period(int timep, object me);
 
 void create()
 {
-        set_name("朱鸿雪", ({ "Zhu hongxue", "zhu hongxue", "zhu" }) );
+        set_name("朱鴻雪", ({ "Zhu hongxue", "zhu hongxue", "zhu" }) );
 
         set("gender", "女性");
         set("age", 69);
         set("long",
-                "朱鸿雪慈眉善目，可又有谁能想到她竟是杀手组织中人。\n");
+                "朱鴻雪慈眉善目，可又有誰能想到她竟是殺手組織中人。\n");
         set("attitude", "peaceful");
         set("skill_public",1);
         set("str", 26000);
@@ -39,7 +39,7 @@ void create()
         set("force_factor", 10);
 
 
-        create_family("东方神教", 2, "教主");
+        create_family("東方神教", 2, "教主");
 
         setup();
 
@@ -48,7 +48,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say 生命可贵！不要自寻死路！");
+        command("say 生命可貴！不要自尋死路！");
         return 0;
 }
 void init()
@@ -87,8 +87,8 @@ int give_quest()
         me = this_player();
 // Let's see if this player still carries an un-expired task
 	if ((int)me->query("combat_exp") <= 1000){
-                message_vision("朱鸿雪奇怪的眼神盯着$N,说:
-就凭你这种小角色也想? 还不快滚!\n",me);
+                message_vision("朱鴻雪奇怪的眼神盯着$N,說:
+就憑你這種小角色也想? 還不快滾!\n",me);
 		return 0;
 		} 
        if((quest =  me->query("quest")))
@@ -97,8 +97,8 @@ int give_quest()
                 return 0;
         else
         {
-                message_vision("朱鸿雪向$N一甩袍袖，说道：
-真没用！不过看在你还回来见我的份上，就在给你一次机会．\n", me);
+                message_vision("朱鴻雪向$N一甩袍袖，說道：
+真沒用！不過看在你還回來見我的份上，就在給你一次機會．\n", me);
                 me->set("kee", me->query("kee")/2+1);
 		tfinished = me->query("tfinished");
 		if (tfinished <= -10)
@@ -151,13 +151,13 @@ int give_quest()
         quest = QUEST_D(tag)->query_quest();
         timep = quest["time"];
         time_period(timep, me);
-        if (quest["quest_type"] == "寻")
+        if (quest["quest_type"] == "尋")
         {
-        tell_object(me,"找回『"+quest["quest"]+"』给我。\n" NOR);
+        tell_object(me,"找回『"+quest["quest"]+"』給我。\n" NOR);
         }
-                if (quest["quest_type"] == "杀")
+                if (quest["quest_type"] == "殺")
         {
-        tell_object(me,"替我杀了『"+quest["quest"]+"』。\n" NOR);
+        tell_object(me,"替我殺了『"+quest["quest"]+"』。\n" NOR);
         }
         quest["exp_bonus"]=quest["exp_bonus"];
         quest["pot_bonus"]=quest["pot_bonus"];
@@ -182,11 +182,11 @@ int time_period(int timep, object me)
         if(d) time = chinese_number(d) + "天";
         else time = "";
 
-        if(h) time += chinese_number(h) + "小时";
+        if(h) time += chinese_number(h) + "小時";
         if(m) time += chinese_number(m) + "分";
         time += chinese_number(s) + "秒";
 
-        tell_object(me,HIW "朱鸿雪沉思了一会儿，说道：\n请在" + time + "内");
+        tell_object(me,HIW "朱鴻雪沉思了一會兒，說道：\n請在" + time + "內");
         return 1;
 }
 /*int accept_object(object who, object ob)
@@ -196,22 +196,22 @@ int time_period(int timep, object me)
         mapping quest;
         if(!(quest =  who->query("quest")))
         {
-        tell_object(who,"朱鸿雪说道：这不是我想要的。\n");
+        tell_object(who,"朱鴻雪說道：這不是我想要的。\n");
         return 0;
         }
         if( ob->name(1) != quest["quest"])
         {
-        tell_object(who,"朱鸿雪说道：这不是我想要的。\n");
+        tell_object(who,"朱鴻雪說道：這不是我想要的。\n");
         return 0;
         }
         if ((int) who->query("task_time") < time() )
         {
-        tell_object(who,"朱鸿雪说道：真可惜！你没有在指定的时间内完成！\n");
+        tell_object(who,"朱鴻雪說道：真可惜！你沒有在指定的時間內完成！\n");
                         return 1;
         }
         else
         {
-        tell_object(who,"朱鸿雪说道：恭喜你！你又完成了一项任务！\n");
+        tell_object(who,"朱鴻雪說道：恭喜你！你又完成了一項任務！\n");
         exp = quest["exp_bonus"]/2 + random(quest["exp_bonus"]/2);
         pot = quest["pot_bonus"]/2 + random(quest["pot_bonus"]/2);
         score = quest["score"]/2 + random(quest["score"]/2);
@@ -239,10 +239,10 @@ int time_period(int timep, object me)
         bonus = (int) who->query("score");
         bonus += score;
         who->set("score", bonus);
-        tell_object(who,HIW"你被奖励了：\n" +
-        chinese_number(exp) + "点实战经验\n"+
-        chinese_number(pot) + "点潜能\n" +
-        chinese_number(score)+"点综合评价\n"NOR);
+        tell_object(who,HIW"你被獎勵了：\n" +
+        chinese_number(exp) + "點實戰經驗\n"+
+        chinese_number(pot) + "點潛能\n" +
+        chinese_number(score)+"點綜合評價\n"NOR);
         who->set("quest", 0 );
                         return 1;
         }

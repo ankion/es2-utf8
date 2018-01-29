@@ -3,8 +3,8 @@ inherit NPC;
  
 void create()
 {
-        set_name("虞琼衣" , ({ "chungyu","chung","yu" }) );
-        set("title", "晚月庄弟子");
+        set_name("虞瓊衣" , ({ "chungyu","chung","yu" }) );
+        set("title", "晚月莊弟子");
         set("gender", "女性" );
         set("age",17);
         set("long", @TEXT
@@ -41,8 +41,8 @@ void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
      if ((string)ob->query("gender") == "男性" ) {
-          say( HIY "琼衣很礼貌的向你微笑! \n" NOR);
-          say ( HIY "说道：请保持安静哦! \n" NOR);
+          say( HIY "瓊衣很禮貌的向你微笑! \n" NOR);
+          say ( HIY "說道：請保持安靜哦! \n" NOR);
           ob->receive_damage("sen", 10);
           this_object()->add("force", 50);
           command("close door");

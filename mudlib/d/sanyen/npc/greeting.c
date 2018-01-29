@@ -13,8 +13,8 @@ void create()
 	set("cps", 26);
 	set("int", 23);
 	set("long",
-		"这个知客僧脸色和蔼，虽然在寺中的地位不高，但是他总是让人有一种\n"
-		"值得信赖的感觉。\n");
+		"這個知客僧臉色和藹，雖然在寺中的地位不高，但是他總是讓人有一種\n"
+		"值得信賴的感覺。\n");
 	set("combat_exp", 2000);
 	set("attitude", "friendly");
 	set("max_force", 300);
@@ -28,6 +28,6 @@ void create()
 
 int accept_fight(object me)
 {
-	command("say 阿弥陀佛！小僧武功\低微，认输便是。\n");
+	command("say 阿彌陀佛！小僧武功\低微，認輸便是。\n");
 	return 0;
 }

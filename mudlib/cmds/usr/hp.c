@@ -19,19 +19,19 @@ int main(object me, string arg)
 		ob = present(arg, environment(me));
 		if (!ob) ob = find_player(arg);
 		if (!ob) ob = find_living(arg);
-        if (!ob) return notify_fail("你要察看谁的状态？\n");
+        if (!ob) return notify_fail("你要察看誰的狀態？\n");
 	} else
-		return notify_fail("只有巫师能察看别人的状态。\n");
+		return notify_fail("只有巫師能察看別人的狀態。\n");
  
 	my = ob->query_entire_dbase();
  
 	printf("▼ " BOLD "%s" NOR "%s\n", RANK_D->query_rank(ob), ob->short(1) );
-    printf(" 精：%s%4d/%4d %s(%3d%%)" NOR "  灵力：%s%4d/%4d (+%d)\n" NOR,
+    printf(" 精：%s%4d/%4d %s(%3d%%)" NOR "  靈力：%s%4d/%4d (+%d)\n" NOR,
 		status_color(my["gin"], my["eff_gin"]),	my["gin"],	my["eff_gin"],
 		status_color(my["eff_gin"], my["max_gin"]),	my["eff_gin"] * 100 / my["max_gin"],
 		status_color(my["atman"], my["max_atman"]),	my["atman"], my["max_atman"],
 		my["atman_factor"] );
-    printf(" 气：%s%4d/%4d %s(%3d%%)" NOR "  内力：%s%4d/%4d (+%d)\n" NOR,
+    printf(" 氣：%s%4d/%4d %s(%3d%%)" NOR "  內力：%s%4d/%4d (+%d)\n" NOR,
 		status_color(my["kee"], my["eff_kee"]),	my["kee"], my["eff_kee"],
 		status_color(my["eff_kee"], my["max_kee"]),	my["eff_kee"] * 100 / my["max_kee"],
 		status_color(my["force"], my["max_force"]),	my["force"], my["max_force"],
@@ -41,12 +41,12 @@ int main(object me, string arg)
 		status_color(my["eff_sen"], my["max_sen"]),	my["eff_sen"] * 100 / my["max_sen"],
 		status_color(my["mana"], my["max_mana"]), my["mana"], my["max_mana"],
 		my["mana_factor"] );
-    printf(" 食物：%s%4d/ %4d   " NOR "   潜能： %s%d\n" NOR,
+    printf(" 食物：%s%4d/ %4d   " NOR "   潛能： %s%d\n" NOR,
         status_color(my["food"], ob->max_food_capacity()),
         my["food"], ob->max_food_capacity(),
         HIY,
         (int)ob->query("potential") - (int)ob->query("learned_points"));
-    printf(" 饮水：%s%4d/ %4d   " NOR "   经验： %s%d\n" NOR,
+    printf(" 飲水：%s%4d/ %4d   " NOR "   經驗： %s%d\n" NOR,
         status_color(my["water"], ob->max_water_capacity()),
         my["water"], ob->max_water_capacity(),
         HIM,
@@ -72,9 +72,9 @@ int help(object me)
 {
 	write(@HELP
 指令格式 : hp
-           hp <对象名称>                   (巫师专用)
+           hp <對象名稱>                   (巫師專用)
  
-这个指令可以显示你(□)或指定对象(含怪物)的精, 气, 神数值。
+這個指令可以顯示你(□)或指定對象(含怪物)的精, 氣, 神數值。
  
 see also : score
 HELP

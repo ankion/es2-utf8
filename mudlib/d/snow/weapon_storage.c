@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "兵器储藏室");
+	set("short", "兵器儲藏室");
 	set("long", @LONG
-这是一间堆满各式兵器、刀械的储藏室，各式武器都依照种类、长
-短、依次放在一起，并且擦拭得一尘不染，储藏室的出口在你的南边，
-面对出口的左手边有一个架子(shelf)。
+這是一間堆滿各式兵器、刀械的儲藏室，各式武器都依照種類、長
+短、依次放在一起，並且擦拭得一塵不染，儲藏室的出口在你的南邊，
+面對出口的左手邊有一個架子(shelf)。
 LONG
 	);
 	set("exits", ([
@@ -18,7 +18,7 @@ LONG
 		__DIR__"npc/obj/bamboo_sword": 1,
 	]) );
 	set("item_desc", ([
-		"shelf": "这个架子上空荡荡的，什么都没有。\n"
+		"shelf": "這個架子上空蕩蕩的，什麼都沒有。\n"
 	]) );
 
 	setup();
@@ -35,12 +35,12 @@ void check_trigger()
 
 	if( (int)query("left_trigger")==3
 	&&	!query("exits/down") ) {
-		message("vision", "地板忽然发出轧轧的声音，一块地面缓缓移动著，露出一个向下的阶梯。\n",
+		message("vision", "地板忽然發出軋軋的聲音，一塊地面緩緩移動著，露出一個向下的階梯。\n",
 			this_object() );
 		set("exits/down", __DIR__"secret_storage");
 		if( room = find_object(__DIR__"secret_storage") ) {
 			room->set("exits/up", __FILE__);
-			message("vision", "天花板忽然发出轧轧的声音，露出一个向上的阶梯。\n", room );
+			message("vision", "天花板忽然發出軋軋的聲音，露出一個向上的階梯。\n", room );
 		}
 		delete("left_trigger");
 		call_out("close_passage", 10);
@@ -52,11 +52,11 @@ void close_passage()
 	object room;
 
 	if( !query("exits/down") ) return;
-	message("vision", "地板忽然发出轧轧的声音，一块地面缓缓移动著，将向下的通道盖\住了。\n",
+	message("vision", "地板忽然發出軋軋的聲音，一塊地面緩緩移動著，將向下的通道蓋\住了。\n",
 		this_object() );
 	if( room = find_object(__DIR__"secret_storage") ) {
 		room->delete("exits/up");
-		message("vision", "天花板忽然发出轧轧的声音，向上的阶梯又缓缓地收了回去。\n",
+		message("vision", "天花板忽然發出軋軋的聲音，向上的階梯又緩緩地收了回去。\n",
 			room );
 	}
 	delete("exits/down");
@@ -70,11 +70,11 @@ int do_push(string arg)
 	if( !arg || arg=="" ) return 0;
 
 	if( arg=="shelf" ) {
-		write("你试著推动这个架子，似乎可以左右滑动....\n");
+		write("你試著推動這個架子，似乎可以左右滑動....\n");
 		return 1;
 	}
 
-    message_vision("$N将架子往左推...，忽然「喀」一声架子又移回原位。\n", this_player());
+    message_vision("$N將架子往左推...，忽然「喀」一聲架子又移回原位。\n", this_player());
     add("left_trigger", 1);
     check_trigger();
     return 1;

@@ -6,8 +6,8 @@ void create()
      set("gender", "男性");
      set("age", 46);
      set("class", "taoist");
-     set("long", "一位四处云游的老道士, 他正在观心观挂单中。\n"
-                 "看他饱经沧桑的脸孔, 似乎他也是经历过无数的大风大浪。\n");
+     set("long", "一位四處雲遊的老道士, 他正在觀心觀掛單中。\n"
+                 "看他飽經滄桑的臉孔, 似乎他也是經歷過無數的大風大浪。\n");
      set("attitude", "peaceful");
      set("combat_exp", 2500);
 
@@ -24,6 +24,6 @@ void create()
 
 int accept_fight(object ob)
 {
-     command("say 无量寿佛 ! 贫道年迈力衰, 怎是施主的对手。\n");
+     command("say 無量壽佛 ! 貧道年邁力衰, 怎是施主的對手。\n");
      return 0;
 }

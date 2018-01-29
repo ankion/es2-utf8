@@ -3,8 +3,8 @@ inherit NPC;
  
 void create()
 {
-         set_name("天龙", ({ "tenlon" }) );
-        set("title", "晚月庄第三代弟子");
+         set_name("天龍", ({ "tenlon" }) );
+        set("title", "晚月莊第三代弟子");
         set("gender", "女性" );
         set("age",17);
         set("long", @TEXT
@@ -42,7 +42,7 @@ void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
      if ((string)ob->query("gender") == "男性" ) {
-          say( HIY "芙云惊慌生气的怒斥： 喂! 色狼! 这不准男人进来!\n" NOR);
+          say( HIY "芙雲驚慌生氣的怒斥： 喂! 色狼! 這不準男人進來!\n" NOR);
           kill_ob(ob);
           ob->fight_ob(this_object());
           return;

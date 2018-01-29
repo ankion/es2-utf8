@@ -2,7 +2,7 @@ inherit NPC;
  
 void create()
 {
-        set_name("袭人", ({ "Shi Ren", "shi ren","shi" }) );
+        set_name("襲人", ({ "Shi Ren", "shi ren","shi" }) );
         set("gender", "女性" );
         set("age",28);
         set("long", @TEXT
@@ -19,7 +19,7 @@ TEXT
         set("max_force", 400);
         set("force_factor", 2);
 
-        create_family("晚月庄",4,"弟子");
+        create_family("晚月莊",4,"弟子");
         setup();
         carry_object("/d/latemoon/obj/skirt4")->wear();
         carry_object(__DIR__"obj/amulet")->wear();

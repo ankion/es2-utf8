@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-     set("short", "佛堂门前");
+     set("short", "佛堂門前");
 	set("long", @LONG
-这里是庄院二楼的佛堂门前，你可以闻到一股浓郁的檀香气息。
-走在这里你有一种庄严肃静的感觉，在闲暇之馀你觉得来到这可以
-暂时忘去周遭的烦人琐事，彷佛可以放开一切� 所有时空都静止般
-的虚空幽静。西面你看到一扇檀香木门。
+這裏是莊院二樓的佛堂門前，你可以聞到一股濃郁的檀香氣息。
+走在這裏你有一種莊嚴肅靜的感覺，在閒暇之餘你覺得來到這可以
+暫時忘去周遭的煩人瑣事，彷佛可以放開一切� 所有時空都靜止般
+的虛空幽靜。西面你看到一扇檀香木門。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -19,7 +19,7 @@ LONG
 
 ]));
 
-    create_door("west","檀香木门","east", DOOR_CLOSED);
+    create_door("west","檀香木門","east", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

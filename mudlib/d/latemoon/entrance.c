@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "碎石小径");
+	set("short", "碎石小徑");
 	set("long", @LONG
-这是条用鹅卵石铺成的小路，往西可以看到一座用淡青色围墙围住
-的庭院，有两个身着彩衣的女子笑盈盈的站在那里说笑着，她们身后的
-一扇拱门(door)，檐顶下面写着「晚月庄」。院墙那边飘出的阵阵曲声勾
-人魂魄，隐约还可闻到一股香气。
+這是條用鵝卵石鋪成的小路，往西可以看到一座用淡青色圍牆圍住
+的庭院，有兩個身着綵衣的女子笑盈盈的站在那裏說笑着，她們身後的
+一扇拱門(door)，檐頂下面寫着「晚月莊」。院牆那邊飄出的陣陣曲聲勾
+人魂魄，隱約還可聞到一股香氣。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -27,7 +27,7 @@ LONG
 	set("objects", ([
 		"/u/cloud/npc/lm_guard": 2 ]) );
 
-	create_door("west", "拱门", "east", DOOR_CLOSED);
+	create_door("west", "拱門", "east", DOOR_CLOSED);
 
 	setup();
 	replace_program(ROOM);
@@ -42,6 +42,6 @@ void init()
 void exist_door(object ob)
 {
         if( (string)ob->query("gender") == "女性"  )
-	        create_door("west", "拱门", "east", DOOR_CLOSED);
+	        create_door("west", "拱門", "east", DOOR_CLOSED);
 }
 */
