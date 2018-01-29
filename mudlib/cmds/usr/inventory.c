@@ -6,7 +6,7 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg)
 {
-	int i;
+	//int i;
 	object *inv, ob;
 
 	if( wizardp(me) && arg ) {

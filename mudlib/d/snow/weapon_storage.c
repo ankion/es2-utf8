@@ -52,7 +52,7 @@ void close_passage()
 	object room;
 
 	if( !query("exits/down") ) return;
-	message("vision", "地板忽然發出軋軋的聲音，一塊地面緩緩移動著，將向下的通道蓋\住了。\n",
+	message("vision", "地板忽然發出軋軋的聲音，一塊地面緩緩移動著，將向下的通道蓋住了。\n",
 		this_object() );
 	if( room = find_object(__DIR__"secret_storage") ) {
 		room->delete("exits/up");
@@ -65,7 +65,7 @@ void close_passage()
 
 int do_push(string arg)
 {
-	string dir;
+	//string dir;
 
 	if( !arg || arg=="" ) return 0;
 
