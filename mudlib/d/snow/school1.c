@@ -1,4 +1,5 @@
 // Room: /d/snow/school1.c
+#include <room.h>
 
 inherit ROOM;
 
