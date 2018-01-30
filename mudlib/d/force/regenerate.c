@@ -6,7 +6,7 @@ int exert(object me, object target)
 {
 	int heal, heal1, heal2, cost=20;
 
-	if( target != me ) return notify_fail("你只能用內功\恢復自己的精力。\n");
+	if( target != me ) return notify_fail("你只能用內功恢復自己的精力。\n");
 
 	if( (int)me->query("force") < 20 ) return notify_fail("你的內力不夠。\n");
 
